@@ -22,8 +22,13 @@ gulp.task('sass',function()
 {
     return gulp.src('src/sass/*.scss')
         .pipe(sass({
-           compass:true // loads the config.rb file which is a fair enough place to store config stuff I think.
-        }));
+            style:'nested',
+            loadPath:'bower_components',
+            quiet:true,
+        }))
+        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))        
+        .pipe(gulp.dest('build/css'))
+        .pipe(livereload(slr));
 });
 
 /*
@@ -139,8 +144,8 @@ gulp.task('watch', function() {
 
         // Watch .scss files
         gulp.watch('src/sass/**/*.scss', function(event) {
-            message(event, 'compass');
-            gulp.run('compass');
+            message(event, 'sass');
+            gulp.run('sass');
         });
 
         // Watch .css files
@@ -168,13 +173,13 @@ gulp.task('watch', function() {
         })
 
         // Watch Jekyll files
-        gulp.watch('build/**/*.{html,yml,md,mkd,markdown}',function(event)
-        {
-            message(event,'');
-            gulp.run('jekyll'); 
-        })
+        // gulp.watch('build/**/*.{html,yml,md,mkd,markdown}',function(event)
+        // {
+        //     message(event,'');
+        //     gulp.run('jekyll'); 
+        // })
 
-        gulp.watch('build/**/*.{html,yml,md,mkd,markdown}',function(event)
+        gulp.watch('build/**/*.{php,html,yml,md,mkd,markdown}',function(event)
         {
             message(event,'');
             gulp.run('livereload'); 

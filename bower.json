@@ -6,6 +6,8 @@
     "modernizr": "latest",
     "normalize-css": "latest",
     "inuit.css": "latest",
-    "html5-boilerplate": "latest"
+    "html5-boilerplate": "latest",
+    "backbone": "~1.1.2",
+    "bootstrap-sass-official": "~3.1.1+2"
   }
 }
