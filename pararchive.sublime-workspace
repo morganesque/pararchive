@@ -1,1 +1,1623 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"json_",
+				"json_decode"
+			],
+			[
+				"ex",
+				"execute"
+			],
+			[
+				"session",
+				"session_destroy"
+			],
+			[
+				"e",
+				"e.prev	preventDefault"
+			],
+			[
+				"pag",
+				"PageLogin"
+			],
+			[
+				"page",
+				"PageLogin"
+			],
+			[
+				"con",
+				"con	consolelog"
+			],
+			[
+				"temp",
+				"temperature_view"
+			],
+			[
+				"inside",
+				"insideEl"
+			],
+			[
+				"in",
+				"insideEl"
+			],
+			[
+				"insi",
+				"insideModel"
+			],
+			[
+				"out",
+				"outsideModel"
+			],
+			[
+				"get",
+				"getData"
+			],
+			[
+				"gree",
+				"greeting_view"
+			],
+			[
+				"home",
+				"HomePage"
+			],
+			[
+				"greet",
+				"GreetingView"
+			],
+			[
+				"auth",
+				"auth_token"
+			],
+			[
+				"wa",
+				"waterheating"
+			],
+			[
+				"stat",
+				"statusImage"
+			],
+			[
+				"list",
+				"listenTo"
+			],
+			[
+				"menu",
+				"onMenuClick"
+			],
+			[
+				"chan",
+				"changeStatus"
+			],
+			[
+				"Air",
+				"AirFlowView"
+			],
+			[
+				"airflow",
+				"airflow"
+			],
+			[
+				"dail",
+				"daily_usage_view"
+			],
+			[
+				"tody",
+				"today_usage_view"
+			],
+			[
+				"set",
+				"setUpViews"
+			],
+			[
+				"on",
+				"onRender"
+			],
+			[
+				"u",
+				"usage_now"
+			],
+			[
+				"actua",
+				"actuatePage"
+			],
+			[
+				"ini",
+				"initialize"
+			],
+			[
+				"scal",
+				"scaleX"
+			],
+			[
+				"E_",
+				"E_MonthlyUsage"
+			],
+			[
+				"ren",
+				"renderBackground"
+			],
+			[
+				"add",
+				"addLine"
+			],
+			[
+				"text",
+				"text_y"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"this",
+				"this_month"
+			],
+			[
+				"last",
+				"lastMonthNum"
+			],
+			[
+				"waves_",
+				"waves_start"
+			],
+			[
+				"wave",
+				"waves_start"
+			],
+			[
+				"back",
+				"backButton"
+			],
+			[
+				"Con",
+				"ControlAll"
+			],
+			[
+				"water",
+				"waterDay"
+			],
+			[
+				"onSwi",
+				"onSwipeLeft"
+			],
+			[
+				"swi",
+				"onSwipeLeft"
+			],
+			[
+				"att",
+				"attributes"
+			],
+			[
+				"json_e",
+				"json_encode"
+			],
+			[
+				"sca",
+				"scaleY"
+			],
+			[
+				"im",
+				"img"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"b",
+				"build"
+			],
+			[
+				"col",
+				"col-setup"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"svg",
+				"svgmin"
+			],
+			[
+				"write",
+				"writeln"
+			],
+			[
+				"conf",
+				"confFile"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"main",
+				"mainFiles"
+			],
+			[
+				"str",
+				"stringify"
+			],
+			[
+				"man",
+				"manualMainFiles"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "build/api/userdata_3.json",
+			"settings":
+			{
+				"buffer_size": 263,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Front-End/WP/PHP\nYes. This would definitely be what I'd do. Front-end is one of my main activities. Wordpress is fine. Wordpress level PHP is fine. Wrangling CMS's etc. I used to do proper coal-face PHP for Orange but don't really do back-end dev anymore so anything that went a lot further probably wouldn't be for me.\n\nJS wizardry\nYes. Pretty sure there's nothing JS I couldn't deliver. I'm guessing the madness here lies at the whizzy-animated-media-frenzy end of the spectrum rather than the big-structured-app end. Either's fine. I used to do loads of Flash back-when-it-was-cool and so I find a lot of that stuff now carries over into JS.\n\nResponsive \nDefinitely. In fact I'd pretty much say anything I work on now would need to be unless for a very good reason.\n\nStyle-guides\nYes, yes, really seeing this as the next thing I'm going to be attempting to shoe-horn into every project I do. I've got a couple of in-progress attempts on the go with the projects I'm working on now. Would love the chance to take that approach with a client would understood and wanted to do that too.\n\nUX & Design\nOK so here's my way of explaining this to myself and others. I see the skills/flow/process thing a bit like this:\n\n\n\nWhere I see myself is covering 2 & 3. In comparison I'd see someone like Dean sitting across 1 & 2. So when it comes to UX I feel like definitely I'd want to be involved in the design, overall UX, information architecture, page structure, user/page flows, right down to the nitty gritty of individual page elements, animating, responding. That's where I've got loads to say and loads to offer I feel.\n\nBut I'm not a visual / brand designer in the way Dean is. I don't have the experience or really the inclination. \n\nSo ideally it would be the kind of project where there already was some branding stuff in place and what was really needed was the UX to Front-end stuff.",
+			"settings":
+			{
+				"buffer_size": 1887,
+				"line_ending": "Unix",
+				"name": "Front-End/WP/PHP"
+			}
+		},
+		{
+			"file": "src/js/pararchive/backbone/router.js",
+			"settings":
+			{
+				"buffer_size": 1039,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/pararchive/backbone/view-page.js",
+			"settings":
+			{
+				"buffer_size": 692,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-air.js",
+			"settings":
+			{
+				"buffer_size": 1855,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"syn",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"clo",
+				"File: Close All"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"beau",
+				"Javascript Beautify"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ske",
+				"Reg Replace: Sketch Cleanup"
+			],
+			[
+				"sket",
+				"Reg Replace: Sketch Cleanup"
+			],
+			[
+				"skect",
+				"Reg Replace: Sketch Cleanup"
+			],
+			[
+				"sketch",
+				"Reg Replace: Sketch Cleanup"
+			],
+			[
+				"Reg",
+				"Reg Replace: Sketch Cleanup"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"bea",
+				"Javascript Beautify"
+			],
+			[
+				"cl",
+				"File: Close All"
+			],
+			[
+				"prev",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"preview",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"save",
+				"File: Save All"
+			],
+			[
+				"user",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"clso",
+				"File: Close All"
+			],
+			[
+				"clos",
+				"File: Close All"
+			],
+			[
+				"enc",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"close",
+				"File: Close All"
+			],
+			[
+				"cls",
+				"File: Close All"
+			],
+			[
+				"decod",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
+			[
+				"deco",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"disbl",
+				"Package Control: Disable Package"
+			],
+			[
+				"auto",
+				"AutoFileName: Quick Settings"
+			],
+			[
+				"aut",
+				"AutoFileName: Default Settings"
+			],
+			[
+				"enco",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
+			[
+				"encode",
+				"Emmet: Encode\\Decode Image to data:URL"
+			],
+			[
+				"case",
+				"Convert Case: Title Case"
+			],
+			[
+				"csae",
+				"Convert Case: Title Case"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"browe",
+				"Preferences: Browse Packages"
+			],
+			[
+				"cal",
+				"Calculate"
+			],
+			[
+				"all",
+				"File: Close All"
+			],
+			[
+				"hint",
+				"JSHint"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"conver",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"conv",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"bro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			]
+		],
+		"width": 647.0
+	},
+	"console":
+	{
+		"height": 86.0,
+		"history":
+		[
+			"clear",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/page.scss",
+		"/Users/tommo/vhosts/pararchive/service/pararchive.sublime-project",
+		"/Users/tommo/vhosts/pararchive/service/build/api/lib/tempo/http/CurlRequest.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/cache/warmth-temperature-outside.cache",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/top.html",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/router.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/user/routes.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-home.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-login.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/init.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/home.php",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/login.scss",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/styles.scss",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/sync.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-component.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/lib/tempo/VERSION",
+		"/Users/tommo/vhosts/pararchive/service/build/api/control/nonessential.json",
+		"/Users/tommo/vhosts/pararchive/service/build/api/lib/Michelf/MarkdownInterface.php",
+		"/Users/tommo/vhosts/pararchive/service/gulpfile.js",
+		"/Users/tommo/vhosts/pararchive/service/build/css/styles.css",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/login.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/electricity/tempodb.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/control/routes.php",
+		"/Users/tommo/vhosts/pararchive/service/README.md",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/userdata_3.json",
+		"/Users/tommo/vhosts/pararchive/service/src/js/modernizr.js",
+		"/Users/tommo/vhosts/pararchive/service/build/config.php",
+		"/Users/tommo/vhosts/pararchive/service/build/index.php",
+		"/Users/tommo/vhosts/smiki/src/sass/styles.scss",
+		"/Users/tommo/vhosts/smiki/src/sass/config.rb",
+		"/Users/tommo/vhosts/smiki/gulpfile.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/allJS.conf",
+		"/Users/tommo/vhosts/pararchive/service/build/.htaccess",
+		"/Users/tommo/vhosts/pararchive/service/.gitignore",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/bottom.html",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-monthly_usage.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/modernizr.js",
+		"/Users/tommo/vhosts/actuate/styleguide/gulpfile.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-home-temp.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-hotwatertank-status.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/init.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/models.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/router.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-home.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-greeting.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-component.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/_colours.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-temperature.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/warmth-temperature-outside.cache",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/warmth-temperature-inside.cache",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/hotwatertank_temp.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/temperatures.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/pages/inc/top.html",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/sync.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-menu-control.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-day_totals.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/loginForm.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/pages/home.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_grids.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/model-actuate.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/checks.txt",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-electricity.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/electricity-month.cache",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/electricity-day.cache",
+		"/Users/tommo/vhosts/actuate/styleguide/service/pages/electricity-day.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/pages/electricity.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/control/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-rainwater-status.js",
+		"/Users/tommo/vhosts/actuate/apitest/index.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/proxy/index.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/control/heatingboost.json",
+		"/Users/tommo/vhosts/actuate/styleguide/service/.htaccess",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_svg.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-electricity.js",
+		"/Users/tommo/bin/curl.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/model-monthly.js",
+		"/Users/tommo/git/backbone.basicauth/backbone.basicauth.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/monthly_usage.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/water-month-this.cache",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/electricity-month-this.cache",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/allJS.conf",
+		"/Users/tommo/vhosts/actuate/styleguide/service/index.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/pages/inc/alerts.html",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_alerts.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/src/img/air-flow.svg",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/lib/AlertMeAPI.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-water.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/pages/inc/menu_controls.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/img/waterheater.svg",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_control.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-air.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_status.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/control/airflow.json",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-status.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-base.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-security.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-day_compare.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-day_usage.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-menu-nav.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-now_usage.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/dyk/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/electricity/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/help/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/security/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/transport/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/user/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/warmth/routes.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-master.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_menu_controls.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/config.rb",
+		"/Users/tommo/vhosts/actuate/styleguide/src/img/nonessential.svg",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-header.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/_base.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/service/pages/billing.php",
+		"/Users/tommo/vhosts/actuate/styleguide/service/img/nonessential.svg",
+		"/Users/tommo/vhosts/actuate/styleguide/actuate-styleguide.sublime-project",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/userdata_3.json",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/lib/Michelf/MarkdownExtra.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/controlSwitchLogic.js",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-all-controls.js",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/security-doors.cache",
+		"/Users/tommo/vhosts/actuate/styleguide/src/img/air-warmth.svg",
+		"/Users/tommo/vhosts/actuate/styleguide/service/api/lib/Michelf/MarkdownInterface.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/sass/_mixins.scss",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/svg_graph.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"*.*",
+			"*.js",
+			"*.scss",
+			"*.*",
+			"*.scss",
+			"*.*",
+			"*.scss",
+			"*.*",
+			"*.js",
+			"*.*",
+			"*.scss",
+			"*.*",
+			"*.scss",
+			"*.*",
+			"*.scss",
+			"*.*",
+			"*.scss",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"homepage",
+			"autoprefix",
+			"actuate",
+			"html()",
+			"controls(.*html);",
+			"console",
+			"html()",
+			"fish",
+			"[^\\/]\\sconsole.log",
+			"[^\\/]\\sconsole.log\\(\\'[^p]",
+			"[^\\/]\\sconsole.log('[^p]",
+			"[^\\/]\\sconsole.log('[^page]",
+			"[^\\/]\\sconsole.log",
+			"[^\\/] console.log",
+			"console.log",
+			"[^\\/][^\\/]  console.log",
+			"[^\\/][^\\/] console.log",
+			"console.log",
+			"this.outsideEl",
+			"this.bob",
+			"this.insideEl",
+			"fish",
+			"home_temp",
+			"new",
+			"console.log",
+			"electricity",
+			"setUpViews",
+			"updatePage",
+			"frag",
+			"Backbone.emulateHTTP",
+			"Backbone.emulateHTTPBackbone",
+			"Backbone",
+			"actuate.user",
+			".loading",
+			".status",
+			".retaining",
+			"sleep(3);",
+			".menu_control__item",
+			".hi",
+			"span class=\"hi",
+			"id=\"([^\"]*)\"",
+			" sketch:type=\"[^\"]*\"",
+			"id=\"([^\"]*)\"",
+			"class=\"",
+			" sketch:type=\"[^\"]*\"",
+			"this.svg",
+			"this.action",
+			"this.status",
+			"this.actionEl",
+			"this.statusEl",
+			".control",
+			"actuate.controls",
+			" id=\"[^\"]*\"",
+			"id=\"[^\"]*\"",
+			"id=\"[^\"*]\"",
+			"svg",
+			"svgmi",
+			"\\ssketch:type=\"[^\"]*\"",
+			"\\sxmlns:sketch=\"[^\"]*\"",
+			"xmlns:sketch",
+			".loading",
+			".load",
+			"this.$statusEl",
+			"$actionEl",
+			"header_view",
+			".container",
+			".status",
+			"targettemp",
+			"WaterHeatingView",
+			"VentStatus",
+			"actuate.controls",
+			"TempView render",
+			"warmth",
+			"TargetTempView",
+			"menu_controls",
+			"TargetTempView",
+			"svg",
+			"warmth",
+			"dd",
+			"DailyTotalsView",
+			"RainwaterStatusView",
+			"electricityPage",
+			"$('",
+			"wait for component",
+			"cons",
+			"conso",
+			"lk",
+			"cons",
+			"console",
+			"contro",
+			"got here",
+			"f",
+			"text-anchor",
+			"pad.x",
+			"renderBackground",
+			"average",
+			"stroke",
+			"this.max",
+			"\\n",
+			"console",
+			"monthlyusageview",
+			"headerview render",
+			"last_month",
+			"toggleMenus",
+			"toggleMenu",
+			"Backbone.history",
+			".brand-face",
+			".status_message",
+			"  =",
+			"WaterHeater",
+			"control__temp",
+			"water",
+			"scaleX",
+			"home__weather",
+			".icon",
+			"changeStatus",
+			"MenuView",
+			"ControlView",
+			"MenuLeftView",
+			"Backbone.Model",
+			"actuate.busData",
+			"insidetempview",
+			"onSwipeRight",
+			"onSwipeLeft",
+			"this.menuIcon",
+			".separate",
+			"-three",
+			".-three"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"loginPage",
+			"home",
+			"class=\"$1\"",
+			"",
+			"class=\"$1\"",
+			"",
+			"waterPage",
+			",",
+			"MenuNavView",
+			"ControlBaseView",
+			"ActuateModel",
+			"belowOrEquals",
+			"aboveOrEquals",
+			"\\n* ",
+			"\\n- ",
+			" ",
+			"placehold.it/$1x$2",
+			"http://placehold.it/$1x$2",
+			"http://placehold.it/$1/$2",
+			"\",\\n\"",
+			"\"\\n\",",
+			"resp-wrap",
+			"\"",
+			"    ",
+			"<%= yeoman.bower %>",
+			"    "
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "build/api/userdata_3.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								233,
+								233
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1217,
+								1217
+							]
+						],
+						"settings":
+						{
+							"auto_name": "Front-End/WP/PHP",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/js/pararchive/backbone/router.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								576,
+								612
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/js/pararchive/backbone/view-page.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 692,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-air.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1855,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								192,
+								192
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"project": "pararchive.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"page",
+				"src/js/pararchive/backbone/view-page.js"
+			],
+			[
+				"router",
+				"src/js/pararchive/backbone/router.js"
+			],
+			[
+				"style",
+				"src/sass/styles.scss"
+			],
+			[
+				"top",
+				"build/pages/inc/top.html"
+			],
+			[
+				"view",
+				"src/js/pararchive/backbone/view-page.js"
+			],
+			[
+				"init",
+				"src/js/pararchive/backbone/init.js"
+			],
+			[
+				"gul",
+				"gulpfile.js"
+			],
+			[
+				"gl",
+				"gulpfile.js"
+			],
+			[
+				"login",
+				"src/js/pararchive/backbone/view-page-login.js"
+			],
+			[
+				"stye",
+				"src/sass/styles.scss"
+			],
+			[
+				"mode",
+				"src/js/pararchive/backbone/model.js"
+			],
+			[
+				"gulp",
+				"gulpfile.js"
+			],
+			[
+				"ini",
+				"src/js/pararchive/backbone/init.js"
+			],
+			[
+				"syn",
+				"src/js/pararchive/backbone/sync.js"
+			],
+			[
+				"model",
+				"src/js/pararchive/backbone/model.js"
+			],
+			[
+				"all",
+				"src/js/allJS.conf"
+			],
+			[
+				".ht",
+				"build/.htaccess"
+			],
+			[
+				"inde",
+				"build/index.php"
+			],
+			[
+				"monlth",
+				"src/js/actuate/backbone/model-monthly.js"
+			],
+			[
+				"gree",
+				"src/js/actuate/backbone/view-greeting.js"
+			],
+			[
+				"home",
+				"src/js/actuate/backbone/view-page-home.js"
+			],
+			[
+				"compo",
+				"src/js/actuate/backbone/view-component.js"
+			],
+			[
+				"temp",
+				"src/js/actuate/backbone/view-home-temp.js"
+			],
+			[
+				"greet",
+				"src/js/actuate/backbone/view-greeting.js"
+			],
+			[
+				"chec",
+				"src/checks.txt"
+			],
+			[
+				"sync",
+				"src/js/actuate/backbone/sync.js"
+			],
+			[
+				"month",
+				"src/js/actuate/backbone/model-monthly.js"
+			],
+			[
+				"aler",
+				"src/sass/modules/_alerts.scss"
+			],
+			[
+				"color",
+				"src/sass/_colours.scss"
+			],
+			[
+				"air",
+				"src/img/air-flow.svg"
+			],
+			[
+				"view-",
+				"src/js/actuate/backbone/view-control-air.js"
+			],
+			[
+				"route",
+				"service/api/control/routes.php"
+			],
+			[
+				"control",
+				"src/sass/modules/_control.scss"
+			],
+			[
+				"non",
+				"src/img/nonessential.svg"
+			],
+			[
+				"menu",
+				"service/pages/inc/menu_controls.php"
+			],
+			[
+				"svg",
+				"src/sass/modules/_svg.scss"
+			],
+			[
+				"routers",
+				"src/js/actuate/backbone/router.js"
+			],
+			[
+				"ele",
+				"service/pages/electricity.php"
+			],
+			[
+				"view-mon",
+				"src/js/actuate/backbone/view-monthly_usage.js"
+			],
+			[
+				"water",
+				"service/pages/water.php"
+			],
+			[
+				"tota",
+				"src/js/actuate/d3/day_total_bars.js"
+			],
+			[
+				"now",
+				"src/js/actuate/backbone/view-now_usage.js"
+			],
+			[
+				"view-mo",
+				"src/js/actuate/backbone/view-monthly_usage.js"
+			],
+			[
+				"today",
+				"src/js/actuate/backbone/view-today_usage.js"
+			],
+			[
+				"hot",
+				"src/js/actuate/backbone/view-hotwatertank-status.js"
+			],
+			[
+				"monl",
+				"src/js/actuate/backbone/view-monthly_usage.js"
+			],
+			[
+				"total",
+				"src/js/actuate/backbone/view-day_totals.js"
+			],
+			[
+				"usage",
+				"src/js/actuate/backbone/view-day_usage.js"
+			],
+			[
+				"toda",
+				"src/js/actuate/backbone/view-today_usage.js"
+			],
+			[
+				"models",
+				"src/js/actuate/backbone/models.js"
+			],
+			[
+				"monthly",
+				"src/js/actuate/d3/monthly_usage.js"
+			],
+			[
+				"rain",
+				"src/js/actuate/backbone/view-rainwater-status.js"
+			],
+			[
+				"mon",
+				"src/js/actuate/backbone/view-monthly_usage.js"
+			],
+			[
+				"botto",
+				"service/pages/inc/bottom.html"
+			],
+			[
+				"header",
+				"src/js/actuate/backbone/view-header.js"
+			],
+			[
+				"coo",
+				"src/sass/_colours.scss"
+			],
+			[
+				"contro",
+				"service/pages/inc/menu_controls.html"
+			],
+			[
+				"wa",
+				"service/pages/water.php"
+			],
+			[
+				"col",
+				"src/sass/_colours.scss"
+			],
+			[
+				"icon",
+				"src/sass/modules/_icons.scss"
+			],
+			[
+				"routes",
+				"service/api/control/routes.php"
+			],
+			[
+				"actuate",
+				"src/js/actuate/backbone/model-actuate.js"
+			],
+			[
+				"help",
+				"service/pages/help.php"
+			],
+			[
+				"actua",
+				"src/js/actuate/backbone/model-actuate.js"
+			],
+			[
+				"bill",
+				"service/pages/billing.php"
+			],
+			[
+				"warm",
+				"service/pages/warmth.php"
+			],
+			[
+				"secur",
+				"service/pages/security.php"
+			],
+			[
+				"temper",
+				"src/js/actuate/backbone/view-temperature.js"
+			],
+			[
+				"warmpth",
+				"service/pages/warmth.php"
+			],
+			[
+				"head",
+				"service/pages/inc/header.html"
+			],
+			[
+				"bottom",
+				"service/pages/inc/bottom.html"
+			],
+			[
+				"price",
+				"src/js/actuate/price.js"
+			],
+			[
+				"config",
+				"src/sass/config.rb"
+			],
+			[
+				"mod",
+				"src/js/modernizr.js"
+			],
+			[
+				"mix",
+				"src/sass/_mixins.scss"
+			],
+			[
+				"main",
+				"dev/js/main.js"
+			],
+			[
+				"contact",
+				"build/_layouts/contact.html"
+			],
+			[
+				"team",
+				"build/team/index.html"
+			],
+			[
+				"odi",
+				"build/_posts/2014-02-03-odi-node.md"
+			],
+			[
+				"news",
+				"build/news/index.html"
+			],
+			[
+				"defa",
+				"build/_layouts/default.html"
+			],
+			[
+				"index",
+				"build/index.html"
+			],
+			[
+				"lay",
+				"dev/sass/_layout.scss"
+			],
+			[
+				"conte",
+				"build/contact/index.md"
+			],
+			[
+				"java",
+				"build/_includes/javascript.html"
+			],
+			[
+				"bttom",
+				"build/_includes/bottom.html"
+			],
+			[
+				"tea",
+				"build/_data/team.yml"
+			],
+			[
+				"conf",
+				"build/_config.yml"
+			],
+			[
+				"con",
+				"build/_config.yml"
+			],
+			[
+				"confi",
+				"build/_config.yml"
+			],
+			[
+				"work",
+				"build/work/index.md"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"g",
+				"Gruntfile.js"
+			],
+			[
+				"ie",
+				"dev/sass/_lt-ie9.scss"
+			],
+			[
+				"mixi",
+				"dev/sass/_mixins.scss"
+			],
+			[
+				"foot",
+				"dev/sass/_footer.scss"
+			],
+			[
+				"future",
+				"build/_includes/futurecities-cutout.svg"
+			],
+			[
+				"res",
+				"dev/sass/_responsive.scss"
+			],
+			[
+				"ma",
+				"dev/sass/main.scss"
+			],
+			[
+				"def",
+				"build/_layouts/default.html"
+			],
+			[
+				"btt",
+				"build/_includes/bottom.html"
+			],
+			[
+				"he",
+				"dev/sass/_header.scss"
+			],
+			[
+				"nav",
+				"dev/sass/_nav.scss"
+			],
+			[
+				"html",
+				"build/_includes/html_head.html"
+			],
+			[
+				"grun",
+				"Gruntfile.js"
+			],
+			[
+				"mixin",
+				"dev/sass/_mixins.scss"
+			],
+			[
+				"bott",
+				"build/_includes/bottom.html"
+			],
+			[
+				"mai",
+				"dev/js/main.js"
+			],
+			[
+				"hea",
+				"dev/sass/_header.scss"
+			],
+			[
+				"mark",
+				"build/_layouts/markdown.html"
+			],
+			[
+				"markdow",
+				"build/_layouts/markdown.html"
+			],
+			[
+				"defau",
+				"build/_layouts/default.html"
+			],
+			[
+				"mar",
+				"build/_layouts/markdown.html"
+			],
+			[
+				"cont",
+				"build/contact/index.html"
+			],
+			[
+				"fu",
+				"build/_includes/futurecities-cutout.svg"
+			],
+			[
+				"footer",
+				"dev/sass/_footer.scss"
+			],
+			[
+				"po",
+				"build/_posts/2014-01-02-actuate-transport-hack-day.markdown"
+			],
+			[
+				"fut",
+				"build/_includes/futurecities-cutout.svg"
+			],
+			[
+				"markdo",
+				"build/_layouts/markdown.html"
+			],
+			[
+				"_con",
+				"build/_config.yml"
+			],
+			[
+				"bot",
+				"build/_includes/bottom.html"
+			],
+			[
+				"colo",
+				"build/_includes/coloured-logo.svg"
+			],
+			[
+				"cut",
+				"build/_includes/cutoutlogo.svg"
+			],
+			[
+				"to",
+				"build/_includes/top.html"
+			],
+			[
+				"logo",
+				"build/img/logo.svg"
+			],
+			[
+				"blog",
+				"build/blog/index.html"
+			],
+			[
+				"abotu",
+				"build/_layouts/about.html"
+			],
+			[
+				"tio",
+				"dev/sass/_layout-trio.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 240.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

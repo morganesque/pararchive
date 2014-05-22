@@ -1,5 +1,8 @@
 var gulp 	     = require('gulp'),
     gutil        = require('gulp-util'),
+    // growl        = require('gulp-notify-growl'),
+    notify       = require("gulp-notify");
+    changed      = require("gulp-changed");
     fs 	         = require('fs'),
     sass         = require('gulp-ruby-sass'),
     concat       = require('gulp-concat'),
@@ -15,20 +18,43 @@ var gulp 	     = require('gulp'),
     tlr          = require('tiny-lr'),  // tiny live reload
     slr          = tlr();               // server live reload
 
+// var growlNotifier = growl({
+//     hostname : '192.168.1.79', // IP or Hostname to notify, default to localhost
+// }); 
+
+var Notification = require('node-notifier');
+var Combine = require('stream-combiner');
+
+function message(event,name)
+{
+    var d = new Date();
+    gutil.log(d.getHours()+':'+d.getMinutes()+' - ' + gutil.colors.yellow(event.path) + ' was ' + event.type + ', running tasks...');
+}     
+
 /*
     ----- SASS -----
 */        
 gulp.task('sass',function()
 {
-    return gulp.src('src/sass/*.scss')
-        .pipe(sass({
-            style:'nested',
-            loadPath:'bower_components',
-            quiet:true,
-        }))
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))        
-        .pipe(gulp.dest('build/css'))
-        .pipe(livereload(slr));
+    var combined = Combine(
+        gulp.src('src/sass/styles.scss'),
+        sass({style:'nested', loadPath:'bower_components', quiet:true,}),
+        autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
+        gulp.dest('build/css'),
+        livereload(slr)
+    );
+    
+    combined.on('error', function(err) 
+    {
+        Notification.Growl().notify({
+            name:       "sass processor",
+            title:       "Sass",
+            message:    err.message,
+        });
+        this.emit('end');
+    }); 
+
+    return combined;       
 });
 
 /*
@@ -129,6 +155,7 @@ gulp.task('serve', serve(['.jekyll','build']));
 gulp.task('livereload',function()
 {
     return gulp.src('build/**/*.{html,yml,md,mkd,markdown}')
+        .pipe(changed('build/**/*.{html,yml,md,mkd,markdown}'))
         .pipe(livereload(slr));
 });
 
@@ -143,34 +170,19 @@ gulp.task('watch', function() {
         if (err) { return console.log(err); } 
 
         // Watch .scss files
-        gulp.watch('src/sass/**/*.scss', function(event) {
-            message(event, 'sass');
-            gulp.run('sass');
-        });
+        gulp.watch('src/sass/**/*.scss', ['sass']);
 
         // Watch .css files
-        gulp.watch('build/css/**/*.css', function(event) {
-            message(event, 'autoprefix');
-            gulp.run('autoprefix');
-        });
+        gulp.watch('build/css/**/*.css', ['autoprefix']);
      
         // Watch .js files
-        gulp.watch('src/js/**/*.js', function(event) {
-            message(event,'scripts');
-            gulp.run('scripts');
-        });
+        gulp.watch('src/js/**/*.js', ['scripts']);
 
         // Watch JS library conf
-        gulp.watch('src/js/allJS.conf', function(event) {
-            message(event,'');
-            gulp.run('libScripts');
-        });
+        gulp.watch('src/js/allJS.conf', ['libScripts']);
 
         // Watch bitmaps
-        gulp.watch('src/img/*.{jpg,jpeg,gif,png}', function(event) {
-            message(event,'');
-            gulp.run('bitmaps'); 
-        })
+        gulp.watch('src/img/*.{jpg,jpeg,gif,png}', ['bitmaps'])
 
         // Watch Jekyll files
         // gulp.watch('build/**/*.{html,yml,md,mkd,markdown}',function(event)
@@ -179,17 +191,8 @@ gulp.task('watch', function() {
         //     gulp.run('jekyll'); 
         // })
 
-        gulp.watch('build/**/*.{php,html,yml,md,mkd,markdown}',function(event)
-        {
-            message(event,'');
-            gulp.run('livereload'); 
-        })
-
-        function message(event,name)
-        {
-            var d = new Date();
-            gutil.log(d.getHours()+':'+d.getMinutes()+' - ' + gutil.colors.yellow(event.path) + ' was ' + event.type + ', running tasks...');
-        }        
+        // watch everything else for live reload.
+        gulp.watch('build/**/*.{php,html,yml,md,mkd,markdown}',['livereload'])   
 
     });
 });
@@ -197,7 +200,4 @@ gulp.task('watch', function() {
 /*
     ----- DEFAULT -----
 */
-gulp.task('default', function(){
-    gulp.run('watch');
-    gulp.run('serve');
-});
+gulp.task('default', ['watch','serve']);

@@ -3,15 +3,28 @@ var PageView = Backbone.View.extend({
 	showing:false,
 	frag: '', // YOU NEED TO SET THIS IN CHILD VIEWS.
 
-	initialize:function(main)
-	{
-		this.main = main;	// DOM element where content will be placed.
+	initialize:function(){},
+
+	/*
+		just capture any <a> clicks and take them to the URL (via Backbone).
+	*/			
+	events: {
+		"click a": 'onClick',
+	},
+
+	onClick:function(e)
+	{		
+		console.log("onClick");		
+		e.preventDefault();
+		// grab the href yo!
+		var href = $(e.target).attr('href');
+        // make it so number one!
+        pararchive.router.navigate(href,{trigger:true});
 	},
 
 	build:function()
 	{
-		console.log("PageView build");		
-		this.showing = true;				
+		// console.log("PageView build");		
 		this.$el.load(this.frag,_.bind(this.setup,this));
 	},
 
@@ -31,6 +44,6 @@ var PageView = Backbone.View.extend({
 
 	hide:function()
 	{
-		this.showing = false;
+		// something.
 	},
 });

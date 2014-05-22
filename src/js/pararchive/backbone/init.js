@@ -15,13 +15,14 @@ $(document).on("ready",function(e)
 	// first create a User object
     pararchive.user = new Model();
     // pararchive.user.urlRoot = 'http://api.staging.pararchivedfutures.com/me';
-    pararchive.user.urlRoot = '/api/user/';
+    pararchive.user.urlRoot = '/api/user/';		
 
 	pararchive.user.getData(function(a,b,c)
 	{						
 		switch(pararchive.user.get('status'))
 		{
-			case "logged out":	
+			case "logged out":
+
 				Backbone.history.start({pushState:true,silent:true});	
 				if (Backbone.history.fragment != 'login/') // only do this if the frag isn't already "login/"
 				{					
@@ -33,10 +34,26 @@ $(document).on("ready",function(e)
 			break;
 
 			case "logged in":
-		
+	
 				Backbone.history.start({pushState:true});
 
 			break;
 		}	
 	});
+
+	pararchive.state = 'create:block';
+
+	var StoryBlock = Backbone.Model.extend({});
+	pararchive.storyBlock = new StoryBlock();
+
+	pararchive.control = new Control(
+	{
+		model:pararchive.storyBlock,
+		el:$('#control'),
+	});
+
+	// pararchive.story = Backbone.Collection.extend(
+	// {
+	// 	model:pararchive.storyBlock,
+	// });
 });

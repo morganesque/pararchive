@@ -1,12 +1,18 @@
-@import "mixins";
+@import "modules/mixins";
 // @import "icons/style";
 
 // $use-grids:true;
 // @import "inuit.css/inuit";
 // $bsu:$base-spacing-unit;
+
+$font-size-base: 16px;
+$font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-weight: 300;
+
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
+@import "modules/icons";
 @import "modules/page";
 @import "modules/login";
 
-@import "isuck";
+@import "modules/isuck";

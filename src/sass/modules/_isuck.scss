@@ -1,0 +1,107 @@
+/*
+	A load of styles which I've just hacked in
+	and should really be consolidated into other 
+	more organised places. If this file has 
+	anything in it beyond this comment then 
+	you can quite liegitmately say that I 
+	comprehensively suck!
+*/
+
+$left-width:0.25;
+
+.left-col {
+	position:fixed;
+	left:0;right:0;
+	width:percentage($left-width);
+	height:100%;
+	background:#999;
+}
+
+.right-col {
+	width:percentage(1 - 2*$left-width);
+	position:relative;
+	margin-left:percentage($left-width);
+}
+
+textarea {
+	width:100%;
+	height:200px;
+}
+
+.greeting {
+	// @include rem('font-size',2);
+	color:rgba(white,0.9);
+}
+
+.example {
+	@include font-size(1.4);
+	color:rgba(black,0.42);
+}
+
+#main {
+	@include rem('padding-top',1.3);
+	// @include rem("padding",1.5);
+}
+
+.header {
+	background-color:black;
+	color:white;
+}
+
+.input {
+	width:100%;	
+	@include rem('font-size',3);
+	@include rem('padding',0.5);
+}
+
+.media__button {
+	display:block;
+	text-align:center;
+	@include rem('margin-bottom',1);
+
+	.icon {
+		@include rem('font-size',3);
+	}
+}
+
+/*
+	just modify the bs call for when I use it with icons.
+*/		
+.icon.pull-right {
+	padding-top:0.25em
+}
+.icon.adjust {
+	position:relative;
+	top:0.06em;
+}
+
+.this__story {
+	.btn {
+		color:rgba(white,0.5);
+		font-weight:300;
+	}
+
+	.block__name {
+		@include rem("margin-top",1);
+	}
+}
+
+.with-space {
+	@include rem("margin-bottom",5);
+}
+
+.action__label {
+	@include rem('font-size',1.6);	
+	margin:0;
+	@include rem('margin-top',2.4);
+	font-weight:400;
+	letter-spacing:0.05em;
+	background-color:rgba(black,0.2);
+	@include rem('padding',0.5);
+	text-transform:uppercase;
+
+	span {
+		text-transform:none;
+		font-weight:700;
+	}
+}

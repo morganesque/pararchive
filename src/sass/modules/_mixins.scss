@@ -36,3 +36,13 @@ http://jakearchibald.github.io/sass-ie/
 
     @return round($px / $base) + em;
 }
+
+@mixin rem($att, $size) {
+    #{$att}: ($size * 10) + px;
+    #{$att}: $size + rem;
+}
+
+@mixin font-size($sizeValue: 1) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
