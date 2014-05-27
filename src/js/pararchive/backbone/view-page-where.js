@@ -14,17 +14,19 @@ var PageWhere = PageView.extend({
 	initialize:function()
 	{				
 		// this.events = _.extend(_.clone(this.events), PageView.prototype.events);
-		// this.delegateEvents();	
+		// this.delegateEvents();			
 	},
 
 	setup:function()
 	{
+		this.storyBlock = pararchive.story.getStoryBlock();
+
 		this.next = this.$el.find('.next__button');
 		this.text = this.$el.find('#where-place');
 		
-		if (pararchive.storyBlock.has('where'))
+		if (this.storyBlock.has('where'))
 		{
-			this.text.val(pararchive.storyBlock.get('where'));
+			this.text.val(this.storyBlock.get('where'));
 		}
 		
 		this.next.hide();
@@ -35,7 +37,7 @@ var PageWhere = PageView.extend({
 		console.log("onNextClick");		
 		e.preventDefault();
 		e.stopPropagation();
-		pararchive.storyBlock.set({'where':this.text.val()});
+		this.storyBlock.set({'where':this.text.val()});
 
 		var href = $(e.currentTarget).attr('href');
         // make it so number one!

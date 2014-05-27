@@ -8,14 +8,70 @@ if (typeof(pararchive) == "undefined") pararchive = {};
 	not show the login screen.
 */		
 $(document).on("ready",function(e)
-{	
+{		
 	// set up the Backbone router // router.js
 	pararchive.router = new Router;
 
-	// first create a User object
+	// first create a User object.
     pararchive.user = new Model();
-    // pararchive.user.urlRoot = 'http://api.staging.pararchivedfutures.com/me';
-    pararchive.user.urlRoot = '/api/user/';		
+    pararchive.user.urlRoot = '/api/users/';		
+
+    // set the initial state.
+    pararchive.state = new Backbone.Model({state:'login'});
+
+    // set up the stories model.
+    pararchive.stories = new Stories();
+
+	// start a story.
+	pararchive.story = new Story();
+
+	// attach story to story panel.
+	pararchive.storyPanel = new StoryPanel({
+		model:pararchive.story,
+		el:$('#storyPanel')
+	});	
+
+	var App = Backbone.View.extend(
+	{        
+	    initialize: function(options) 
+	    {
+	        this.listenTo(pararchive.state, "change:state", this.changeState)
+
+	        this.controlPanel = this.$el.find('#control');
+	        this.controlPanel.hide();
+
+	        this.storyPanel = this.$el.find('#storyPanel');
+	        this.storyPanel.hide();
+	    },  
+	    
+	    changeState:function(e)
+	    {	    		
+	    	switch(pararchive.state.get('state'))
+	    	{
+	    		case "login":
+	    			this.controlPanel.hide();
+	    			this.storyPanel.hide();
+	    		break;
+
+	    		case "editing":
+	    			this.controlPanel.show();
+	    			this.storyPanel.show();
+	    		break;
+	    	}
+	    }
+	});
+
+	pararchive.app = new App({el:$('#inner-wrap')});
+
+	// wait for a block to be added to a story.
+	pararchive.story.on('reset',function()
+	{
+		pararchive.control = new Control(
+		{
+			model:pararchive.story.getStoryBlock(),
+			el:$('#control'),
+		});				
+	});	
 
 	pararchive.user.getData(function(a,b,c)
 	{						
@@ -34,26 +90,16 @@ $(document).on("ready",function(e)
 			break;
 
 			case "logged in":
-	
-				Backbone.history.start({pushState:true});
+
+				var story = pararchive.user.get('latest_story');
+
+				pararchive.story.setStoryID(story);
+				pararchive.story.fetch({reset:true,success:function()
+				{
+					Backbone.history.start({pushState:true});
+				}});			
 
 			break;
 		}	
 	});
-
-	pararchive.state = 'create:block';
-
-	var StoryBlock = Backbone.Model.extend({});
-	pararchive.storyBlock = new StoryBlock();
-
-	pararchive.control = new Control(
-	{
-		model:pararchive.storyBlock,
-		el:$('#control'),
-	});
-
-	// pararchive.story = Backbone.Collection.extend(
-	// {
-	// 	model:pararchive.storyBlock,
-	// });
 });

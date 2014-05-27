@@ -3,14 +3,14 @@
 	and should really be consolidated into other 
 	more organised places. If this file has 
 	anything in it beyond this comment then 
-	you can quite liegitmately say that I 
-	comprehensively suck!
+	you can quite legitmately say that I 
+	comprehensively and commemoratively suck!
 */
 
 $left-width:0.25;
 
 .left-col {
-	position:fixed;
+	position:absolute;
 	left:0;right:0;
 	width:percentage($left-width);
 	height:100%;
@@ -21,6 +21,13 @@ $left-width:0.25;
 	width:percentage(1 - 2*$left-width);
 	position:relative;
 	margin-left:percentage($left-width);
+}
+
+.bottom-col {
+	position:fixed;
+	left:0;bottom:0;
+	width:100%;
+	background-color:rgba(black,0.85);
 }
 
 textarea {
@@ -80,10 +87,6 @@ textarea {
 		color:rgba(white,0.5);
 		font-weight:300;
 	}
-
-	.block__name {
-		@include rem("margin-top",1);
-	}
 }
 
 .with-space {
@@ -95,13 +98,43 @@ textarea {
 	margin:0;
 	@include rem('margin-top',2.4);
 	font-weight:400;
-	letter-spacing:0.05em;
 	background-color:rgba(black,0.2);
-	@include rem('padding',0.5);
+	@include rem('padding',1,1);
 	text-transform:uppercase;
+	@include rem('border-radius',0.3);
 
 	span {
 		text-transform:none;
 		font-weight:700;
 	}
+}
+
+.story__name {
+	color:white;
+	@include rem("margin",1,0);
+}
+
+$blockh:62px;
+
+.story__blocks {
+	margin-bottom:1em;
+}
+
+.block {
+	display:inline-block;
+	width:$blockh;
+	height:$blockh;
+	text-align:center;
+	line-height:$blockh;
+	background-color:rgba(white,0.42);
+	border:1px dashed rgba(white,0.62);
+	@include rem("font-size",3);
+	@include rem("margin-right",2);
+	color:white;
+}
+
+*[contenteditable="true"]:focus {
+	box-shadow:none;
+	border:none;
+	outline:none;
 }

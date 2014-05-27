@@ -28,7 +28,13 @@ var PageLogin = PageView.extend({
 		{
 			success:function(m,r,o)
 			{							
-				pararchive.router.navigate('',{trigger:true});					
+				var s = pararchive.user.get('status');		
+				if (s == 'logged in')
+				{
+					pararchive.router.navigate('',{trigger:true});					
+				} else {
+					alert(s);
+				}	
 			}, 
 			error:function(m,r,o)
 			{

@@ -21,6 +21,7 @@ var Router = Backbone.Router.extend({
 		"arte/:type/": 	"arteType",
 		"where/": 		"where",
 		"nearly/": 		"nearly",
+		"*undefined": 	"show404Error"
 	},
 
 	/*
@@ -83,21 +84,25 @@ var Router = Backbone.Router.extend({
 	what: function()
 	{
 		this.normalPage('what',PageWhat);	
+		pararchive.state.set('state','editing');
 	},
 
 	when: function()
 	{
 		this.normalPage('when',PageWhen);	
+		pararchive.state.set('state','editing');
 	},
 
 	arte: function()
 	{
 		this.normalPage('arte',PageQuick,{frag:'/pages/arte.php'});	
+		pararchive.state.set('state','editing');
 	},
 
 	where: function()
 	{
 		this.normalPage('where',PageWhere);	
+		pararchive.state.set('state','editing');
 	},
 
 	nearly: function()
@@ -112,5 +117,10 @@ var Router = Backbone.Router.extend({
 		this.normalPage(slug,PageQuick,{frag:frag});	
 	},
 
+	show404Error:function()
+	{
+		this.currentPage = null;
+		this.main.html('<div class="container">404 page not found</div>');
+	},
 
 });

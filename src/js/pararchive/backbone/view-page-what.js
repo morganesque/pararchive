@@ -14,18 +14,20 @@ var PageWhat = PageView.extend({
 	initialize:function()
 	{				
 		// this.events = _.extend(_.clone(this.events), PageView.prototype.events);
-		// this.delegateEvents();	
+		// this.delegateEvents();			
 	},
 
 	setup:function()
 	{
+		this.storyBlock = pararchive.story.getStoryBlock();
+		
 		this.next = this.$el.find('.next__button');
 		this.text = this.$el.find('#what-text');
 		this.next.hide();
 
-		if (pararchive.storyBlock.has('what'))
+		if (this.storyBlock.has('what'))
 		{
-			this.text.val(pararchive.storyBlock.get('what'));
+			this.text.val(this.storyBlock.get('what'));
 		}
 	},
 
@@ -34,7 +36,7 @@ var PageWhat = PageView.extend({
 		console.log("onNextClick");		
 		e.preventDefault();
 		e.stopPropagation();
-		pararchive.storyBlock.set({'what':this.text.val()});
+		this.storyBlock.set({'what':this.text.val()});
 
 		var href = $(e.currentTarget).attr('href');
         // make it so number one!

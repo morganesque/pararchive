@@ -14,18 +14,20 @@ var PageWhen = PageView.extend({
 	initialize:function()
 	{				
 		// this.events = _.extend(_.clone(this.events), PageView.prototype.events);
-		// this.delegateEvents();	
+		// this.delegateEvents();			
 	},
 
 	setup:function()
 	{
+		this.storyBlock = pararchive.story.getStoryBlock();
+
 		this.next = this.$el.find('.next__button');
 		this.text = this.$el.find('#when-date');
 		this.next.hide();
 
-		if (pararchive.storyBlock.has('when'))
+		if (this.storyBlock.has('when'))
 		{
-			this.text.val(pararchive.storyBlock.get('when'));
+			this.text.val(this.storyBlock.get('when'));
 		}
 	},
 
@@ -34,7 +36,7 @@ var PageWhen = PageView.extend({
 		console.log("onNextClick");		
 		e.preventDefault();
 		e.stopPropagation();
-		pararchive.storyBlock.set({'when':this.text.val()});
+		this.storyBlock.set({'when':this.text.val()});
 
 		var href = $(e.currentTarget).attr('href');
         // make it so number one!

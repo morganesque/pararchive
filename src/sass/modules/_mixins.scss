@@ -15,7 +15,6 @@ http://jakearchibald.github.io/sass-ie/
         
         @media only screen and (min-width:$width) {@content;}
     }
-    
 }
 
 @mixin below($width) {
@@ -28,8 +27,6 @@ http://jakearchibald.github.io/sass-ie/
         
         @media only screen and (max-width:$width) {@content;}
     }
-
-    
 }
 
 @function pem($px, $base: 16) {
@@ -37,9 +34,28 @@ http://jakearchibald.github.io/sass-ie/
     @return round($px / $base) + em;
 }
 
-@mixin rem($att, $size) {
-    #{$att}: ($size * 10) + px;
-    #{$att}: $size + rem;
+@mixin rem($att, $size, $size2:99999, $size3:99999, $size4:99999) {
+
+    @if $size4 != 99999
+    {
+        #{$att}: ($size * 10) + px ($size2 * 10) + px ($size3 * 10) + px ($size4 * 10) + px;
+        #{$att}: $size + rem $size2 + rem $size3 + rem $size4 + rem;
+    }
+    @else if $size3 != 99999
+    {
+        #{$att}: ($size * 10) + px ($size2 * 10) + px ($size3 * 10) + px;
+        #{$att}: $size + rem $size2 + rem $size3 + rem;
+    }
+    @else if $size2 != 99999
+    {
+        #{$att}: ($size * 10) + px ($size2 * 10) + px;
+        #{$att}: $size + rem $size2 + rem;
+    }
+    @else 
+    {
+        #{$att}: ($size * 10) + px;
+        #{$att}: $size + rem;
+    }
 }
 
 @mixin font-size($sizeValue: 1) {
