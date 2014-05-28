@@ -37,4 +37,6 @@ bower_components
 node_modules
 .tmp
 .jekyll
-build*
+build/css
+build/js
+build/api/config.php

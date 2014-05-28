@@ -1,0 +1,32 @@
+
+<div class="container-fluid" id="control">
+	
+	<h1>Pararchive</h1>
+
+	<p class="h4 greeting">Hello Jane</p>
+
+	<div class="monitor">
+
+		<h2 class="h4 action__label">You are: <span>Editting a block</span></h2>
+
+		<div class="this__story">
+		
+			<!-- <div class="h3 block__name">Block Name <a href="#editname" class="btn btn-sm pull-right">edit</a></div>-->
+
+			<br />
+
+			<div class="list-group meta__links">
+				<a href="/what/" class="list-group-item item__what">What <span class="icon pull-right icon-checkbox-unchecked"></span></a>
+				<a href="/when/" class="list-group-item item__when">When <span class="icon pull-right icon-checkbox-unchecked"></span></a>
+				<a href="/where/" class="list-group-item item__where">Where <span class="icon pull-right icon-checkbox-unchecked"></span></a>
+			</div>
+
+			<div class="list-group">
+				<a href="/arte/" class="list-group-item item__arte">Artefacts <span class="badge">1</span></a>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
