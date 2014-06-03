@@ -1,9 +1,13 @@
 
 <div class="container-fluid" id="control">
 	
-	<h1>Pararchive</h1>
-
-	<p class="h4 greeting">Hello Jane</p>
+	<div class="identity">
+		<h1>Pararchive</h1>
+		<p class="h4 greeting">
+			<span class="content">Hello Jane</span>
+			<a href="#" class="btn btn-xs btn-default pull-right logout__link">logout</a>
+		</p>
+	</div>
 
 	<div class="monitor">
 

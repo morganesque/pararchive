@@ -21,33 +21,3 @@
 	</div>
 
 </div>
-
-<script>
-	$(function()
-	{
-		$('.input-file').hide();
-		$('.use__this').hide();
-
-		$('.upload__trigger').on('click',function(e)
-		{
-			e.preventDefault();
-			$('.input-file').trigger('click');
-		})
-
-		$('.input-file').on("change",function()
-		{
-			var chosen = $(this).val().replace(/^.*[\\\/]/, '');		
-			$('.file__name').val(chosen).trigger('change');			
-		});
-
-		$('.file__name').on('change paste keyup',function()
-		{
-			if ($(this).val()) $('.use__this').fadeIn(1500);
-			else {
-				$('.use__this').hide();
-				$('.upload__form').get(0).reset();
-				console.log($('.input-file').val());		
-			}
-		});
-	})
-</script>

@@ -1,0 +1,5 @@
+var PageWhat = PageView.extend({
+
+	
+
+});

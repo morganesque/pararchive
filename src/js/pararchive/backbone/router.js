@@ -1,126 +1,165 @@
 var Router = Backbone.Router.extend({
 
-	pages:[],
+    pages:[],
 
-	creation_order: ['what','when','arte','where'],
+    order: ['what','when','where','arte','done'],
 
-	initialize: function()
-	{
-		console.log('Welcome to Pararchive');
-		this.main = $('#main');
-	},
+    initialize: function()
+    {
+        console.log('Welcome to Pararchive');
+        this.main = $('#main');
+    },
 
-	currentPage:null,
+    currentPage:null,
 
-	routes: {
-		"": "home",
-		"login/": 		"login",
-		"what/": 		"what",
-		"when/": 		"when",
-		"arte/": 		"arte",
-		"arte/:type/": 	"arteType",
-		"where/": 		"where",
-		"nearly/": 		"nearly",
-		"*undefined": 	"show404Error"
-	},
+    routes: {
+        "":                 "home",
+        "login/":           "login",
+        "in/":              "in",
+        "what/":            "what",
+        "when/":            "when",
+        "arte/":            "arte",
+        "arte/:type/":      "arteType",
+        "arte/edit/:id/":   "arteEdit",
+        "where/":           "where",
+        "next/":            "next",
+        "done/":            "done",
+        "*undefined":       "show404Error"
+    },
 
-	/*
-		Done before it calls any of the specific page functions.
-	*/		
-	execute: function(callback, args) 
-	{	
-		console.log('page: /'+Backbone.history.fragment);				
-		// console.log("Router execute");				
-		// take it to bakersfield!
-		window.scrollTo(0,0);
+    /*
+        Done before it calls any of the specific page functions.
+    */      
+    execute: function(callback, args) 
+    {   
+        console.log('page: /'+Backbone.history.fragment);               
 
-		// go and do the normal routing thing.
-	    if (callback) callback.apply(this, args);
+        // take it to bakersfield!
+        window.scrollTo(0,0);
 
-	    /*
-	    	If after that there's a current page get it going!
-	    */		
-	   	if (this.currentPage) 
-    	{
-    		this.main.html(this.currentPage.el);
-    		this.currentPage.update();
-    		this.currentPage.delegateEvents();
-    	}
-  	},
+        // go and do the normal routing thing.
+        if (callback) callback.apply(this, args);
 
-	/*
-		This is generally what happens for all pages 
-		except a few which need a little more logic.
-	*/		
-	normalPage:function(name,pageType,args)
-	{
-		if (!this.pages[name])
-		{
-			this.pages[name] = new pageType(args);
-			this.pages[name].build();			
-		} 
-		this.currentPage = this.pages[name];	
-	},
+        // If after that there's a current page get it going!
+        if (this.currentPage) 
+        {
+            // put contents of view into the page.
+            this.main.html(this.currentPage.el);
 
-	login:function()
-	{
-		// console.log("Router login");		
-		
-		var self = this;	
+            // kick off any rendering (updating) that the view needs to do.
+            this.currentPage.render();
+            // make sure the page captures events
+            this.currentPage.delegateEvents();
+            // make sure the control changes it's state if necessary.
+            pararchive.control.update();
+        }
+    },
 
-		if (!this.loginPage)
-		{
-			this.loginPage = new PageLogin();
-			this.loginPage.build();			
-		} 
-		this.currentPage = this.loginPage;
-	},
+    /*
+        This is generally what happens for all pages 
+        except a few which need a little more logic.
+    */      
+    normalPage:function(name,pageType,args)
+    {
+        // console.log("normalPage");        
+        if (!this.pages[name])
+        {            
+            this.pages[name] = new pageType(args);
+            this.pages[name].build();           
+        } 
+        this.currentSlug = name;
+        this.currentPage = this.pages[name];    
 
-	home: function()
-	{
-		this.normalPage('home',PageHome);	
-	},
+    },
 
-	what: function()
-	{
-		this.normalPage('what',PageWhat);	
-		pararchive.state.set('state','editing');
-	},
+    in:function()
+    {
+        window.location.href = '/';
+    },
 
-	when: function()
-	{
-		this.normalPage('when',PageWhen);	
-		pararchive.state.set('state','editing');
-	},
+    login:function()
+    {
+        // console.log("Router login");     
+        
+        var self = this;    
 
-	arte: function()
-	{
-		this.normalPage('arte',PageQuick,{frag:'/pages/arte.php'});	
-		pararchive.state.set('state','editing');
-	},
+        if (!this.loginPage)
+        {
+            this.loginPage = new PageLogin();
+            this.loginPage.build();         
+        } 
+        this.currentPage = this.loginPage;
+    },
 
-	where: function()
-	{
-		this.normalPage('where',PageWhere);	
-		pararchive.state.set('state','editing');
-	},
+    home: function()
+    {
+        this.normalPage('home',PageHome);   
+    },
 
-	nearly: function()
-	{
-		this.normalPage('nearly',PageQuick,{frag:'/pages/nearly.php'});	
-	},
+    what: function()
+    {
+        this.normalPage('what',PageWhat);   
+        pararchive.state.set('state','editing');
+    },
 
-	arteType:function(type)
-	{
-		var slug = 'arte-'+type; console.log(slug);		
-		var frag = '/pages/'+slug+'.php';
-		this.normalPage(slug,PageQuick,{frag:frag});	
-	},
+    when: function()
+    {
+        this.normalPage('when',PageWhen);   
+        pararchive.state.set('state','editing');
+    },
 
-	show404Error:function()
-	{
-		this.currentPage = null;
-		this.main.html('<div class="container">404 page not found</div>');
-	},
+    arte: function()
+    {
+        this.normalPage('arte',PageArte);   
+        pararchive.state.set('state','editing');
+    },
+
+    where: function()
+    {
+        this.normalPage('where',PageWhere); 
+        pararchive.state.set('state','editing');
+    },
+
+    done: function()
+    {
+        this.normalPage('done',PageDone);   
+        pararchive.state.set('state','editing');
+    },
+
+    /*
+        This allow one step of the process to pass the decision 
+        as to what to do next off to the router instead of having 
+        that within the page itself. Abstraction shall set ye free!
+    */      
+    next:function()
+    {
+        if (this.currentSlug)
+        {       
+            var i = this.order.indexOf(this.currentSlug);
+            var j = i+1; if (j == this.order.length) j = 0; // loop if necessary.
+            pararchive.router.navigate('/'+this.order[j]+'/',{trigger:true});
+            
+        } else {
+            pararchive.router.navigate('/what/',{trigger:true});
+        }
+    },
+
+    arteType:function(type)
+    {        
+        this.normalPage(type,PageArtefact,{slug:type});    
+        pararchive.state.set('state','editing');
+    },
+
+    arteEdit:function(id)
+    {
+        this.normalPage('arte-edit-'+id,PageEditArtefact,{id:id});    
+        pararchive.state.set('state','editing');  
+    },
+
+    show404Error:function()
+    {
+        this.currentPage = null;
+        this.main.html('<div class="container">404 page not found</div>');
+    },
 
 });

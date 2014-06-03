@@ -11,10 +11,10 @@
 
 	<div class="row">
 		<div class="col-xs-6">
-			<a href="/arte/" class="btn btn-lg btn-info btn-block" type="submit" id="login_submit">Skip</a>
+			<a href="/next/" class="btn btn-lg btn-warning btn-block skip__button">Skip</a>
 		</div>
 		<div class="col-xs-6">
-			<a href="/arte/ "class="btn btn-lg btn-primary btn-block next__button" type="submit" id="login_submit">Use this</a>
+			<a href="/arte/ "class="btn btn-lg btn-success btn-block next__button" type="submit" id="login_submit">Use this</a>
 		</div>
 	</div>
 

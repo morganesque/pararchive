@@ -9,9 +9,15 @@ $font-size-base: 16px;
 $font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $headings-font-weight: 300;
 
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
-@import "modules/icons";
+// @import "modules/icons";
 @import "modules/page";
 @import "modules/login";
 

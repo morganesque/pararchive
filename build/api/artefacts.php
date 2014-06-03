@@ -1,6 +1,6 @@
 <?php
 
-$type = "block";
+$type = "artefact";
 
 switch($_SERVER['REQUEST_METHOD'])
 {
@@ -13,15 +13,15 @@ switch($_SERVER['REQUEST_METHOD'])
 
 		} else {
 
-			$id = $_GET['story_id'];
+			$id = $_GET['block_id'];
+			$block = R::load('block',$id);
+			$artefacts = $block->sharedArtefactList;
 
-			$stories = R::findAll($type, "story_id = ? ", [$id]);
 			$out = [];
-			foreach($stories as $s)
+			foreach($artefacts as $a)
 			{
-				array_push($out,$s->export());
+				array_push($out,$a->export());
 			}
-
 			echo json_encode($out);
 		}
 	break;
@@ -30,9 +30,16 @@ switch($_SERVER['REQUEST_METHOD'])
 		$post = json_decode(file_get_contents('php://input'));	
 		$bean = R::dispense($type);
 		$bean->import($post);
-		$user->ownStoryList[] = $bean;
-		$id = R::store($user);	
-		$bean->id = $id;
+
+		$block_id = $bean->block_id;
+
+		$block = R::load('block',$block_id);
+		$block->sharedArtefactList[] = $bean;
+
+		$user->ownArtefactList[] = $bean;
+				
+		R::storeAll([$block,$user]);	
+		
 		echo json_encode($bean->export());
 	break;
  
@@ -50,7 +57,6 @@ switch($_SERVER['REQUEST_METHOD'])
 		// 	$id = $params[1];
 		// 	$bean = R::load($type,$id); // Retrieve
 		// 	R::trash($bean);
- 
 		// } else die('need the second param');
 	break;
  

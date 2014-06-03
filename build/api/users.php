@@ -27,7 +27,8 @@ if (!isset($params[1]))
         default:
             if (isset($_SESSION['user']))
             {
-                echo json_encode($_SESSION['user']);
+                $u = R::load('user',$_SESSION['user']['id']);
+                echo json_encode($u->export());
 
             } else {
 

@@ -6,7 +6,7 @@ var PageHome = PageView.extend({
 
 	events:{
 		"click #start__button": "onStartClick",
-		"click .edit__story": "onEditClick"
+		"click .edit__story": "onEditClick",
 	},
 
 	initialize:function()
@@ -22,6 +22,7 @@ var PageHome = PageView.extend({
 
 			render:function()
 			{
+				this.$el
 				var stories = this.model.get('stories'); 
 				_.each(stories,function(a)
 				{				
@@ -57,13 +58,12 @@ var PageHome = PageView.extend({
 	onEditClick:function(e)
 	{
 		e.preventDefault();
-		var t = $(e.currentTarget).attr('href').substr(1);
+		var story = $(e.currentTarget).attr('href').substr(1);
 
-		pararchive.story.setStoryID(t);
-		pararchive.story.fetch({reset:true,success:function()
-		{			
+		pararchive.story.startEditting(story,function()
+		{
 			pararchive.router.navigate('/what/',{trigger:true});
-		}});			
+		});
 	},
 
 });

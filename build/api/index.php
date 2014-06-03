@@ -23,7 +23,7 @@ if (!isset($params[0])) die('I say, this is an error don\'t you know. Tallyho!')
 if ($params[0] !== 'users' && !isset($_SESSION['user']))
 {
     http_response_code(401);
-    die;
+    die('Authentication Error 401');
 } 
     
 include('config.php');
@@ -47,6 +47,10 @@ switch($params[0])
 
     case 'blocks':
         include_once('blocks.php');
+    break;
+
+    case 'artefacts':
+        include_once('artefacts.php');
     break;
 
     case 'test':

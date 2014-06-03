@@ -1,6 +1,14 @@
+/*
+
+	1. initialize 	- router.js (1st time only)
+	2. build 		- router.js (1st time only)
+	3. setup		- build() after it's done (1st time only)
+	4. update		- build() after it's run setup() (1st time only)
+	4. render 		- router.js - calls update each time page is displayed (as long as setup has been done)
+*/
 var PageView = Backbone.View.extend({
 
-	showing:false,
+	ready:false,
 	frag: '', // YOU NEED TO SET THIS IN CHILD VIEWS.
 
 	initialize:function(){},
@@ -14,7 +22,7 @@ var PageView = Backbone.View.extend({
 
 	onClick:function(e)
 	{		
-		console.log("onClick");		
+		// console.log("onClick");		
 		e.preventDefault();
 		// grab the href yo!
 		var href = $(e.target).attr('href');
@@ -25,7 +33,17 @@ var PageView = Backbone.View.extend({
 	build:function()
 	{
 		// console.log("PageView build");		
-		this.$el.load(this.frag,_.bind(this.setup,this));
+		this.$el.load(this.frag,_.bind(function()
+		{
+			this.setup();
+			this.ready = true;
+			this.update();
+		},this));
+	},
+
+	render:function()
+	{
+		if (this.ready) this.update();
 	},
 
 	update:function()

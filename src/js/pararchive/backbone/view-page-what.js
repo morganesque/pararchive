@@ -1,5 +1,6 @@
 var PageWhat = PageView.extend({
-	
+
+	type: 'what',	
 	frag: '/pages/what.php',
 	className: 'page page_what',
 
@@ -14,33 +15,48 @@ var PageWhat = PageView.extend({
 	initialize:function()
 	{				
 		// this.events = _.extend(_.clone(this.events), PageView.prototype.events);
-		// this.delegateEvents();			
+		// this.delegateEvents();					
 	},
 
 	setup:function()
 	{
-		this.storyBlock = pararchive.story.getStoryBlock();
-		
+		// console.log("PageWhat setup");		
 		this.next = this.$el.find('.next__button');
 		this.text = this.$el.find('#what-text');
-		this.next.hide();
+		this.label = this.$el.find('.what__label');
+	},
+
+	update:function()
+	{
+		this.storyBlock = pararchive.story.getBlock(); 
 
 		if (this.storyBlock.has('what'))
 		{
 			this.text.val(this.storyBlock.get('what'));
+		} else {
+			this.text.val('');
 		}
+
+		var i = pararchive.story.indexOf(this.storyBlock);
+		if (i == 0) this.label.text("What is the first thing that happened in your story?");
+		else this.label.html("&hellip;and what happened next?");
+
+		if (!this.text.val().length) this.next.hide();
+		else this.next.show();
 	},
 
 	onNextClick:function(e)
 	{
-		console.log("onNextClick");		
+		// console.log("onNextClick");		
 		e.preventDefault();
 		e.stopPropagation();
-		this.storyBlock.set({'what':this.text.val()});
 
 		var href = $(e.currentTarget).attr('href');
-        // make it so number one!
-        pararchive.router.navigate(href,{trigger:true});
+		
+		this.storyBlock.save({'what':this.text.val()},{success:function()
+		{
+			pararchive.router.navigate(href,{trigger:true});
+		}});
 	},
 
 	onTextChange:function(e)

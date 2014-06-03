@@ -52,6 +52,28 @@ function createStoryBlock()
 	R::store($story);
 }
 
+function createArtefact()
+{
+	$a = R::dispense('artefact');
+	var_dump($a->export());
+
+	$a->url = 'https://www.youtube.com/watch?v=fbOC0uoKYtU';
+	$a->title = 'Star Trek bit';
+	$a->description = 'A video of Eddie Izzard';
+
+	$block = R::load('block',3);
+	var_dump($block->export());	
+
+	$block->sharedArtefactList[] = $a;
+	$block->created = R::isoDateTime(time());
+	
+	$user = R::load('user',3);
+	$user->ownArtefactList[] = $a;
+
+	$res = R::storeAll([$block,$user]);
+	var_dump($res);
+}
+
 // $story = R::load('story',1);
 // var_dump($story->export());
 
@@ -60,6 +82,8 @@ function createStoryBlock()
 
 // createStoryBlock();
 
-updateUser();
+// updateUser();
+
+createArtefact();
 
 ?>

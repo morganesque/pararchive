@@ -16,7 +16,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">    
-    <link rel="stylesheet" live="<?php echo $live; ?>" href="/css/styles.css">
+    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/643344802a/Pararchive/style.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <!-- let modernizr do it's thing (OPTIMIZE THIS LATER!) -->
     <script src="/js/modernizr.js"></script>
@@ -34,16 +35,22 @@
     <script type="text/javascript" src="/js/pararchive/backbone/sync.js"></script>            
     <script type="text/javascript" src="/js/pararchive/backbone/router.js"></script>            
     <script type="text/javascript" src="/js/pararchive/backbone/model.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/backbone/model-misc.js"></script>            
     <script type="text/javascript" src="/js/pararchive/backbone/model-story.js"></script>            
 
     <!-- load all the backbone page views -->
     <script type="text/javascript" src="/js/pararchive/backbone/view-page.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-login.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-blockedit.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-quick.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-home.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-what.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-when.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-where.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-arte.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-artefact.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-edit-artefact.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-done.js"></script>    
     
     <!-- load all the backbone component views -->
     <script type="text/javascript" src="/js/pararchive/backbone/view-component.js"></script>    
@@ -53,6 +60,7 @@
     <!-- load all the d3 scripts -->  
 
     <!-- kick things off -->
+    <script type="text/javascript" src="/js/pararchive/backbone/app.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/init.js"></script>    
 </head>
 <body class="colours-body">

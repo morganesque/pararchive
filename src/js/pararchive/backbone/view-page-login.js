@@ -7,6 +7,8 @@ var PageLogin = PageView.extend({
 
 	events: {
 		"click #login_submit": "onSubmit",
+		// "submit #login-form": "onSubmit",
+		"click a": 'onClick',
 	},
 
 	setup:function()
@@ -31,7 +33,8 @@ var PageLogin = PageView.extend({
 				var s = pararchive.user.get('status');		
 				if (s == 'logged in')
 				{
-					pararchive.router.navigate('',{trigger:true});					
+					// pararchive.router.navigate('',{trigger:true});					
+					$('#login-form').submit();
 				} else {
 					alert(s);
 				}	

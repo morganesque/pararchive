@@ -1,25 +1,30 @@
 var Control = Backbone.View.extend(
 {
 	checks:[],
+	types:['what','where','when','arte'],
 
 	events:{
 		"click .meta__links a": "onMetaClick",
+		"click .logout__link": "onLogOut"
 	},
 
-	changeModel:function(m)
+	addModel:function()
 	{
-		this.model = m;
+		if (this.model) this.stopListening(this.model);
+		
+		this.model = pararchive.story.getBlock();
 		this.listenTo(this.model, "change", this.render);
-		this.render();
+
+		this.model.trigger('change');
 	},
 
-	initialize:function()
+	initialize:function(options)
 	{
 		// console.log("Control initialize");		
 
-		this.user = pararchive.user;
+		if (options.user) this.user = options.user; 
 
-		this.listenTo(this.model, "change", this.render);
+		// this.listenTo(this.model, "change", this.render);
 		this.listenTo(this.user,  "change", this.userChange);
 
 		this.checks['what']  = this.$el.find('.item__what');			
@@ -32,10 +37,10 @@ var Control = Backbone.View.extend(
 		this.checks['when'].hide(); 		
 		this.checks['arte'].hide();
 
-		this.greeting = this.$el.find('.greeting');
-		this.monitor  = this.$el.find('.monitor');
-
-		this.render();
+		this.greeting = this.$el.find('.greeting .content');
+		this.monitor  = this.$el.find('.monitor'); this.monitor.hide();		
+		this.logout = this.$el.find('.logout__link');
+		this.metas = this.$el.find('.meta__links .list-group-item');
 	},
 
 	userChange:function()
@@ -44,25 +49,25 @@ var Control = Backbone.View.extend(
 		{
 			this.greeting.text('Hello you!');			
 			$("title").html('Pararchive');
-			this.monitor.hide();
+			this.logout.hide();
 		} else {
 			this.greeting.text(this.user.get('firstname')+ ' ' +this.user.get('surname'));
 			$("title").html(this.user.get('firstname')+'&rsquo;s Pararchive');
-			this.monitor.show();
+			this.logout.show();
 		}		
 	},
 
 	mark:function(el,value)
 	{
-		if (typeof value !== "undefined") el.show(); 
+		if (typeof value !== "undefined" && value !== null) el.show(); 
 		else el.hide();
 
 		el.text(value);
 	},
 
 	render:function()
-	{		
-		var a = ['what','where','when','arte'];
+	{				
+		var a = this.types;
 		_.each(a,function(a)
 		{
 			this.mark(this.checks[a],this.model.get(a));
@@ -76,5 +81,41 @@ var Control = Backbone.View.extend(
 
 		var href = $(e.currentTarget).attr('href');		
 		pararchive.router.navigate(href,{trigger:true});
+	},
+
+	onLogOut:function(e)
+	{
+		e.preventDefault();
+
+		$.get('/api/users/logout/',function(a,b,c)
+		{
+			window.location.href = '/';
+		});
+	},
+
+	update:function()
+	{
+		var slug = Backbone.history.fragment;
+		slug = slug.substring(0,slug.length-1);
+
+		var i = this.types.indexOf(slug);
+		
+		if (i >= 0) // only if it's one of the block content types.
+		{
+			this.metas.removeClass('current');
+			this.checks[slug].addClass('current');	
+		}		
+	},
+
+	hide:function()
+	{
+		// console.log("Control hide");		
+		this.monitor.hide();
+	},
+
+	show:function()
+	{
+		// console.log("Control show");		
+		this.monitor.show();
 	},
 });

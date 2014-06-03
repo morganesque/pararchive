@@ -120,6 +120,7 @@ gulp.task('scripts',function()
 {
     return gulp.src('src/js/**/*.js')
         // .pipe(uglify())  // put this back later - for dev I don't need it uglified.
+        .pipe(changed('build/js'))
         .pipe(gulp.dest('build/js'))
         .pipe(livereload(slr));
 });

@@ -1,7 +1,11 @@
 
 <div class="container-fluid" id="storyPanel">
 	
-	<h3 class="story__name"><span class="content">Storyname</span>&nbsp;<a class="btn btn-xs" id="edit" href="#edit">edit</a></h3>
+	<h3 class="story__name">
+		<span class="icon icon-stack nudge"></span>
+		<span class="content">Storyname</span>&nbsp;
+		<a class="btn btn-xs" id="edit" href="#edit">edit</a>
+	</h3>
 
 	<div class="row">
 		
@@ -9,11 +13,13 @@
 
 			<a href="#" class="block">1</a>
 
+			<a href="#" class="plus btn btn-default"><span class="icon icon-plus"></span></a>			
+
 		</div>
 
 		<div class="story__actions text-right col-xs-2">
 
-			<a href="#" class="btn btn-primary btn-lg">Finish Story</a>
+			<a href="#" class="btn btn-success btn-lg">Finish Story</a>
 
 		</div>
 
