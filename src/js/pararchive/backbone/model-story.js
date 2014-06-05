@@ -11,6 +11,7 @@ var Story = Backbone.Collection.extend({
 
     startEditting:function(id,callback)
     {
+        // console.log("startEditting: "+id);        
         var self = this;
         
         this.setStoryID(id);
@@ -19,6 +20,18 @@ var Story = Backbone.Collection.extend({
             if (self.length) self.setBlock();
             else self.addBlock(); 
 
+            callback();
+        }});
+    },
+
+    startReading:function(id,callback)
+    {
+        // console.log("startEditting: "+id);        
+        var self = this;
+        
+        this.setStoryID(id);
+        this.fetch({reset:true,success:function()
+        {
             callback();
         }});
     },
@@ -54,6 +67,11 @@ var Story = Backbone.Collection.extend({
     {
         if (this.blockID) return this.get(this.blockID);
         else return this.first();
+    },
+
+    getLastBlock:function()
+    {
+        return this.last();
     },
 
     url: function()

@@ -17,9 +17,11 @@ var PageEditArtefact = PageView.extend({
 		// console.log("PageEditArtefact setup");		
 		// console.log(pararchive.artefacts.length);		
 
-		this.listenTo(pararchive.artefacts,'artefacts',this.showMedia);
+		this.listenTo(pararchive.artefacts,'change',this.showMedia);
+		this.listenTo(pararchive.artefacts,'reset',this.showMedia);
 
-		this.display = this.$el.find('.artefact__display');
+		this.display = $('<div/>');
+		this.$el.find('.artefact__display').append(this.display);
 		this.type = this.$el.find('.type__label');
 
 		this.desc = this.$el.find('.arte__description');
@@ -31,14 +33,13 @@ var PageEditArtefact = PageView.extend({
 
 	showMedia:function()
 	{
-		// console.log("PageEditArtefact showMedia");	
-
+		// console.log("showMedia");		
 		this.arte = pararchive.artefacts.get(this.arteID);		
 
 		var type = this.arte.get('type');
 		this.type.text(type);
 
-		this.display.html('<img src="'+this.arte.get('url')+'" width="100%" height="100" alt="" />');
+		this.display.css({'background-image': 'url('+this.arte.get('url')+')'});
 	},
 
 	update:function()

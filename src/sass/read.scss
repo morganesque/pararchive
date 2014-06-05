@@ -1,0 +1,108 @@
+@import "modules/mixins";
+// @import "icons/style";
+
+// $use-grids:true;
+// @import "inuit.css/inuit";
+// $bsu:$base-spacing-unit;
+
+$font-size-base: 16px;
+$font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-weight: 300;
+
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+
+#inner-wrap {
+	width:100%;
+	overflow:hidden;
+}
+
+#readblock {
+	position:absolute;
+	width:100%;
+	height:100%;
+	text-align:center;
+
+	background-color:#999;	
+	background-position:center center;
+	background-size:cover;
+
+	h1 {
+		margin:0 0 0.5em;
+	}
+
+	.when {
+		text-transform:uppercase;
+		letter-spacing:0.3em;
+		word-spacing:0.5em;
+		color:rgba(white,0.42);
+	}
+
+	.main-content {
+		width:62%;
+		margin:0 auto 0;
+		background-color:rgba(black,0.76);
+		border-radius:50%;
+		padding:10% 10%;
+		color:white;
+		h1 {
+			line-height:1.2 !important;
+		}
+	}
+}
+
+#navblock {
+	overflow:hidden;
+	position:absolute;left:0;top:0;
+	width:100%;height:100%;
+
+	.nav {
+		position:absolute;
+		top:0;
+		width:15%;height:100%;
+		display:block;
+		background:rgba(white,0.42);
+		transition: transform 0.2s ease-out;
+		&.hide {display:none}		
+	}
+
+	#navleft {
+		left:0;
+		transform: translate3D(-90%,0,0);
+		&:hover {transform: translate3D(0%,0,0);}
+	}
+
+	#navright {
+		right:0;
+		transform: translate3D(90%,0,0);
+		&:hover {transform: translate3D(0%,0,0);}
+	}
+
+	.triangle {
+		position:absolute;
+		top:50%;left:50%;
+		margin-top:-50px;
+		margin-left:-50px;	
+	}
+
+	#triangle-left {
+		width: 0;
+		height: 0;
+		border-top: 50px solid transparent;
+		border-right: 100px solid black;
+		border-bottom: 50px solid transparent;
+	}
+	#triangle-right {
+		width: 0;
+		height: 0;
+		border-top: 50px solid transparent;
+		border-left: 100px solid black;
+		border-bottom: 50px solid transparent;
+	}
+
+}

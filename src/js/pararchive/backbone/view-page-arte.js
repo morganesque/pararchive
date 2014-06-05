@@ -7,11 +7,12 @@ var PageArte = PageView.extend({
 	events: {
 		// 'click .next__button':  'onNextClick',
 		"click .skip__button":  'onClick',
+		"click .media__button":  'onClick',
 	},
 
 	initialize:function()
 	{				
-		console.log("initialize");		
+		// console.log("initialize");		
 		// this.events = _.extend(_.clone(this.events), PageView.prototype.events);
 		// this.delegateEvents();			
 	},

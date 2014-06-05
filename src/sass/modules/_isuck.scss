@@ -202,6 +202,36 @@ $blockh:62px;
 	border:none;
 	color:rgba(white,0.42)
 }
+
 .display {
-	margin-bottom:1em;
+	position:relative;
+	display:inline-block;
+	width:100%;
+	height:0;
+	padding-top:50%;
+	margin-bottom:1em;	
+	border: 1px solid #ccc;	
+
+	.the__artefacts & {		
+		width:23%;
+		height:0;
+		padding:23% 0 0;
+		margin:0 2% 0 0;
+		background-color:rgba(white,0.9);
+	}
+
+	a,div {	
+		$pad:2%;	
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+		width:100%;
+		height:(100% - (2 * $pad));
+		position:absolute;
+		top:$pad;left:0;
+	}
+}
+
+.the__artefacts {
+	padding:0.5em;
 }

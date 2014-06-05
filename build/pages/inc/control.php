@@ -25,8 +25,9 @@
 				<a href="/where/" class="list-group-item item__where">Where <span class="icon pull-right icon-checkbox-unchecked"></span></a>
 			</div>
 
-			<div class="list-group">
-				<a href="/arte/" class="list-group-item item__arte">Artefacts <span class="badge">1</span></a>
+			<div class="list-group meta__links">
+				<a href="/arte/" class="list-group-item item__arte">Artefacts <span class="badge">1</span></a>				
+				<div class="the__artefacts"></div>
 			</div>
 
 		</div>

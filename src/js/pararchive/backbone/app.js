@@ -32,6 +32,7 @@ var App = Backbone.View.extend(
 		{
 			el:$('#control'),
 			user:this.user,
+            artefacts:this.artefacts,
 		});
 
         this.listenTo(this.state, "change:state", this.onChangeState)
@@ -44,9 +45,14 @@ var App = Backbone.View.extend(
     changeBlock:function()
     {       
         // console.log("changeBlock: "+this.story.blockID);         
+
+        // tell the control panel about the block
     	this.control.addModel();
+        // tell the story panel about the block
         this.storyPanel.selectBlock(this.story.blockID);
+        // go and load the artefacts for this block
         this.artefacts.selectBlock(this.story.blockID);
+
         if (pararchive.router.currentPage) pararchive.router.currentPage.render();
     },
     

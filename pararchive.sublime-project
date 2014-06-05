@@ -11,14 +11,16 @@
         		"tasks",
                 "build/css",
                 "build/img",
-                "build/js",
+                "build/js/pararchive",
         	],
         "file_exclude_patterns": 
 	        [
 	        	".bowerrc", 
 	        	"bower.json", 
 	        	"Gemfile*", 
-	        	"package.json"
+	        	"package.json",
+                "build/js/all.min.js",
+                "build/js/modernizr.js",
 	        ],
         "path": "."
     }]

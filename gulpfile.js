@@ -37,7 +37,7 @@ function message(event,name)
 gulp.task('sass',function()
 {
     var combined = Combine(
-        gulp.src('src/sass/styles.scss'),
+        gulp.src('src/sass/*.scss'),
         sass({style:'nested', loadPath:'bower_components', quiet:true,}),
         autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
         gulp.dest('build/css'),
@@ -174,7 +174,7 @@ gulp.task('watch', function() {
         gulp.watch('src/sass/**/*.scss', ['sass']);
 
         // Watch .css files
-        gulp.watch('build/css/**/*.css', ['autoprefix']);
+        // gulp.watch('build/css/**/*.css', ['autoprefix']);
      
         // Watch .js files
         gulp.watch('src/js/**/*.js', ['scripts']);
