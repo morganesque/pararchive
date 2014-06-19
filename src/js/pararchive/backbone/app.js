@@ -44,7 +44,7 @@ var App = Backbone.View.extend(
 
     changeBlock:function()
     {       
-        // console.log("changeBlock: "+this.story.blockID);         
+        console.log("changeBlock: "+this.story.blockID);         
 
         // tell the control panel about the block
     	this.control.addModel();

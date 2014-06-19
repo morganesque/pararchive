@@ -4,8 +4,160 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"read/"
+			],
+			[
+				"story",
+				"storyRedirect"
+			],
+			[
+				"arte",
+				"artefacts"
+			],
+			[
+				"e",
+				"el"
+			],
+			[
+				"on",
+				"onKeyPress"
+			],
+			[
+				"cu",
+				"current"
+			],
+			[
+				"temp",
+				"template"
+			],
+			[
+				"atre",
+				"artefacts"
+			],
+			[
+				"ar",
+				"arte"
+			],
+			[
+				"fetch",
+				"fetching"
+			],
+			[
+				"page",
+				"PageEditArtefact"
+			],
+			[
+				"pageA",
+				"PageArtefact"
+			],
+			[
+				"norm",
+				"normalPage"
+			],
+			[
+				"art",
+				"arteType"
+			],
+			[
+				"fil",
+				"fileNameInput"
+			],
+			[
+				"atr",
+				"artefacts"
+			],
+			[
+				"file",
+				"fileInput"
+			],
+			[
+				"current",
+				"currentSlug"
+			],
+			[
+				"Pag",
+				"PageWhen"
+			],
+			[
+				"Stor",
+				"storyBlock"
+			],
+			[
+				"pa",
+				"PageWhat"
+			],
+			[
+				"new",
+				"newBlock"
+			],
+			[
+				"sto",
+				"storyBlock"
+			],
+			[
+				"Story",
+				"StoryMeta"
+			],
+			[
+				"change",
+				"changeBlock"
+			],
+			[
+				"block",
+				"blockID"
+			],
+			[
+				"chan",
+				"changeState"
+			],
+			[
+				"Back",
+				"Backbone.View.extend	view.extend"
+			],
+			[
+				"stor",
+				"storyID"
+			],
+			[
+				"create",
+				"createStoryBlock"
+			],
+			[
+				"creat",
+				"createUserStory"
+			],
+			[
+				"curre",
+				"currentPage"
+			],
+			[
+				"Page",
+				"PageHome"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"dis",
+				"dispense"
+			],
+			[
 				"json_",
-				"json_decode"
+				"json_encode"
+			],
+			[
+				"first",
+				"firsttime"
+			],
+			[
+				"gorl",
+				"growlNotifier"
+			],
+			[
+				"user",
+				"username"
 			],
 			[
 				"ex",
@@ -16,24 +168,12 @@
 				"session_destroy"
 			],
 			[
-				"e",
-				"e.prev	preventDefault"
-			],
-			[
 				"pag",
-				"PageLogin"
-			],
-			[
-				"page",
 				"PageLogin"
 			],
 			[
 				"con",
 				"con	consolelog"
-			],
-			[
-				"temp",
-				"temperature_view"
 			],
 			[
 				"inside",
@@ -88,10 +228,6 @@
 				"onMenuClick"
 			],
 			[
-				"chan",
-				"changeStatus"
-			],
-			[
 				"Air",
 				"AirFlowView"
 			],
@@ -110,10 +246,6 @@
 			[
 				"set",
 				"setUpViews"
-			],
-			[
-				"on",
-				"onRender"
 			],
 			[
 				"u",
@@ -146,10 +278,6 @@
 			[
 				"text",
 				"text_y"
-			],
-			[
-				"re",
-				"response"
 			],
 			[
 				"this",
@@ -252,43 +380,50 @@
 	"buffers":
 	[
 		{
-			"file": "build/api/userdata_3.json",
+			"file": "build/index.php",
 			"settings":
 			{
-				"buffer_size": 263,
+				"buffer_size": 338,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Front-End/WP/PHP\nYes. This would definitely be what I'd do. Front-end is one of my main activities. Wordpress is fine. Wordpress level PHP is fine. Wrangling CMS's etc. I used to do proper coal-face PHP for Orange but don't really do back-end dev anymore so anything that went a lot further probably wouldn't be for me.\n\nJS wizardry\nYes. Pretty sure there's nothing JS I couldn't deliver. I'm guessing the madness here lies at the whizzy-animated-media-frenzy end of the spectrum rather than the big-structured-app end. Either's fine. I used to do loads of Flash back-when-it-was-cool and so I find a lot of that stuff now carries over into JS.\n\nResponsive \nDefinitely. In fact I'd pretty much say anything I work on now would need to be unless for a very good reason.\n\nStyle-guides\nYes, yes, really seeing this as the next thing I'm going to be attempting to shoe-horn into every project I do. I've got a couple of in-progress attempts on the go with the projects I'm working on now. Would love the chance to take that approach with a client would understood and wanted to do that too.\n\nUX & Design\nOK so here's my way of explaining this to myself and others. I see the skills/flow/process thing a bit like this:\n\n\n\nWhere I see myself is covering 2 & 3. In comparison I'd see someone like Dean sitting across 1 & 2. So when it comes to UX I feel like definitely I'd want to be involved in the design, overall UX, information architecture, page structure, user/page flows, right down to the nitty gritty of individual page elements, animating, responding. That's where I've got loads to say and loads to offer I feel.\n\nBut I'm not a visual / brand designer in the way Dean is. I don't have the experience or really the inclination. \n\nSo ideally it would be the kind of project where there already was some branding stuff in place and what was really needed was the UX to Front-end stuff.",
+			"file": "build/pages/inc/bottom.php",
 			"settings":
 			{
-				"buffer_size": 1887,
-				"line_ending": "Unix",
-				"name": "Front-End/WP/PHP"
-			}
-		},
-		{
-			"file": "src/js/pararchive/backbone/router.js",
-			"settings":
-			{
-				"buffer_size": 1039,
+				"buffer_size": 798,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/js/pararchive/backbone/view-page.js",
+			"file": "src/sass/modules/_isuck.scss",
 			"settings":
 			{
-				"buffer_size": 692,
+				"buffer_size": 3874,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-air.js",
+			"file": "src/sass/styles.scss",
 			"settings":
 			{
-				"buffer_size": 1855,
+				"buffer_size": 623,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/sass/modules/_page.scss",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "build/config.php",
+			"settings":
+			{
+				"buffer_size": 76,
 				"line_ending": "Unix"
 			}
 		}
@@ -296,20 +431,36 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 147.0,
 		"selected_items":
 		[
 			[
-				"syn",
-				"Set Syntax: Shell Script (Bash)"
+				"wrap",
+				"Word Wrap: Toggle"
 			],
 			[
 				"clo",
 				"File: Close All"
 			],
 			[
-				"wrap",
-				"Word Wrap: Toggle"
+				"prev",
+				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+			],
+			[
+				"cl",
+				"File: Close All"
+			],
+			[
+				"Clo",
+				"File: Close All"
+			],
+			[
+				"beatu",
+				"Javascript Beautify"
+			],
+			[
+				"syn",
+				"Set Syntax: Shell Script (Bash)"
 			],
 			[
 				"beau",
@@ -350,14 +501,6 @@
 			[
 				"bea",
 				"Javascript Beautify"
-			],
-			[
-				"cl",
-				"File: Close All"
-			],
-			[
-				"prev",
-				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
 			],
 			[
 				"preview",
@@ -526,43 +669,126 @@
 	},
 	"file_history":
 	[
-		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/page.scss",
 		"/Users/tommo/vhosts/pararchive/service/pararchive.sublime-project",
-		"/Users/tommo/vhosts/pararchive/service/build/api/lib/tempo/http/CurlRequest.php",
-		"/Users/tommo/vhosts/pararchive/service/build/api/cache/warmth-temperature-outside.cache",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/top.html",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/storyPanel.php",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/styles.scss",
+		"/Users/tommo/vhosts/pararchive/service/build/api/config.php",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/config.rb",
+		"/Users/tommo/vhosts/pararchive/service/build/config.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/control.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/blocks.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-what.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-when.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-where.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-photo.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-audio.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-archive.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-video.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-edit.php",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/router.js",
-		"/Users/tommo/vhosts/pararchive/service/build/api/user/routes.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-home.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-login.js",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-arte.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/when.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/top.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/app.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-artefact.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-edit-artefact.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/router.js",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/read.scss",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/app.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/view-nav.js",
+		"/Users/tommo/vhosts/pararchive/service/build/js/templates/read-main.html",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-story.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/read-top.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/view-readblock.js",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/page.scss",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/view-readbookend.js",
+		"/Users/tommo/vhosts/pararchive/service/build/read/index.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-home.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/story.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/read-bottom.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/README.md",
+		"/Users/tommo/vhosts/pararchive/service/build/api/index.php",
+		"/Users/tommo/vhosts/pararchive/service/build/index.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/_control/routes.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/_control/nonessential.json",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-control.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-artefacts.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/init.js",
+		"/Users/tommo/vhosts/pararchive/service/gulpfile.js",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/init.js",
+		"/Users/tommo/vhosts/pararchive/service/build/.htaccess",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-storypanel.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-app.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/view-top.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-init.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/view-bottom.php",
+		"/Users/tommo/vhosts/pararchive/service/build/view/index.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/sync.js",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_isuck.scss",
+		"/Users/tommo/vhosts/pararchive/service/error.log",
+		"/Users/tommo/vhosts/pararchive/service/build/api/artefacts.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-misc.js",
+		"/Users/tommo/vhosts/pararchive/service/README.md",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/what.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/modernizr.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-quick.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/test.php",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_mixins.scss",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-photo.js",
+		"/Users/tommo/Desktop/Amanda.txt",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-blockedit.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/where.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-login.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-done.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-component.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/login.php",
+		"/Users/tommo/Desktop/twitter-blurb.txt",
 		"/Users/tommo/vhosts/pararchive/service/build/pages/home.php",
 		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/login.scss",
-		"/Users/tommo/vhosts/pararchive/service/src/sass/styles.scss",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/sync.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-component.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/done.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/users.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/userdata_3.json",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/allJS.conf",
+		"/Users/tommo/vhosts/pararchive/service/build/api/RedBeanPHP/loader.php",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_icons.scss",
+		"/Users/tommo/vhosts/pararchive/service/build/api/lib/Michelf/Markdown.inc.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/story.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/electricity/month_this.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/cache/warmth-temperature-outside.cache",
+		"/Users/tommo/vhosts/pararchive/service/build/api/lib/AlertMeAPI.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/control/airflow.json",
+		"/Users/tommo/vhosts/pararchive/service/build/api/control/heatingboost.json",
+		"/Users/tommo/vhosts/pararchive/service/build/api/lib/tempo/http/CurlRequest.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/cache/transport-busstops.cache",
+		"/Users/tommo/vhosts/pararchive/service/build/api/electricity/tempodb.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/lib/Michelf/MarkdownInterface.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/user/routes.php",
+		"/Users/tommo/vhosts/pararchive/service/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_variables.scss",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/nearly.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/left.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/dyk/content/warmth_123.html",
+		"/Users/tommo/vhosts/pararchive/service/build/api/cache/water-day-average.cache",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/bottom.html",
+		"/Users/tommo/vhosts/pararchive/service/build/js/all.min.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/dyk/content/billing_123.html",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/top.html",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_icons.css",
+		"/Users/tommo/vhosts/pararchive/service/package.json",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/_mixins.scss",
+		"/Users/tommo/vhosts/pararchive/service/build/api/control/routes.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/dyk/content/local_123.html",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/create.php",
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-air.js",
 		"/Users/tommo/vhosts/pararchive/service/build/api/lib/tempo/VERSION",
 		"/Users/tommo/vhosts/pararchive/service/build/api/control/nonessential.json",
-		"/Users/tommo/vhosts/pararchive/service/build/api/lib/Michelf/MarkdownInterface.php",
-		"/Users/tommo/vhosts/pararchive/service/gulpfile.js",
 		"/Users/tommo/vhosts/pararchive/service/build/css/styles.css",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/login.php",
-		"/Users/tommo/vhosts/pararchive/service/build/api/electricity/tempodb.php",
-		"/Users/tommo/vhosts/pararchive/service/build/api/control/routes.php",
-		"/Users/tommo/vhosts/pararchive/service/README.md",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model.js",
-		"/Users/tommo/vhosts/pararchive/service/build/api/userdata_3.json",
-		"/Users/tommo/vhosts/pararchive/service/src/js/modernizr.js",
-		"/Users/tommo/vhosts/pararchive/service/build/config.php",
-		"/Users/tommo/vhosts/pararchive/service/build/index.php",
 		"/Users/tommo/vhosts/smiki/src/sass/styles.scss",
 		"/Users/tommo/vhosts/smiki/src/sass/config.rb",
 		"/Users/tommo/vhosts/smiki/gulpfile.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/allJS.conf",
-		"/Users/tommo/vhosts/pararchive/service/build/.htaccess",
 		"/Users/tommo/vhosts/pararchive/service/.gitignore",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/bottom.html",
 		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-monthly_usage.js",
 		"/Users/tommo/vhosts/actuate/styleguide/src/js/modernizr.js",
 		"/Users/tommo/vhosts/actuate/styleguide/gulpfile.js",
@@ -570,90 +796,7 @@
 		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-hotwatertank-status.js",
 		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/init.js",
 		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/models.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/router.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-home.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-greeting.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-component.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/_colours.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-temperature.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/warmth-temperature-outside.cache",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/warmth-temperature-inside.cache",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/hotwatertank_temp.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/temperatures.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/pages/inc/top.html",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/sync.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-menu-control.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-day_totals.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/loginForm.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/pages/home.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_grids.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/model-actuate.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/checks.txt",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-electricity.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/electricity-month.cache",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/electricity-day.cache",
-		"/Users/tommo/vhosts/actuate/styleguide/service/pages/electricity-day.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/pages/electricity.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/control/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-rainwater-status.js",
-		"/Users/tommo/vhosts/actuate/apitest/index.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/proxy/index.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/control/heatingboost.json",
-		"/Users/tommo/vhosts/actuate/styleguide/service/.htaccess",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_svg.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-electricity.js",
-		"/Users/tommo/bin/curl.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/model-monthly.js",
-		"/Users/tommo/git/backbone.basicauth/backbone.basicauth.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/monthly_usage.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/water-month-this.cache",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/electricity-month-this.cache",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/allJS.conf",
-		"/Users/tommo/vhosts/actuate/styleguide/service/index.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/pages/inc/alerts.html",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_alerts.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/src/img/air-flow.svg",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/lib/AlertMeAPI.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-water.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/pages/inc/menu_controls.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/img/waterheater.svg",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_control.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-air.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_status.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/control/airflow.json",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-status.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-base.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-security.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-day_compare.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-day_usage.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-menu-nav.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-now_usage.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/dyk/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/electricity/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/help/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/security/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/transport/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/user/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/warmth/routes.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-control-master.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/modules/_menu_controls.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/config.rb",
-		"/Users/tommo/vhosts/actuate/styleguide/src/img/nonessential.svg",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-header.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/_base.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/service/pages/billing.php",
-		"/Users/tommo/vhosts/actuate/styleguide/service/img/nonessential.svg",
-		"/Users/tommo/vhosts/actuate/styleguide/actuate-styleguide.sublime-project",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/userdata_3.json",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/lib/Michelf/MarkdownExtra.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/controlSwitchLogic.js",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-all-controls.js",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/cache/security-doors.cache",
-		"/Users/tommo/vhosts/actuate/styleguide/src/img/air-warmth.svg",
-		"/Users/tommo/vhosts/actuate/styleguide/service/api/lib/Michelf/MarkdownInterface.php",
-		"/Users/tommo/vhosts/actuate/styleguide/src/sass/_mixins.scss",
-		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/d3/svg_graph.js"
+		"/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/router.js"
 	],
 	"find":
 	{
@@ -664,6 +807,18 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"*.js",
+			"*.php",
+			"*.js",
+			"*.*",
+			"*.php",
+			"*.js",
+			"*.scss",
+			"*.scs",
+			"*.php",
+			"*.js",
+			"*.scss",
+			"*.js",
 			"*.*",
 			"*.js",
 			"*.scss",
@@ -689,6 +844,106 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"URL",
+			"currentSlug",
+			"\"/next/\"",
+			"\"next/\"",
+			"\"/next/\"",
+			"onClick",
+			"navig",
+			"setStoryID",
+			"pararchive.stories",
+			"storyonly",
+			"navig",
+			"setBlock(",
+			">\n",
+			"current",
+			"artefacts",
+			"metas",
+			"this.els['greeting'].",
+			"greeting",
+			"this.els['monitor'].",
+			"this.els['logout']",
+			"this.logout",
+			"logout",
+			"this.monitor",
+			"monitor",
+			"this.greeting",
+			"greeting",
+			"'",
+			"artefactChange",
+			"artefactChange]",
+			"listen.*artefact",
+			"hide",
+			"arte",
+			"naviga",
+			",\n",
+			"listento",
+			"atreID",
+			"pararchive.router.navigate(href,{trigger:true});",
+			"navig",
+			"this.slug",
+			"this.frag",
+			"PageArtefact",
+			"this.fileName",
+			"this.uploadTrigger",
+			"this.useThis",
+			"file__name",
+			"udpate",
+			"block",
+			"\\?story_id",
+			"?story_id",
+			"listen.*meta",
+			"meta",
+			"= ",
+			"=",
+			"\\&",
+			"creation_order",
+			"PageWhere",
+			"navigate",
+			"extend",
+			"logout__link",
+			"me",
+			"adjust",
+			"icon",
+			"main",
+			"update(",
+			"changed",
+			"'))",
+			"changed",
+			"window.location.href",
+			"pararchive.state",
+			"form",
+			"credenti",
+			"pull",
+			"push",
+			"'block'",
+			"navigate",
+			"updateControl",
+			"this.stories",
+			"getStoryBlock",
+			"pararchive",
+			"this.storyBlock",
+			".block",
+			"navigate",
+			"ActuateModel",
+			"navigat",
+			"#story",
+			"pararchive.storyBlock",
+			"navi",
+			"where-date",
+			"when",
+			"PageWhat",
+			"PageQuick",
+			"this.main",
+			"handleError",
+			"weight",
+			";\n",
+			"weight:",
+			"id=\"login_submit\">Next</button>",
+			"growl",
+			"this.showing",
+			"alerts",
 			"homepage",
 			"autoprefix",
 			"actuate",
@@ -716,114 +971,21 @@
 			"console.log",
 			"electricity",
 			"setUpViews",
-			"updatePage",
-			"frag",
-			"Backbone.emulateHTTP",
-			"Backbone.emulateHTTPBackbone",
-			"Backbone",
-			"actuate.user",
-			".loading",
-			".status",
-			".retaining",
-			"sleep(3);",
-			".menu_control__item",
-			".hi",
-			"span class=\"hi",
-			"id=\"([^\"]*)\"",
-			" sketch:type=\"[^\"]*\"",
-			"id=\"([^\"]*)\"",
-			"class=\"",
-			" sketch:type=\"[^\"]*\"",
-			"this.svg",
-			"this.action",
-			"this.status",
-			"this.actionEl",
-			"this.statusEl",
-			".control",
-			"actuate.controls",
-			" id=\"[^\"]*\"",
-			"id=\"[^\"]*\"",
-			"id=\"[^\"*]\"",
-			"svg",
-			"svgmi",
-			"\\ssketch:type=\"[^\"]*\"",
-			"\\sxmlns:sketch=\"[^\"]*\"",
-			"xmlns:sketch",
-			".loading",
-			".load",
-			"this.$statusEl",
-			"$actionEl",
-			"header_view",
-			".container",
-			".status",
-			"targettemp",
-			"WaterHeatingView",
-			"VentStatus",
-			"actuate.controls",
-			"TempView render",
-			"warmth",
-			"TargetTempView",
-			"menu_controls",
-			"TargetTempView",
-			"svg",
-			"warmth",
-			"dd",
-			"DailyTotalsView",
-			"RainwaterStatusView",
-			"electricityPage",
-			"$('",
-			"wait for component",
-			"cons",
-			"conso",
-			"lk",
-			"cons",
-			"console",
-			"contro",
-			"got here",
-			"f",
-			"text-anchor",
-			"pad.x",
-			"renderBackground",
-			"average",
-			"stroke",
-			"this.max",
-			"\\n",
-			"console",
-			"monthlyusageview",
-			"headerview render",
-			"last_month",
-			"toggleMenus",
-			"toggleMenu",
-			"Backbone.history",
-			".brand-face",
-			".status_message",
-			"  =",
-			"WaterHeater",
-			"control__temp",
-			"water",
-			"scaleX",
-			"home__weather",
-			".icon",
-			"changeStatus",
-			"MenuView",
-			"ControlView",
-			"MenuLeftView",
-			"Backbone.Model",
-			"actuate.busData",
-			"insidetempview",
-			"onSwipeRight",
-			"onSwipeLeft",
-			"this.menuIcon",
-			".separate",
-			"-three",
-			".-three"
+			"updatePage"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"",
+			"=\\t\\t\\t",
+			" = ",
+			"&\\n",
+			"getBlock",
+			"this",
+			"id=\"login_submit\">Use this</button>",
 			"loginPage",
 			"home",
 			"class=\"$1\"",
@@ -865,107 +1027,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "build/api/userdata_3.json",
+					"file": "build/index.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 263,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								233,
-								233
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1887,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1217,
-								1217
-							]
-						],
-						"settings":
-						{
-							"auto_name": "Front-End/WP/PHP",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/js/pararchive/backbone/router.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1039,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								576,
-								612
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 159.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/js/pararchive/backbone/view-page.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 692,
+						"buffer_size": 338,
 						"regions":
 						{
 						},
@@ -978,11 +1044,150 @@
 						],
 						"settings":
 						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "build/pages/inc/bottom.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								581,
+								581
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/sass/modules/_isuck.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3874,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								287,
+								287
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/sass/styles.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -993,29 +1198,38 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/Users/tommo/vhosts/actuate/styleguide/src/js/actuate/backbone/view-page-air.js",
-					"semi_transient": false,
+					"file": "src/sass/modules/_page.scss",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 1855,
+						"buffer_size": 0,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								192,
-								192
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1023,13 +1237,55 @@
 					},
 					"stack_index": 0,
 					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "build/config.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 76,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -1058,6 +1314,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -1078,68 +1338,340 @@
 		"selected_items":
 		[
 			[
-				"page",
-				"src/js/pararchive/backbone/view-page.js"
+				"suck",
+				"src/sass/modules/_isuck.scss"
+			],
+			[
+				"config",
+				"build/config.php"
+			],
+			[
+				"bottom",
+				"build/pages/inc/bottom.php"
+			],
+			[
+				"index",
+				"build/index.php"
 			],
 			[
 				"router",
 				"src/js/pararchive/backbone/router.js"
 			],
 			[
+				"app",
+				"src/js/pararchive/backbone/app.js"
+			],
+			[
+				"rout",
+				"src/js/pararchive/backbone/router.js"
+			],
+			[
+				"top",
+				"build/pages/inc/top.php"
+			],
+			[
 				"style",
 				"src/sass/styles.scss"
 			],
 			[
-				"top",
-				"build/pages/inc/top.html"
-			],
-			[
-				"view",
+				"page",
 				"src/js/pararchive/backbone/view-page.js"
 			],
 			[
-				"init",
-				"src/js/pararchive/backbone/init.js"
+				"read",
+				"src/sass/read.scss"
+			],
+			[
+				"story",
+				"src/js/pararchive/backbone/model-story.js"
+			],
+			[
+				"rouer",
+				"src/js/pararchive/backbone/read/router.js"
+			],
+			[
+				"nav",
+				"src/js/pararchive/backbone/read/view-nav.js"
+			],
+			[
+				"arte",
+				"build/pages/arte.php"
+			],
+			[
+				"view",
+				"src/js/pararchive/backbone/view-control.js"
+			],
+			[
+				"ini",
+				"src/js/pararchive/backbone/read/init.js"
 			],
 			[
 				"gul",
 				"gulpfile.js"
 			],
 			[
-				"gl",
-				"gulpfile.js"
+				"sync",
+				"src/js/pararchive/backbone/sync.js"
 			],
 			[
-				"login",
-				"src/js/pararchive/backbone/view-page-login.js"
+				"botom",
+				"build/pages/inc/bottom.php"
 			],
 			[
-				"stye",
-				"src/sass/styles.scss"
+				"con",
+				"build/pages/inc/control.php"
+			],
+			[
+				"contro",
+				"src/js/pararchive/backbone/view-control.js"
+			],
+			[
+				"isuck",
+				"src/sass/modules/_isuck.scss"
+			],
+			[
+				"edit",
+				"src/js/pararchive/backbone/view-page-edit-artefact.js"
+			],
+			[
+				"mis",
+				"src/js/pararchive/backbone/model-misc.js"
+			],
+			[
+				"misc",
+				"src/js/pararchive/backbone/model-misc.js"
+			],
+			[
+				"when",
+				"build/pages/when.php"
+			],
+			[
+				"block",
+				"build/api/blocks.php"
+			],
+			[
+				"test",
+				"build/api/test.php"
+			],
+			[
+				"model",
+				"src/js/pararchive/backbone/model-misc.js"
+			],
+			[
+				"control",
+				"src/js/pararchive/backbone/view-control.js"
 			],
 			[
 				"mode",
-				"src/js/pararchive/backbone/model.js"
+				"src/js/pararchive/backbone/model-story.js"
+			],
+			[
+				"tes",
+				"build/api/test.php"
+			],
+			[
+				"ap",
+				"src/js/pararchive/backbone/app.js"
+			],
+			[
+				"where",
+				"build/pages/where.php"
+			],
+			[
+				"atre",
+				"build/pages/arte.php"
+			],
+			[
+				"what",
+				"build/pages/what.php"
+			],
+			[
+				"art",
+				"build/pages/arte.php"
+			],
+			[
+				"login",
+				"build/pages/login.php"
+			],
+			[
+				"panel",
+				"build/pages/inc/storyPanel.php"
 			],
 			[
 				"gulp",
 				"gulpfile.js"
 			],
 			[
-				"ini",
+				"home",
+				"build/pages/home.php"
+			],
+			[
+				"log",
+				"build/pages/login.php"
+			],
+			[
+				"done",
+				"src/js/pararchive/backbone/view-page-done.js"
+			],
+			[
+				"doe",
+				"build/pages/done.php"
+			],
+			[
+				"were",
+				"build/pages/where.php"
+			],
+			[
+				"nearl",
+				"build/pages/nearly.php"
+			],
+			[
+				"blo",
+				"build/api/blocks.php"
+			],
+			[
+				"user",
+				"build/api/users.php"
+			],
+			[
+				"sty",
+				"build/pages/inc/storyPanel.php"
+			],
+			[
+				"stye",
+				"src/sass/styles.scss"
+			],
+			[
+				"init",
 				"src/js/pararchive/backbone/init.js"
 			],
 			[
-				"syn",
-				"src/js/pararchive/backbone/sync.js"
+				"sory",
+				"build/pages/inc/storyPanel.php"
 			],
 			[
-				"model",
-				"src/js/pararchive/backbone/model.js"
+				"viewlo",
+				"src/js/pararchive/backbone/view-page-login.js"
+			],
+			[
+				"styp",
+				"build/api/story.php"
+			],
+			[
+				"users",
+				"build/api/users.php"
+			],
+			[
+				"viewcon",
+				"src/js/pararchive/backbone/view-control.js"
+			],
+			[
+				"viewwhere",
+				"src/js/pararchive/backbone/view-page-where.js"
+			],
+			[
+				"vieww",
+				"src/js/pararchive/backbone/view-page-when.js"
+			],
+			[
+				"viewwh",
+				"src/js/pararchive/backbone/view-page-what.js"
+			],
+			[
+				"viewhome",
+				"src/js/pararchive/backbone/view-page-home.js"
+			],
+			[
+				"styo",
+				"build/pages/inc/story.php"
+			],
+			[
+				"viewwhat",
+				"src/js/pararchive/backbone/view-page-what.js"
+			],
+			[
+				"otp",
+				"build/api/electricity/month_this.php"
 			],
 			[
 				"all",
 				"src/js/allJS.conf"
+			],
+			[
+				"mixi",
+				"src/sass/modules/_mixins.scss"
+			],
+			[
+				"viewwhen",
+				"src/js/pararchive/backbone/view-page-when.js"
+			],
+			[
+				"in",
+				"build/index.php"
+			],
+			[
+				"wah",
+				"build/pages/what.php"
+			],
+			[
+				"viewpag",
+				"src/js/pararchive/backbone/view-page.js"
+			],
+			[
+				"userrou",
+				"build/api/user/routes.php"
+			],
+			[
+				"near",
+				"build/pages/nearly.php"
+			],
+			[
+				"icos",
+				"src/sass/modules/_icons.scss"
+			],
+			[
+				"icon",
+				"src/sass/modules/_icons.scss"
+			],
+			[
+				"left",
+				"build/pages/inc/left.php"
+			],
+			[
+				"waht",
+				"build/pages/what.php"
+			],
+			[
+				"isuc",
+				"src/sass/modules/_isuck.scss"
+			],
+			[
+				"icons",
+				"src/sass/modules/_icons.scss"
+			],
+			[
+				"wehn",
+				"build/pages/when.php"
+			],
+			[
+				"mix",
+				"src/sass/_mixins.scss"
+			],
+			[
+				"lo",
+				"build/pages/login.php"
+			],
+			[
+				"homep",
+				"build/pages/home.php"
+			],
+			[
+				"gl",
+				"gulpfile.js"
+			],
+			[
+				"syn",
+				"src/js/pararchive/backbone/sync.js"
 			],
 			[
 				".ht",
@@ -1158,10 +1690,6 @@
 				"src/js/actuate/backbone/view-greeting.js"
 			],
 			[
-				"home",
-				"src/js/actuate/backbone/view-page-home.js"
-			],
-			[
 				"compo",
 				"src/js/actuate/backbone/view-component.js"
 			],
@@ -1176,10 +1704,6 @@
 			[
 				"chec",
 				"src/checks.txt"
-			],
-			[
-				"sync",
-				"src/js/actuate/backbone/sync.js"
 			],
 			[
 				"month",
@@ -1204,10 +1728,6 @@
 			[
 				"route",
 				"service/api/control/routes.php"
-			],
-			[
-				"control",
-				"src/sass/modules/_control.scss"
 			],
 			[
 				"non",
@@ -1302,20 +1822,12 @@
 				"src/sass/_colours.scss"
 			],
 			[
-				"contro",
-				"service/pages/inc/menu_controls.html"
-			],
-			[
 				"wa",
 				"service/pages/water.php"
 			],
 			[
 				"col",
 				"src/sass/_colours.scss"
-			],
-			[
-				"icon",
-				"src/sass/modules/_icons.scss"
 			],
 			[
 				"routes",
@@ -1336,258 +1848,6 @@
 			[
 				"bill",
 				"service/pages/billing.php"
-			],
-			[
-				"warm",
-				"service/pages/warmth.php"
-			],
-			[
-				"secur",
-				"service/pages/security.php"
-			],
-			[
-				"temper",
-				"src/js/actuate/backbone/view-temperature.js"
-			],
-			[
-				"warmpth",
-				"service/pages/warmth.php"
-			],
-			[
-				"head",
-				"service/pages/inc/header.html"
-			],
-			[
-				"bottom",
-				"service/pages/inc/bottom.html"
-			],
-			[
-				"price",
-				"src/js/actuate/price.js"
-			],
-			[
-				"config",
-				"src/sass/config.rb"
-			],
-			[
-				"mod",
-				"src/js/modernizr.js"
-			],
-			[
-				"mix",
-				"src/sass/_mixins.scss"
-			],
-			[
-				"main",
-				"dev/js/main.js"
-			],
-			[
-				"contact",
-				"build/_layouts/contact.html"
-			],
-			[
-				"team",
-				"build/team/index.html"
-			],
-			[
-				"odi",
-				"build/_posts/2014-02-03-odi-node.md"
-			],
-			[
-				"news",
-				"build/news/index.html"
-			],
-			[
-				"defa",
-				"build/_layouts/default.html"
-			],
-			[
-				"index",
-				"build/index.html"
-			],
-			[
-				"lay",
-				"dev/sass/_layout.scss"
-			],
-			[
-				"conte",
-				"build/contact/index.md"
-			],
-			[
-				"java",
-				"build/_includes/javascript.html"
-			],
-			[
-				"bttom",
-				"build/_includes/bottom.html"
-			],
-			[
-				"tea",
-				"build/_data/team.yml"
-			],
-			[
-				"conf",
-				"build/_config.yml"
-			],
-			[
-				"con",
-				"build/_config.yml"
-			],
-			[
-				"confi",
-				"build/_config.yml"
-			],
-			[
-				"work",
-				"build/work/index.md"
-			],
-			[
-				"grunt",
-				"Gruntfile.js"
-			],
-			[
-				"g",
-				"Gruntfile.js"
-			],
-			[
-				"ie",
-				"dev/sass/_lt-ie9.scss"
-			],
-			[
-				"mixi",
-				"dev/sass/_mixins.scss"
-			],
-			[
-				"foot",
-				"dev/sass/_footer.scss"
-			],
-			[
-				"future",
-				"build/_includes/futurecities-cutout.svg"
-			],
-			[
-				"res",
-				"dev/sass/_responsive.scss"
-			],
-			[
-				"ma",
-				"dev/sass/main.scss"
-			],
-			[
-				"def",
-				"build/_layouts/default.html"
-			],
-			[
-				"btt",
-				"build/_includes/bottom.html"
-			],
-			[
-				"he",
-				"dev/sass/_header.scss"
-			],
-			[
-				"nav",
-				"dev/sass/_nav.scss"
-			],
-			[
-				"html",
-				"build/_includes/html_head.html"
-			],
-			[
-				"grun",
-				"Gruntfile.js"
-			],
-			[
-				"mixin",
-				"dev/sass/_mixins.scss"
-			],
-			[
-				"bott",
-				"build/_includes/bottom.html"
-			],
-			[
-				"mai",
-				"dev/js/main.js"
-			],
-			[
-				"hea",
-				"dev/sass/_header.scss"
-			],
-			[
-				"mark",
-				"build/_layouts/markdown.html"
-			],
-			[
-				"markdow",
-				"build/_layouts/markdown.html"
-			],
-			[
-				"defau",
-				"build/_layouts/default.html"
-			],
-			[
-				"mar",
-				"build/_layouts/markdown.html"
-			],
-			[
-				"cont",
-				"build/contact/index.html"
-			],
-			[
-				"fu",
-				"build/_includes/futurecities-cutout.svg"
-			],
-			[
-				"footer",
-				"dev/sass/_footer.scss"
-			],
-			[
-				"po",
-				"build/_posts/2014-01-02-actuate-transport-hack-day.markdown"
-			],
-			[
-				"fut",
-				"build/_includes/futurecities-cutout.svg"
-			],
-			[
-				"markdo",
-				"build/_layouts/markdown.html"
-			],
-			[
-				"_con",
-				"build/_config.yml"
-			],
-			[
-				"bot",
-				"build/_includes/bottom.html"
-			],
-			[
-				"colo",
-				"build/_includes/coloured-logo.svg"
-			],
-			[
-				"cut",
-				"build/_includes/cutoutlogo.svg"
-			],
-			[
-				"to",
-				"build/_includes/top.html"
-			],
-			[
-				"logo",
-				"build/img/logo.svg"
-			],
-			[
-				"blog",
-				"build/blog/index.html"
-			],
-			[
-				"abotu",
-				"build/_layouts/about.html"
-			],
-			[
-				"tio",
-				"dev/sass/_layout-trio.scss"
 			]
 		],
 		"width": 0.0

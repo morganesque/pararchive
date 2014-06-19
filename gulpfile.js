@@ -1,71 +1,89 @@
-var gulp 	     = require('gulp'),
-    gutil        = require('gulp-util'),
-    // growl        = require('gulp-notify-growl'),
-    notify       = require("gulp-notify");
-    changed      = require("gulp-changed");
-    fs 	         = require('fs'),
-    sass         = require('gulp-ruby-sass'),
-    concat       = require('gulp-concat'),
-    header       = require('gulp-header'),
-    jekyll 	     = require('gulp-jekyll'),
-    uglify 	     = require('gulp-uglify'),
-    svgmin       = require('gulp-svgmin'),
-    imagemin 	 = require('gulp-imagemin'),
-    debug        = require('gulp-debug'),
-    serve        = require('gulp-serve'),
-    autoprefixer = require('gulp-autoprefixer'),
-    livereload   = require('gulp-livereload'),
-    tlr          = require('tiny-lr'),  // tiny live reload
-    slr          = tlr();               // server live reload
+/*
+    the basic stuff.
+*/        
+var gulp    = require('gulp'),
+    fs      = require('fs');
+/*
+    load all the other things.
+*/        
+var gulpLoadPlugins = require('gulp-load-plugins'),
+    plugins = gulpLoadPlugins({
+        pattern:'*',
+        camelize:true,
+    });
 
-// var growlNotifier = growl({
-//     hostname : '192.168.1.79', // IP or Hostname to notify, default to localhost
-// }); 
+/*
+    keep references to filenames up here.
+*/        
+var files = {
+    "jsconf":   'src/js/allJS.conf',
+    "jslib":    "all.min.js",
+}
 
-var Notification = require('node-notifier');
-var Combine = require('stream-combiner');
+/*
+    keep all the globs together here.
+*/        
+var glob = {
+    "sass":     'src/sass/**/*.scss',
+    "js":       'src/js/**/*.js',    
+    "img":      'src/img/**/*.{jpg,jpeg,gif,png}',
+    "svg":      'src/img/**/*.svg',
+    "jekyll":   ['build/**/*.{html,yml,md,mkd,markdown}','build/_config.yml'],
+    "html":     'build/**/*.{html,yml,md,mkd,markdown,php}',
+};
 
-function message(event,name)
-{
-    var d = new Date();
-    gutil.log(d.getHours()+':'+d.getMinutes()+' - ' + gutil.colors.yellow(event.path) + ' was ' + event.type + ', running tasks...');
-}     
+/*
+    keeping all the destinations together here.
+*/        
+var dest = {
+    "css":      "build/css",
+    "js":       "build/js",
+    "img":      "build/img",
+}
 
 /*
     ----- SASS -----
 */        
 gulp.task('sass',function()
 {
-    var combined = Combine(
-        gulp.src('src/sass/*.scss'),
-        sass({style:'nested', loadPath:'bower_components', quiet:true,}),
-        autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
-        gulp.dest('build/css'),
-        livereload(slr)
+    /*
+        combine everything together so I can catch errors.
+    */        
+    var combined = plugins.streamCombiner(
+        gulp.src(glob.sass),
+        plugins.rubySass({style:'nested', loadPath:'bower_components', quiet:true,}),
+        plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
+        gulp.dest(dest.css),
+        plugins.browserSync.reload({stream:true})        
     );
-    
+    /*
+        growl out any errors
+    */        
     combined.on('error', function(err) 
     {
-        Notification.Growl().notify({
-            name:       "sass processor",
-            title:       "Sass",
+        plugins.nodeNotifier.Growl().plugins.notify({
+            name:       "SASS processor",
+            title:      "SASS",
             message:    err.message,
         });
         this.emit('end');
     }); 
-
     return combined;       
 });
+
+/*
+    HERE ARE ALL THE TASKS NOW!!!
+*/        
 
 /*
     ----- AUTO PREFIX -----
 */
 gulp.task('autoprefix',function()
 {
-    return gulp.src('build/css/*.css')
-        .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))        
-        .pipe(gulp.dest('build/css'))
-        .pipe(livereload(slr));
+    return gulp.src(glob.css)
+        .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))        
+        .pipe(gulp.dest(dest.css))
+        .pipe(plugins.browserSync.reload({stream:true}));
 });
 
 /*
@@ -73,9 +91,9 @@ gulp.task('autoprefix',function()
 */
 gulp.task('jekyll',function()
 {
-    /* jekyll */
-    return gulp.src(['build/**/*.{html,yml,md,mkd,markdown}','build/_config.yml'])
-        .pipe(jekyll({
+    /* plugins.jekyll */
+    return gulp.src(glob.jekyll)
+        .pipe(plugins.jekyll({
             source: './build',
             destination: '.jekyll',
             // bundleExec:true,
@@ -85,44 +103,35 @@ gulp.task('jekyll',function()
 
 /*
     ----- JS LIBRARIES -----
+    (minified into a single file)
 */
 gulp.task('libScripts',function()
 {
-    var file = fs.readFileSync('src/js/allJS.conf','utf8').trim().split('\n');    
-    var src = file.filter(function(v)
+    var src = refreshJSLibs();
+    if (src.length)
     {
-        if (!v) return false;
-        if (v.substr(0,1) == '#') return false;   
-
-        if (!fs.existsSync(v)) 
-        {
-            gutil.log(gutil.colors.red(v+' does not exist!'));
-            return false;
-        }
-              
-        return true;
-    })
-    gutil.log(src);
-
-    /* javascript minify */    
-    return gulp.src(src,{base:'bower_components/'})
-        .pipe(uglify())  
-        .pipe(header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
-        .pipe(concat("all.min.js"))
-        .pipe(gulp.dest('build/js'))
-        .pipe(livereload(slr));
+        return gulp.src(src,{base:'bower_components/'})
+            .pipe(plugins.uglify())  
+            .pipe(plugins.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
+            .pipe(plugins.concat(files.jslib))
+            .pipe(gulp.dest(dest.js))
+            .pipe(plugins.browserSync.reload({stream:true}));
+    } else {
+        plugins.util.log('file empty ignoring');
+    }
 });
 
 /*
     ----- JS FILES -----
+    (for separates minified and copied across) 
 */
 gulp.task('scripts',function()
 {
-    return gulp.src('src/js/**/*.js')
-        // .pipe(uglify())  // put this back later - for dev I don't need it uglified.
-        .pipe(changed('build/js'))
-        .pipe(gulp.dest('build/js'))
-        .pipe(livereload(slr));
+    return gulp.src(glob.js)
+        // .pipe(plugins.uglify())  // put this back later - for dev I don't need it uglified.
+        .pipe(plugins.changed(dest.js))
+        .pipe(gulp.dest(dest.js))
+        .pipe(plugins.browserSync.reload({stream:true}));
 });
 
 /*
@@ -130,9 +139,9 @@ gulp.task('scripts',function()
 */
 gulp.task('svg',function()
 {
-    return gulp.src('src/img/*.svg')
-        .pipe(svgmin())
-        .pipe(gulp.dest('build/img'));
+    return gulp.src(glob.svg)
+        .pipe(plugins.svgmin())
+        .pipe(gulp.dest(dest.img));
 });
 
 /*
@@ -140,65 +149,82 @@ gulp.task('svg',function()
 */
 gulp.task('bitmaps',function()
 {
-    return gulp.src('src/img/*.{jpg,jpeg,gif,png}')
-        .pipe(imagemin())
-        .pipe(gulp.dest('build/img'));
+    return gulp.src(glob.img)
+        .pipe(plugins.imagemin())
+        .pipe(gulp.dest(dest.img));
 });
 
 /*
-    ----- SERVER -----
+    ----- SYNC -----
+    (includes a server for flat builds)
 */
-gulp.task('serve', serve(['.jekyll','build']));
+gulp.task('browser-sync', function() {
+    plugins.browserSync.init(null, {
+      server: {
+        baseDir: "./build/"
+      }
+    });
+});
 
 /*
     ----- BASIC LIVERELOAD -----
+    (so I can trigger it independantly for certain files)
 */
-gulp.task('livereload',function()
+gulp.task('sync',function()
 {
-    return gulp.src('build/**/*.{html,yml,md,mkd,markdown}')
-        .pipe(changed('build/**/*.{html,yml,md,mkd,markdown}'))
-        .pipe(livereload(slr));
+    return gulp.src(glob.html)
+        .pipe(plugins.changed(glob.html))
+        .pipe(plugins.browserSync.reload({stream:true}));
 });
 
 /*
     ----- WATCH -----
 */
-gulp.task('watch', function() {
- 
-    // Listen on port 35729
-    slr.listen(35729, function (err) 
-    {
-        if (err) { return console.log(err); } 
-
+gulp.task('watch', function() 
+{ 
         // Watch .scss files
-        gulp.watch('src/sass/**/*.scss', ['sass']);
+        gulp.watch(glob.sass, ['sass']);     
 
-        // Watch .css files
-        // gulp.watch('build/css/**/*.css', ['autoprefix']);
-     
         // Watch .js files
-        gulp.watch('src/js/**/*.js', ['scripts']);
+        gulp.watch(glob.js, ['scripts']);
 
         // Watch JS library conf
-        gulp.watch('src/js/allJS.conf', ['libScripts']);
+        gulp.watch(files.jsconf, ['libScripts']);
 
         // Watch bitmaps
-        gulp.watch('src/img/*.{jpg,jpeg,gif,png}', ['bitmaps'])
+        gulp.watch(glob.img, ['bitmaps']);
 
-        // Watch Jekyll files
-        // gulp.watch('build/**/*.{html,yml,md,mkd,markdown}',function(event)
-        // {
-        //     message(event,'');
-        //     gulp.run('jekyll'); 
-        // })
+        // Watch SVG
+        gulp.watch(glob.svg, ['svg']);
 
-        // watch everything else for live reload.
-        gulp.watch('build/**/*.{php,html,yml,md,mkd,markdown}',['livereload'])   
+        // watch HTML (etc)
+        gulp.watch(glob.html,['sync']) 
 
-    });
+        // Watch plugins.jekyll files
+        // gulp.watch(glob.jekyll, ['jekyll'])
 });
 
 /*
     ----- DEFAULT -----
 */
-gulp.task('default', ['watch','serve']);
+gulp.task('default', ['browser-sync'], function(){gulp.run('watch');});
+
+function refreshJSLibs()
+{
+    var file = fs.readFileSync(files.jsconf,'utf8').trim().split('\n');    
+    var src = file.filter(function(v)
+    {
+        if (!v) return false;
+        if (v.substr(0,1) == '#') return false;   
+
+        if (!fs.existsSync(v)) 
+        {
+            plugins.util.log(plugins.util.colors.red(v+' does not exist!'));
+            return false;
+        }
+              
+        return true;
+    })
+    if (src.length) plugins.util.log(src);   
+    return src;
+}

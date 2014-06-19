@@ -3,11 +3,15 @@
 	
 	<div class="page-header"><h1><span class="icon icon-camera"></span> A photo?</h1></div>
 	
-	<p>You can upload if from your computer or add a link if it's already online:</p>
+	<!-- <p>You can upload if from your computer or add a link if it's already online:</p> -->
+	<p>Your file must already be online:</p>
 
 	<form class="upload__form with-space">
+		<!--
 		<input type="file" class="input-file" />
 		<p><button class="upload__trigger btn btn-sm btn-default">Choose a file to upload</button> <small>or paste a link below:</small></p>
+		-->
+		<p>Paste a web address below:</p>
 		<p><input type="text" class="input file__name" /></p>
 	</form>
 

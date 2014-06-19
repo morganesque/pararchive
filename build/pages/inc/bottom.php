@@ -16,6 +16,9 @@
 </script>    
 */ ?>    
 
-<?php if (isset($_CONFIG['js-livereload'])) echo '<script src="'.$_CONFIG['js-livereload'].'"></script>'; ?>
+<?php if ($_CONFIG['reload'] === true): ?>
+<script defer src="//localhost:3000/socket.io/socket.io.js"></script>
+<script defer src="//localhost:3001/client/browser-sync-client.0.9.1.js"></script>
+<?php endif; ?>
 </body>
 </html>

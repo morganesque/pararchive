@@ -17,7 +17,7 @@ $brand-danger:          #d9534f;
 
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
-// @import "modules/icons";
+@import "modules/icons";
 @import "modules/page";
 @import "modules/login";
 

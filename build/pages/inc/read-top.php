@@ -16,7 +16,7 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">    
-    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/70517f37a4/Pararchive/style.css">
+    <link rel="stylesheet" href="http://i.icomoon.io/public/temp/069a4c5316/Pararchive/style.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/read.css">
 

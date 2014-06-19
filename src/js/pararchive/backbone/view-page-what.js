@@ -5,7 +5,8 @@ var PageWhat = PageView.extend({
 	className: 'page page_what',
 
 	events: {
-		'click .next__button':  'onNextClick',
+		'click .next__button':  'saveAndGo',
+		
 		'change #what-text': 	'onTextChange',
 		'paste #what-text': 	'onTextChange',
 		'keyup #what-text': 	'onTextChange',
@@ -41,32 +42,19 @@ var PageWhat = PageView.extend({
 		if (i == 0) this.label.text("What is the first thing that happened in your story?");
 		else this.label.html("&hellip;and what happened next?");
 
-		if (!this.text.val().length) this.next.hide();
-		else this.next.show();
-	},
-
-	onNextClick:function(e)
-	{
-		// console.log("onNextClick");		
-		e.preventDefault();
-		e.stopPropagation();
-
-		var href = $(e.currentTarget).attr('href');
-		
-		this.storyBlock.save({'what':this.text.val()},{success:function()
-		{
-			pararchive.router.navigate(href,{trigger:true});
-		}});
+		if (!this.text.val().length) this.next.css({"opacity":0.5});
+		else this.next.css({"opacity":1});
 	},
 
 	onTextChange:function(e)
 	{
 		if (this.text.val().length)
 		{
-			this.next.fadeIn(500);
+			// this.next.fadeIn(500);
+			this.next.css({"opacity":1});
 		} else {
 			this.next.blur();
-			this.next.hide();
+			// this.next.hide();
 		}
 	},
 

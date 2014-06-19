@@ -24,10 +24,28 @@ var PageView = Backbone.View.extend({
 	{		
 		// console.log("onClick");		
 		e.preventDefault();
+
 		// grab the href yo!
-		var href = $(e.target).attr('href');
-        // make it so number one!
-        pararchive.router.navigate(href,{trigger:true});
+		var href = $(e.currentTarget).attr('href');
+	
+		// take em there (unless it's a "next" link)
+		if (href == '/next/') pararchive.router.next();
+		else pararchive.router.navigate(href,{trigger:true});
+	},
+
+	saveAndGo:function(e)
+	{
+		e.preventDefault();
+		e.stopPropagation();
+
+		var href = $(e.currentTarget).attr('href');
+		var data = {};
+		data[this.type] = this.text.val();
+		
+		this.storyBlock.save(data,{success:function()
+		{
+			pararchive.router.next();
+		}});
 	},
 
 	build:function()

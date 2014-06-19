@@ -1,4 +1,4 @@
-var Router = Backbone.Router.extend({
+    var Router = Backbone.Router.extend({
 
     pages:[],
 
@@ -32,6 +32,7 @@ var Router = Backbone.Router.extend({
     */      
     execute: function(callback, args) 
     {   
+        if (Backbone.history.fragment == 'next/') alert("Danger Will Robinson!\nYou shouldn't be coming to /next/ directly!!!");
         console.log('page: /'+Backbone.history.fragment);               
 
         // take it to bakersfield!

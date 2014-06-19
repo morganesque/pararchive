@@ -4,7 +4,8 @@ var PageEditArtefact = PageView.extend({
 	className: 'page page_edit_artifact',
 
 	events: {
-		"click .use__this": 'onUseThisClick'
+		"click .use__this": 'onUseThisClick',
+		"click .skip__button": 'onClick'
 	},
 
 	initialize:function(options)
