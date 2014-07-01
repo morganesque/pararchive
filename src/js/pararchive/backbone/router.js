@@ -25,6 +25,7 @@
         "where/":                   "where",
         "next/":                    "next",
         "done/":                    "done",
+        "view/story/:story/":        "viewStory",
         "*undefined":               "show404Error"
     },
 
@@ -165,6 +166,12 @@
         query = query.replace(/\++/g,' ');  
         this.normalPage('arte-search',PageSearchArtefact,{query:query});          
         pararchive.state.set('state','editing');  
+    },
+
+    viewStory:function(story_id)
+    {
+        this.normalPage('viewStory',PageViewStory,{story_id:story_id});       
+        pararchive.state.set('state','viewing');  
     },
 
     show404Error:function()

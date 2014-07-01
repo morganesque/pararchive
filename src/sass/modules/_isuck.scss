@@ -13,12 +13,24 @@ body,html {
 
 $left-width:0.25;
 
-.left-col {
-	position:absolute;
-	left:0;right:0;
-	width:percentage($left-width);
+#inner-wrap {
 	height:100%;
+	overflow:hidden;
+}
+
+.left-col {
+	float:left;
+	width:percentage($left-width);
 	background:#999;
+
+	&:before {
+		content:"blah";
+		display:block;
+		padding-top:9999px;
+		margin-bottom:-9999px;
+		background:inherit;
+		height:0;
+	}
 }
 
 .right-col {
@@ -277,4 +289,45 @@ $blockh:62px;
 .message {
 	font-size:1.2em;
 	padding-top:0.75em;
+}
+
+.story-block {
+
+	position:relative;
+	padding:2em 2em;
+	margin:0 0 2em;
+	// box-shadow:0 0.25em 0.125em rgba(black,0.42);
+	border:1px solid #eee;
+	border-bottom:0.125em solid rgba(black,0.22);
+
+	.edit-block {
+		position:absolute;
+		bottom:1em;right:1em;
+		transition:all .5s ease-in;
+		opacity:0
+	}
+
+	&:hover {
+		.edit-block {
+			opacity:1;
+		}
+	}
+	
+	
+
+	.when,.where {
+		font-size:0.8em;
+		color:#999;
+		float:left;
+	}
+	.where {
+		float:right;
+	}
+	.what {
+		clear:both;
+	}
+	.artefacts {
+		height:75px;
+		margin-bottom:0.5em;
+	}
 }

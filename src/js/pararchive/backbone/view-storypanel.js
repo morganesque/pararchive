@@ -2,7 +2,8 @@ var StoryPanel = Backbone.View.extend(
 {
 	events:{
 		'click .block': "onBlockClick",
-		'click .plus' : "onPlusClick"
+		'click .plus' : "onPlusClick",
+		'click .view-story' : "onViewStory"
 	},
 
 	/*
@@ -85,6 +86,12 @@ var StoryPanel = Backbone.View.extend(
 	{
 		var block = this.$el.find('#block_'+id);
 		block.addClass('current');
+	},
+
+	onViewStory:function(e)
+	{
+		e.preventDefault();
+		pararchive.router.navigate('/view/story/'+pararchive.story.storyID+'/',{trigger:true});
 	},
 
 	/*

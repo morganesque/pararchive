@@ -38,6 +38,7 @@
     <script type="text/javascript" src="/js/pararchive/backbone/model-misc.js"></script>            
     <script type="text/javascript" src="/js/pararchive/backbone/model-story.js"></script>            
     <script type="text/javascript" src="/js/pararchive/backbone/model-artefacts.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/backbone/model-storyview.js"></script>            
 
     <!-- load all the backbone page views -->
     <script type="text/javascript" src="/js/pararchive/backbone/view-page.js"></script>    
@@ -53,6 +54,7 @@
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-edit-artefact.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-search-artefact.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-done.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-story.js"></script>    
     
     <!-- load all the backbone component views -->
     <script type="text/javascript" src="/js/pararchive/backbone/view-component.js"></script>    

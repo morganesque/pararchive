@@ -27,6 +27,8 @@ var App = Backbone.View.extend(
 			el:$('#storyPanel')
 		});	
 
+        this.viewStory = new StoryView();
+
         // attach the control panel.
 		this.control = new Control(
 		{
@@ -63,6 +65,7 @@ var App = Backbone.View.extend(
     	switch(state)
     	{
     		case "login":
+            case "viewing":
     			this.control.hide();
     			this.storyPanel.hide();
     		break;

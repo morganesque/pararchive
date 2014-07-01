@@ -53,6 +53,10 @@ switch($params[0])
         include_once('artefacts.php');
     break;
 
+    case 'view':
+        include_once('view.php');
+    break;
+
     case 'test':
         include_once('test.php');
     break;

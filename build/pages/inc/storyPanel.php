@@ -19,7 +19,7 @@
 
 		<div class="story__actions text-right col-xs-2">
 
-			<a href="#" class="btn btn-success btn-lg">Finish Story</a>
+			<a href="#" class="btn btn-success btn-lg view-story">View Story</a>
 
 		</div>
 
