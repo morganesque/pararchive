@@ -51,6 +51,7 @@
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-arte.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-artefact.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-edit-artefact.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-search-artefact.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-done.js"></script>    
     
     <!-- load all the backbone component views -->

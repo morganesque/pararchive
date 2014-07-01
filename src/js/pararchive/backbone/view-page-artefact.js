@@ -1,8 +1,8 @@
 var PageArtefact = PageView.extend({
 	
-	type:'where',
+	type:'arte',
 	frag: undefined,
-	className: 'page page_where',
+	className: 'page page_artefact',
 
 	events: {
 		'click .use__this':  	  'onUseThisClick',
@@ -53,10 +53,9 @@ var PageArtefact = PageView.extend({
 			type: this.slug,
 		});
 
-
 		arte.save({},{success:function(a,b,c)
 		{			
-			console.log(a);		
+			console.log(a);
 			var href = '/arte/edit/'+a.get('id')+'/';
 			pararchive.router.navigate(href,{trigger:true});		
 

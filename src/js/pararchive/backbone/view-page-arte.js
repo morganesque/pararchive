@@ -7,24 +7,61 @@ var PageArte = PageView.extend({
 	events: {
 		// 'click .next__button':  'onNextClick',
 		"click .skip__button":  'onClick',
+		"click .cont__button":  'onClick',
 		"click .media__button":  'onClick',
+		"click .input_submit": "onSearchSubmit",
 	},
 
 	initialize:function()
 	{				
 		// console.log("initialize");		
 		// this.events = _.extend(_.clone(this.events), PageView.prototype.events);
-		// this.delegateEvents();			
+		// this.delegateEvents();	
+		this.listenTo(pararchive.artefacts, "reset", this.update);
 	},
 
 	setup:function()
 	{
-		
+		this.searchbox = this.$el.find('.archive__search');
+		this.contBtn = this.$el.find('.cont__button').hide();
+		this.skipBtn = this.$el.find('.skip__button');
+		this.message = this.$el.find('.message');
+
+		this.update();
 	},
 
 	update:function()
 	{
-	
+		var l = pararchive.artefacts.length;
+		if (l)
+		{
+			this.skipBtn.hide();			
+			if (l == 1) 
+			{
+				this.contBtn.show().css('display','block').text('use this');
+				this.message.html('You have included <b>'+l+'</b> artefact');
+			} else { 
+				this.contBtn.show().css('display','block').text('use these');
+				this.message.html('You have included <b>'+l+'</b> artefacts');
+			}
+		} else {
+			this.skipBtn.show().css('display','block');
+			this.contBtn.hide();
+			this.message.html("No artefacts yet.");
+		}
 	},	
+
+	onSearchSubmit:function(e)
+	{
+		e.preventDefault();
+		var query = encodeURI(this.searchbox.val().replace(/[?#\s]/g,'+'));
+		if (query !== '')
+		{
+			pararchive.router.navigate('/arte/search/'+query+'/',{trigger:true});
+		} else {
+			alert('Please enter a search term.');
+		}
+		// 
+	},
 
 });

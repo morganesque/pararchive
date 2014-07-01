@@ -8,14 +8,17 @@
         		".sass-cache", 
         		"bower_components", 
         		"node_modules", 
-        		"tasks"
+        		"tasks",
+                "build/img",
+                "build/css",
+                "build/js",
         	],
         "file_exclude_patterns": 
 	        [
 	        	".bowerrc", 
 	        	"bower.json", 
 	        	"Gemfile*", 
-	        	"package.json"
+	        	// "package.json"
 	        ],
         "path": "."
     }]

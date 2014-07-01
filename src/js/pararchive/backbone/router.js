@@ -13,18 +13,19 @@
     currentPage:null,
 
     routes: {
-        "":                 "home",
-        "login/":           "login",
-        "in/":              "in",
-        "what/":            "what",
-        "when/":            "when",
-        "arte/":            "arte",
-        "arte/:type/":      "arteType",
-        "arte/edit/:id/":   "arteEdit",
-        "where/":           "where",
-        "next/":            "next",
-        "done/":            "done",
-        "*undefined":       "show404Error"
+        "":                         "home",
+        "login/":                   "login",
+        "in/":                      "in",
+        "what/":                    "what",
+        "when/":                    "when",
+        "arte/":                    "arte",
+        "arte/:type/":              "arteType",
+        "arte/edit/:id/":           "arteEdit",
+        "arte/search/:query/":      "arteSearch",
+        "where/":                   "where",
+        "next/":                    "next",
+        "done/":                    "done",
+        "*undefined":               "show404Error"
     },
 
     /*
@@ -44,7 +45,8 @@
         // If after that there's a current page get it going!
         if (this.currentPage) 
         {
-            // put contents of view into the page.
+ 
+           // put contents of view into the page.
             this.main.html(this.currentPage.el);
 
             // kick off any rendering (updating) that the view needs to do.
@@ -126,6 +128,7 @@
         this.normalPage('done',PageDone);   
         pararchive.state.set('state','editing');
     },
+    
 
     /*
         This allow one step of the process to pass the decision 
@@ -154,6 +157,13 @@
     arteEdit:function(id)
     {
         this.normalPage('arte-edit-'+id,PageEditArtefact,{id:id});    
+        pararchive.state.set('state','editing');  
+    },
+
+    arteSearch:function(query)
+    {
+        query = query.replace(/\++/g,' ');  
+        this.normalPage('arte-search',PageSearchArtefact,{query:query});          
         pararchive.state.set('state','editing');  
     },
 

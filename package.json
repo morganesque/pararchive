@@ -23,8 +23,9 @@
     "gulp-header": "*",
     "gulp-ruby-sass": "*",
     "gulp-changed": "*",
+    "gulp-cached": "*",
     "node-notifier": "*",
-    "stream-combiner": "*",    
-    "browser-sync": "~0.9.1"
+    "stream-combiner": "*",
+    "browser-sync": "*"
   }
 }

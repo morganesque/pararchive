@@ -41,6 +41,14 @@ var dest = {
     "img":      "build/img",
 }
 
+
+/*
+    -------------------------------
+     HERE ARE ALL THE TASKS NOW!!!
+    -------------------------------
+*/      
+
+
 /*
     ----- SASS -----
 */        
@@ -61,7 +69,7 @@ gulp.task('sass',function()
     */        
     combined.on('error', function(err) 
     {
-        plugins.nodeNotifier.Growl().plugins.notify({
+        plugins.nodeNotifier.Growl().notify({
             name:       "SASS processor",
             title:      "SASS",
             message:    err.message,
@@ -69,11 +77,7 @@ gulp.task('sass',function()
         this.emit('end');
     }); 
     return combined;       
-});
-
-/*
-    HERE ARE ALL THE TASKS NOW!!!
-*/        
+});  
 
 /*
     ----- AUTO PREFIX -----
@@ -160,20 +164,21 @@ gulp.task('bitmaps',function()
 */
 gulp.task('browser-sync', function() {
     plugins.browserSync.init(null, {
-      server: {
-        baseDir: "./build/"
-      }
+        proxy: "pararchive.app"
+        // server: {
+        //     baseDir: "./build/"
+        // }
     });
 });
 
 /*
     ----- BASIC LIVERELOAD -----
-    (so I can trigger it independantly for certain files)
+    (so I can trigger it independently for certain files)
 */
 gulp.task('sync',function()
 {
     return gulp.src(glob.html)
-        .pipe(plugins.changed(glob.html))
+        .pipe(plugins.cached(glob.html))
         .pipe(plugins.browserSync.reload({stream:true}));
 });
 
@@ -207,7 +212,7 @@ gulp.task('watch', function()
 /*
     ----- DEFAULT -----
 */
-gulp.task('default', ['browser-sync'], function(){gulp.run('watch');});
+gulp.task('default', ['browser-sync','watch']);
 
 function refreshJSLibs()
 {
