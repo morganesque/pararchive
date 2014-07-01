@@ -30,6 +30,7 @@ var StoryPanel = Backbone.View.extend(
 	{
 		this.blocks.empty();
 
+
 		_.each(this.model.models,function(m,i)
 		{
 			var id = m.id;
@@ -37,7 +38,7 @@ var StoryPanel = Backbone.View.extend(
 
 			var n = this.template.clone();
 			n.attr('href','#'+id);
-			n.attr('id','block_'+id);
+			n.addClass('block_'+id);
 			n.text(i+1);
 
 			this.blocks.append(n);					
@@ -84,7 +85,7 @@ var StoryPanel = Backbone.View.extend(
 	*/		
 	selectBlock:function(id)
 	{
-		var block = this.$el.find('#block_'+id);
+		var block = this.$el.find('.block_'+id);
 		block.addClass('current');
 	},
 

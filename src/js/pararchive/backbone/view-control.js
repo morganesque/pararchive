@@ -1,7 +1,7 @@
 var Control = Backbone.View.extend(
 {
 	checks:[],
-	types:['what','where','when',"arte"],
+	types:['what','where','when'],
 	els:{},
 
 	events:{
@@ -37,9 +37,9 @@ var Control = Backbone.View.extend(
 		this.checks['when']  = this.$el.find('.item__when');			
 		this.checks['arte']  = this.$el.find('.item__arte');			
 
-		this.checks['what'].hide(); 		
-		this.checks['where'].hide();			
-		this.checks['when'].hide(); 		
+		// this.checks['what'].hide(); 		
+		// this.checks['where'].hide();			
+		// this.checks['when'].hide(); 		
 		// this.checks['arte'].hide();
 
 		this.els['greeting'] = this.$el.find('.greeting .content');
@@ -53,8 +53,8 @@ var Control = Backbone.View.extend(
 	{
 		var num = this.artefacts.length;
 		
-		if (!num) this.checks['arte'].hide();
-		else this.checks['arte'].show();
+		// if (!num) this.checks['arte'].hide();
+		// else this.checks['arte'].show();
 
 		this.checks['arte'].find(".badge").text(this.artefacts.length);		
 
@@ -91,22 +91,27 @@ var Control = Backbone.View.extend(
 		}		
 	},
 
-	mark:function(el,value)
+	mark:function(a)
 	{
-		if (typeof value !== "undefined" && value !== null) el.show(); 
-		else el.hide();
+		var el = this.checks[a]
+		var value = this.model.get(a);
 
-		el.text(value);
+		if (typeof value !== "undefined" && value !== null) 
+		{
+			el.show(); 
+			el.text(value);
+			el.addClass('got_content');
+		} else {
+			el.text(a);
+			el.removeClass('got_content');
+		}
+		// else el.hide();
 	},
 
 	render:function()
 	{				
 		var a = this.types;
-		_.each(a,function(a)
-		{
-			this.mark(this.checks[a],this.model.get(a));
-
-		},this);
+		_.each(a,this.mark,this);
 	},
 
 	onMetaClick:function(e)

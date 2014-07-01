@@ -42,8 +42,10 @@ var PageView = Backbone.View.extend({
 		var data = {};
 		data[this.type] = this.text.val();
 		
-		this.storyBlock.save(data,{success:function()
+		this.storyBlock.save(data,{success:function(model,response,options)
 		{
+			// make sure you set the newly saved block ID (replace the temp one).
+			pararchive.story.setBlock(model.get('id')); 
 			pararchive.router.next();
 		}});
 	},

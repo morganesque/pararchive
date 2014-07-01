@@ -20,13 +20,14 @@
 			<br />
 
 			<div class="list-group meta__links">
-				<a href="/what/" class="list-group-item item__what">What <span class="icon pull-right icon-checkbox-unchecked"></span></a>
-				<a href="/when/" class="list-group-item item__when">When <span class="icon pull-right icon-checkbox-unchecked"></span></a>
-				<a href="/where/" class="list-group-item item__where">Where <span class="icon pull-right icon-checkbox-unchecked"></span></a>
+				<a href="/what/" class="list-group-item item__what">What</a>
+				<a href="/when/" class="list-group-item item__when">When</span></a>
+				<a href="/where/" class="list-group-item item__where">Where</a>
 			</div>
+			<!--  <span class="icon pull-right icon-checkbox-unchecked"></span> -->
 
 			<div class="list-group meta__links">
-				<a href="/arte/" class="list-group-item item__arte">Artefacts <span class="badge">1</span></a>				
+				<a href="/arte/" class="list-group-item item__arte">artefacts <span class="badge">1</span></a>				
 				<div class="the__artefacts"></div>
 			</div>
 

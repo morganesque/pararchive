@@ -83,6 +83,8 @@ var PageSearchArtefact = PageView.extend({
 			alert("You've already added that one.");
 			return;
 		} else {
+			console.log('saving artefact');		
+			console.log(pararchive.story.blockID);		
 			var arte = pararchive.artefacts.add(
 			{
 				block_id: pararchive.story.blockID,

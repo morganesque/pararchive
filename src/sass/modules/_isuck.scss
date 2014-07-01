@@ -13,6 +13,8 @@ body,html {
 
 $left-width:0.25;
 
+#outer-wrap {height:100%;}
+
 #inner-wrap {
 	height:100%;
 	overflow:hidden;
@@ -21,6 +23,7 @@ $left-width:0.25;
 .left-col {
 	float:left;
 	width:percentage($left-width);
+	height:100%;
 	background:#999;
 
 	&:before {
@@ -34,9 +37,11 @@ $left-width:0.25;
 }
 
 .right-col {
+	height:100%;
 	width:percentage(1 - 2*$left-width);
-	position:relative;
-	margin-left:percentage($left-width);
+	float:left;
+	// position:relative;
+	// margin-left:percentage($left-width);
 }
 
 .bottom-col {
@@ -44,6 +49,24 @@ $left-width:0.25;
 	left:0;bottom:0;
 	width:100%;
 	background-color:rgba(black,0.85);
+	transform:translate3d(0,90px,0); 
+	
+	transition: all 400ms $easeOutQuint; /* custom */
+	transition-timing-function: $easeOutQuint; /* custom */
+	
+	&:hover {
+		transform:translate3d(0,0,0); 	
+	}
+
+	&:before {
+		content:'';
+		display:block;
+		position:absolute;
+		width:100%;
+		height:50px;
+		background:transparent;
+		top:-50px;
+	}
 }
 
 textarea {
@@ -132,8 +155,18 @@ textarea {
 }
 
 .story__name {
+	position:relative;
+	transform:translate3d(0,-5px,0);
 	color:white;
 	@include rem("margin",1,0);
+
+	$ease: cubic-bezier(0.345, -0.485, 0.700, 1.095);
+	transition: all 400ms $ease;
+	transition-timing-function: $ease;
+
+	.bottom-col:hover & {
+		transform:translate3d(0,0,0);
+	}
 }
 
 $blockh:62px;
@@ -197,6 +230,19 @@ $blockh:62px;
 .meta__links {
 	@include rem("font-size",1.4);
 
+	.list-group-item {
+		
+		font-size:0.8em;
+		color:$brand-primary;
+		text-decoration:underline;
+
+		&.got_content {
+			font-size:1em;
+			text-decoration:none;
+			color:$text-color;
+		}
+	}
+
 	.list-group-item.current {
 		background-color:$brand-primary;
 		border-color:$brand-primary;
@@ -240,7 +286,7 @@ $blockh:62px;
 	}
 
 	a,div {	
-		$pad:2%;	
+		$pad:2%;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -253,6 +299,7 @@ $blockh:62px;
 
 .the__artefacts {
 	padding:0.5em;
+	background-color:rgba(white,0.42);
 }
 .search_query {
 	font-weight:bold;
@@ -312,8 +359,6 @@ $blockh:62px;
 			opacity:1;
 		}
 	}
-	
-	
 
 	.when,.where {
 		font-size:0.8em;
@@ -330,4 +375,9 @@ $blockh:62px;
 		height:75px;
 		margin-bottom:0.5em;
 	}
+}
+
+.badge {
+	position:relative;
+	top:-0.2em;
 }
