@@ -42,13 +42,15 @@ var PageWhere = PageView.extend({
 
 	onTextChange:function(e)
 	{
+		console.log("onTextChange");
+		console.log(this.text.val().length);				
 		if (this.text.val().length)
 		{
 			// this.next.fadeIn(500);
 			this.next.css({"opacity":1});
 		} else {
 			this.next.blur();
-			this.next.hide();
+			// this.next.hide();
 		}
 	},
 

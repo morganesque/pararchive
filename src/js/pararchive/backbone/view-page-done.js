@@ -9,6 +9,7 @@ var PageDone = PageView.extend({
 		// "click #login_submit": "onSubmit",
 		"click .new__block": "onNewBlockClick",
 		"click .edit__button": "onClick",
+		"click .finished_link": "onViewStory",
 	},
 
 	setup:function()
@@ -26,6 +27,12 @@ var PageDone = PageView.extend({
 		e.preventDefault();		
 		pararchive.story.addBlock();	
 		pararchive.router.navigate('/what/',{trigger:true});
+	},
+
+	onViewStory:function(e)
+	{
+		e.preventDefault();
+		pararchive.router.navigate('/view/story/'+pararchive.story.storyID+'/',{trigger:true});
 	},
 
 });

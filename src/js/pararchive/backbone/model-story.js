@@ -9,6 +9,12 @@ var Story = Backbone.Collection.extend({
     	if (options && options.storyID) this.storyID = options.storyID;
     },
 
+    /*
+        Right at the start it uses the Story ID
+        to fetch all the blocks before passing 
+        over to router.js to do the rest.
+        (if no blocks - create a new empty one)
+    */        
     startEditting:function(id,callback)
     {
         // console.log("startEditting: "+id);        

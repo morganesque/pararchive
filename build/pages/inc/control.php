@@ -11,7 +11,7 @@
 
 	<div class="monitor">
 
-		<h2 class="h4 action__label">You are: <span>Editting a block</span></h2>
+		<h2 class="h4 action__label">You are: <span>Editing a block</span></h2>
 
 		<div class="this__story">
 		

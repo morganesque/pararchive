@@ -17,7 +17,7 @@
 
 	<div class="row">
 		<div class="col-xs-6">
-			<a href="/arte/" class="btn btn-lg btn-info btn-block back__button" type="submit">Back</a>
+			<a href="/arte/" class="btn back__button" type="submit"><span class="icon icon-arrow-left"></span> Back</a>
 		</div>
 		<div class="col-xs-6">
 			<button class="btn btn-lg btn-primary btn-block use__this" type="submit">Use This</button>

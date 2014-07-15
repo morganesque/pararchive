@@ -46,10 +46,8 @@ var Router = Backbone.Router.extend({
         // If after that there's a current page get it going!
         if (this.currentPage) 
         {
- 
-           // put contents of view into the page.
+            // put contents of view into the page.
             this.main.html(this.currentPage.el);
-
             // kick off any rendering (updating) that the view needs to do.
             this.currentPage.render();
             // make sure the page captures events

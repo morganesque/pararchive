@@ -1,3 +1,8 @@
+/*
+	For the page where you 
+	a) choose which Artefact you want to add.
+	b) see how many Artefacts you've added.
+*/		
 var PageArte = PageView.extend({
 	
 	type:'arte',
@@ -8,8 +13,8 @@ var PageArte = PageView.extend({
 		// 'click .next__button':  'onNextClick',
 		"click .skip__button":  'onClick',
 		"click .cont__button":  'onClick',
-		"click .media__button":  'onClick',
-		"click .input_submit": "onSearchSubmit",
+		"click .media__button": 'onClick',
+		"click .input_submit":  "onSearchSubmit",
 	},
 
 	initialize:function()
@@ -17,21 +22,23 @@ var PageArte = PageView.extend({
 		// console.log("initialize");		
 		// this.events = _.extend(_.clone(this.events), PageView.prototype.events);
 		// this.delegateEvents();	
-		this.listenTo(pararchive.artefacts, "reset", this.update);
+		this.listenTo(pararchive.artefacts, "reset", this.render);
 	},
 
 	setup:function()
 	{
+		// console.log("setup");		
 		this.searchbox = this.$el.find('.archive__search');
 		this.contBtn = this.$el.find('.cont__button').hide();
-		this.skipBtn = this.$el.find('.skip__button');
+		this.skipBtn = this.$el.find('.skip__button'); 
 		this.message = this.$el.find('.message');
 
-		this.update();
+		// console.log("setup running update");		
+		// this.update();
 	},
 
 	update:function()
-	{
+	{				
 		var l = pararchive.artefacts.length;
 		if (l)
 		{

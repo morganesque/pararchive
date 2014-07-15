@@ -39,9 +39,10 @@
 	<div class="row">
 		<div class="col-xs-6">
 			<p class="message">You haven't included any artefacts yet.</p> 
+			<p><a href="/next/" class="skip__button">Skip <span class="icon icon-arrow-right"></span></a></p>
 		</div>
 		<div class="col-xs-6">
-			<a href="/next/" class="btn btn-lg btn-warning btn-block skip__button">Skip</a>
+			
 			<a href="/next/" class="btn btn-lg btn-success btn-block cont__button">Use these</a>			
 		</div>
 	</div>

@@ -43,7 +43,7 @@ var PageWhen = PageView.extend({
 	},
 
 	onTextChange:function(e)
-	{
+	{		
 		if (this.text.val().length)
 		{
 			// this.next.fadeIn(500);

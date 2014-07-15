@@ -10,7 +10,7 @@
 
 	<div class="row">
 		<div class="col-xs-6">
-			<a href="/arte/" class="btn btn-lg btn-warning btn-block skip__button">Skip</a>
+			<a href="/arte/" class="btn skip__button">Skip <span class="icon icon-arrow-right"></span></a>
 		</div>
 		<div class="col-xs-6">
 			<button class="btn btn-lg btn-primary btn-block use__this">Use This</button>

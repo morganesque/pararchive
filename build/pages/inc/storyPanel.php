@@ -4,7 +4,7 @@
 	<h3 class="story__name">
 		<span class="icon icon-stack nudge"></span>
 		<span class="content">Storyname</span>&nbsp;
-		<a class="btn btn-xs" id="edit" href="#edit">edit</a>
+		<!-- <a class="btn btn-xs" id="edit" href="#edit">edit</a>-->
 	</h3>
 
 	<div class="row">
@@ -38,4 +38,5 @@
 			$('.story__name .content').textrange('fish');		
 		});
 	});
+	
 </script>

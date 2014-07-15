@@ -14,7 +14,7 @@
 
 	<div class="row">
 		<div class="col-xs-6">
-			<a href="/next/" class="btn btn-lg btn-warning btn-block skip__button">Skip</a>
+			<a href="/next/" class="btn skip__button">Skip <span class="icon icon-arrow-right"></span></a>
 		</div>
 		<div class="col-xs-6">
 			<a href="/next/" class="btn btn-lg btn-success btn-block next__button" type="submit" id="login_submit">Use this</a>

@@ -30,7 +30,6 @@ var StoryPanel = Backbone.View.extend(
 	{
 		this.blocks.empty();
 
-
 		_.each(this.model.models,function(m,i)
 		{
 			var id = m.id;

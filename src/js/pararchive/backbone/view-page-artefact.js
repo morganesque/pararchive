@@ -1,3 +1,6 @@
+/*
+	For the pages where you add Photos, Video or Audio URLs.
+*/		
 var PageArtefact = PageView.extend({
 	
 	type:'arte',
@@ -9,7 +12,7 @@ var PageArtefact = PageView.extend({
 		"click .back__button":    'onClick',
 		"click .upload__trigger": 'onTriggerClick',
 		
-		'change .input-file': 	  "onInputChange",
+		// 'change .input-file': 	  "onInputChange",
   
 		'change .file__name': 	  "onFileNameChange",
 		'paste .file__name': 	  "onFileNameChange",
@@ -28,7 +31,8 @@ var PageArtefact = PageView.extend({
 		this.fileInput.hide();
 
 		this.useThisButton = this.$el.find('.use__this');
-		this.useThisButton.hide();
+		// this.useThisButton.hide();
+		this.useThisButton.css('opacity',0.5);
 
 		this.uploadTriggerButton = this.$el.find('.upload__trigger');
 
@@ -42,10 +46,18 @@ var PageArtefact = PageView.extend({
 		// this.storyBlock = pararchive.story.getBlock();
 		// console.log('udpate');		
 		// console.log(this.storyBlock);		
+		this.fileNameInput.val('');
 	},
 
 	onUseThisClick:function(e)
 	{
+		if (pararchive.story.getBlock().isNew())
+		{
+			alert("The block hasn't been saved yet. Add a What, When or Where before adding artefacts");
+			return;
+		}
+
+		if (this.fileNameInput.val() == '') return;
 
 		var arte = pararchive.artefacts.add({
 			block_id: pararchive.story.blockID,
@@ -86,9 +98,9 @@ var PageArtefact = PageView.extend({
 
 	onFileNameChange:function()
 	{
-		if (this.fileNameInput.val()) this.useThisButton.fadeIn(1500);
+		if (this.fileNameInput.val()) this.useThisButton.css('opacity',1);
 		else {
-			this.useThisButton.hide();
+			this.useThisButton.css('opacity',0.5);
 			this.form.get(0).reset();
 			console.log($('.input-file').val());		
 		}

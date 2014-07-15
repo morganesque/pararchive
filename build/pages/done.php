@@ -9,7 +9,10 @@
 
 	<p>Now, make the next block to tell the next part of your story.</p>
 
-	<a href="/what/" class="btn btn btn-primary new__block">Create a new block</a>
+	<p><a href="/what/" class="btn btn btn-primary new__block">Next block</a></p>
+
+	<br />
+	<p><a href="/done/" class="finished_link">I've finished my story</a></p>
 
 </div>
 

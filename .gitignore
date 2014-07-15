@@ -41,3 +41,5 @@ build/css
 build/js
 build/api/config.php
 project.sh
+index.php
+build/photos

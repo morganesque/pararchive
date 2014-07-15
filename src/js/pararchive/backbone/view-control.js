@@ -1,7 +1,7 @@
 var Control = Backbone.View.extend(
 {
 	checks:[],
-	types:['what','where','when'],
+	types:['what','where','when','arte'],
 	els:{},
 
 	events:{
@@ -15,6 +15,7 @@ var Control = Backbone.View.extend(
 		
 		this.model = pararchive.story.getBlock();
 		this.listenTo(this.model, "change", this.render);
+		this.listenTo(this.model, "sync", this.render);
 
 		this.model.trigger('change');
 	},
@@ -47,8 +48,13 @@ var Control = Backbone.View.extend(
 		this.els['logout'] = this.$el.find('.logout__link');
 		this.els['metas'] = this.$el.find('.meta__links .list-group-item');
 		this.els['artefacts'] = this.$el.find('.the__artefacts');
+
+		this.actionLabel = this.$el.find('.action__label');
 	},
 
+	/*
+		If the artefacts object triggers "change" or "reset"
+	*/	
 	artefactChange:function()
 	{
 		var num = this.artefacts.length;
@@ -77,6 +83,10 @@ var Control = Backbone.View.extend(
 
 	},
 
+	/*
+		This is still visible when the user is logged out
+		so it needs to change it's appearance.
+	*/		
 	userChange:function()
 	{
 		if (this.user.get('status') == 'logged out')
@@ -91,27 +101,39 @@ var Control = Backbone.View.extend(
 		}		
 	},
 
+	/*
+		Triggered when the Model changes.
+	*/		
+	render:function()
+	{		
+		var a = this.types;
+		_.each(a,this.mark,this);
+	},
+
+	/*
+		Taking the individual meta data elements 
+		and displaying them appropriately.
+	*/		
 	mark:function(a)
 	{
 		var el = this.checks[a]
 		var value = this.model.get(a);
+		
+		var label = a;
+		if (label == 'arte') label = 'artefacts';
 
-		if (typeof value !== "undefined" && value !== null) 
+		if (this.model.get('id') == undefined && a != 'what')
 		{
+			el.hide();
+		} else if (typeof value !== "undefined" && value !== null && value !== '') {
 			el.show(); 
 			el.text(value);
 			el.addClass('got_content');
 		} else {
-			el.text(a);
+			el.show(); 
+			el.text(label);
 			el.removeClass('got_content');
 		}
-		// else el.hide();
-	},
-
-	render:function()
-	{				
-		var a = this.types;
-		_.each(a,this.mark,this);
 	},
 
 	onMetaClick:function(e)
@@ -140,13 +162,17 @@ var Control = Backbone.View.extend(
 		slug = slug.substring(0,slug.length-1);
 
 		var r = slug.indexOf("arte");
-		if (r === 0) slug = 'arte';
+		if (r === 0) slug = 'arte';	
 
 		var i = this.types.indexOf(slug);
+		this.els.metas.removeClass('current');
+
+		// if we're done hide the "you are editing a block" message.
+		if (slug == 'done') this.actionLabel.css('opacity',0);
+		else this.actionLabel.css('opacity',1);
 		
 		if (i >= 0) // only if it's one of the block content types.
-		{
-			this.els.metas.removeClass('current');
+		{	
 			this.checks[slug].addClass('current');	
 		}		
 	},

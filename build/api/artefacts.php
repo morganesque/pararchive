@@ -26,14 +26,16 @@ switch($_SERVER['REQUEST_METHOD'])
 		}
 	break;
  
+ 	// create
 	case "POST":
 		$post = json_decode(file_get_contents('php://input'));	
 		$bean = R::dispense($type);
+		
 		$bean->import($post);
+		$bean->created = R::isoDateTime();
+		$bean->modified = R::isoDateTime();
 
-		$block_id = $bean->block_id;
-
-		$block = R::load('block',$block_id);
+		$block = R::load('block',$bean->block_id);
 		$block->sharedArtefactList[] = $bean;
 
 		$user->ownArtefactList[] = $bean;
@@ -43,11 +45,13 @@ switch($_SERVER['REQUEST_METHOD'])
 		echo json_encode($bean->export());
 	break;
  
+ 	// update
 	case "PUT":
 		$post = json_decode(file_get_contents('php://input'));
 		$bean = R::dispense($type);
 		$bean->import($post);
-		R::store($bean); // Update
+		$bean->modified = R::isoDateTime();
+		R::store($bean); 
 		echo json_encode($bean->export());
 	break;
  

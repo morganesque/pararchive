@@ -28,8 +28,6 @@ var PageEditArtefact = PageView.extend({
 		this.desc = this.$el.find('.arte__description');
 
 		this.useThisButton = this.$el.find('.use__this');
-
-		this.update();
 	},
 
 	showMedia:function()

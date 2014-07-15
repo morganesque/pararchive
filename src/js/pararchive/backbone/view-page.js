@@ -38,9 +38,13 @@ var PageView = Backbone.View.extend({
 		e.preventDefault();
 		e.stopPropagation();
 
+		var val = this.text.val();
+
+		if (!val) return;
+
 		var href = $(e.currentTarget).attr('href');
 		var data = {};
-		data[this.type] = this.text.val();
+		data[this.type] = val;
 		
 		this.storyBlock.save(data,{success:function(model,response,options)
 		{
@@ -57,13 +61,16 @@ var PageView = Backbone.View.extend({
 		{
 			this.setup();
 			this.ready = true;
-			this.update();
+			this.render();
 		},this));
 	},
 
 	render:function()
 	{
-		if (this.ready) this.update();
+		if (this.ready) 
+		{
+			this.update();
+		}
 	},
 
 	update:function()
