@@ -32,13 +32,14 @@ var PageEditArtefact = PageView.extend({
 
 	showMedia:function()
 	{
-		console.log("showMedia");		
 		this.arte = pararchive.artefacts.get(this.arteID);		
 
-		var type = this.arte.get('type');
-		this.type.text(type);
-
-		this.display.css({'background-image': 'url('+this.arte.get('url')+')'});
+		if (this.arte)
+		{
+			var type = this.arte.get('type');
+			this.type.text(type);
+			this.display.css({'background-image': 'url('+this.arte.get('url')+')'});	
+		}		
 	},
 
 	update:function()

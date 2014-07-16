@@ -45,10 +45,10 @@ var PageArte = PageView.extend({
 			this.skipBtn.hide();			
 			if (l == 1) 
 			{
-				this.contBtn.show().css('display','block').text('use this');
+				this.contBtn.show().css('display','block');//.text('Done');
 				this.message.html('You have included <b>'+l+'</b> artefact');
 			} else { 
-				this.contBtn.show().css('display','block').text('use these');
+				this.contBtn.show().css('display','block');//.text('Done');
 				this.message.html('You have included <b>'+l+'</b> artefacts');
 			}
 		} else {

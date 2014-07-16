@@ -83,6 +83,8 @@ var PageArtefact = PageView.extend({
 			if (response.responseText) alert(response.responseText);
 			else alert('error - bad return value!');
 
+			pararchive.artefacts.remove(model);
+
 			self.fileNameInput.val(model.get('url'));
 			self.useThisButton.text('Use This');
 		}});

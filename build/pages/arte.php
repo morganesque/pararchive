@@ -43,7 +43,7 @@
 		</div>
 		<div class="col-xs-6">
 			
-			<a href="/next/" class="btn btn-lg btn-success btn-block cont__button">Use these</a>			
+			<a href="/next/" class="btn btn-lg btn-success btn-block cont__button">Done</a>			
 		</div>
 	</div>
 

@@ -47,7 +47,13 @@ switch($_SERVER['REQUEST_METHOD'])
 
 		// $mime = getMimeType($bean->url);
 		// $mime_true = strpos($mime,"image");
-		$mime_true = true;
+
+		$ext = pathinfo($bean->url, PATHINFO_EXTENSION);
+		
+		if (in_array($ext, array('jpg','jpeg','png','gif','svg','tiff','webp'))) $mime_true = true;
+		else $mime_true = false;
+
+		// $mime_true = true;
 		if ($mime_true !== false)
 		{
 			$block = R::load('block',$bean->block_id);

@@ -4,16 +4,64 @@
 		"selected_items":
 		[
 			[
+				"art",
+				"arteID"
+			],
+			[
+				"mime",
+				"mime_true"
+			],
+			[
+				"sourc",
+				"sources"
+			],
+			[
+				"se",
+				"selectBlock"
+			],
+			[
+				"add",
+				"addBlock"
+			],
+			[
+				"story",
+				"storyBlock"
+			],
+			[
+				"mim",
+				"mime_true"
+			],
+			[
+				"image_",
+				"image_type"
+			],
+			[
+				"gd",
+				"gd_version"
+			],
+			[
+				"cac",
+				"cache_file"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"thumb",
+				"thumb_size_x"
+			],
+			[
+				"get",
+				"getBlock"
+			],
+			[
 				"arte",
 				"artefactChange"
 			],
 			[
 				"save",
 				"saveAndGo"
-			],
-			[
-				"story",
-				"story_id"
 			],
 			[
 				"jsn_",
@@ -100,20 +148,12 @@
 				"normalPage"
 			],
 			[
-				"art",
-				"arteType"
-			],
-			[
 				"fil",
 				"fileNameInput"
 			],
 			[
 				"atr",
 				"artefacts"
-			],
-			[
-				"file",
-				"fileInput"
 			],
 			[
 				"current",
@@ -232,10 +272,6 @@
 				"outsideModel"
 			],
 			[
-				"get",
-				"getData"
-			],
-			[
 				"gree",
 				"greeting_view"
 			],
@@ -310,10 +346,6 @@
 			[
 				"ren",
 				"renderBackground"
-			],
-			[
-				"add",
-				"addLine"
 			],
 			[
 				"text",
@@ -420,26 +452,10 @@
 	"buffers":
 	[
 		{
-			"file": "build/api/blocks.php",
+			"file": "build/api/artefacts.php",
 			"settings":
 			{
-				"buffer_size": 1130,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/js/pararchive/backbone/view-control.js",
-			"settings":
-			{
-				"buffer_size": 3764,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/js/pararchive/backbone/view-page-arte.js",
-			"settings":
-			{
-				"buffer_size": 1634,
+				"buffer_size": 2051,
 				"line_ending": "Unix"
 			}
 		},
@@ -447,39 +463,41 @@
 			"file": "src/sass/modules/_isuck.scss",
 			"settings":
 			{
-				"buffer_size": 5985,
+				"buffer_size": 6303,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/sass/modules/_mixins.scss",
+			"file": "src/js/pararchive/backbone/view-page-artefact.js",
 			"settings":
 			{
-				"buffer_size": 2879,
+				"buffer_size": 2923,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "build/pages/arte.php",
+			"contents": "Searching 34 files for \".add(\"\n\n/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-story.js:\n   46      {\n   47          console.log(\"addBlock\");        \n   48:         var newBlock = this.add({\"story_id\":this.storyID});\n   49          this.setBlock(newBlock.cid);  \n   50      },\n\n/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-artefact.js:\n   63  		if (this.fileNameInput.val() == '') return;		\n   64  \n   65: 		var arte = pararchive.artefacts.add({\n   66  			block_id: pararchive.story.blockID,\n   67  			url: this.fileNameInput.val(),\n\n/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-search-artefact.js:\n   65  			// console.log('saving artefact');		\n   66  			// console.log(pararchive.story.blockID);		\n   67: 			var arte = pararchive.artefacts.add(\n   68  			{\n   69  				block_id: pararchive.story.blockID,\n\n3 matches across 3 files\n",
 			"settings":
 			{
-				"buffer_size": 1714,
+				"buffer_size": 919,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/js/pararchive/backbone/view-page-edit-artefact.js",
+			"settings":
+			{
+				"buffer_size": 1423,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "build/pages/inc/control.php",
+			"file": "src/js/pararchive/backbone/router.js",
 			"settings":
 			{
-				"buffer_size": 1066,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "build/pages/inc/storyPanel.php",
-			"settings":
-			{
-				"buffer_size": 857,
+				"buffer_size": 5036,
 				"line_ending": "Unix"
 			}
 		}
@@ -495,16 +513,60 @@
 				"File: Close All"
 			],
 			[
-				"wrap",
-				"Word Wrap: Toggle"
+				"insta",
+				"Package Control: Install Package"
 			],
 			[
-				"prev",
-				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
+				"bea",
+				"Javascript Beautify"
 			],
 			[
 				"cl",
 				"File: Close All"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"git",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"markdown",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
 			],
 			[
 				"Clo",
@@ -551,22 +613,6 @@
 				"Reg Replace: Sketch Cleanup"
 			],
 			[
-				"brow",
-				"Preferences: Browse Packages"
-			],
-			[
-				"bea",
-				"Javascript Beautify"
-			],
-			[
-				"preview",
-				"Markdown Preview: Github Flavored Markdown: Preview in Browser"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
-			],
-			[
 				"save",
 				"File: Save All"
 			],
@@ -603,20 +649,12 @@
 				"Emmet: Encode\\Decode Image to data:URL"
 			],
 			[
-				"remove",
-				"Package Control: Remove Package"
-			],
-			[
 				"dis",
 				"Package Control: Disable Package"
 			],
 			[
 				"disable",
 				"Package Control: Disable Package"
-			],
-			[
-				"list",
-				"Package Control: List Packages"
 			],
 			[
 				"disbl",
@@ -703,11 +741,11 @@
 				"Set Syntax: Sass"
 			]
 		],
-		"width": 647.0
+		"width": 467.0
 	},
 	"console":
 	{
-		"height": 86.0,
+		"height": 291.0,
 		"history":
 		[
 			"clear",
@@ -725,33 +763,72 @@
 	},
 	"file_history":
 	[
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-misc.js",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-search.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-photo.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-edit.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-audio.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-archive.php",
-		"/Users/tommo/vhosts/pararchive/service/build/api/artefacts.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/app.js",
-		"/Users/tommo/vhosts/pararchive/service/build/index.php",
-		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_icons.scss",
-		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_isuck.scss",
-		"/Users/tommo/vhosts/pararchive/service/build/config.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/bottom.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/router.js",
-		"/Users/tommo/vhosts/pararchive/service/build/api/users.php",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-search-artefact.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-arte.js",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_isuck.scss",
+		"/Users/tommo/vhosts/pararchive/service/build/photos/json.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-artefact.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/app.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/artefacts.php",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-storypanel.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-control.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-storyview.js",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-story.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/view-story.html",
 		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/storyPanel.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-story.js",
+		"/Users/tommo/vhosts/pararchive/service/build/config.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-misc.js",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_mixins.scss",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/all-models.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/_control/routes.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/story.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/blocks.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/init.js",
+		"/Users/tommo/vhosts/pararchive/service/build/index.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-where.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/where.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/when.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/what.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-edit-artefact.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/config.php",
+		"/Users/tommo/vhosts/pararchive/service/build/photos/index.php",
+		"/Users/tommo/vhosts/pararchive/service/build/photos/gallery.php",
+		"/Users/tommo/vhosts/pararchive/service/build/photos/thumb.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/top.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-archive.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-edit.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-video.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-audio.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-photo.php",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_icons.scss",
+		"/Users/tommo/vhosts/pararchive/service/build/photos/jane-jones/index.php",
+		"/Users/tommo/vhosts/pararchive/service/build/photos/jane-jones/thumb.php",
+		"/Users/tommo/vhosts/pararchive/service/build/photos/lightbox/featherlight.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-home.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/control.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/router.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/read-router.js",
+		"/Users/tommo/Desktop/todo.md",
+		"/Users/tommo/vhosts/pararchive/service/gulpfile.js",
+		"/Users/tommo/vhosts/pararchive/service/src/js/allJS.conf",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-when.js",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/done.php",
+		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-done.js",
+		"/Users/tommo/vhosts/pararchive/service/build/api/_control/nonessential.json",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/search-results.html",
+		"/Users/tommo/vhosts/pararchive/service/src/sass/styles.scss",
+		"/Users/tommo/Library/Application Support/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/Users/tommo/Library/Application Support/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-search.php",
+		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/bottom.php",
+		"/Users/tommo/vhosts/pararchive/service/build/api/users.php",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-login.js",
 		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_login.scss",
 		"/Users/tommo/vhosts/pararchive/service/build/pages/login.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/read-router.js",
-		"/Users/tommo/vhosts/pararchive/service/build/api/config.php",
 		"/Users/tommo/vhosts/pararchive/service/src/sass/config.rb",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/control.php",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-component.js",
 		"/Users/tommo/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/tommo/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
@@ -760,36 +837,17 @@
 		"/Users/tommo/vhosts/pararchive/service/build/read/index.php",
 		"/Users/tommo/vhosts/pararchive/service/build/api/index.php",
 		"/Users/tommo/vhosts/pararchive/service/build/api/view.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/init.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-story.js",
 		"/Users/tommo/vhosts/pararchive/service/src/sass/_read.scss",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/view-story.html",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/top.php",
 		"/Users/tommo/vhosts/pararchive/service/build/pages/story.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-storyview.js",
 		"/Users/tommo/vhosts/pararchive/service/build/js/templates/read-main.html",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-arte.js",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/arte.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/search-results.html",
-		"/Users/tommo/vhosts/pararchive/service/gulpfile.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-artefact.js",
 		"/Users/tommo/vhosts/pararchive/service/pararchive.sublime-project",
 		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/read-bottom.php",
 		"/Users/tommo/vhosts/pararchive/service/package.json",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-quick.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-control.js",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/init.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/allJS.conf",
-		"/Users/tommo/vhosts/pararchive/service/build/api/blocks.php",
 		"/Users/tommo/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/tommo/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
-		"/Users/tommo/vhosts/pararchive/service/src/sass/styles.scss",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-what.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-when.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-where.js",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/arte-video.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/when.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-edit-artefact.js",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/router.js",
 		"/Users/tommo/vhosts/pararchive/service/src/sass/read.scss",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/app.js",
@@ -798,11 +856,7 @@
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/view-readblock.js",
 		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/page.scss",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/read/view-readbookend.js",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-home.js",
-		"/Users/tommo/vhosts/pararchive/service/build/api/story.php",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/README.md",
-		"/Users/tommo/vhosts/pararchive/service/build/api/_control/routes.php",
-		"/Users/tommo/vhosts/pararchive/service/build/api/_control/nonessential.json",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model-artefacts.js",
 		"/Users/tommo/vhosts/pararchive/service/build/.htaccess",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-app.js",
@@ -813,19 +867,14 @@
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/sync.js",
 		"/Users/tommo/vhosts/pararchive/service/error.log",
 		"/Users/tommo/vhosts/pararchive/service/README.md",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/what.php",
 		"/Users/tommo/vhosts/pararchive/service/src/js/modernizr.js",
 		"/Users/tommo/vhosts/pararchive/service/build/api/test.php",
-		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_mixins.scss",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-photo.js",
 		"/Users/tommo/Desktop/Amanda.txt",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-blockedit.js",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/where.php",
-		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/view-page-done.js",
 		"/Users/tommo/Desktop/twitter-blurb.txt",
 		"/Users/tommo/vhosts/pararchive/service/build/pages/home.php",
 		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/login.scss",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/done.php",
 		"/Users/tommo/vhosts/pararchive/service/build/api/userdata_3.json",
 		"/Users/tommo/vhosts/pararchive/service/src/js/pararchive/backbone/model.js",
 		"/Users/tommo/vhosts/pararchive/service/build/api/RedBeanPHP/loader.php",
@@ -841,18 +890,7 @@
 		"/Users/tommo/vhosts/pararchive/service/build/api/electricity/tempodb.php",
 		"/Users/tommo/vhosts/pararchive/service/build/api/lib/Michelf/MarkdownInterface.php",
 		"/Users/tommo/vhosts/pararchive/service/build/api/user/routes.php",
-		"/Users/tommo/vhosts/pararchive/service/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_variables.scss",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/nearly.php",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/left.php",
-		"/Users/tommo/vhosts/pararchive/service/build/api/dyk/content/warmth_123.html",
-		"/Users/tommo/vhosts/pararchive/service/build/api/cache/water-day-average.cache",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/bottom.html",
-		"/Users/tommo/vhosts/pararchive/service/build/js/all.min.js",
-		"/Users/tommo/vhosts/pararchive/service/build/api/dyk/content/billing_123.html",
-		"/Users/tommo/vhosts/pararchive/service/build/pages/inc/top.html",
-		"/Users/tommo/vhosts/pararchive/service/src/sass/modules/_icons.css",
-		"/Users/tommo/vhosts/pararchive/service/src/sass/_mixins.scss",
-		"/Users/tommo/vhosts/pararchive/service/build/api/control/routes.php"
+		"/Users/tommo/vhosts/pararchive/service/bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap/_variables.scss"
 	],
 	"find":
 	{
@@ -863,6 +901,12 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"*.js",
+			"*.php",
+			"*.scss",
+			"*.php",
+			"*.js",
+			"*.scss",
 			"*.php",
 			"*.js",
 			"*.scss",
@@ -907,6 +951,50 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".add(",
+			"arteEdit",
+			"the__artefacts",
+			"luke",
+			"contBtn",
+			"addBlocks",
+			"current",
+			"var_dump",
+			"case \"POST\":",
+			"setBlock",
+			"$ratio",
+			"thumb_size",
+			"@",
+			"onUseThisClick",
+			"skip__button",
+			"sizex",
+			"Use",
+			"onUseThisClick",
+			"setBlock",
+			"render",
+			"mark",
+			"onInputChange",
+			"arteType",
+			"matrix",
+			" {",
+			"{\n",
+			"console",
+			"href",
+			"onViewStory",
+			"action__label",
+			"render",
+			"update",
+			"render()",
+			"update()",
+			"setup()",
+			"current",
+			"render",
+			"mark",
+			".skip",
+			".skip__button",
+			"- [] ",
+			"[]",
+			"- ",
+			"bottom-col",
 			"class=\"row\"",
 			"grid",
 			"id",
@@ -990,51 +1078,7 @@
 			"block",
 			"\\?story_id",
 			"?story_id",
-			"listen.*meta",
-			"meta",
-			"= ",
-			"=",
-			"\\&",
-			"creation_order",
-			"PageWhere",
-			"navigate",
-			"extend",
-			"logout__link",
-			"me",
-			"adjust",
-			"icon",
-			"main",
-			"update(",
-			"changed",
-			"'))",
-			"changed",
-			"window.location.href",
-			"pararchive.state",
-			"form",
-			"credenti",
-			"pull",
-			"push",
-			"'block'",
-			"navigate",
-			"updateControl",
-			"this.stories",
-			"getStoryBlock",
-			"pararchive",
-			"this.storyBlock",
-			".block",
-			"navigate",
-			"ActuateModel",
-			"navigat",
-			"#story",
-			"pararchive.storyBlock",
-			"navi",
-			"where-date",
-			"when",
-			"PageWhat",
-			"PageQuick",
-			"this.main",
-			"handleError",
-			"weight"
+			"listen.*meta"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1042,6 +1086,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"[ ]",
+			"- [] ",
 			"",
 			"=\\t\\t\\t",
 			" = ",
@@ -1085,24 +1132,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "build/api/blocks.php",
+					"file": "build/api/artefacts.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1130,
+						"buffer_size": 2051,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1151,
+								1133
 							]
 						],
 						"settings":
@@ -1126,71 +1173,71 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/js/pararchive/backbone/view-control.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3764,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1560,
-								1560
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": false,
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 614.0,
+						"translation.y": 632.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "src/js/pararchive/backbone/view-page-arte.js",
+					"buffer": 1,
+					"file": "src/sass/modules/_isuck.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1634,
+						"buffer_size": 6303,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								888,
-								888
+								5102,
+								5102
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4508.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/js/pararchive/backbone/view-page-artefact.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1539,
+								1539
 							]
 						],
 						"settings":
@@ -1214,116 +1261,83 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 252.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/sass/modules/_isuck.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5985,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								596,
-								596
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": true,
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 824.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/sass/modules/_mixins.scss",
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2879,
+						"buffer_size": 919,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										209,
+										214
+									],
+									[
+										495,
+										500
+									],
+									[
+										828,
+										833
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								2454,
-								2439
+								498,
+								498
 							]
 						],
 						"settings":
 						{
 							"WordCountShouldRun": true,
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
+							"detect_indentation": false,
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 969.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "build/pages/arte.php",
+					"buffer": 4,
+					"file": "src/js/pararchive/backbone/view-page-edit-artefact.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1714,
+						"buffer_size": 1423,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								108,
-								98
+								801,
+								801
 							]
 						],
 						"settings":
@@ -1343,102 +1357,59 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "build/pages/inc/control.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1066,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								944,
-								944
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": false,
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "build/pages/inc/storyPanel.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 857,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"WordCountShouldRun": false,
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 225.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/js/pararchive/backbone/router.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4407,
+								4407
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": false,
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 890.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1483,6 +1454,10 @@
 	{
 		"height": 0.0
 	},
+	"output.markdown":
+	{
+		"height": 106.0
+	},
 	"output.sftp":
 	{
 		"height": 0.0
@@ -1490,7 +1465,7 @@
 	"project": "pararchive.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1499,8 +1474,12 @@
 		"selected_items":
 		[
 			[
-				"mix",
-				"src/sass/modules/_mixins.scss"
+				"router",
+				"src/js/pararchive/backbone/router.js"
+			],
+			[
+				"isuck",
+				"src/sass/modules/_isuck.scss"
 			],
 			[
 				"viewarte",
@@ -1511,24 +1490,128 @@
 				"build/pages/arte.php"
 			],
 			[
+				"app",
+				"src/js/pararchive/backbone/app.js"
+			],
+			[
+				"story",
+				"src/js/pararchive/backbone/view-storypanel.js"
+			],
+			[
+				"control",
+				"src/js/pararchive/backbone/view-control.js"
+			],
+			[
+				"viewstory",
+				"src/js/pararchive/backbone/view-page-story.js"
+			],
+			[
+				"model",
+				"src/js/pararchive/backbone/model-story.js"
+			],
+			[
+				"modelstoe",
+				"src/js/pararchive/backbone/model-storyview.js"
+			],
+			[
+				"art",
+				"build/pages/arte.php"
+			],
+			[
+				"ini",
+				"src/js/pararchive/backbone/init.js"
+			],
+			[
+				"viewcon",
+				"src/js/pararchive/backbone/view-control.js"
+			],
+			[
+				"panel",
+				"src/js/pararchive/backbone/view-storypanel.js"
+			],
+			[
+				"stor",
+				"src/js/pararchive/backbone/view-page-story.js"
+			],
+			[
+				"where",
+				"src/js/pararchive/backbone/view-page-where.js"
+			],
+			[
+				"viewpageed",
+				"src/js/pararchive/backbone/view-page-edit-artefact.js"
+			],
+			[
+				"thumb",
+				"build/photos/thumb.php"
+			],
+			[
+				"suc",
+				"src/sass/modules/_isuck.scss"
+			],
+			[
+				"when",
+				"build/pages/when.php"
+			],
+			[
+				"icon",
+				"src/sass/modules/_icons.scss"
+			],
+			[
+				"phot",
+				"build/photos/index.php"
+			],
+			[
+				"contro",
+				"src/js/pararchive/backbone/view-control.js"
+			],
+			[
+				"view",
+				"src/js/pararchive/backbone/view-page-artefact.js"
+			],
+			[
+				"done",
+				"src/js/pararchive/backbone/view-page-done.js"
+			],
+			[
+				"cntro",
+				"build/pages/inc/control.php"
+			],
+			[
+				"all",
+				"src/js/allJS.conf"
+			],
+			[
+				"gulp",
+				"gulpfile.js"
+			],
+			[
+				"page",
+				"src/js/pararchive/backbone/view-page.js"
+			],
+			[
+				"isuc",
+				"src/sass/modules/_isuck.scss"
+			],
+			[
+				"what",
+				"build/pages/what.php"
+			],
+			[
+				"style",
+				"src/sass/styles.scss"
+			],
+			[
+				"mix",
+				"src/sass/modules/_mixins.scss"
+			],
+			[
 				"is",
 				"src/sass/modules/_isuck.scss"
 			],
 			[
-				"control",
-				"build/pages/inc/control.php"
-			],
-			[
-				"view",
-				"src/js/pararchive/backbone/view-control.js"
-			],
-			[
 				"blo",
 				"build/api/blocks.php"
-			],
-			[
-				"story",
-				"src/js/pararchive/backbone/model-story.js"
 			],
 			[
 				"log",
@@ -1539,20 +1622,12 @@
 				"build/api/users.php"
 			],
 			[
-				"router",
-				"src/js/pararchive/backbone/router.js"
-			],
-			[
 				"con",
 				"build/config.php"
 			],
 			[
 				"inf",
 				"build/info.php"
-			],
-			[
-				"app",
-				"src/js/pararchive/backbone/app.js"
 			],
 			[
 				"users",
@@ -1567,20 +1642,12 @@
 				"build/pages/inc/bottom.php"
 			],
 			[
-				"isuck",
-				"src/sass/modules/_isuck.scss"
-			],
-			[
 				"top",
 				"build/pages/inc/top.php"
 			],
 			[
 				"bott",
 				"build/pages/inc/bottom.php"
-			],
-			[
-				"isuc",
-				"src/sass/modules/_isuck.scss"
 			],
 			[
 				"search",
@@ -1607,18 +1674,6 @@
 				"gulpfile.js"
 			],
 			[
-				"ini",
-				"src/js/pararchive/backbone/init.js"
-			],
-			[
-				"all",
-				"src/js/allJS.conf"
-			],
-			[
-				"viewcon",
-				"src/js/pararchive/backbone/view-control.js"
-			],
-			[
 				"suck",
 				"src/sass/modules/_isuck.scss"
 			],
@@ -1629,14 +1684,6 @@
 			[
 				"rout",
 				"src/js/pararchive/backbone/router.js"
-			],
-			[
-				"style",
-				"src/sass/styles.scss"
-			],
-			[
-				"page",
-				"src/js/pararchive/backbone/view-page.js"
 			],
 			[
 				"read",
@@ -1659,10 +1706,6 @@
 				"build/pages/inc/bottom.php"
 			],
 			[
-				"contro",
-				"src/js/pararchive/backbone/view-control.js"
-			],
-			[
 				"edit",
 				"src/js/pararchive/backbone/view-page-edit-artefact.js"
 			],
@@ -1675,20 +1718,12 @@
 				"src/js/pararchive/backbone/model-misc.js"
 			],
 			[
-				"when",
-				"build/pages/when.php"
-			],
-			[
 				"block",
 				"build/api/blocks.php"
 			],
 			[
 				"test",
 				"build/api/test.php"
-			],
-			[
-				"model",
-				"src/js/pararchive/backbone/model-misc.js"
 			],
 			[
 				"mode",
@@ -1703,36 +1738,12 @@
 				"src/js/pararchive/backbone/app.js"
 			],
 			[
-				"where",
-				"build/pages/where.php"
-			],
-			[
 				"atre",
 				"build/pages/arte.php"
 			],
 			[
-				"what",
-				"build/pages/what.php"
-			],
-			[
-				"art",
-				"build/pages/arte.php"
-			],
-			[
-				"panel",
-				"build/pages/inc/storyPanel.php"
-			],
-			[
-				"gulp",
-				"gulpfile.js"
-			],
-			[
 				"home",
 				"build/pages/home.php"
-			],
-			[
-				"done",
-				"src/js/pararchive/backbone/view-page-done.js"
 			],
 			[
 				"doe",
@@ -1828,10 +1839,6 @@
 			],
 			[
 				"icos",
-				"src/sass/modules/_icons.scss"
-			],
-			[
-				"icon",
 				"src/sass/modules/_icons.scss"
 			],
 			[
@@ -1977,38 +1984,6 @@
 			[
 				"total",
 				"src/js/actuate/backbone/view-day_totals.js"
-			],
-			[
-				"usage",
-				"src/js/actuate/backbone/view-day_usage.js"
-			],
-			[
-				"toda",
-				"src/js/actuate/backbone/view-today_usage.js"
-			],
-			[
-				"models",
-				"src/js/actuate/backbone/models.js"
-			],
-			[
-				"monthly",
-				"src/js/actuate/d3/monthly_usage.js"
-			],
-			[
-				"rain",
-				"src/js/actuate/backbone/view-rainwater-status.js"
-			],
-			[
-				"mon",
-				"src/js/actuate/backbone/view-monthly_usage.js"
-			],
-			[
-				"botto",
-				"service/pages/inc/bottom.html"
-			],
-			[
-				"header",
-				"src/js/actuate/backbone/view-header.js"
 			]
 		],
 		"width": 0.0
