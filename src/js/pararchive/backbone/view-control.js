@@ -14,6 +14,8 @@ var Control = Backbone.View.extend(
 		if (this.model) this.stopListening(this.model);
 		
 		this.model = pararchive.story.getBlock();
+		// console.log("Control addModel",this.model);		
+
 		this.listenTo(this.model, "change", this.render);
 		this.listenTo(this.model, "sync", this.render);
 

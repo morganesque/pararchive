@@ -1,3 +1,6 @@
+/*
+	Viewing the story at the end.
+*/		
 var PageViewStory = PageView.extend({
 	
 	frag: '/pages/story.php',
@@ -16,8 +19,6 @@ var PageViewStory = PageView.extend({
 
 	setup:function()
 	{
-		console.log("PageViewStory setup");		
-
 		var html = this.$el.find('#viewStory').html();
 		this.template = _.template(html);
 
@@ -32,14 +33,13 @@ var PageViewStory = PageView.extend({
 
 	showStory:function()
 	{
-		console.log(pararchive.viewStory.attributes);		
 		this.$el.html(this.template({data:pararchive.viewStory.attributes}));
 	},
 
 	onEditBlock:function(e)
 	{
 		e.preventDefault();
-		var id = $(e.currentTarget).attr('href').substr(1);
+		var id = $(e.currentTarget).attr('href').substr(1); console.log(id);		
 		pararchive.story.setBlock(id);
 		pararchive.router.navigate('/what/',{trigger:true});
 	},

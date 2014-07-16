@@ -33,6 +33,7 @@ var PageArtefact = PageView.extend({
 		this.useThisButton = this.$el.find('.use__this');
 		// this.useThisButton.hide();
 		this.useThisButton.css('opacity',0.5);
+		this.useThisButton.text('Use This');
 
 		this.uploadTriggerButton = this.$el.find('.upload__trigger');
 
@@ -51,13 +52,15 @@ var PageArtefact = PageView.extend({
 
 	onUseThisClick:function(e)
 	{
+		console.log("onUseThisClick");		
+
 		if (pararchive.story.getBlock().isNew())
 		{
 			alert("The block hasn't been saved yet. Add a What, When or Where before adding artefacts");
 			return;
 		}
 
-		if (this.fileNameInput.val() == '') return;
+		if (this.fileNameInput.val() == '') return;		
 
 		var arte = pararchive.artefacts.add({
 			block_id: pararchive.story.blockID,
@@ -65,13 +68,24 @@ var PageArtefact = PageView.extend({
 			type: this.slug,
 		});
 
+		this.fileNameInput.val('');
+		this.useThisButton.text('Saving...');
+
+		var self = this;
+
 		arte.save({},{success:function(a,b,c)
 		{			
-			console.log(a);
 			var href = '/arte/edit/'+a.get('id')+'/';
-			pararchive.router.navigate(href,{trigger:true});		
+			pararchive.router.navigate(href,{trigger:true});			
 
-		},error:function(){alert('error - bad return value!');}});
+		},error:function(model,response) 
+		{
+			if (response.responseText) alert(response.responseText);
+			else alert('error - bad return value!');
+
+			self.fileNameInput.val(model.get('url'));
+			self.useThisButton.text('Use This');
+		}});
 
 		// console.log("onNextClick");		
 		// e.preventDefault();
@@ -101,8 +115,7 @@ var PageArtefact = PageView.extend({
 		if (this.fileNameInput.val()) this.useThisButton.css('opacity',1);
 		else {
 			this.useThisButton.css('opacity',0.5);
-			this.form.get(0).reset();
-			console.log($('.input-file').val());		
+			this.form.get(0).reset();		
 		}
 	},
 

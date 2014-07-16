@@ -42,8 +42,8 @@ var PageWhere = PageView.extend({
 
 	onTextChange:function(e)
 	{
-		console.log("onTextChange");
-		console.log(this.text.val().length);				
+		// console.log("onTextChange");
+		// console.log(this.text.val().length);				
 		if (this.text.val().length)
 		{
 			// this.next.fadeIn(500);

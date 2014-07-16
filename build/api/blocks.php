@@ -31,22 +31,22 @@ switch($_SERVER['REQUEST_METHOD'])
 		$post = json_decode(file_get_contents('php://input'));	
 		$bean = R::dispense($type);		
 		
-		$bean->import($post);
+		$bean->import($post);		
 		$bean->created = R::isoDateTime();
 		$bean->modified = R::isoDateTime();
 
 		$user->ownStoryList[] = $bean;
 		$id = R::store($user);	
 
-		$bean->id = $id;
+		// $bean->id = $id;
 		echo json_encode($bean->export());
 	break;
  
  	// update
 	case "PUT":
 		$post = json_decode(file_get_contents('php://input'));
-		$bean = R::dispense($type);
-
+		$bean = R::dispense($type);		
+		
 		$bean->import($post);
 		$bean->modified = R::isoDateTime();
 

@@ -7,16 +7,15 @@
 	comprehensively and commemoratively suck!
 */
 
-body,html {
-	height:100%;
-}
+html {height:100%}
+body {height:100%}
 
 $left-width:0.25;
 
 #outer-wrap {height:100%;}
 
 #inner-wrap {
-	height:100%;
+	min-height:100%;
 	overflow:hidden;
 }
 

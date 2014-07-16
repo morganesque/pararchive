@@ -2,6 +2,16 @@
 
 $type = "artefact";
 
+function getMimeType($url)
+{
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_exec($ch);
+
+	# get the content type
+	return curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
+}
+
 switch($_SERVER['REQUEST_METHOD'])
 {
 	case 'GET':
@@ -35,14 +45,22 @@ switch($_SERVER['REQUEST_METHOD'])
 		$bean->created = R::isoDateTime();
 		$bean->modified = R::isoDateTime();
 
-		$block = R::load('block',$bean->block_id);
-		$block->sharedArtefactList[] = $bean;
+		// $mime = getMimeType($bean->url);
+		// $mime_true = strpos($mime,"image");
+		$mime_true = true;
+		if ($mime_true !== false)
+		{
+			$block = R::load('block',$bean->block_id);
+			$block->sharedArtefactList[] = $bean;
 
-		$user->ownArtefactList[] = $bean;
-				
-		R::storeAll([$block,$user]);	
-		
-		echo json_encode($bean->export());
+			$user->ownArtefactList[] = $bean;
+					
+			R::storeAll([$block,$user]);		
+			echo json_encode($bean->export());
+		} else {
+			header('HTTP/1.1 500 Internal Server Error');
+			echo "I'm sorry but that doesn't seem to be an image. Please only paste addresses of actual images.";
+		}
 	break;
  
  	// update

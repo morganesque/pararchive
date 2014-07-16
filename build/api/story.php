@@ -35,7 +35,7 @@ switch($_SERVER['REQUEST_METHOD'])
 		$user->ownStoryList[] = $bean;
 		$id = R::store($user);	
 
-		$bean->id = $id;
+		// $bean->id = $id;
 		echo json_encode($bean->export());
 	break;
  

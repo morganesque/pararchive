@@ -44,6 +44,7 @@ var Story = Backbone.Collection.extend({
 
     addBlock:function()
     {
+        console.log("addBlock");        
         var newBlock = this.add({"story_id":this.storyID});
         this.setBlock(newBlock.cid);  
     },
@@ -61,8 +62,12 @@ var Story = Backbone.Collection.extend({
 
     setBlock:function(id)
     {
+        console.log("setBlock",id);        
+
         if (id) this.blockID = id;
         else this.blockID = this.first().get('id');
+
+        console.log(this.blockID);        
 
         // console.log(['this.blockID',this.blockID]);        
 

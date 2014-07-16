@@ -32,7 +32,7 @@ var PageEditArtefact = PageView.extend({
 
 	showMedia:function()
 	{
-		// console.log("showMedia");		
+		console.log("showMedia");		
 		this.arte = pararchive.artefacts.get(this.arteID);		
 
 		var type = this.arte.get('type');
