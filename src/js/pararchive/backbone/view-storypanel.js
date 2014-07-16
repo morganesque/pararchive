@@ -13,6 +13,7 @@ var StoryPanel = Backbone.View.extend(
 	{		
 		this.user = pararchive.user;
 		
+		this.listenTo(this.model, "block", this.addBlocks);
 		this.listenTo(this.model, "reset", this.addBlocks);
 		this.listenTo(this.model, "add", this.addBlocks);
 		this.listenTo(this.model, "meta", this.addTitle);
