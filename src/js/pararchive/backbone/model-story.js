@@ -62,14 +62,8 @@ var Story = Backbone.Collection.extend({
 
     setBlock:function(id)
     {
-        console.log("setBlock",id);        
-
         if (id) this.blockID = id;
         else this.blockID = this.first().get('id');
-
-        console.log(this.blockID);        
-
-        // console.log(['this.blockID',this.blockID]);        
 
         this.trigger('block');
     },

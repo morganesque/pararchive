@@ -39,7 +39,7 @@ var PageViewStory = PageView.extend({
 	onEditBlock:function(e)
 	{
 		e.preventDefault();
-		var id = $(e.currentTarget).attr('href').substr(1); console.log(id);		
+		var id = $(e.currentTarget).attr('href').substr(1);
 		pararchive.story.setBlock(id);
 		pararchive.router.navigate('/what/',{trigger:true});
 	},

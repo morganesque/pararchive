@@ -10,10 +10,10 @@
 				<a href="/arte/photo/" class="btn btn-default btn-large media__button"> <span class="icon icon-camera"></span><br /> Photos </a>			
 			</div>
 			<div class="col-xs-4">
-				<a href="/arte/audio/" class="btn btn-default btn-large media__button"> <span class="icon icon-headphones"></span><br /> Audio </a>			
+				<a href="/arte/audio/" class="btn btn-default btn-large media__button disabled"> <span class="icon icon-headphones"></span><br /> Audio </a>			
 			</div>
 			<div class="col-xs-4">
-				<a href="/arte/video/" class="btn btn-default btn-large media__button"> <span class="icon icon-camera2"></span><br /> Video </a>
+				<a href="/arte/video/" class="btn btn-default btn-large media__button disabled"> <span class="icon icon-camera2"></span><br /> Video </a>
 			</div>			
 		</div>
 		<p class="example">(use these buttons to add artefacts)</p>

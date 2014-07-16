@@ -59,9 +59,7 @@ var StoryPanel = Backbone.View.extend(
 	*/		
 	onBlockClick:function(e)
 	{
-		e.preventDefault();
-
-		this.$el.find('.block').removeClass('current');
+		e.preventDefault();		
 
 		var id = $(e.currentTarget).attr('href').substr(1);
 				
@@ -84,7 +82,10 @@ var StoryPanel = Backbone.View.extend(
 	*/		
 	selectBlock:function(id)
 	{
+		console.log("selectBlock",id);		
 		var block = this.$el.find('.block_'+id);
+
+		this.$el.find('.block').removeClass('current'); // remove the current 
 		block.addClass('current');
 	},
 
