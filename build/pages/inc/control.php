@@ -23,13 +23,11 @@
 				<a href="/what/" class="list-group-item item__what">What</a>
 				<a href="/when/" class="list-group-item item__when">When</span></a>
 				<a href="/where/" class="list-group-item item__where">Where</a>
-			</div>
-			<!--  <span class="icon pull-right icon-checkbox-unchecked"></span> -->
-
-			<div class="list-group meta__links">
 				<a href="/arte/" class="list-group-item item__arte">artefacts <span class="badge">1</span></a>				
 				<div class="the__artefacts"></div>
 			</div>
+
+			<p><a href="#" class="btn btn-xs btn-danger delete_block">delete block</a></p>
 
 		</div>
 

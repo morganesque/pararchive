@@ -5,7 +5,8 @@ var PageEditArtefact = PageView.extend({
 
 	events: {
 		"click .use__this": 'onUseThisClick',
-		"click .skip__button": 'onClick'
+		"click .skip__button": 'onClick',
+		"click .delete__artefact": 'onDeleteArtefact'
 	},
 
 	initialize:function(options)
@@ -33,7 +34,6 @@ var PageEditArtefact = PageView.extend({
 	showMedia:function()
 	{
 		this.arte = pararchive.artefacts.get(this.arteID);		
-
 		if (this.arte)
 		{
 			var type = this.arte.get('type');
@@ -60,6 +60,31 @@ var PageEditArtefact = PageView.extend({
 		{
 			pararchive.router.navigate('/arte/',{trigger:true});
 		}});
+	},
+
+	onDeleteArtefact:function(e)
+	{
+		e.preventDefault();
+		
+		if (!this.arte) {
+			console.log('ERROR: no artefact set man!'); 
+			return;
+		}
+
+		if (window.confirm('Delete this artefact?'))
+		{
+			this.arte.destroy({success:function(model,response,options)
+			{
+				console.log('success',model,response,options);		
+
+				pararchive.artefacts.remove(model);
+				pararchive.router.navigate('/arte/',{trigger:true});
+
+			},error:function(model,response,options)
+			{
+				console.log('error',model,response,options);		
+			}});
+		}
 	},
 
 });

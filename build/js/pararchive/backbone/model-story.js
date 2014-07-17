@@ -15,12 +15,10 @@ var Story = Backbone.Collection.extend({
         over to router.js to do the rest.
         (if no blocks - create a new empty one)
     */        
-    startEditting:function(id,callback)
+    startEditting:function(callback)
     {
-        // console.log("startEditting: "+id);        
         var self = this;
         
-        this.setStoryID(id);
         this.fetch({reset:true,success:function()
         {
             if (self.length) self.setBlock();
@@ -31,8 +29,7 @@ var Story = Backbone.Collection.extend({
     },
 
     startReading:function(id,callback)
-    {
-        // console.log("startEditting: "+id);        
+    {   
         var self = this;
         
         this.setStoryID(id);

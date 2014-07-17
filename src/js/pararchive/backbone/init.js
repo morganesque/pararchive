@@ -30,7 +30,8 @@ $(document).on("ready",function(e)
 			case "logged in":
 
 				var story = pararchive.user.get('latest_story'); 
-				pararchive.story.startEditting(story,function()
+				pararchive.story.setStoryID(story);
+				pararchive.story.startEditting(function()
 				{
 					Backbone.history.start({pushState:true});
 				});

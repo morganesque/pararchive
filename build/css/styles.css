@@ -5373,7 +5373,7 @@ textarea {
 #main {
   padding-top: 13px;
   padding-top: 1.3rem;
-  padding-bottom: 150px; }
+  padding-bottom: 200px; }
 
 .header {
   background-color: black;
@@ -5412,9 +5412,11 @@ textarea {
   position: relative;
   top: 0.1em; }
 
-.this__story .btn {
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 300; }
+.this__story {
+  margin-bottom: 200px; }
+  .this__story .btn {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 300; }
 
 .with-space {
   margin-bottom: 50px;
@@ -5544,9 +5546,7 @@ textarea {
     left: 0; }
 
 .the__artefacts {
-  padding: 0.5em;
-  background-color: rgba(255, 255, 255, 0.42);
-  margin-bottom: 200px; }
+  background-color: rgba(255, 255, 255, 0.42); }
 
 .search_query {
   font-weight: bold; }

@@ -17,4 +17,6 @@
 		</div>
 	</div>
 
+	<p style="margin-top:2em"><a href="#" class="btn btn-xs btn-danger delete__artefact">delete artefact</a></p>
+
 </div>

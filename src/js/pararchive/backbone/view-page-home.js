@@ -58,9 +58,9 @@ var PageHome = PageView.extend({
 	onEditClick:function(e)
 	{
 		e.preventDefault();
-		var story = $(e.currentTarget).attr('href').substr(1);
-
-		pararchive.story.startEditting(story,function()
+		var story = $(e.currentTarget).attr('href').substr(1);		
+		pararchive.story.setStoryID(story);
+		pararchive.story.startEditting(function()
 		{
 			pararchive.router.navigate('/what/',{trigger:true});
 		});

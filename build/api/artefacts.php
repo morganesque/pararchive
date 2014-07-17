@@ -80,12 +80,16 @@ switch($_SERVER['REQUEST_METHOD'])
 	break;
  
 	case "DELETE":
-		// if (isset($params[1]))
-		// {
-		// 	$id = $params[1];
-		// 	$bean = R::load($type,$id); // Retrieve
-		// 	R::trash($bean);
-		// } else die('need the second param');
+		if (isset($params[1]))
+		{
+			$id = $params[1];
+			$bean = R::load($type,$id); // Retrieve
+			R::trash($bean);
+			echo json_encode(array(
+				'message'=>'artefact deleted',
+				'id'=>$id,
+				));
+		} else die('need the second param');
 	break;
  
 	default: echo $_SERVER['REQUEST_METHOD'];

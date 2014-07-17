@@ -6,7 +6,8 @@ var Control = Backbone.View.extend(
 
 	events:{
 		"click .list-group a": "onMetaClick",
-		"click .logout__link": "onLogOut"
+		"click .logout__link": "onLogOut",
+		"click .delete_block": "onDeleteBlock"
 	},
 
 	addModel:function()
@@ -32,6 +33,7 @@ var Control = Backbone.View.extend(
 		// this.listenTo(this.model, "change", this.render);
 		this.listenTo(this.user,  "change", this.userChange);
 
+		this.listenTo(this.artefacts,  "remove", this.artefactChange);
 		this.listenTo(this.artefacts,  "change", this.artefactChange);
 		this.listenTo(this.artefacts,  "reset", this.artefactChange);
 
@@ -144,6 +146,29 @@ var Control = Backbone.View.extend(
 
 		var href = $(e.currentTarget).attr('href');		
 		pararchive.router.navigate(href,{trigger:true});
+	},
+
+	onDeleteBlock:function(e)
+	{
+		e.preventDefault();
+		if (window.confirm('Are you sure you want to delete?'))
+		{
+			this.model.destroy({success:function(model,response,options)
+			{
+				console.log('success',model,response,options);		
+				// model.
+				pararchive.story.remove(model);
+				pararchive.story.startEditting(function()
+				{
+					console.log('done deleteing');		
+					pararchive.router.navigate('/what/',{trigger:true});
+				});
+
+			},error:function(model,response,options)
+			{
+				console.log('error',model,response,options);		
+			}});
+		}
 	},
 
 	onLogOut:function(e)

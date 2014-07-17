@@ -115,7 +115,7 @@ gulp.task('libScripts',function()
     if (src.length)
     {
         return gulp.src(src,{base:'bower_components/'})
-            // .pipe(plugins.uglify())  
+            .pipe(plugins.uglify())  
             .pipe(plugins.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
             .pipe(plugins.concat(files.jslib))
             .pipe(gulp.dest(dest.js))
