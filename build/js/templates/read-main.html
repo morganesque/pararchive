@@ -1,0 +1,7 @@
+<div class="main-content">
+	<p class="when"><%= when %></p>
+	<h1 class="what"><%= what %></h1>
+	<% if (where) { %>
+	<p class="where"><a class="maplink" href="https://www.google.co.uk/maps/search/<%= where %>"><span class="icon icon-earth nudge"></span>&nbsp;&nbsp;<%= where %></a></p>
+	<% } %>
+</div>
