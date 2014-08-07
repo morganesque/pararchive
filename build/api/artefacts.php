@@ -48,7 +48,7 @@ switch($_SERVER['REQUEST_METHOD'])
 		// $mime = getMimeType($bean->url);
 		// $mime_true = strpos($mime,"image");
 
-		$ext = pathinfo($bean->url, PATHINFO_EXTENSION);
+		$ext = strtolower(pathinfo($bean->url, PATHINFO_EXTENSION));
 		
 		if (in_array($ext, array('jpg','jpeg','png','gif','svg','tiff','webp'))) $mime_true = true;
 		else $mime_true = false;

@@ -32,7 +32,7 @@ var Router = Backbone.Router.extend({
     /*
         Done before it calls any of the specific page functions.
     */      
-    execute: function(callback, args) 
+    execute: function(callback, args)
     {   
         if (Backbone.history.fragment == 'next/') alert("Danger Will Robinson!\nYou shouldn't be coming to /next/ directly!!!");
         console.log('page: /'+Backbone.history.fragment);               

@@ -179,7 +179,7 @@ gulp.task('browser-sync', function() {
 gulp.task('sync',function()
 {
     return gulp.src(glob.html)
-        .pipe(plugins.cached(glob.html))
+        .pipe(plugins.changed(glob.html))
         .pipe(plugins.browserSync.reload({stream:true}));
 });
 
