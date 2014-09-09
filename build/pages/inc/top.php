@@ -32,20 +32,37 @@
     <!-- <script type="text/javascript" src="/js/pararchive/loginForm.js"></script>-->
     
     <!-- load all the backbone models -->
-    <script type="text/javascript" src="/js/pararchive/backbone/sync.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/backbone/router.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/backbone/model.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/backbone/model-misc.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/backbone/model-story.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/backbone/model-artefacts.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/backbone/model-storyview.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/router-pararchive.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/router.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/model.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/model-misc.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/model-story.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/model-artefacts.js"></script>
+    <script type="text/javascript" src="/js/pararchive/model-storyview.js"></script>            
+
+    <script type="text/javascript" src="/js/pararchive/view-page.js"></script>    
+
+    <!-- load all the components -->
+    <script type="text/javascript" src="/js/login.js"></script>    
+    <script type="text/javascript" src="/js/identity.js"></script>    
+    <script type="text/javascript" src="/js/story-panel.js"></script>    
+    <script type="text/javascript" src="/js/your-stories.js"></script>    
+    <script type="text/javascript" src="/js/edit-block.js"></script>    
+    <script type="text/javascript" src="/js/saved-block.js"></script>    
+    <script type="text/javascript" src="/js/read-story.js"></script>    
+    <script type="text/javascript" src="/js/story-list.js"></script>    
+    <?php /*
+                
+    
 
     <!-- load all the backbone page views -->
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-login.js"></script>    
+    
+    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-blockedit.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-quick.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-home.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/backbone/view-page-block.js"></script>    
+
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-what.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-when.js"></script>    
     <script type="text/javascript" src="/js/pararchive/backbone/view-page-where.js"></script>    
@@ -62,10 +79,11 @@
     <script type="text/javascript" src="/js/pararchive/backbone/view-storypanel.js"></script>    
  
     <!-- load all the d3 scripts -->  
-
+    
+    */ ?>
     <!-- kick things off -->
-    <script type="text/javascript" src="/js/pararchive/backbone/app.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/init.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/app.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/init.js"></script>    
 </head>
 <body class="colours-body">
 
@@ -74,4 +92,4 @@
 <![endif]-->
 
 <div id="outer-wrap">
-<div id="inner-wrap">
+<div id="inner-wrap" class="start">

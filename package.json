@@ -23,9 +23,9 @@
     "gulp-header": "*",
     "gulp-ruby-sass": "*",
     "gulp-changed": "*",
-    "gulp-cached": "*",
     "node-notifier": "*",
     "stream-combiner": "*",
-    "browser-sync": "*"
+    "browser-sync": "~0.9.1",
+    "gulp-cached": "0.0.3"
   }
 }

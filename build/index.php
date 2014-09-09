@@ -5,19 +5,16 @@
 ?>
 	<div class="left-col">
 		
-		<?php include('pages/inc/control.php'); ?>
+		<div class="container-fluid"><?php include('pages/identity.php'); ?></div>
 
 	</div>
-	<div class="right-col">
+	<div class="right-col">		
 	
+		<div class="top-col"> <?php include('pages/inc/story-panel.php'); ?> </div>
 		<div id="main"></div>	
-	
-	</div>
-	<div class="bottom-col">
-		
-		<?php include('pages/inc/storyPanel.php'); ?>
 
 	</div>
+	
 <?
     include('pages/inc/bottom.php'); 
 ?>
