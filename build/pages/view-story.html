@@ -1,0 +1,24 @@
+<div class="container-fluid">
+
+	<div class="page-header">
+		<h1><%= data.name %></h1>
+	</div>
+
+	<% _.each(data.blocks, function(r) { %>
+
+		<div class="story-block">
+			<p class="when"><%= r.when %></p>
+			<p class="where"><%= r.where %></p>
+			<p class="what"><%= r.what %></p>		
+
+			<% _.each(r.artefacts, function(a) { %>
+				<img src="<%= a.url %>" class="artefacts"/>
+			<% }); %>	
+
+			<p class="edit"><a href="#<%= r.id%>" class="btn btn-xs btn-default edit-block">edit</a></p>
+		</div>
+
+	<% }); %>	
+	
+</div>
+

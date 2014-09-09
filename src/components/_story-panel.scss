@@ -1,0 +1,71 @@
+.story-panel {
+
+	// don't display if it's login time.
+	.state-read-story &,
+	.start & {
+		display:none;
+	}
+
+	.story-panel__name {
+		color:black;
+		margin-bottom:0.5em;
+		.content {font-weight:700;}
+	}
+
+	.story-panel__blocks {		
+		padding-left:1em;
+		margin-bottom:1em;
+	}
+
+	.block {
+
+		$blockh:62px;
+
+		position:relative;
+		display:inline-block;
+		width:$blockh;
+		height:$blockh;
+		text-align:center;
+		line-height:$blockh;
+		background-color:#666;
+		border:1px dashed rgba(white,0.62);
+		@include rem("font-size",3);
+		@include rem("margin-right",2);
+		color:white;
+
+		&:hover {
+			text-decoration:none;
+			color:white;
+			background-color:darken($brand-info,15);
+		}		
+
+		&.current {	
+			position:relative;
+			background-color:$brand-primary;
+			border:none;
+			&:before {
+			   content:"";
+			   position: absolute;
+			   top: 100%;
+			   left: $blockh/4;
+			   width: 0;
+			   height: 0;
+			   border-left: $blockh/4 solid transparent;
+			   border-top: $blockh/3 solid $brand-primary;
+			   border-right: $blockh/4 solid transparent;
+			}
+			pointer-events:none;
+			// transition:all .3s ease-in;
+
+			.state-saved-block & {
+				background-color:$brand-success;
+				&:before {
+					display:none;					
+				}
+			}
+		}
+
+
+	}
+}
+

@@ -1,0 +1,44 @@
+html {height:100%}
+body {height:100%}
+
+$left-width:0.15;
+
+#outer-wrap {height:100%;}
+
+#inner-wrap {
+	min-height:100%;
+	overflow:hidden;
+}
+
+.left-col {
+	position:fixed;
+	// float:left;
+	width:percentage($left-width);
+	min-height:100%;
+	background:#999;
+
+	&:before {
+		content:"blah";
+		display:block;
+		padding-top:9999px;
+		margin-bottom:-9999px;
+		background:inherit;
+		height:0;
+	}
+}
+
+.right-col {
+	position:relative;
+	height:100%;
+	width:percentage(1 - $left-width);
+	margin-left:percentage($left-width);
+	background-color:rgba(black,0.05);
+	.start & {padding-top:0;}
+}
+
+.top-col {
+	position:relative;
+	background-color:rgba(white,0.62);
+	border-bottom:1px solid #ccc;
+	z-index:1;
+}
