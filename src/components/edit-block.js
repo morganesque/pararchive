@@ -47,7 +47,6 @@ var EditBlockPage = PageView.extend({
 		console.log("EditBlockPage update");		
 
 		this.storyBlock = pararchive.story.getBlock();
-		console.log(this.storyBlock);		
 
 		this.updateTextField('what');
 		this.updateTextField('when');

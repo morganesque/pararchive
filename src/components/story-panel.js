@@ -30,6 +30,7 @@ var StoryPanelView = Backbone.View.extend(
 
 	blockBlocks:function()
 	{
+		// throw new Error('blockBlocks');
 		console.log('blockBlocks');		
 	},
 
