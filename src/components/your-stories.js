@@ -1,31 +1,21 @@
-var YourStoriesPage = PageView.extend({
-	
-	frag: '/pages/your-stories.php',
-	className: 'page page_home',
-	firsttime: true,
+var YourStoriesView = Marionette.ItemView.extend(
+{
+	template:"#stories-template",
 
-	events:{
-		"click #start__button": "onStartClick",
-		"click .story-list__edit-link": "onEditClick",
+	behaviors: {
+		EditStory:{message:'boo!'},
 	},
 
 	initialize:function()
 	{		
-
-	},
-
-	setup:function()
-	{
-		// console.log("PageHome setup");		
-		this.listenTo(pararchive.stories, "change", this.showList)		
-
-		this.firsttime = false; // only stop asking to change events after this setup has happened.
+		this.listenTo(this.model, "change", this.showList);
+		this.model.getData();
 	},
 
 	showList:function()
 	{
 		var container = this.$el.find('.story-list');
-		var stories = pararchive.stories.get('stories'); 
+		var stories = this.model.get('stories'); 
 
 		_.each(stories,function(a)
 		{				
@@ -33,29 +23,4 @@ var YourStoriesPage = PageView.extend({
 			container.append(link);
 		},this);
 	},
-
-	update:function()
-	{
-		console.log("PageHome update");		
-		pararchive.stories.getData();
-	},
-
-	onStartClick:function(e)
-	{
-		e.preventDefault();
-		console.log('new!');			
-	},
-
-	onEditClick:function(e)
-	{
-		e.preventDefault();
-		var story = $(e.currentTarget).attr('href').substr(1);		
-		// pararchive.story.setStoryID(story);
-		// pararchive.story.startEditting(function()
-		// {
-		// 	pararchive.router.navigate('/story/'+story,{trigger:true});
-		// });
-		pararchive.router.navigate('/story/'+story+'/',{trigger:true});
-	},
-
 });

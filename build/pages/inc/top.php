@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
@@ -28,14 +28,13 @@
     <!-- load all the libraries -->
     <script type="text/javascript" src="/js/all.min.js"></script>    
 
-    <!-- load any other plugins and stuff -->
-    <!-- <script type="text/javascript" src="/js/pararchive/loginForm.js"></script>-->
-    
-    <!-- load all the backbone models -->
-    <script type="text/javascript" src="/js/pararchive/router-pararchive.js"></script>            
+    <!-- load a few things first -->
+    <script type="text/javascript" src="/js/pararchive/config.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/controller.js"></script>        
     <script type="text/javascript" src="/js/pararchive/router.js"></script>            
+            
+    <!-- load all the backbone models -->
     <script type="text/javascript" src="/js/pararchive/model.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/model-misc.js"></script>            
     <script type="text/javascript" src="/js/pararchive/model-story.js"></script>            
     <script type="text/javascript" src="/js/pararchive/model-artefacts.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-storyview.js"></script>            
@@ -51,34 +50,13 @@
     <script type="text/javascript" src="/js/saved-block.js"></script>    
     <script type="text/javascript" src="/js/read-story.js"></script>    
     <script type="text/javascript" src="/js/story-list.js"></script>    
-    <?php /*
-                
-    
 
-    <!-- load all the backbone page views -->
-    
-    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-blockedit.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-quick.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-home.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-block.js"></script>    
-
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-what.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-when.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-where.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-arte.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-artefact.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-edit-artefact.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-search-artefact.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-done.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-page-story.js"></script>    
-    
-    <!-- load all the backbone component views -->
-    <script type="text/javascript" src="/js/pararchive/backbone/view-component.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-control.js"></script>    
-    <script type="text/javascript" src="/js/pararchive/backbone/view-storypanel.js"></script>    
- 
-    <!-- load all the d3 scripts -->  
+    <!-- behaviours -->
+    <script type="text/javascript" src="/js/pararchive/beh-edit-story.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/beh-new-block.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/beh-edit-block.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/beh-editting-block.js"></script>    
+    <?php /*            
     
     */ ?>
     <!-- kick things off -->
@@ -92,4 +70,4 @@
 <![endif]-->
 
 <div id="outer-wrap">
-<div id="inner-wrap" class="start">
+<div id="inner-wrap" class="">

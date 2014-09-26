@@ -1,9 +1,32 @@
-var StoryPanelView = Backbone.View.extend(
+var StoryPanelView = Marionette.ItemView.extend(
 {
+	template:'#panel-template',
+
 	events:{
 		'click .block': "onBlockClick",
-		'click .plus' : "onPlusClick",
 		'click .view-story' : "onViewStory"
+	},
+
+	ui: {
+		newblockbutton:'.plus',
+		temp:'.story-panel__blocks .block',
+		plus:'.story-panel__blocks .plus',
+		blocks:'.story-panel__blocks',
+		name:'.story-panel__name .content',
+		author:'.story-panel__name .author',
+	},
+
+	behaviors:{
+		NewBlock:{},
+	},
+
+	onRender:function()
+	{		
+		this.ui.temp.remove();
+		this.ui.plus.remove();
+		this.addBlocks();
+		this.addTitle();
+		this.addAuthor();		
 	},
 
 	/*
@@ -11,21 +34,12 @@ var StoryPanelView = Backbone.View.extend(
 	*/		
 	initialize:function(options)
 	{		
-		this.user = options.user;
-		
-		this.listenTo(this.model, "block", this.blockBlocks);
-		this.listenTo(this.model, "reset", this.resetBlocks);
-		this.listenTo(this.model, "add", this.addBlocks);
+		this.listenTo(this.model, "block", 	this.blockBlocks);
+		this.listenTo(this.model, "reset", 	this.resetBlocks);
+		this.listenTo(this.model, "add", 	this.addBlocks);
+		this.listenTo(this.model, "meta", 	this.addTitle);
 
-		this.listenTo(this.model, "meta", this.addTitle);
-
-		this.listenTo(this.user, "change", this.addAuthor);
-
-		this.template 	= this.$el.find('.story-panel__blocks .block').remove();
-		this.plus 		= this.$el.find('.story-panel__blocks .plus').remove();
-		this.blocks 	= this.$el.find('.story-panel__blocks'); 
-		this.name 		= this.$el.find('.story-panel__name .content');
-		this.author 	= this.$el.find('.story-panel__name .author');
+		this.listenTo(pararchive.user, "change", this.addAuthor);		
 	},
 
 	blockBlocks:function()
@@ -46,7 +60,7 @@ var StoryPanelView = Backbone.View.extend(
 	addBlocks:function()
 	{		
 		console.log("addBlocks");		
-		this.blocks.empty();
+		this.ui.blocks.empty();
 
 		_.each(this.model.models,function(m,i)
 		{
@@ -55,15 +69,15 @@ var StoryPanelView = Backbone.View.extend(
 
 			if(!id) id = m.cid; // it's a new Block	
 
-			var n = this.template.clone();
+			var n = this.ui.temp.clone();
 			n.attr('href','/story/'+sd+'/block/'+id+'/');
 			n.addClass('block_'+id);
 			n.text(i+1);
 
-			this.blocks.append(n);					
+			this.ui.blocks.append(n);					
 		},this);
 
-		this.blocks.append(this.plus);
+		this.ui.blocks.append(this.ui.plus);
 	},
 
 	/*
@@ -71,15 +85,15 @@ var StoryPanelView = Backbone.View.extend(
 	*/		
 	addTitle:function()
 	{
-		this.name.text(this.model.meta.get('name'));
+		this.ui.name.text(this.model.meta.get('name'));
 	},	
 
 	addAuthor:function()
 	{
-		var fn = this.user.get('firstname');
-		var sn = this.user.get('surname');	
+		var fn = pararchive.user.get('firstname');
+		var sn = pararchive.user.get('surname');	
 
-		this.author.text('by '+fn+' '+sn);
+		this.ui.author.text('by '+fn+' '+sn);
 	},
 
 	/*
@@ -91,16 +105,6 @@ var StoryPanelView = Backbone.View.extend(
 		e.preventDefault();		
 		var href = $(e.currentTarget).attr('href');
 		pararchive.router.navigate(href,{trigger:true});
-	},
-
-	/*
-		When adding a new block to the story.
-	*/		
-	onPlusClick:function(e)
-	{
-		e.preventDefault();		
-		this.model.addBlock();	
-		pararchive.router.navigate('/story/'+this.model.storyID+'/block/'+this.model.blockID+'/',{trigger:true});
 	},
 
 	/*

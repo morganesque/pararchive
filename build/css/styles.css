@@ -5331,9 +5331,6 @@ body {
   border-top-right-radius: 0;
   border-top-left-radius: 0; }
 
-.identity__greeting {
-  color: rgba(255, 255, 255, 0.9); }
-
 .identity__logout {
   background-color: #666;
   border: none;

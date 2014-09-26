@@ -1,3 +1,9 @@
+
+var Artefact = Backbone.Model.extend(
+{
+	urlRoot:'/api/artefacts/',
+});
+
 var Artefacts = Backbone.Collection.extend({
 
 	model:Artefact,

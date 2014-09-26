@@ -41,7 +41,7 @@ var ReadStoryPage = PageView.extend({
 		var id = $(e.currentTarget).attr('href').substr(1);
 		var url = '/story/'+pararchive.viewStory.storyID+'/block/'+id+'/';
 		// console.log(url);		
-		pararchive.router.navigate(url,{trigger:true});
+		// pararchive.router.navigate(url,{trigger:true});
 	},
 
 });

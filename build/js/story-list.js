@@ -1,49 +1,50 @@
-var StoryListPage = PageView.extend({
-	
-	frag: '/pages/story-list.php',
-	className: 'page story-list',
+var StoryListView = Marionette.ItemView.extend(
+{
+	template:'#story-template',
 
-	events:{
-		"click .new-block": 'onNewBlock',
+	ui:{
+		num:'.some-blocks .num',
+		someblocks:'.some-blocks',
+		noblocks:'.no-blocks',
+		newblockbutton:'.new-block',
 	},
 
-	setup:function()
-	{
-		// alert('wee!');
-		this.num = this.$el.find('.some-blocks .num');
-		this.someblocks = this.$el.find('.some-blocks');
-		this.noblocks = this.$el.find('.no-blocks');
+	behaviors:{
+		NewBlock:{},
 	},
 
-	update:function()
+	initialize:function()
+	{	
+		this.listenTo(this.model, "change", this.onChange);		
+		this.listenTo(this.model, "reset", this.onReset);		
+	},
+
+	onChange:function()
 	{
+		console.log("StoryListView change");		
+		this.render();
+	},
+
+	onReset:function()
+	{
+		console.log("StoryListView reset");		
+		this.render();
+	},
+
+	onRender:function()
+	{				
 		if (pararchive.story.length)
 		{
-			this.someblocks.show();
-			this.noblocks.hide();
+			this.ui.someblocks.show();
+			this.ui.noblocks.hide();
 
-			if (pararchive.story.length == 1) this.num.text('1 block');
-			else this.num.text(pararchive.story.length+' blocks');
+			if (pararchive.story.length == 1) this.ui.num.text('1 block');
+			else this.ui.num.text(pararchive.story.length+' blocks');
 
 		} else {
-			this.someblocks.hide();
-			this.noblocks.show();
-		}
-
-		/*
-			Hack!
-			Just have to force it not to select a block on this page.
-		*/		
-		pararchive.storyPanel.deselectBlock();
-	},
-
-	onNewBlock:function(e)
-	{
-		e.preventDefault();
-		pararchive.story.addBlock();
-		var sid = pararchive.story.storyID;
-		var bid = pararchive.story.blockID;
-		pararchive.router.navigate('/story/'+sid+'/block/'+bid+'/',{trigger:true});
+			this.ui.someblocks.hide();
+			this.ui.noblocks.show();
+		}		
 	},
 
 });

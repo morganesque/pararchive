@@ -27,7 +27,7 @@
 	</div>
 </div>
 
-<script>
+<?php /*<script>
 	
 	$(document).on('ready',function()
 	{
@@ -40,4 +40,4 @@
 		});
 	});
 	
-</script>
+</script> */ ?>

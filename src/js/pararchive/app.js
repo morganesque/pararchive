@@ -1,76 +1,56 @@
-var App = Backbone.View.extend(
-{        
-    initialize: function(options) 
-    {
-		// set up the Backbone router // router.js
-		this.router = new Router;
+var App = Marionette.Application.extend({
 
-		// first create a User object.
-	    this.user = new Model();
-	    this.user.urlRoot = '/api/users/';
-
-	    // set the initial state.
-	    this.state = new Backbone.Model({state:'waiting'});
-
-	    // set up the stories model.
-        this.stories = new StoryMeta();	
-
-		// start a story.
-		this.story = new Story();
-
-        this.artefacts = new Artefacts();
-
-		// attach story to story panel.
-		this.storyPanel = new StoryPanelView(
-        {
-            user:this.user,
-			model:this.story,
-			el:$('#story-panel')
-		});	
-
-        this.viewStory = new StoryView();
-
-        this.identity = new IdentityView({
-            model:this.user,
-            el:$("#identity"),            
-        })
-
-        // attach the control panel.
-		// this.control = new Control(
-		// {
-		// 	el:$('#control'),
-		// 	user:this.user,
-        //  artefacts:this.artefacts,
-		// });
-
-        this.listenTo(this.state, "change:state", this.onChangeState)
-        this.listenTo(this.story, "block", this.changeBlock)
-
-        // this.control.hide();
-        // this.storyPanel.hide();
-    },  
-
-    changeBlock:function()
-    {           
-        // console.log("changeBlock: "+this.story.blockID);
-
-        // tell the control panel about the block
-    	// this.control.addModel();
-
-        // tell the story panel about the block
-        this.storyPanel.selectBlock(this.story.blockID);
-        
-        // go and load the artefacts for this block
-        this.artefacts.selectBlock(this.story.blockID);
-
-        if (pararchive.router.currentPage) pararchive.router.currentPage.render();
+    regions: {
+        top:'#top',
+        main:'#main',
     },
-    
-    onChangeState:function(e)
-    {	
-        // console.log(['onChangeState',state]);            	
-        var state = pararchive.state.get('state');
-        this.$el.removeClass();
-        this.$el.addClass('state-'+state);
-    }
+
+    initialize:function()
+    {                
+        console.log('App initialize');        
+
+        // create the controller.
+        this.controller = new Controller();
+
+        // create the router
+        this.router = new Router({controller: this.controller});
+
+        // first create a user object.
+        this.user = new Model();
+        this.user.urlRoot = '/api/users/';
+
+        // set the initial state.
+        this.state = new Backbone.Model({state:'waiting'});
+
+        // set up the stories model.
+        this.stories = new Backbone.Model({urlRoot:"/api/stories/"}); 
+
+        // start a story.
+        this.story = new Story();
+
+        // create the artefacts object.
+        this.artefacts = new Artefacts();
+    },
+
+    showEditBlock:function()
+    {
+        var editblock = new EditBlockView({
+            model:pararchive.story.getBlock(),
+        });
+        this.main.show(editblock);            
+    },
+
+    showStoryPanel:function()
+    {
+        var storypanel = new StoryPanelView({
+            model:pararchive.story,
+        })
+        this.top.show(storypanel);
+    },
+
+    showSavedBlock:function()
+    {
+        var savedblock = new SavedBlockView({});
+        this.main.show(savedblock);
+    },    
 });

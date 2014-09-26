@@ -1,8 +1,6 @@
-var LoginPage = PageView.extend({
-	
-	frag: '/pages/login.php',
-	className: 'page page_login',
-
+var LoginView = Marionette.ItemView.extend(
+{	
+	template:'#login-template',
 	initialize:function(){},
 
 	events: {
@@ -10,13 +8,6 @@ var LoginPage = PageView.extend({
 		// "submit #login-form": "onSubmit",
 		"click a": 'onClick',
 	},
-
-	setup:function()
-	{
-		// console.log("PageLogin setup");		
-		// when the frag is loaded this will be called.		
-		// @ you should probably override this in a child view.
-	},	
 
 	onSubmit:function(e)
 	{
@@ -33,7 +24,6 @@ var LoginPage = PageView.extend({
 				var s = pararchive.user.get('status');		
 				if (s == 'logged in')
 				{
-					// pararchive.router.navigate('',{trigger:true});					
 					$('#login-form').submit();
 				} else {
 					alert(s);

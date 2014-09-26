@@ -1,3 +1,9 @@
+
+var StoryBlock = Backbone.Model.extend(
+{
+    urlRoot:"/api/blocks/",
+});
+
 var Story = Backbone.Collection.extend({
     
     model:StoryBlock,
@@ -17,7 +23,7 @@ var Story = Backbone.Collection.extend({
     */        
     startEditting:function(callback)
     {        
-        console.log("startEditting",this.storyID,this.blockID);        
+        // console.log("startEditting",this.storyID,this.blockID);        
         // throw new Error('start editing');
         var self = this;
         this.fetch({reset:true,success:function()
@@ -54,6 +60,9 @@ var Story = Backbone.Collection.extend({
     {
         var self = this;
     	this.storyID = id;
+        var StoryMeta = Model.extend({
+            urlRoot:"/api/stories/"
+        });
         this.meta = new StoryMeta({id:id});
         this.meta.fetch({success:function(a)
         {
