@@ -1,0 +1,22 @@
+.footer {
+	position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;	
+	@include rem('font-size',3);
+	border-top:1px solid $brand-primary;
+	.row {
+		padding:0.5em 0;
+	}
+	a {
+		padding:0.5em;		
+		&:hover {
+			text-decoration:none;
+		}
+	}
+	transition:transform 1s $easeOutQuint;
+	&.out {
+		transform:translateY(75px);	
+	}
+	
+}

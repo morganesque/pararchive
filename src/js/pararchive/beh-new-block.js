@@ -15,7 +15,7 @@ window.Behaviors.NewBlock = Marionette.Behavior.extend(
         var sid = pararchive.story.storyID;
         var bid = pararchive.story.blockID;
 
-        pararchive.router.navigate('/story/'+sid+'/block/'+bid+'/');
+        pararchive.router.navigate('/edit/story/'+sid+'/block/'+bid+'/');
         pararchive.showEditBlock();
     }
 });

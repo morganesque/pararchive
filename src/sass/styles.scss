@@ -1,0 +1,39 @@
+@import "mixins";
+
+$font-size-base: 16px;
+$font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-weight: 300;
+
+// $border-radius-base:        4px !default;
+// $border-radius-large:       24px !default;
+// $border-radius-small:       3px !default;
+
+$brand-primary:         #26b9b9;
+$brand-secondary:		#4c4f62;
+
+$gray-darker:            lighten($brand-secondary, 13.5%) !default; // #222
+$gray-dark:              lighten($brand-secondary, 20%) !default;   // #333
+$gray:                   lighten($brand-secondary, 33.5%) !default; // #555
+$gray-light:             lighten($brand-secondary, 60%) !default;   // #999
+$gray-lighter:           lighten($brand-secondary, 93.5%) !default; // #eee
+
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+@import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+
+@import "icons";
+@import "layout";
+@import "components/login";
+@import "components/identity";
+@import "components/story-panel";
+@import "components/edit-block";
+@import "components/read-story";
+@import "components/view-footer";
+@import "components/story-front";
+
+// @import "modules/page";
+
+@import "isuck";

@@ -18,7 +18,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         {
             var bid = model.get('id');
             var sid = model.get('story_id');            
-            pararchive.router.navigate('/story/'+sid+'/block/'+bid+'/saved/');
+            pararchive.router.navigate('/edit/story/'+sid+'/block/'+bid+'/saved/');
             pararchive.showSavedBlock();
         }); 
     },
@@ -108,10 +108,10 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
                 // model.
                 pararchive.story.remove(model);
                 pararchive.story.setBlock();
-                pararchive.story.startEditting(function()
+                pararchive.story.loadStory(function()
                 {
                     console.log('done deleteing');      
-                    pararchive.router.navigate('/story/'+pararchive.story.storyID+'/',{trigger:true});
+                    pararchive.router.navigate('/edit/story/'+pararchive.story.storyID+'/',{trigger:true});
                 });
 
             },error:function(model,response,options)

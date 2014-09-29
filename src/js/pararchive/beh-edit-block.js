@@ -13,6 +13,6 @@ window.Behaviors.EditBlock = Marionette.Behavior.extend(
         var sid = pararchive.story.storyID;
         var bid = pararchive.story.blockID;
         // console.log(sid,bid);        
-        pararchive.router.navigate('/story/'+sid+'/block/'+bid+'/',{trigger:true});
+        pararchive.router.navigate('/edit/story/'+sid+'/block/'+bid+'/',{trigger:true});
     }
 });

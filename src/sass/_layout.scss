@@ -1,0 +1,18 @@
+html {height:100%}
+body {height:100%}
+
+#outer-wrap {height:100%;}
+
+#inner-wrap {
+	min-height:100%;
+	overflow:hidden;
+}
+
+.header {
+	margin-bottom:0;
+}
+
+.central {
+	max-width:640px;
+	margin:0 auto;
+}

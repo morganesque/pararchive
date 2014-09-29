@@ -30,16 +30,16 @@
 
     <!-- load a few things first -->
     <script type="text/javascript" src="/js/pararchive/config.js"></script>            
-    <script type="text/javascript" src="/js/pararchive/controller.js"></script>        
-    <script type="text/javascript" src="/js/pararchive/router.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/edit-controller.js"></script>        
+    <script type="text/javascript" src="/js/pararchive/edit-router.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/view-controller.js"></script>        
+    <script type="text/javascript" src="/js/pararchive/view-router.js"></script>            
             
     <!-- load all the backbone models -->
     <script type="text/javascript" src="/js/pararchive/model.js"></script>            
+    <script type="text/javascript" src="/js/pararchive/model-stories.js"></script>            
     <script type="text/javascript" src="/js/pararchive/model-story.js"></script>            
     <script type="text/javascript" src="/js/pararchive/model-artefacts.js"></script>
-    <script type="text/javascript" src="/js/pararchive/model-storyview.js"></script>            
-
-    <script type="text/javascript" src="/js/pararchive/view-page.js"></script>    
 
     <!-- load all the components -->
     <script type="text/javascript" src="/js/login.js"></script>    
@@ -47,9 +47,11 @@
     <script type="text/javascript" src="/js/story-panel.js"></script>    
     <script type="text/javascript" src="/js/your-stories.js"></script>    
     <script type="text/javascript" src="/js/edit-block.js"></script>    
-    <script type="text/javascript" src="/js/saved-block.js"></script>    
-    <script type="text/javascript" src="/js/read-story.js"></script>    
+    <script type="text/javascript" src="/js/saved-block.js"></script>
     <script type="text/javascript" src="/js/story-list.js"></script>    
+    <script type="text/javascript" src="/js/view-footer.js"></script>    
+    <script type="text/javascript" src="/js/story-front.js"></script>    
+    <script type="text/javascript" src="/js/block-view.js"></script>    
 
     <!-- behaviours -->
     <script type="text/javascript" src="/js/pararchive/beh-edit-story.js"></script>    

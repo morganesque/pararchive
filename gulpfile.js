@@ -16,9 +16,9 @@ var gulpLoadPlugins = require('gulp-load-plugins'),
     keep references to filenames up here.
 */        
 var files = {
-    "jsconf":   'src/allJS.conf',
+    "jsconf":   'src/js/allJS.conf',
     "jslib":    "all.min.js",
-    "jsieconf": 'src/lteie8.conf',
+    "jsieconf": 'src/js/lteie8.conf',
     "jsielib":  "lteie8.min.js",
 }
 
@@ -26,8 +26,8 @@ var files = {
     keep all the globs together here.
 */        
 var glob = {
-    "sass":     'src/**/*.scss',
-    "js":       ['src/js/**/*.js','src/components/*.js'],
+    "sass":     'src/sass/*.scss',
+    "js":       'src/js/**/*.js',
     "img":      'src/img/**/*.{jpg,jpeg,gif,png}',
     "svg":      'src/img/**/*.svg',
     "jekyll":   ['build/**/*.{html,yml,md,mkd,markdown}','build/_config.yml'],

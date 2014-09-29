@@ -4,6 +4,11 @@ var StoryBlock = Backbone.Model.extend(
     urlRoot:"/api/blocks/",
 });
 
+var StoryMeta = Model.extend(
+{
+    urlRoot:"/api/stories/"
+});
+
 var Story = Backbone.Collection.extend({
     
     model:StoryBlock,
@@ -21,32 +26,20 @@ var Story = Backbone.Collection.extend({
         over to router.js to do the rest.
         (if no blocks - create a new empty one)
     */        
-    startEditting:function(callback)
+    loadStory:function(callback)
     {        
-        // console.log("startEditting",this.storyID,this.blockID);        
-        // throw new Error('start editing');
+        // console.log("loadStory",this.storyID,this.blockID);        
         var self = this;
         this.fetch({reset:true,success:function()
         {
-            self.setBlock(self.blockID);
+            // self.setBlock(self.blockID); // think this is being done manually now - no need for it here.
             if (callback) callback();
-        }});
-    },
-
-    startReading:function(id,callback)
-    {   
-        var self = this;
-        
-        this.setStoryID(id);
-        this.fetch({reset:true,success:function()
-        {
-            callback();
         }});
     },
 
     addBlock:function()
     {
-        // console.log("Story::addBlock");        
+        console.log("Story::addBlock");        
         var newBlock = this.add({"story_id":this.storyID});
         this.setBlock(newBlock.cid);  
     },
@@ -60,9 +53,6 @@ var Story = Backbone.Collection.extend({
     {
         var self = this;
     	this.storyID = id;
-        var StoryMeta = Model.extend({
-            urlRoot:"/api/stories/"
-        });
         this.meta = new StoryMeta({id:id});
         this.meta.fetch({success:function(a)
         {
@@ -70,12 +60,20 @@ var Story = Backbone.Collection.extend({
         }});
     },
 
+    setStoryMeta:function(sm)
+    {   
+        this.meta = new StoryMeta(sm);     
+        this.storyID = this.meta.get('id');
+        this.trigger('meta');
+    },
+
     setBlock:function(id)
     {
-        // console.log('Story::setBlock '+id);        
+        console.log('Story:setBlock '+id);        
         if (id) this.blockID = id;
         else if (this.length) this.blockID = this.first().get('id');
-        // else this.addBlock();  
+        // else this.addBlock(); // dont' think we need to do this anymore - things aren't going to be that automated. 
+        
         this.trigger('block');
     },
     

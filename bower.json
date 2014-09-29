@@ -10,6 +10,7 @@
     "backbone": "~1.1.2",
     "bootstrap-sass-official": "~3.1.1",
     "jquery-textrange": "~1.1.0",
-    "marionette": "~2.2.1"
+    "marionette": "~2.2.1",
+    "jquery-slugify": "~1.0.3"
   }
 }

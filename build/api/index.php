@@ -42,7 +42,7 @@ switch($params[0])
     break;       
 
     case 'stories':
-        include_once('story.php');
+        include_once('stories.php');
     break;
 
     case 'blocks':
@@ -55,6 +55,10 @@ switch($params[0])
 
     case 'view':
         include_once('view.php');
+    break;
+
+    case 'slug':
+        include_once('slug.php');
     break;
 
     case 'test':
