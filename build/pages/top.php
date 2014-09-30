@@ -42,16 +42,16 @@
     <script type="text/javascript" src="/js/pararchive/model-artefacts.js"></script>
 
     <!-- load all the components -->
-    <script type="text/javascript" src="/js/login.js"></script>    
-    <script type="text/javascript" src="/js/identity.js"></script>    
-    <script type="text/javascript" src="/js/story-panel.js"></script>    
-    <script type="text/javascript" src="/js/your-stories.js"></script>    
-    <script type="text/javascript" src="/js/edit-block.js"></script>    
-    <script type="text/javascript" src="/js/saved-block.js"></script>
-    <script type="text/javascript" src="/js/story-list.js"></script>    
-    <script type="text/javascript" src="/js/view-footer.js"></script>    
-    <script type="text/javascript" src="/js/story-front.js"></script>    
-    <script type="text/javascript" src="/js/block-view.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/login.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/identity.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/story-panel.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/your-stories.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/edit-block.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/saved-block.js"></script>
+    <script type="text/javascript" src="/js/pararchive/components/story-list.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/view-footer.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/story-front.js"></script>    
+    <script type="text/javascript" src="/js/pararchive/components/block-view.js"></script>    
 
     <!-- behaviours -->
     <script type="text/javascript" src="/js/pararchive/beh-edit-story.js"></script>    

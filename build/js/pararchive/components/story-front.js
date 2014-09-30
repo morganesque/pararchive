@@ -23,6 +23,6 @@ var StoryFrontView = Marionette.ItemView.extend(
 
 		pararchive.viewrouter.navigate('/view/'+slug+'/'+bid+'/');
 		pararchive.story.setBlock(bid);
-		pararcive.showViewBlock();
+		pararchive.showViewBlock();
 	},
 });

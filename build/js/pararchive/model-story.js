@@ -88,6 +88,17 @@ var Story = Backbone.Collection.extend({
         return this.last();
     },
 
+    getNextBlock:function()
+    {
+        if (this.blockID)
+        {
+            var i = this.model.indexOf(this.getBlock());
+            console.log(i);        
+        } else {
+            alert('No Block ID set!');
+        }
+    },
+
     url: function()
     {
     	if (!this.storyID) 

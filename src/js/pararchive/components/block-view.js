@@ -1,4 +1,4 @@
-cdvar BlockView = Marionette.ItemView.extend(
+var BlockView = Marionette.ItemView.extend(
 {
 	template:'#blockview-template',
 
