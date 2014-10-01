@@ -13,7 +13,7 @@ window.Behaviors.NewBlock = Marionette.Behavior.extend(
         pararchive.story.addBlock();
         
         var sid = pararchive.story.storyID;
-        var bid = pararchive.story.blockID;
+        var bid = pararchive.story.block.get('id');
 
         pararchive.router.navigate('/edit/story/'+sid+'/block/'+bid+'/');
         pararchive.showEditBlock();

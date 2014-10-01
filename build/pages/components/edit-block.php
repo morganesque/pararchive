@@ -40,17 +40,17 @@
 			</div>
 		</div>
 
-	</div>
+		<div class="add-artefact">
+			<div class="add-artefact__input">			
+				<h2>Adding an artefact <small>(your file must already be online)</small></h2>
+				<div class="form-group">
+					<p>Paste a web address below:</p>
+					<p><input type="text" class="input file__name" /></p>
+					<button id="save-artefact" class="btn btn-default btn-success">Submit</button>
+				</div>			
+			</div>		
+		</div>
 
-	<div class="add-artefact">
-		<div class="add-artefact__input">			
-			<h2>Adding an artefact <small>(your file must already be online)</small></h2>
-			<div class="form-group">
-				<p>Paste a web address below:</p>
-				<p><input type="text" class="input file__name" /></p>
-				<button id="save-artefact" class="btn btn-default btn-success">Submit</button>
-			</div>			
-		</div>		
 	</div>
 
 </div>

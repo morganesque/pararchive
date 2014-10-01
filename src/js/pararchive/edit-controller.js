@@ -10,7 +10,7 @@ var EditController = Marionette.Controller.extend({
 	{
 		console.log("Controller: home");		
 		var storiesview = new YourStoriesView({
-			model:pararchive.stories,
+			model:pararchive.user.stories,
 		});
 		pararchive.main.show(storiesview);
 	},
@@ -18,22 +18,14 @@ var EditController = Marionette.Controller.extend({
 	editStory:function(sid)
 	{
 		console.log("Controller: editStory: "+sid);				
-		
-		var storyview = new StoryListView({
-			model:pararchive.story,
-		});
-		pararchive.main.show(storyview);
-
+		pararchive.showEditStory();
 		pararchive.story.setStoryID(sid);
-		pararchive.story.loadStory();
-
-		pararchive.showStoryPanel();		
+		pararchive.story.loadStory();		
 	},
 
 	editBlock:function(sid,bid)
 	{
-		console.log("Controller: editBlock: "+sid+" "+bid);		
-
+		console.log("Controller\teditBlock: "+sid+" "+bid);		
 		/*
 			If there's a storyID set they we've not arriving for the first time.
 		*/		
@@ -48,6 +40,7 @@ var EditController = Marionette.Controller.extend({
 				console.log('no block!');		
 			}
 		} else {
+			console.log("––new URL");		
 			pararchive.story.setStoryID(sid);
 			pararchive.story.loadStory(_.bind(function()
 			{

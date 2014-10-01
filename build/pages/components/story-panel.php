@@ -1,15 +1,27 @@
 
 <div class="story-panel container-fluid" id="story-panel">
 	
-	<div class="story-panel__name">
-		<!-- <span class="icon icon-stack nudge"></span> -->
-		<span class="content">Storyname</span>		
-		<span class="author">Storyname</span>
-		<!-- <a class="btn btn-xs" id="edit" href="#edit">edit</a>-->
-	</div>	
-	<div class="story-panel__blocks">
-		<a href="#" class="block">1</a>
-		<a href="#" class="plus btn btn-default"><span class="icon icon-plus"></span></a>			
+	<div class="row">
+		<div class="col-xs-8">
+			<div class="story-panel__name">
+				<!-- <span class="icon icon-stack nudge"></span> -->
+				<span class="content">Storyname</span>		
+				<span class="author">Storyname</span>
+			</div>			
+		</div>
+		<div class="col-xs-4">
+			<p class="story-panel__btns">
+			<a href="#" class="edit-story btn btn-sm btn-primary">edit story</a>
+			<a href="#" class="view-story btn btn-sm btn-primary">view story</a>
+			</p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="story-panel__blocks">
+			<a href="#" class="block">1</a>
+			<a href="#" class="plus btn btn-default"><span class="icon icon-plus"></span></a>			
+		</div>
 	</div>
 </div>
 

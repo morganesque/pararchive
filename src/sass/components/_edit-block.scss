@@ -25,7 +25,7 @@
 	justify-content: center;
 	display:none;
 
-	.state-artefacts & {display:flex;}	
+	&.show {display:flex;}	
 }
 
 .add-artefact__input {

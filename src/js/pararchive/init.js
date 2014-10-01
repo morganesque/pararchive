@@ -18,8 +18,8 @@ $(document).on("ready",function(e)
 				break;
 
 				case "logged in":
-					pararchive.showIdentity();
-					pararchive.stories.fetch({reset:true});
+					// pararchive.showHeader();
+					pararchive.showIdentity();					
 					Backbone.history.start({pushState:true});
 				break;
 			}	

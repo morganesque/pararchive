@@ -1,11 +1,11 @@
 /*
     the basic stuff.
-*/        
+*/
 var gulp    = require('gulp'),
     fs      = require('fs');
 /*
     load all the other things.
-*/        
+*/
 var gulpLoadPlugins = require('gulp-load-plugins'),
     plugins = gulpLoadPlugins({
         pattern:'*',
@@ -14,7 +14,7 @@ var gulpLoadPlugins = require('gulp-load-plugins'),
 
 /*
     keep references to filenames up here.
-*/        
+*/
 var files = {
     "jsconf":   'src/js/allJS.conf',
     "jslib":    "all.min.js",
@@ -24,9 +24,9 @@ var files = {
 
 /*
     keep all the globs together here.
-*/        
+*/
 var glob = {
-    "sass":     'src/sass/*.scss',
+    "sass":     'src/sass/**/*.scss',
     "js":       'src/js/**/*.js',
     "img":      'src/img/**/*.{jpg,jpeg,gif,png}',
     "svg":      'src/img/**/*.svg',
@@ -36,7 +36,7 @@ var glob = {
 
 /*
     keeping all the destinations together here.
-*/        
+*/
 var dest = {
     "css":      "build/css",
     "js":       "build/js",
@@ -45,23 +45,23 @@ var dest = {
 
 /*
     ----- SASS -----
-*/        
+*/
 gulp.task('sass',function()
 {
     /*
         combine everything together so I can catch errors.
-    */        
+    */
     var combined = plugins.streamCombiner(
         gulp.src(glob.sass),
         plugins.rubySass({style:'nested', loadPath:'bower_components', quiet:true,}),
         plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'),
         gulp.dest(dest.css),
-        plugins.browserSync.reload({stream:true})        
+        plugins.browserSync.reload({stream:true})
     );
     /*
         growl out any errors
-    */        
-    combined.on('error', function(err) 
+    */
+    combined.on('error', function(err)
     {
         plugins.nodeNotifier.Growl().notify({
             name:       "SASS processor",
@@ -69,13 +69,13 @@ gulp.task('sass',function()
             message:    err.message,
         });
         this.emit('end');
-    }); 
-    return combined;       
+    });
+    return combined;
 });
 
 /*
     HERE ARE ALL THE TASKS NOW!!!
-*/        
+*/
 
 /*
     ----- AUTO PREFIX -----
@@ -83,7 +83,7 @@ gulp.task('sass',function()
 gulp.task('autoprefix',function()
 {
     return gulp.src(glob.css)
-        .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))        
+        .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest(dest.css))
         .pipe(plugins.browserSync.reload({stream:true}));
 });
@@ -118,9 +118,9 @@ function createJSLib(conf,lib)
     var src = refreshJSLibs(conf);
     if (src.length)
     {
-        plugins.util.log(src);   
+        plugins.util.log(src);
         return gulp.src(src,{base:'bower_components/'})
-            .pipe(plugins.uglify())  
+            .pipe(plugins.uglify())
             .pipe(plugins.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
             .pipe(plugins.concat(lib))
             .pipe(gulp.dest(dest.js))
@@ -132,14 +132,14 @@ function createJSLib(conf,lib)
 
 /*
     Check lib size
-*/        
+*/
 gulp.task('checkScripts',function()
 {
     var src = refreshJSLibs();
     if (src.length)
     {
         return gulp.src(src,{base:'bower_components/'})
-            .pipe(plugins.uglify())  
+            .pipe(plugins.uglify())
             .pipe(plugins.header("/*! bower_components/${file.relative} */\n",{foo:'bar'}))
             .pipe(plugins.gzip())
             .pipe(plugins.flatten())
@@ -152,7 +152,7 @@ gulp.task('checkScripts',function()
 
 /*
     ----- JS FILES -----
-    (for separates minified and copied across) 
+    (for separates minified and copied across)
 */
 gulp.task('scripts',function()
 {
@@ -217,17 +217,17 @@ gulp.task('sync',function()
 /*
     ----- WATCH -----
 */
-gulp.task('watch', function() 
-{ 
+gulp.task('watch', function()
+{
         // Watch .scss files
-        gulp.watch(glob.sass, ['sass']);     
+        gulp.watch(glob.sass, ['sass']);
 
         // Watch .js files
         gulp.watch(glob.js, ['scripts']);
 
         // Watch JS library conf
         gulp.watch(files.jsconf, ['libScripts']); // and "checkScripts" ???
-        gulp.watch(files.jsieconf, ['libScripts']); 
+        gulp.watch(files.jsieconf, ['libScripts']);
 
         // Watch bitmaps
         gulp.watch(glob.img, ['bitmaps']);
@@ -236,7 +236,7 @@ gulp.task('watch', function()
         gulp.watch(glob.svg, ['svg']);
 
         // watch HTML (etc)
-        gulp.watch(glob.html,['sync']) 
+        gulp.watch(glob.html,['sync'])
 
         // Watch plugins.jekyll files
         // gulp.watch(glob.jekyll, ['jekyll'])
@@ -249,19 +249,19 @@ gulp.task('default', ['browser-sync','watch']);
 
 function refreshJSLibs(confFile)
 {
-    var file = fs.readFileSync(confFile,'utf8').trim().split('\n');    
+    var file = fs.readFileSync(confFile,'utf8').trim().split('\n');
     var src = file.filter(function(v)
     {
         if (!v) return false;
-        if (v.substr(0,1) == '#') return false;   
+        if (v.substr(0,1) == '#') return false;
 
-        if (!fs.existsSync(v)) 
+        if (!fs.existsSync(v))
         {
             plugins.util.log(plugins.util.colors.red(v+' does not exist!'));
             return false;
         }
-              
+
         return true;
-    })    
+    })
     return src;
 }

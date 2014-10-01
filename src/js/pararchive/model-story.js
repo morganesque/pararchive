@@ -1,52 +1,84 @@
-
+/*
+    Model for a single story block.
+*/        
 var StoryBlock = Backbone.Model.extend(
 {
     urlRoot:"/api/blocks/",
+    artefacts:undefined,
+
+    initialize:function()
+    {
+        this.artefacts = new Artefacts();
+    },
+
+    loadArtefacts:function()
+    {
+        console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
+        var id = this.get('id');
+        this.artefacts.selectBlock(id,_.bind(function()
+        {   
+            this.trigger('artefacts');
+        },this));
+    },
+
+    addArtefact:function(url)
+    {
+        console.log("StoryBlock\taddArtefact");        
+        var newArte = this.artefacts.add(
+        {
+            block_id:this.get('id'),
+            url:url,
+            type:"photo",
+        });
+        newArte.save();
+    },
 });
 
+/*
+   Model for a single piece of story meta data. 
+
+   HACK -- This is the same as a StoryModel 
+   (see model-user.js) but I'm not convinced 
+   I can user them interchangabley right now.
+*/        
 var StoryMeta = Model.extend(
 {
     urlRoot:"/api/stories/"
 });
-
+/*
+    A collection of StoryBlock's that make up the Story.
+*/        
 var Story = Backbone.Collection.extend({
-    
+
     model:StoryBlock,
     storyID:undefined,
-    blockID:undefined,
+    block:undefined,
 
     initialize:function(options)
-    {
-    	if (options && options.storyID) this.storyID = options.storyID;
-    },
+    {        
+    	if (options && options.storyID) this.storyID = options.storyID;        
+    },    
 
     /*
         Right at the start it uses the Story ID
-        to fetch all the blocks before passing 
+        to fetch all the blocks before passing
         over to router.js to do the rest.
         (if no blocks - create a new empty one)
-    */        
+    */
     loadStory:function(callback)
-    {        
-        // console.log("loadStory",this.storyID,this.blockID);        
+    {
         var self = this;
         this.fetch({reset:true,success:function()
         {
-            // self.setBlock(self.blockID); // think this is being done manually now - no need for it here.
             if (callback) callback();
         }});
     },
 
     addBlock:function()
     {
-        console.log("Story::addBlock");        
+        console.log("Story::addBlock");
         var newBlock = this.add({"story_id":this.storyID});
-        this.setBlock(newBlock.cid);  
-    },
-
-    getStoryID:function()
-    {
-        return this.storyID;
+        this.setBlock(newBlock.cid);
     },
 
     setStoryID:function(id)
@@ -61,47 +93,63 @@ var Story = Backbone.Collection.extend({
     },
 
     setStoryMeta:function(sm)
-    {   
-        this.meta = new StoryMeta(sm);     
+    {
+        this.meta = new StoryMeta(sm);
         this.storyID = this.meta.get('id');
         this.trigger('meta');
     },
 
     setBlock:function(id)
     {
-        console.log('Story:setBlock '+id);        
-        if (id) this.blockID = id;
-        else if (this.length) this.blockID = this.first().get('id');
-        // else this.addBlock(); // dont' think we need to do this anymore - things aren't going to be that automated. 
-        
-        this.trigger('block');
-    },
-    
-    getBlock:function()
-    {
-        if (this.blockID) return this.get(this.blockID);
-        else return this.first();
+        console.log('Story\t\tsetBlock '+id);
+
+        if (id) this.block = this.get(id);
+        else if (this.length) this.block = this.first();
+
+        this.trigger('block'); 
+        this.block.loadArtefacts();        
     },
 
-    getLastBlock:function()
+    /*
+        Sets the block based on it's index (when reading the story)
+        Always pass in the URL value
+    */
+    setBlockByIndex:function(bin)
     {
-        return this.last();
+        var block = this.at(bin-1);
+        if (block)
+        {
+            var id = block.get('id');
+            this.setBlock(id); 
+
+        } else alert('There is no block at '+(bin-1));
+    },
+
+    getBlock:function()
+    {
+        if (this.block) return this.block;
+        else return this.first();
     },
 
     getNextBlock:function()
     {
-        if (this.blockID)
-        {
-            var i = this.model.indexOf(this.getBlock());
-            console.log(i);        
-        } else {
-            alert('No Block ID set!');
-        }
+        var block = this.getBlock();
+        var i = this.indexOf(block); console.log(i,this.length,(i+1));
+        if (i < this.length-1) return i+1;
+        else return false;
+    },
+
+    getPrevBlock:function()
+    {
+        var block = this.getBlock();
+        var i = this.indexOf(block);
+        if (i > 0) return i+1;
+        else return false;
     },
 
     url: function()
     {
-    	if (!this.storyID) 
+    	if (!this.storyID)
         {
             alert('Not picked a story yet!');
             throw new Error('fricken huck!');
@@ -113,12 +161,12 @@ var Story = Backbone.Collection.extend({
     {
         if (this.length > 1)
         {
-            var data = this.at(this.length-2);        
+            var data = this.at(this.length-2);
             return {
                 'when': data.get('when'),
                 'where': data.get('where'),
-            }    
+            }
         }
-        
+
     },
 });

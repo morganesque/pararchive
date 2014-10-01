@@ -74,7 +74,8 @@ var StoryListView = Marionette.ItemView.extend(
 		var name = this.ui.storyname.val();
 		if (name)
 		{
-			this.model.meta.set({name:name});
+			var slug = $.slugify(name);
+			this.model.meta.set({name:name,slug:slug});
 			this.model.trigger('meta');
 			this.model.meta.save({},{success:function(story)
 			{

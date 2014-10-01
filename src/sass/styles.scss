@@ -2,6 +2,7 @@
 
 $font-size-base: 16px;
 $font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       'Averia Serif Libre', cursive !default;
 $headings-font-weight: 300;
 
 // $border-radius-base:        4px !default;
@@ -27,12 +28,13 @@ $brand-danger:          #d9534f;
 @import "icons";
 @import "layout";
 @import "components/login";
+@import "components/header";
 @import "components/identity";
 @import "components/story-panel";
 @import "components/edit-block";
-@import "components/read-story";
 @import "components/view-footer";
 @import "components/story-front";
+@import "components/block-view";
 
 // @import "modules/page";
 

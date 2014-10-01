@@ -7,7 +7,7 @@ var StoryFrontView = Marionette.ItemView.extend(
 	},
 
 	events: {
-		'click @ui.start':'onStart'	
+		'click @ui.start':'onStart'
 	},
 
 	behaviors:{
@@ -17,12 +17,13 @@ var StoryFrontView = Marionette.ItemView.extend(
 	onStart:function(e)
 	{
 		e.preventDefault();
-		var block = pararchive.story.getBlock();
+		// var block = pararchive.story.getBlock();
 		var slug = pararchive.story.meta.get('slug');
-		var bid = block.get('id');
+		// var bid = block.get('id');
 
-		pararchive.viewrouter.navigate('/view/'+slug+'/'+bid+'/');
-		pararchive.story.setBlock(bid);
+		// pararchive.viewrouter.navigate('/view/'+slug+'/'+bid+'/');
+		pararchive.viewrouter.navigate('/view/'+slug+'/1/');
 		pararchive.showViewBlock();
+		pararchive.story.setBlock();
 	},
 });

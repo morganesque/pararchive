@@ -8,8 +8,8 @@ var App = Marionette.Application.extend({
     },
 
     initialize:function()
-    {                
-        console.log('App:Initialize');        
+    {
+        console.log('App:Initialize');
 
         // Create the edit controller.
         this.controller = new EditController();
@@ -22,20 +22,17 @@ var App = Marionette.Application.extend({
         this.viewrouter = new ViewRouter({controller: this.viewcontroller});
 
         // First create a user object.
-        this.user = new Model();
-        this.user.urlRoot = '/api/users/';
-
-        // set the initial state.
-        this.state = new Backbone.Model({state:'waiting'});
-
-        // set up the stories model.
-        this.stories = new Stories();
+        this.user = new User();        
 
         // start a story.
         this.story = new Story();
+    },
 
-        // create the artefacts object.
-        this.artefacts = new Artefacts();
+    showHeader:function()
+    {
+        var header = new HeaderView({
+            model:pararchive.story
+        });
     },
 
     showIdentity:function()
@@ -47,12 +44,22 @@ var App = Marionette.Application.extend({
         // this.header.show(identity);
     },
 
+    showEditStory:function()
+    {
+        var storyview = new StoryListView({
+            model:pararchive.story,
+        });
+        pararchive.main.show(storyview);
+        pararchive.showStoryPanel();
+    },
+
     showEditBlock:function()
     {
+        console.log("App\t\t\tshowEditBlock");        
         var editblock = new EditBlockView({
-            model:pararchive.story.getBlock(),
+            model:pararchive.story,
         });
-        this.main.show(editblock);            
+        this.main.show(editblock);
     },
 
     showStoryPanel:function()
@@ -63,16 +70,21 @@ var App = Marionette.Application.extend({
         this.top.show(storypanel);
     },
 
+    hideStoryPanel:function()
+    {
+        this.top.empty();  
+    },
+
     showSavedBlock:function()
     {
         var savedblock = new SavedBlockView({});
         this.main.show(savedblock);
-    },   
+    },
 
     showViewFooter:function()
     {
         var viewfooter = new ViewFooterView({
-            model:new Backbone.Model(),
+            model:pararchive.story,
         });
         pararchive.footer.show(viewfooter);
         pararchive.footer.$el.removeClass('out');
@@ -85,15 +97,17 @@ var App = Marionette.Application.extend({
         });
         pararchive.main.show(storyfront);
         pararchive.footer.$el.addClass('out');
+        this.hideStoryPanel();
     },
 
     showViewBlock:function()
     {
-        console.log("showViewBlock");        
+        console.log("App\t\t\tshowViewBlock");        
         var viewblock = new BlockView({
-            model:pararchive.story.getBlock(),
+            model:pararchive.story,
         });
         this.main.show(viewblock);
         this.showViewFooter();
-    }, 
+        this.showHeader();
+    },
 });

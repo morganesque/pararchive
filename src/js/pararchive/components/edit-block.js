@@ -1,6 +1,7 @@
 var EditBlockView = Marionette.ItemView.extend(
 {
 	template:'#editblock-template',
+	block:undefined,
 
 	ui: {
 		what_field:'#what-text',
@@ -10,6 +11,7 @@ var EditBlockView = Marionette.ItemView.extend(
 		help:'.help',
 		artefacts:'.show-artefacts',
 		arteexam:'.artfacts-example',
+		addarte:'.add-artefact',
 	},
 
 	behaviors:{
@@ -18,9 +20,17 @@ var EditBlockView = Marionette.ItemView.extend(
 
 	initialize:function()
 	{			
-		this.listenTo(pararchive.artefacts, "reset", this.updateArtefacts);
-		this.listenTo(pararchive.artefacts, "change", this.updateArtefacts);
-		this.listenTo(pararchive.artefacts, "reset", this.updateArtefacts)
+		this.listenTo(this.model,'block',this.onBlock);		
+	},
+
+	onBlock:function()
+	{
+		// console.log("EditBlockView\tonBlock");		
+		this.block = this.model.getBlock();
+		this.listenTo(this.block,'artefacts',this.updateArtefacts);
+		this.listenTo(this.block.artefacts, "reset", this.updateArtefacts);
+		this.listenTo(this.block.artefacts, "change", this.updateArtefacts);
+		this.render();
 	},
 
 	fields:function()
@@ -29,20 +39,21 @@ var EditBlockView = Marionette.ItemView.extend(
 			what:this.ui.what_field,
 			when:this.ui.when_field,
 			where:this.ui.where_field,
+			artefact:this.ui.arte_field,
 		};
 	},
 
 	onRender:function()
 	{
 		// console.log("EditBlockView onRender");		
-		// this.model = pararchive.story.getBlock();
+		// this.block = pararchive.story.getBlock();
 
 		this.updateTextField('what');
 		this.updateTextField('when');
 		this.updateTextField('where');
 
 		this.updateHelpText();
-		this.updateArtefacts();
+		// this.updateArtefacts();
 	},
 
 	/*
@@ -50,10 +61,10 @@ var EditBlockView = Marionette.ItemView.extend(
 	*/		
 	updateTextField:function(type)
 	{
-		if (this.model)
-		if (this.model.has(type))
+		if (this.block)
+		if (this.block.has(type))
 		{
-			this.fields()[type].val(this.model.get(type));
+			this.fields()[type].val(this.block.get(type));
 		} else {
 
 			var data = pararchive.story.getLastWhenWhere();
@@ -87,13 +98,12 @@ var EditBlockView = Marionette.ItemView.extend(
 
 	updateArtefacts:function()
 	{
-		// console.log("updateArtefacts");		
-
+		// console.log("EditBlockView\tupdateArtefacts");		
 		this.ui.artefacts.empty();
 
 		var dd = $('<div class="display"></div>');
 
-		if (pararchive.artefacts.length)
+		if (this.block.artefacts.length)
 		{	
 			this.ui.arteexam.hide();
 			this.ui.artefacts.show();
@@ -102,7 +112,7 @@ var EditBlockView = Marionette.ItemView.extend(
 			this.ui.artefacts.hide();
 		}
 
-		pararchive.artefacts.each(function(a,b,c)
+		this.block.artefacts.each(function(a,b,c)
 		{	
 			var url = a.get('url');
 			var link = $('<a/>');
@@ -112,7 +122,7 @@ var EditBlockView = Marionette.ItemView.extend(
 
 			var dc = dd.clone();
 			dc.append(link);
-			this.artefacts.append(dc);
+			this.ui.artefacts.append(dc);
 		},this);
 	},
 

@@ -29,9 +29,12 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         /*
             First save the block so you've got a proper ID to attach artefacts to.
         */      
+        console.log("click");        
+        var self = this;
         this.saveStoryBlock(function(model) 
         {
-            pararchive.state.set('state','artefacts');  
+            console.log('got here');        
+            self.view.ui.addarte.addClass('show');
         }); 
     },    
 
@@ -43,7 +46,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
             "where": this.view.fields()['where'].val(),
         }
 
-        this.view.model.save(data,{success:function(model,response,options)
+        this.view.block.save(data,{success:function(model,response,options)
         {       
             // make sure you set the newly saved block ID (replace the temp one).
             var bid = model.get('id');
@@ -63,38 +66,15 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
 
         if (this.view.fields()['artefact'].val() == '')
         {
-            pararchive.state.set('state','edit-block');
+            this.view.ui.addarte.removeClass('show');
             return;     
         }
 
-        var arte = pararchive.artefacts.add({
-            block_id: pararchive.story.blockID,
-            url: this.view.fields()['artefact'].val(),
-            type: 'photo',
-        });
+        var url = this.view.fields()['artefact'].val();        
+        this.view.block.addArtefact(url);
 
         this.view.fields()['artefact'].val('');
-        // this.useThisButton.text('Saving...');
-
-        var self = this;
-
-        arte.save({},{success:function(a,b,c)
-        {           
-            // var href = '/arte/edit/'+a.get('id')+'/';
-            // pararchive.router.navigate(href,{trigger:true});         
-            pararchive.state.set('state','edit-block');
-
-        },error:function(model,response) 
-        {
-            if (response.responseText) alert(response.responseText);
-            else alert('error - bad return value!');
-
-            pararchive.artefacts.remove(model);
-
-            self.fields['artefact'].val(model.get('url'));
-            // self.useThisButton.text('Use This');
-        }});
-        
+        this.view.ui.addarte.removeClass('show');
     },    
 
     onDeleteBlock:function(e)
