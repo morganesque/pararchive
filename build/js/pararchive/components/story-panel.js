@@ -9,8 +9,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 		blocks:'.story-panel__blocks',
 		name:'.story-panel__name .content',
 		author:'.story-panel__name .author',
-		view:'.view-story',
-		edit:'.edit-story',
+		view:'.btn-view-story',
+		edit:'.btn-edit-story',
 	},
 
 	events:{

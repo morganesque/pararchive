@@ -3,7 +3,7 @@ window.Behaviors.EditStory = Marionette.Behavior.extend(
     defaults: {},
 
     events: {
-        "click .story-list__edit-link": "editStory"
+        "click .edit-story__edit-link": "editStory"
     },
 
     editStory: function(e) 

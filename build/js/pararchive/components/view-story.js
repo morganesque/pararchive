@@ -3,7 +3,7 @@ var StoryFrontView = Marionette.ItemView.extend(
 	template:'#storyfront-template',
 
 	ui: {
-		start:'.story-front__start'
+		start:'.view-story__start'
 	},
 
 	events: {

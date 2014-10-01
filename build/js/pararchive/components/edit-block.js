@@ -46,7 +46,6 @@ var EditBlockView = Marionette.ItemView.extend(
 	onRender:function()
 	{
 		// console.log("EditBlockView onRender");		
-		// this.block = pararchive.story.getBlock();
 
 		this.updateTextField('what');
 		this.updateTextField('when');

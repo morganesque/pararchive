@@ -6,18 +6,20 @@ var YourStoriesView = Marionette.ItemView.extend(
 		EditStory:{},
 	},
 
-	events:{
-		'click .create-new-story': "onCreateNewStory",
+	ui:{
+		storylist:'.edit-story',
+		author:'.author-name',
 	},
 
-	ui:{
-		storylist:'.story-list',
+	events:{
+		'click .create-new-story': "onCreateNewStory",
 	},
 
 	initialize:function()
 	{		
 		this.listenTo(this.model, "reset", this.showList);		
 		this.listenTo(this.model, "change", this.showList);		
+		this.listenTo(pararchive.user, "reset", this.showAuthor);		
 	},
 
 	showList:function()
@@ -26,9 +28,17 @@ var YourStoriesView = Marionette.ItemView.extend(
 		// this.model is the 
 		this.model.each(function(a)
 		{				
-			var link = $('<div class="story-list__item"><a href="#'+a.get('id')+'" class="story-list__edit-link pull-right">edit this story</a><h3>'+a.get('name')+'</h3></div>');
+			var link = $('<div class="edit-story__item"><a href="#'+a.get('id')+'" class="edit-story__edit-link pull-right">edit this story</a><h3>'+a.get('name')+'</h3></div>');
 			this.ui.storylist.append(link);
 		},this);
+
+		this.showAuthor();
+	},
+
+	showAuthor:function()
+	{
+		console.log("showAuthor");		
+		this.ui.author.text(pararchive.user.get('firstname'));
 	},
 
 	onCreateNewStory:function(e)

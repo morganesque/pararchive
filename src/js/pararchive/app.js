@@ -103,7 +103,7 @@ var App = Marionette.Application.extend({
     showViewBlock:function()
     {
         console.log("App\t\t\tshowViewBlock");        
-        var viewblock = new BlockView({
+        var viewblock = new ViewBlockView({
             model:pararchive.story,
         });
         this.main.show(viewblock);

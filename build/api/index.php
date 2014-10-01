@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 /*
     Grab the URL structure.
 */
@@ -59,6 +58,10 @@ switch($params[0])
 
     case 'slug':
         include_once('slug.php');
+    break;
+
+    case 'embed':
+        include_once('embed.php');
     break;
 
     case 'test':

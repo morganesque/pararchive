@@ -68,17 +68,19 @@ var ViewFooterView = Marionette.ItemView.extend(
 
 	onPrevClick:function(e)
 	{
+		// console.log("ViewFooterView\tonPrevClick");		
 		e.preventDefault();
 
 		if (this.current > 1)
-		{
+		{			
 			this.current--;
+			console.log("–––going to "+this.current);		
 			pararchive.router.navigate('/view/'+this.slug+'/'+this.current+'/');
 			this.model.setBlockByIndex(this.current);
 		}
-
-		if (this.current == 1)
+		else if (this.current == 1)
 		{
+			console.log("–––going home ");
 			pararchive.router.navigate('/view/'+this.slug+'/');
 			pararchive.showViewStory();
 		}

@@ -11,8 +11,8 @@
 		</div>
 		<div class="col-xs-4">
 			<p class="story-panel__btns">
-			<a href="#" class="edit-story btn btn-sm btn-primary">edit story</a>
-			<a href="#" class="view-story btn btn-sm btn-primary">view story</a>
+			<a href="#" class="btn-edit-story btn btn-sm btn-primary">edit story</a>
+			<a href="#" class="btn-view-story btn btn-sm btn-primary">view story</a>
 			</p>
 		</div>
 	</div>
