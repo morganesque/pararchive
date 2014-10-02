@@ -15,7 +15,7 @@ var App = Marionette.Application.extend({
         this.user = new User();     
 
         // create the nav controller.
-        this.nav = new NavController({user:this.user});
+        this.nav = new NavController();
 
         // Create the edit controller.
         this.controller = new EditController();
@@ -59,7 +59,8 @@ var App = Marionette.Application.extend({
         });
         this.top.empty();
         this.main.show(storiesview);
-        this.vent.trigger('hidestory');
+        this.vent.trigger('storyname:hide');
+        this.vent.trigger('footer:hide');
     },
 
     showEditStory:function()
@@ -105,7 +106,7 @@ var App = Marionette.Application.extend({
             model:this.story,
         });
         this.footer.show(viewfooter);
-        this.footer.$el.removeClass('out');
+        this.vent.trigger('footer:show');
     },
 
     showViewStory:function()
@@ -114,8 +115,8 @@ var App = Marionette.Application.extend({
             model:this.story,
         });
         this.main.show(storyfront);
-        this.footer.$el.addClass('out');
         this.hideStoryPanel();
+        this.vent.trigger('footer:hide');
     },
 
     showViewBlock:function()

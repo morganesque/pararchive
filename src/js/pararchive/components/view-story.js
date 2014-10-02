@@ -23,8 +23,6 @@ var StoryFrontView = Marionette.ItemView.extend(
 
 	onRender:function()
 	{
-		console.log('her–––––––e!!!!');		
-		console.log(this.model);		
 		if (this.model.meta)
 		{
 			this.ui.storyname.text(this.model.meta.get('name'));	

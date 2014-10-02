@@ -15,10 +15,10 @@ var HeaderView = Marionette.ItemView.extend(
 
 	initialize:function(options)
 	{
-		console.log("HeaderView\tinitialize");		
+		// console.log("HeaderView\tinitialize");		
 		
 		this.listenTo(this.model, "meta", this.render);
-		this.listenTo(pararchive.vent, "hidestory", this.clearName);
+		this.listenTo(pararchive.vent, "storyname:hide", this.clearName);
 	},
 
 	onRender:function()

@@ -43,7 +43,6 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
             "where": this.view.fields()['where'].val(),
         }
 
-        console.log(this.view.block);        
         if(this.view.block)
         {
             this.view.block.save(data,{success:function(model,response,options)

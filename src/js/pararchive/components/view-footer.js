@@ -1,6 +1,7 @@
 var ViewFooterView = Marionette.ItemView.extend(
 {
 	template:'#viewfooter-template',
+	className:'view-footer',
 
 	current:1,
 
@@ -26,6 +27,22 @@ var ViewFooterView = Marionette.ItemView.extend(
 
 		this.listenTo(this.model, 'reset', this.onReset);
 		this.listenTo(this.model, 'block', this.onBlock);
+
+		this.listenTo(pararchive.vent, 'footer:show', this.show);
+		this.listenTo(pararchive.vent, 'footer:hide', this.hide);
+	},
+
+	show:function()
+	{
+		console.log('footer show');		
+		console.log(this.$el);		
+		this.$el.parent().removeClass('out');
+	},
+
+	hide:function()
+	{
+		console.log("footer hide");		
+		this.$el.parent().addClass('out');	
 	},
 
 	onReset:function()

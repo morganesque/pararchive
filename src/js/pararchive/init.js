@@ -24,6 +24,8 @@ $(document).on("ready",function(e)
 				break;
 			}	
 		}});
+
+		pararchive.nav.start();		
 	});
 
 	pararchive.start();	

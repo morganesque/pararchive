@@ -9,7 +9,7 @@
 	<div id="top" class="sidepad"></div>
 	<div id="main" class="sidepad"></div>
 
-	<footer id="footer" class="sidepad footer out"></footer>
+	<footer id="footer" class="sidepad footer"></footer>
 
 	<script type="text/template" id="login-template"><?php include('pages/components/login.php');?></script>
 	<script type="text/template" id="panel-template"><?php include('pages/components/story-panel.php'); ?></script>

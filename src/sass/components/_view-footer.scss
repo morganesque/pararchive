@@ -21,9 +21,11 @@
 		}
 	}
 
+	/*
+		The bit which hides and shows the footer.
+	*/		
 	transition:transform 1s $easeOutQuint;
 	&.out {
 		transform:translateY(75px);	
-	}
-	
+	}	
 }

@@ -12,7 +12,7 @@ var Artefacts = Backbone.Collection.extend({
 
 	selectBlock:function(id,callback)
 	{
-		console.log("Artefacts\tselectBlock: "+id);		
+		// console.log("Artefacts\tselectBlock: "+id);		
 		if (!this.fetched)
 		{
 			this.blockID = id;	

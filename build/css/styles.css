@@ -4797,6 +4797,9 @@ body {
   font-size: 30px;
   font-size: 3rem;
   border-top: 1px solid #26b9b9;
+  /*
+  	The bit which hides and shows the footer.
+  */
   -webkit-transition: -webkit-transform 1s cubic-bezier(0.23, 1, 0.32, 1);
           transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1); }
   .footer .row {

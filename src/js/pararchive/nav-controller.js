@@ -1,8 +1,9 @@
 var NavController = Marionette.Controller.extend({
 
-	initialize:function(options)
+	start:function()
 	{
-		this.listenTo(options.user, 'change', this.onUser);
+		// console.log("start");		
+		this.listenTo(pararchive.user, 'change', this.onUser);
 	},
 
 	onUser:function()
@@ -12,14 +13,14 @@ var NavController = Marionette.Controller.extend({
 
 	yourStories:function()
 	{
-		console.log("Nav\t\t\tyourStories");		
+		// console.log("Nav\t\t\tyourStories");		
 		pararchive.router.navigate('/'+this.user+'/');
 		pararchive.showYourStories();
 	},
 
 	editStory:function(sid)
 	{
-		console.log("Nav\t\t\teditStory");		
+		// console.log("Nav\t\t\teditStory");		
 		var url = pararchive.user.get('username');
 		pararchive.router.navigate('/'+this.user+'/story/'+sid+'/edit/');
         pararchive.showEditStory();
@@ -29,7 +30,7 @@ var NavController = Marionette.Controller.extend({
 
 	editStoryBlock:function(sid,bid)
 	{
-		console.log("Nav\t\t\teditStoryBlock");		
+		// console.log("Nav\t\t\teditStoryBlock");		
 		pararchive.router.navigate('/'+this.user+'/story/'+sid+'/block/'+bid+'/edit/');
 		pararchive.showEditBlock();		
 		pararchive.story.setBlock(bid);	
@@ -37,20 +38,20 @@ var NavController = Marionette.Controller.extend({
 
 	savedBlock:function(sid,bid)
 	{
-		console.log("Nav\t\t\tsavedBlock");		
+		// console.log("Nav\t\t\tsavedBlock");		
 		pararchive.router.navigate('/'+this.user+'/story/'+sid+'/block/'+bid+'/saved/');
         pararchive.showSavedBlock();
 	},
 
 	viewStory:function(slug)
 	{
-		console.log("Nav\t\t\tviewStory");
+		// console.log("Nav\t\t\tviewStory");
 		pararchive.router.navigate('/view/'+slug+'/',{trigger:true});	
 	},
 
 	viewStoryBlock:function(slug,bin)
 	{
-		console.log("Nav\t\t\tviewStoryBlock");
+		// console.log("Nav\t\t\tviewStoryBlock");
 		// change the URL.
 		pararchive.router.navigate('/view/'+slug+'/'+bin+'/');
 		// change the HTML.

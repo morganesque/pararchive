@@ -15,7 +15,7 @@ var StoryBlock = Backbone.Model.extend(
     {
         if (!this.isNew())
         {
-            console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
+            // console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
             var id = this.get('id');
             this.artefacts.selectBlock(id,_.bind(function()
             {   
@@ -29,7 +29,7 @@ var StoryBlock = Backbone.Model.extend(
 
     addArtefact:function(url)
     {
-        console.log("StoryBlock\taddArtefact");        
+        // console.log("StoryBlock\taddArtefact");        
         var newArte = this.artefacts.add(
         {
             block_id:this.get('id'),
@@ -37,7 +37,7 @@ var StoryBlock = Backbone.Model.extend(
         });
         newArte.save({},{success:function(a,b,c)
         {
-            console.log('Saved\tArtefact');        
+            // console.log('Saved\tArtefact');        
             // console.log('StoryBlock\tDoneSaveArtefact');        
             // console.log(a,b,c);        
         },error:function(a,b,c)
@@ -90,7 +90,7 @@ var Story = Backbone.Collection.extend({
 
     addBlock:function()
     {
-        console.log("Story\t\taddBlock");
+        // console.log("Story\t\taddBlock");
         var newBlock = this.add({"story_id":this.storyID});
         this.setBlock(newBlock.cid);
     },
@@ -119,8 +119,6 @@ var Story = Backbone.Collection.extend({
 
         if (id) this.block = this.get(id);
         else if (this.length) this.block = this.first();
-
-        console.log(this.block);        
 
         this.trigger('block'); 
         this.block.loadArtefacts();        

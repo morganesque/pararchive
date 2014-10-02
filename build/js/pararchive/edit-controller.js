@@ -2,7 +2,7 @@ var EditController = Marionette.Controller.extend({
 
 	login:function()
 	{
-		console.log("Controller\tlogin");	
+		// console.log("Controller\tlogin");	
 		pararchive.main.show(new LoginView);
 	},
 
@@ -17,13 +17,13 @@ var EditController = Marionette.Controller.extend({
 
 	yourStories:function(username)
 	{
-		console.log("Controller\tyourStories");		
+		// console.log("Controller\tyourStories");		
 		pararchive.showYourStories();
 	},
 
 	editStory:function(username,sid)
 	{
-		console.log("Controller\teditStory\t"+sid);				
+		// console.log("Controller\teditStory\t"+sid);				
 		pararchive.showEditStory();
 		pararchive.story.setStoryID(sid);
 		pararchive.story.loadStory();		
@@ -31,7 +31,7 @@ var EditController = Marionette.Controller.extend({
 
 	editBlock:function(username,sid,bid)
 	{
-		console.log("Controller\teditBlock\t"+sid+" "+bid);		
+		// console.log("Controller\teditBlock\t"+sid+" "+bid);		
 		/*
 			If there's a storyID set they we've not arriving for the first time.
 		*/		
@@ -43,7 +43,7 @@ var EditController = Marionette.Controller.extend({
 				pararchive.showEditBlock();					
 				pararchive.story.setBlock(bid);	
 			} else {
-				console.log('no block!');		
+				// console.log('no block!');		
 			}
 		} else {
 			pararchive.story.setStoryID(sid);
@@ -65,7 +65,7 @@ var EditController = Marionette.Controller.extend({
 
 	savedBlock:function(sid,bid)
 	{
-		console.log("Controller\tsavedBlock\t"+sid+" "+bid);		
+		// console.log("Controller\tsavedBlock\t"+sid+" "+bid);		
 
 		pararchive.story.setStoryID(sid);
 		pararchive.story.setBlock(bid);			
@@ -74,7 +74,7 @@ var EditController = Marionette.Controller.extend({
 
 	show404Error:function()
 	{
-		console.log("Controller\tshow404Error");		
+		// console.log("Controller\tshow404Error");		
 	},
 
 	/*
@@ -85,7 +85,7 @@ var EditController = Marionette.Controller.extend({
     */        
     in:function()
     {
-    	console.log("Controller\tin");		
+    	// console.log("Controller\tin");		
     	var user = pararchive.user.get('username');    	
         pararchive.router.navigate('/'+user+'/',{trigger:true});
     },

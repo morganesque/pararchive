@@ -45,7 +45,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 	blockBlocks:function()
 	{
-		console.log("blockBlocks");		
+		// console.log("blockBlocks");		
 		// throw new Error('blockBlocks');
 		var bid = this.model.block.get('id');
 		if (!bid) bid = this.model.block.cid;
@@ -86,7 +86,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	onBlockClick:function(e)
 	{
-		console.log("onBlockClick");		
+		// console.log("onBlockClick");		
 		e.preventDefault();		
 
 		var sid = this.model.storyID;
