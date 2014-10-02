@@ -8,24 +8,18 @@ switch($_SERVER['REQUEST_METHOD'])
 		if (isset($params[1]))
 		{
 			$id = $params[1];
-			$bean = R::load($type,$id); //Retrieve
-			echo json_encode($bean->export());
-
+			if ($id == 'all')
+			{
+				$stories = R::findAll($type);
+				outputStories($stories);	
+			} else {
+				$bean = R::load($type,$id); //Retrieve
+				echo json_encode($bean->export());	
+			}
 		} else {
 
 			$stories = R::findAll($type, "user_id = ? ", [$user->id]);
-			// $stories = R::findAll($type);
-			$out = [];			
-			foreach($stories as $s)
-			{
-				$out[] = array(
-					"id"=>$s->id,
-					"name"=>$s->name,
-					"user_id"=>$s->user_id,
-					"created"=>$s->created,
-				);
-			}
-			echo json_encode($out);
+			outputStories($stories);
 		}
 	break;
  
@@ -63,6 +57,17 @@ switch($_SERVER['REQUEST_METHOD'])
 	break;
  
 	default: echo $_SERVER['REQUEST_METHOD'];
+}
+
+function outputStories($stories)
+{
+	// $stories = R::findAll($type);
+	$out = [];			
+	foreach($stories as $s)
+	{
+		$out[] = $s->export();
+	}
+	echo json_encode($out);
 }
 
 ?>

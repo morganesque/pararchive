@@ -14,6 +14,16 @@ var Stories = Backbone.Collection.extend({
     url:"/api/stories/",
 });
 
+var AllStories = Backbone.Collection.extend({
+
+	model:StoryModel,
+	url:function()
+	{
+		return "/api/stories/all/";
+	}
+
+});
+
 /*
 	A model for the currently logged in user.
 */		
@@ -33,7 +43,5 @@ var User = Backbone.Model.extend(
 		// set up the stories model.    
         this.stories.fetch({reset:true});
 	},
-
-	
 });
 

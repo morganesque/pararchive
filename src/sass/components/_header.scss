@@ -1,8 +1,16 @@
 .header {
 	.story {
-		display:none;
+		text-align:center;
+		padding-top:0.25em;
 	}
 	.story-name {
 		font-family:$font-family-serif;
+		font-size:2em;
+		vertical-align:middle;
+		margin:0;
 	}
+	.story-author {
+		display:none;
+	}
+
 }

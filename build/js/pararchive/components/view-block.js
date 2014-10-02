@@ -58,7 +58,8 @@ var ViewBlockView = Marionette.ItemView.extend(
 		{
 			this.block.artefacts.each(function(a,b,c)
 			{
-				var url = a.get('url');
+				var url = a.get('thumbnail_url');
+				if (!url) url = a.get('url');
 				var link = $('<a/>');
 
 				link.css({'background-image': 'url('+url+')'});
@@ -73,7 +74,6 @@ var ViewBlockView = Marionette.ItemView.extend(
 
 	onWindowResize:function(e)
 	{
-		console.log("onWindowResize");		
 		var wh = $(window).height()-(53+73+32);
 		this.ui.artefacts.css("height",wh+'px');
 		this.ui.extras.css("height",wh+'px');
@@ -82,11 +82,40 @@ var ViewBlockView = Marionette.ItemView.extend(
 
 	onThumbClick:function(e)
 	{
+		console.log("onThumbClick");		
 		e.preventDefault();		
 		var id = $(e.currentTarget).attr('href').substr(1);		
 		var a = this.block.artefacts.get(id);
-		var url = a.get('url');
-		this.ui.showall.css({"background-image":'url('+url+')'});
+
+		var type = a.get('type');
+
+		if (type == 'photo')
+		{
+			var url = a.get('url');
+			this.ui.showall.css({"background-image":'url('+url+')'});	
+			this.ui.showall.empty();
+			this.ui.showall.append('<a class="btn-close"><span class="icon icon-close"></span></a>');
+		}
+
+		if (type == 'video')
+		{
+			var html = $(a.get("html"));
+			var wid = html.attr('width');
+			var hei = html.attr('height');
+			var rat = (hei/wid)*100;		
+			html.removeAttr('width');
+			html.removeAttr('height');			
+			var cont = $('<div class="embed-container"></div>').css({'padding-top':rat+'%'});
+			cont.append($(html).removeAttr('width').removeAttr('height'));
+			this.ui.showall.prepend(cont);
+
+			var she = this.ui.showall.height();
+			var swi = this.ui.showall.width();
+			var vhi = swi*(rat/100);		
+			if (she > vhi) cont.css({'margin-top':((she-vhi)/2)});
+			this.ui.showall.css({"background-image":'none'});	
+		}
+		
 		this.ui.showall.show();
 	},
 

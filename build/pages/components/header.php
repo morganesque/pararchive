@@ -1,13 +1,16 @@
 <div class="container-fluid">
-	<nav>
-		<div class="nav navbar-nav">
+	<div class="row">
+		<div class="col-xs-3">
 			<a href="/" class="navbar-brand">Pararchive</a>
-			<p class="navbar-text story">
-				<span class="story-name">Storyname</span>
-				<span class="story-author">Storyname</span>
-			</p>
-			<!-- <span class="story-author">Author</span> -->
 		</div>
-		<?php include('pages/components/identity.php'); ?>
-	</nav>
+		<div class="col-xs-6">
+			<div class="story">
+				<span class="story-name"></span>
+				<span class="story-author"></span>
+			</div>
+		</div>
+		<div class="col-xs-3">	
+			<?php include('pages/components/identity.php'); ?>
+		</div>
+	</div>
 </div>

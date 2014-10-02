@@ -3,7 +3,9 @@ var StoryFrontView = Marionette.ItemView.extend(
 	template:'#storyfront-template',
 
 	ui: {
-		start:'.view-story__start'
+		start:'.view-story__start',
+		storyname:'.view-story__name',
+		blurb:'.view-story__blurb',
 	},
 
 	events: {
@@ -14,16 +16,25 @@ var StoryFrontView = Marionette.ItemView.extend(
 
 	},
 
+	initialize:function()
+	{
+		this.listenTo(this.model, "meta", this.render);
+	},
+
+	onRender:function()
+	{
+		console.log('her–––––––e!!!!');		
+		console.log(this.model);		
+		if (this.model.meta)
+		{
+			this.ui.storyname.text(this.model.meta.get('name'));	
+		}
+	},
+
 	onStart:function(e)
 	{
 		e.preventDefault();
-		// var block = pararchive.story.getBlock();
 		var slug = pararchive.story.meta.get('slug');
-		// var bid = block.get('id');
-
-		// pararchive.viewrouter.navigate('/view/'+slug+'/'+bid+'/');
-		pararchive.viewrouter.navigate('/view/'+slug+'/1/');
-		pararchive.showViewBlock();
-		pararchive.story.setBlock();
+		pararchive.nav.viewStoryBlock(slug,1);
 	},
 });

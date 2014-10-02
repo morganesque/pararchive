@@ -38,7 +38,7 @@ var Model = Backbone.Model.extend({
         {            
             if (!this.fetching)
             {
-                this.log('fetching new data: '+this.urlRoot);       
+                this.console.log('fetching new data: '+this.urlRoot);       
                 this.fetching = true;
                 this.fetch({success:function(a,b,c)
                 {
@@ -46,7 +46,7 @@ var Model = Backbone.Model.extend({
                     self.fetched = _.now();                            
                     self.fetching = false;
                     
-                    self.log('changed: '+self.urlRoot+' - '+!$.isEmptyObject(self.changed));        
+                    self.console.log('changed: '+self.urlRoot+' - '+!$.isEmptyObject(self.changed));        
                     if ($.isEmptyObject(self.changed)) self.trigger('change'); // this is a HACK becuase the control.all initially sets for other control.* models (and that is a HACK)
                     
                     if (typeof callback !== 'undefined') callback();
@@ -55,7 +55,7 @@ var Model = Backbone.Model.extend({
             
         } else {
 
-            this.log('already got data: '+this.urlRoot+' - '+force);        
+            this.console.log('already got data: '+this.urlRoot+' - '+force);        
             if (force) this.trigger('change');
         }        
     },

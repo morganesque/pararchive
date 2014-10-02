@@ -20,6 +20,7 @@
 	<script type="text/template" id="viewfooter-template"><?php include('pages/components/view-footer.php'); ?></script>
 	<script type="text/template" id="storyfront-template"><?php include('pages/components/view-story.php'); ?></script>
 	<script type="text/template" id="blockview-template"><?php include('pages/components/view-block.php'); ?></script>
+	<script type="text/template" id="allstories-template"><?php include('pages/components/all-stories.php'); ?></script>
 
 <?
     include('pages/bottom.php'); 

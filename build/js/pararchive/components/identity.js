@@ -10,6 +10,7 @@ var IdentityView = Marionette.ItemView.extend(
 
 	events:{
 		"click @ui.logout": "onLogOut",
+		"click @ui.username": "onUserClick",
 	},
 
 	initialize:function(options)
@@ -31,5 +32,11 @@ var IdentityView = Marionette.ItemView.extend(
 		{
 			window.location.href = '/';
 		});
+	},
+
+	onUserClick:function(e)
+	{
+		e.preventDefault();
+		pararchive.nav.yourStories();
 	},
 });

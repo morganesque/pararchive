@@ -11,6 +11,12 @@ var App = Marionette.Application.extend({
     {
         console.log('App:Initialize');
 
+        // First create a user object.
+        this.user = new User();     
+
+        // create the nav controller.
+        this.nav = new NavController({user:this.user});
+
         // Create the edit controller.
         this.controller = new EditController();
         // Create the edit router.
@@ -21,43 +27,55 @@ var App = Marionette.Application.extend({
         // Create the view router.
         this.viewrouter = new ViewRouter({controller: this.viewcontroller});
 
-        // First create a user object.
-        this.user = new User();        
-
         // start a story.
         this.story = new Story();
+
+        // a model to fetch all the stories.
+        this.allStories = new AllStories();
     },
 
     showHeader:function()
     {
         var header = new HeaderView({
-            model:pararchive.story
+            model:this.story
         });
+        header.render();
     },
 
     showIdentity:function()
     {
         var identity = new IdentityView({
-            model:pararchive.user,
+            model:this.user,
         })
         identity.render();
         // this.header.show(identity);
     },
 
+    showYourStories:function()
+    {
+        console.log("App\t\t\tshowYourStories");        
+        var storiesview = new YourStoriesView({
+            model:this.user.stories,
+        });
+        this.top.empty();
+        this.main.show(storiesview);
+        this.vent.trigger('hidestory');
+    },
+
     showEditStory:function()
     {
         var storyview = new StoryListView({
-            model:pararchive.story,
+            model:this.story,
         });
-        pararchive.main.show(storyview);
-        pararchive.showStoryPanel();
+        this.main.show(storyview);
+        this.showStoryPanel();
     },
 
     showEditBlock:function()
     {
         console.log("App\t\t\tshowEditBlock");        
         var editblock = new EditBlockView({
-            model:pararchive.story,
+            model:this.story,
         });
         this.main.show(editblock);
     },
@@ -65,7 +83,7 @@ var App = Marionette.Application.extend({
     showStoryPanel:function()
     {
         var storypanel = new StoryPanelView({
-            model:pararchive.story,
+            model:this.story,
         })
         this.top.show(storypanel);
     },
@@ -84,19 +102,19 @@ var App = Marionette.Application.extend({
     showViewFooter:function()
     {
         var viewfooter = new ViewFooterView({
-            model:pararchive.story,
+            model:this.story,
         });
-        pararchive.footer.show(viewfooter);
-        pararchive.footer.$el.removeClass('out');
+        this.footer.show(viewfooter);
+        this.footer.$el.removeClass('out');
     },
 
     showViewStory:function()
     {
         var storyfront = new StoryFrontView({
-            model:pararchive.story,
+            model:this.story,
         });
-        pararchive.main.show(storyfront);
-        pararchive.footer.$el.addClass('out');
+        this.main.show(storyfront);
+        this.footer.$el.addClass('out');
         this.hideStoryPanel();
     },
 
@@ -104,10 +122,9 @@ var App = Marionette.Application.extend({
     {
         console.log("App\t\t\tshowViewBlock");        
         var viewblock = new ViewBlockView({
-            model:pararchive.story,
+            model:this.story,
         });
         this.main.show(viewblock);
         this.showViewFooter();
-        this.showHeader();
     },
 });

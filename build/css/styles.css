@@ -4619,9 +4619,15 @@ body {
   margin: 0 auto; }
 
 .header .story {
-  display: none; }
+  text-align: center;
+  padding-top: 0.25em; }
 .header .story-name {
-  font-family: "Averia Serif Libre", cursive; }
+  font-family: "Averia Serif Libre", cursive;
+  font-size: 2em;
+  vertical-align: middle;
+  margin: 0; }
+.header .story-author {
+  display: none; }
 
 .logout {
   opacity: 0.8;
@@ -4659,7 +4665,7 @@ body {
   padding-left: 1em;
   padding-bottom: 0.75em; }
 .story-panel__btns {
-  margin-top: 0.9em; }
+  margin-top: 1.25em; }
   .story-panel__btns a {
     margin-left: 1em; }
 .story-panel .block {
@@ -4757,9 +4763,9 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    height: 96%;
+    height: 100%;
     position: absolute;
-    top: 2%;
+    top: 0;
     left: 0; }
 
 .show-artefacts {
@@ -4769,6 +4775,19 @@ body {
 #delete-block {
   margin-top: 3em;
   text-align: right; }
+
+.embed-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto; }
+  .embed-container iframe, .embed-container object, .embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 .footer {
   position: fixed;
@@ -4868,8 +4887,8 @@ body {
   border-bottom: 1px solid #26b9b9; }
 
 .enormous, .view-story__name {
-  font-size: 100px;
-  font-size: 10rem; }
+  font-size: 80px;
+  font-size: 8rem; }
 
 .btn {
   text-transform: uppercase;

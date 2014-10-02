@@ -18,8 +18,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         {
             var bid = model.get('id');
             var sid = model.get('story_id');            
-            pararchive.router.navigate('/edit/story/'+sid+'/block/'+bid+'/saved/');
-            pararchive.showSavedBlock();
+            pararchive.nav.savedBlock(sid,bid);
         }); 
     },
 
@@ -28,12 +27,10 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         e.preventDefault();
         /*
             First save the block so you've got a proper ID to attach artefacts to.
-        */      
-        console.log("click");        
+        */            
         var self = this;
         this.saveStoryBlock(function(model) 
-        {
-            console.log('got here');        
+        {      
             self.view.ui.addarte.addClass('show');
         }); 
     },    
@@ -46,18 +43,24 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
             "where": this.view.fields()['where'].val(),
         }
 
-        this.view.block.save(data,{success:function(model,response,options)
-        {       
-            // make sure you set the newly saved block ID (replace the temp one).
-            var bid = model.get('id');
-            pararchive.story.setBlock(bid); 
-            callback(model);
-            
-        },error:function()
+        console.log(this.view.block);        
+        if(this.view.block)
         {
-            if (response.responseText) alert(response.responseText);
-            else alert('error - bad return value!');
-        }});        
+            this.view.block.save(data,{success:function(model,response,options)
+            {       
+                // make sure you set the newly saved block ID (replace the temp one).
+                var bid = model.get('id');
+                pararchive.story.setBlock(bid); 
+                callback(model);
+                
+            },error:function()
+            {
+                if (response.responseText) alert(response.responseText);
+                else alert('error - bad return value!');
+            }});              
+        }
+
+      
     },    
 
     saveArtefact:function(e)
@@ -82,7 +85,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         e.preventDefault();
         if (window.confirm('Are you sure you want to delete?'))
         {
-            this.view.model.destroy({success:function(model,response,options)
+            this.view.block.destroy({success:function(model,response,options)
             {
                 console.log('success',model,response,options);      
                 // model.
@@ -91,7 +94,8 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
                 pararchive.story.loadStory(function()
                 {
                     console.log('done deleteing');      
-                    pararchive.router.navigate('/edit/story/'+pararchive.story.storyID+'/',{trigger:true});
+                    var sid = pararchive.story.storyID;
+                    pararchive.nav.editStory(sid);                    
                 });
 
             },error:function(model,response,options)

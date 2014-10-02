@@ -37,16 +37,16 @@ var ViewFooterView = Marionette.ItemView.extend(
 
 	onBlock:function()
 	{
-		var block = this.model.getBlock();
+		console.log("ViewFooterView\tonBlock");		
+		var block = this.model.getBlock(); console.log(block);		
 		this.current = this.model.indexOf(block) + 1;
-		
 		this.ui.page.text('Page '+this.current);
-		this.updateArrows();
-				
+		this.updateArrows();	
 	},
 
 	updateArrows:function()
 	{
+		console.log("ViewFooterView\tupdateArrows");		
 		this.ui.next.removeClass('disabled');
 		this.ui.prev.removeClass('disabled');
 		if (this.current == this.length) this.ui.next.addClass('disabled');
@@ -60,8 +60,8 @@ var ViewFooterView = Marionette.ItemView.extend(
 		if (this.current < this.length)
 		{
 			this.current++;
-			pararchive.router.navigate('/view/'+this.slug+'/'+this.current+'/');
-			this.model.setBlockByIndex(this.current);
+			console.log("––––––––––––––––––––––––––––");
+			pararchive.nav.viewStoryBlock(this.slug,this.current);						
 		}	
 		this.updateArrows();	
 	},
@@ -74,15 +74,13 @@ var ViewFooterView = Marionette.ItemView.extend(
 		if (this.current > 1)
 		{			
 			this.current--;
-			console.log("–––going to "+this.current);		
-			pararchive.router.navigate('/view/'+this.slug+'/'+this.current+'/');
-			this.model.setBlockByIndex(this.current);
+			console.log("––––––––––––––––––––––––––––");
+			pararchive.nav.viewStoryBlock(this.slug,this.current);
 		}
 		else if (this.current == 1)
 		{
 			console.log("–––going home ");
-			pararchive.router.navigate('/view/'+this.slug+'/');
-			pararchive.showViewStory();
+			pararchive.nav.viewStory(this.slug);
 		}
 		this.updateArrows(); 		
 	},

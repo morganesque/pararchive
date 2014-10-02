@@ -3,12 +3,12 @@ var StoryPanelView = Marionette.ItemView.extend(
 	template:'#panel-template',	
 
 	ui: {
-		newblockbutton:'.plus',
-		temp:'.story-panel__blocks .block',
-		plus:'.story-panel__blocks .plus',
+		temp:'.story-panel__blocks .block',		
 		blocks:'.story-panel__blocks',
 		name:'.story-panel__name .content',
 		author:'.story-panel__name .author',
+
+		plus:'.btn-new-block',
 		view:'.btn-view-story',
 		edit:'.btn-edit-story',
 	},
@@ -31,28 +31,25 @@ var StoryPanelView = Marionette.ItemView.extend(
 		this.listenTo(this.model, "block", 	this.blockBlocks);
 		this.listenTo(this.model, "reset", 	this.resetBlocks);
 		this.listenTo(this.model, "add", 	this.addBlocks);
-		this.listenTo(this.model, "meta", 	this.addTitle);
-
-		this.listenTo(pararchive.user, "change", this.addAuthor);		
 	},
 
 	onRender:function()
 	{		
 		// console.log("StoryPanelView:onRender");		
 		this.ui.temp.remove();
-		this.ui.plus.remove();
 		if (this.model.length)
 		{
 			this.addBlocks();
-			this.addTitle();			
 		}
-		this.addAuthor();
 	},
 
 	blockBlocks:function()
 	{
+		console.log("blockBlocks");		
 		// throw new Error('blockBlocks');
-		this.selectBlock(this.model.block.get('id'));
+		var bid = this.model.block.get('id');
+		if (!bid) bid = this.model.block.cid;
+		this.selectBlock(bid);
 	},
 
 	resetBlocks:function()
@@ -82,25 +79,6 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 			this.ui.blocks.append(n);					
 		},this);
-
-		this.ui.blocks.append(this.ui.plus);
-	},
-
-	/*
-		Title comes from a different model so it listened for separately.
-	*/		
-	addTitle:function()
-	{
-		this.ui.name.text(this.model.meta.get('name'));
-	},	
-
-	addAuthor:function()
-	{
-		// console.log("addAuthor");		
-		var fn = pararchive.user.get('firstname');
-		var sn = pararchive.user.get('surname');	
-
-		this.ui.author.text('by '+fn+' '+sn);
 	},
 
 	/*
@@ -114,9 +92,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 		var sid = this.model.storyID;
 		var bid = $(e.currentTarget).attr('href').substr(1);
 
-		pararchive.router.navigate('/edit/story/'+sid+'/block/'+bid+'/');
-		pararchive.showEditBlock();
-		pararchive.story.setBlock(bid);
+		pararchive.nav.editStoryBlock(sid,bid);
 	},
 
 	/*
@@ -138,16 +114,14 @@ var StoryPanelView = Marionette.ItemView.extend(
 	{
 		e.preventDefault();
 		var slug = pararchive.story.meta.get('slug');
-		pararchive.router.navigate('/view/'+slug+'/');
-		pararchive.showViewStory();
+		pararchive.nav.viewStory(slug);
 	},
 
 	onEditStory:function(e)
 	{
 		e.preventDefault();
-		var id = pararchive.story.meta.get('id');
-		pararchive.router.navigate('/edit/story/'+id+'/');
-		pararchive.showEditStory();
+		var sid = pararchive.story.meta.get('id');
+		pararchive.nav.editStory(sid);
 	},
 
 	/*

@@ -31,6 +31,7 @@
 
     <!-- load a few things first -->
     <script type="text/javascript" src="/js/pararchive/config.js"></script>
+    <script type="text/javascript" src="/js/pararchive/nav-controller.js"></script>
     <script type="text/javascript" src="/js/pararchive/edit-controller.js"></script>
     <script type="text/javascript" src="/js/pararchive/edit-router.js"></script>
     <script type="text/javascript" src="/js/pararchive/view-controller.js"></script>
@@ -54,6 +55,7 @@
     <script type="text/javascript" src="/js/pararchive/components/view-footer.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/view-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/view-block.js"></script>
+    <script type="text/javascript" src="/js/pararchive/components/all-stories.js"></script>
 
     <!-- behaviours -->
     <script type="text/javascript" src="/js/pararchive/beh-edit-story.js"></script>

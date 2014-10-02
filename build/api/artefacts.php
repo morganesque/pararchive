@@ -45,28 +45,59 @@ switch($_SERVER['REQUEST_METHOD'])
 		$bean->created = R::isoDateTime();
 		$bean->modified = R::isoDateTime();
 
-		// $mime = getMimeType($bean->url);
-		// $mime_true = strpos($mime,"image");
+		include_once('lib/essence/bootstrap.php');
+		$Essence = Essence\Essence::instance( );
 
-		$ext = strtolower(pathinfo($bean->url, PATHINFO_EXTENSION));
+		$url = $bean->url;
+		$Media = $Essence->embed($url);
+
+		if ( $Media ) {
+			// echo 'got media!';
+		    $bean->import($Media);	
+		    $block = R::load('block',$bean->block_id);
+			$block->sharedArtefactList[] = $bean;
+			$user->ownArtefactList[] = $bean;							
+			R::storeAll([$block,$user]);		
+			echo json_encode($bean->export());	    
+		} else {			
+			// echo 'no media!';
+			$urls = $Essence->extract($url);			
+			if ($urls)
+			{
+				header('HTTP/1.1 500 Internal Server Error');
+				echo "I'm sorry that URL isn't compatible right now, we're working on it honest!";
+				// echo 'got urls!';
+				/*	
+				$array = $bean->export();
+				$array['suggestions'] = $urls;
+				echo json_encode($array);
+				*/
+			} else {
+				// echo 'no urls!';
+				$ext = strtolower(pathinfo($bean->url, PATHINFO_EXTENSION));	
+				if (in_array($ext, array('jpg','jpeg','png','gif','svg','tiff','webp'))) $mime_true = true;
+				else $mime_true = false;
+
+				if ($mime_true !== false)
+				{
+					$block = R::load('block',$bean->block_id);
+					$block->sharedArtefactList[] = $bean;
+					$user->ownArtefactList[] = $bean;							
+					R::storeAll([$block,$user]);		
+					echo json_encode($bean->export());
+				} else {
+					header('HTTP/1.1 500 Internal Server Error');
+					echo "I'm sorry but that doesn't seem to be an image. Please only paste addresses of actual images.";
+				}
+			}
+		}
+
+		return;
+
 		
-		if (in_array($ext, array('jpg','jpeg','png','gif','svg','tiff','webp'))) $mime_true = true;
-		else $mime_true = false;
 
 		// $mime_true = true;
-		if ($mime_true !== false)
-		{
-			$block = R::load('block',$bean->block_id);
-			$block->sharedArtefactList[] = $bean;
-
-			$user->ownArtefactList[] = $bean;
-					
-			R::storeAll([$block,$user]);		
-			echo json_encode($bean->export());
-		} else {
-			header('HTTP/1.1 500 Internal Server Error');
-			echo "I'm sorry but that doesn't seem to be an image. Please only paste addresses of actual images.";
-		}
+		
 	break;
  
  	// update

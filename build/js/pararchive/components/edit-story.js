@@ -7,7 +7,7 @@ var StoryListView = Marionette.ItemView.extend(
 		someblocks:'.some-blocks',
 		noblocks:'.no-blocks',
 		newstory:'.new-story',
-		newblockbutton:'.new-block',
+		plus:'.new-block',
 		storyname:'.story-name',
 	},
 

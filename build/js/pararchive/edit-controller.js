@@ -2,30 +2,36 @@ var EditController = Marionette.Controller.extend({
 
 	login:function()
 	{
-		console.log("Controller: login");	
+		console.log("Controller\tlogin");	
 		pararchive.main.show(new LoginView);
 	},
 
 	home:function()
 	{
-		console.log("Controller: home");		
-		var storiesview = new YourStoriesView({
-			model:pararchive.user.stories,
-		});
-		pararchive.main.show(storiesview);
+		var storiesview = new AllStoriesView({
+			collection:pararchive.allStories,
+		});	
+		pararchive.main.show(storiesview);	
+		pararchive.allStories.fetch({reset:true});
 	},
 
-	editStory:function(sid)
+	yourStories:function(username)
 	{
-		console.log("Controller: editStory: "+sid);				
+		console.log("Controller\tyourStories");		
+		pararchive.showYourStories();
+	},
+
+	editStory:function(username,sid)
+	{
+		console.log("Controller\teditStory\t"+sid);				
 		pararchive.showEditStory();
 		pararchive.story.setStoryID(sid);
 		pararchive.story.loadStory();		
 	},
 
-	editBlock:function(sid,bid)
+	editBlock:function(username,sid,bid)
 	{
-		console.log("Controller\teditBlock: "+sid+" "+bid);		
+		console.log("Controller\teditBlock\t"+sid+" "+bid);		
 		/*
 			If there's a storyID set they we've not arriving for the first time.
 		*/		
@@ -40,7 +46,6 @@ var EditController = Marionette.Controller.extend({
 				console.log('no block!');		
 			}
 		} else {
-			console.log("––new URL");		
 			pararchive.story.setStoryID(sid);
 			pararchive.story.loadStory(_.bind(function()
 			{
@@ -60,7 +65,7 @@ var EditController = Marionette.Controller.extend({
 
 	savedBlock:function(sid,bid)
 	{
-		console.log("Controller: savedBlock: "+sid+" "+bid);		
+		console.log("Controller\tsavedBlock\t"+sid+" "+bid);		
 
 		pararchive.story.setStoryID(sid);
 		pararchive.story.setBlock(bid);			
@@ -69,7 +74,7 @@ var EditController = Marionette.Controller.extend({
 
 	show404Error:function()
 	{
-		console.log("Controller: show404Error");		
+		console.log("Controller\tshow404Error");		
 	},
 
 	/*
@@ -80,7 +85,8 @@ var EditController = Marionette.Controller.extend({
     */        
     in:function()
     {
-    	console.log("Controller: in");		
-        window.location.href = '/';
+    	console.log("Controller\tin");		
+    	var user = pararchive.user.get('username');    	
+        pararchive.router.navigate('/'+user+'/',{trigger:true});
     },
 });

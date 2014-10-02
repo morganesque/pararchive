@@ -22,6 +22,6 @@ var SavedBlockView = Marionette.ItemView.extend(
 	{
 		e.preventDefault();
 		var slug = pararchive.story.get('slug');
-		pararchive.router.navigate('/view/story/'+slug+'/',{trigger:true});
+		pararchive.viewStory(slug);		
 	},
 });

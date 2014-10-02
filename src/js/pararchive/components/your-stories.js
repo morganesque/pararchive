@@ -17,9 +17,16 @@ var YourStoriesView = Marionette.ItemView.extend(
 
 	initialize:function()
 	{		
-		this.listenTo(this.model, "reset", this.showList);		
-		this.listenTo(this.model, "change", this.showList);		
-		this.listenTo(pararchive.user, "reset", this.showAuthor);		
+		this.listenTo(this.model, "reset", this.render);		
+		this.listenTo(this.model, "change", this.render);		
+		this.listenTo(pararchive.user, "reset", this.render);		
+	},
+
+	onRender:function()
+	{
+		// console.log("YourStoriesView\t onRender");		
+		if (this.model.length) this.showList();
+		this.showAuthor();
 	},
 
 	showList:function()
@@ -37,7 +44,7 @@ var YourStoriesView = Marionette.ItemView.extend(
 
 	showAuthor:function()
 	{
-		console.log("showAuthor");		
+		// console.log("showAuthor");		
 		this.ui.author.text(pararchive.user.get('firstname'));
 	},
 
@@ -50,9 +57,8 @@ var YourStoriesView = Marionette.ItemView.extend(
 		});
 		m.save({},{success:function(story,b,c)
 		{
-			var id = story.get('id');
-			pararchive.router.navigate('/edit/story/'+id+'/');
-        	pararchive.controller.editStory(id);
+			var sid = story.get('id');
+			pararchive.nav.editStory(sid);
 		}});
 	},
 });

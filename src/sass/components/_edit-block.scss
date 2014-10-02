@@ -53,14 +53,13 @@
 	}
 
 	a,div {	
-		$pad:2%;
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center center;
 		width:100%;
-		height:(100% - (2 * $pad));
+		height:100%;
 		position:absolute;
-		top:$pad;left:0;
+		top:0;left:0;
 	}
 }
 
@@ -74,3 +73,19 @@
 	margin-top:3em;
 	text-align:right;
 }
+
+.embed-container { 
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+	iframe,object,embed 
+	{
+		position:absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+ } 

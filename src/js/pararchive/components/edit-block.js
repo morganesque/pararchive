@@ -47,6 +47,11 @@ var EditBlockView = Marionette.ItemView.extend(
 	{
 		// console.log("EditBlockView onRender");		
 
+		if (!this.block) 
+		{
+			this.block = this.model.getBlock();
+		}
+
 		this.updateTextField('what');
 		this.updateTextField('when');
 		this.updateTextField('where');
@@ -113,7 +118,8 @@ var EditBlockView = Marionette.ItemView.extend(
 
 		this.block.artefacts.each(function(a,b,c)
 		{	
-			var url = a.get('url');
+			var url = a.get('thumbnail_url');
+			if (!url) url = a.get('url');
 			var link = $('<a/>');
 
 			link.css({'background-image': 'url('+url+')'});

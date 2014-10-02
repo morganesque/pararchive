@@ -13,12 +13,18 @@ var StoryBlock = Backbone.Model.extend(
 
     loadArtefacts:function()
     {
-        console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
-        var id = this.get('id');
-        this.artefacts.selectBlock(id,_.bind(function()
-        {   
-            this.trigger('artefacts');
-        },this));
+        if (!this.isNew())
+        {
+            console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
+            var id = this.get('id');
+            this.artefacts.selectBlock(id,_.bind(function()
+            {   
+                this.trigger('artefacts');
+            },this));    
+        } else {
+            console.log("StoryBlock\tThis block is still new so not loading artefacts.");        
+        }
+        
     },
 
     addArtefact:function(url)
@@ -28,9 +34,17 @@ var StoryBlock = Backbone.Model.extend(
         {
             block_id:this.get('id'),
             url:url,
-            type:"photo",
         });
-        newArte.save();
+        newArte.save({},{success:function(a,b,c)
+        {
+            console.log('Saved\tArtefact');        
+            // console.log('StoryBlock\tDoneSaveArtefact');        
+            // console.log(a,b,c);        
+        },error:function(a,b,c)
+        {
+            // console.log(a,b,c);        
+            alert(b.responseText);        
+        }});
     },
 });
 
@@ -76,7 +90,7 @@ var Story = Backbone.Collection.extend({
 
     addBlock:function()
     {
-        console.log("Story::addBlock");
+        console.log("Story\t\taddBlock");
         var newBlock = this.add({"story_id":this.storyID});
         this.setBlock(newBlock.cid);
     },
@@ -101,10 +115,12 @@ var Story = Backbone.Collection.extend({
 
     setBlock:function(id)
     {
-        console.log('Story\t\tsetBlock '+id);
+        // console.log('Story\t\tsetBlock '+id);
 
         if (id) this.block = this.get(id);
         else if (this.length) this.block = this.first();
+
+        console.log(this.block);        
 
         this.trigger('block'); 
         this.block.loadArtefacts();        
