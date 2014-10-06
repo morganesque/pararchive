@@ -9,6 +9,7 @@ var ViewBlockNotesView = Marionette.ItemView.extend(
 	ui: {
 		addnotes:'.add-notes',
 		newnote: '#new-note',
+		frame: '.show-notes',
 	},
 
 	events: {
@@ -30,6 +31,13 @@ var ViewBlockNotesView = Marionette.ItemView.extend(
 	onRender:function()
 	{	
 		console.log("Notes onRender");		
+		// this.ui.frame.on('scroll',_.bind(function()
+		// {
+		// 	console.log('scrolling: '+this.ui.frame.scrollTop());		
+		// 	console.log('scrolling: '+this.$el.scrollTop());		
+		// },this));
+		var r = this.ui.frame.scrollTop(0).scrollTop(300);
+		console.log(r.scrollTop());		
 	},
 
 	onNotes:function()
@@ -47,7 +55,8 @@ var ViewBlockNotesView = Marionette.ItemView.extend(
 	{
 		e.preventDefault();
 		var note = this.ui.newnote.val();
-		this.collection.addNote(note);
+		if (note !== '') this.collection.addNote(note);
+		else this.onAddNotesShow(new Event('asdk'));
 	},
 
 });

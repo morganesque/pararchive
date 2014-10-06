@@ -12,13 +12,13 @@ var ViewBlockView = Marionette.LayoutView.extend(
 	ui: {
 		body:'.view-block__body',
 		media:'.view-block__media',		
-		extras:'.block-extras',				
+		extras:'.view-block__extras',				
 
-		exarte:'.block-extras .artefacts',
-		exnote:'.block-extras .notes',
+		exarte:'.view-block__extras .artefacts',
+		exnote:'.view-block__extras .notes',
 
-		numarte:'.block-extras .artefacts .num',
-		numnotes:'.block-extras .notes .num',
+		numarte:'.view-block__extras .artefacts .num',
+		numnotes:'.view-block__extras .notes .num',
 	},
 
 	events: {				
@@ -56,7 +56,7 @@ var ViewBlockView = Marionette.LayoutView.extend(
 		if (this.block) 
 		{
 			this.ui.body.text(this.block.get('what'))
-			this.showNotes();
+			this.showArtefacts();
 		}
 		this.onWindowResize();
 	},

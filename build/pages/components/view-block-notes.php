@@ -1,7 +1,7 @@
 <div class="show-notes">
 	<% _.each(items, function(item){ %>
 		<div class="show-notes__note media">
-			<a href="#" class="pull-left"><img src="http://www.gravatar.com/avatar/<%= item.user.gravatar %>.png" class="media-object"/></a>
+			<a href="#" class="pull-left"><img src="http://www.gravatar.com/avatar/<%= item.user.gravatar %>?d=identicon" class="media-object"/></a>
 			<div class="media-body">
 				<p><%= item.note %></p>				
 				<p><a href="#" class="user"><%= item.user.username %></a> &mdash; <a href="#" class="date"><%= item.created %></a></p>
