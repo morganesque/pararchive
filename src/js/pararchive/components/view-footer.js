@@ -34,28 +34,25 @@ var ViewFooterView = Marionette.ItemView.extend(
 
 	show:function()
 	{
-		console.log('footer show');		
-		console.log(this.$el);		
 		this.$el.parent().removeClass('out');
 	},
 
 	hide:function()
 	{
-		console.log("footer hide");		
 		this.$el.parent().addClass('out');	
 	},
 
 	onReset:function()
 	{
-		console.log("ViewFooterView:onReset");
+		// console.log("ViewFooterView:onReset");
 		this.slug = this.model.meta.get('slug');
 		this.length = this.model.length;
 	},
 
 	onBlock:function()
 	{
-		console.log("ViewFooterView\tonBlock");		
-		var block = this.model.getBlock(); console.log(block);		
+		// console.log("ViewFooterView\tonBlock");		
+		var block = this.model.getBlock();
 		this.current = this.model.indexOf(block) + 1;
 		this.ui.page.text('Page '+this.current);
 		this.updateArrows();	
@@ -63,7 +60,7 @@ var ViewFooterView = Marionette.ItemView.extend(
 
 	updateArrows:function()
 	{
-		console.log("ViewFooterView\tupdateArrows");		
+		// console.log("ViewFooterView\tupdateArrows");		
 		this.ui.next.removeClass('disabled');
 		this.ui.prev.removeClass('disabled');
 		if (this.current == this.length) this.ui.next.addClass('disabled');

@@ -18,7 +18,7 @@ var Artefacts = Backbone.Collection.extend({
 			this.blockID = id;	
 			this.reset();
 			var self = this;
-			this.fetch({success:_.bind(function()
+			this.fetch({reset:true,success:_.bind(function()
 			{
 				this.fetched = true;
 				callback();

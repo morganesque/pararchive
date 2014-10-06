@@ -2,7 +2,7 @@
 
 $font-size-base: 16px;
 $font-family-sans-serif:  'Source Sans Pro', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       'Averia Serif Libre', cursive !default;
+$font-family-serif:       'Merriweather', cursive !default;
 $headings-font-weight: 300;
 
 // $border-radius-base:        4px !default;
@@ -15,7 +15,7 @@ $brand-secondary:		#4c4f62;
 $gray-darker:            darken($brand-secondary, 10%) !default; // #222
 $gray-dark:              darken($brand-secondary, 5%) !default;   // #333
 $gray:                   lighten($brand-secondary, 0%) !default; // #555
-$gray-light:             lighten($brand-secondary, 30%) !default;   // #999
+$gray-light:             lighten($brand-secondary, 50%) !default;   // #999
 $gray-lighter:           lighten($brand-secondary, 60%) !default; // #eee
 
 $brand-success:         #5cb85c;
@@ -23,7 +23,7 @@ $brand-info:            #5bc0de;
 $brand-warning:         #f0ad4e;
 $brand-danger:          #d9534f;
 
-// $grid-gutter-width:         0px !default;
+$grid-gutter-width:         16px !default;
 
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 

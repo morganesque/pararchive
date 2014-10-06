@@ -52,6 +52,10 @@ switch($params[0])
         include_once('artefacts.php');
     break;
 
+    case 'note':
+        include_once('notes.php');
+    break;
+
     case 'view':
         include_once('view.php');
     break;
@@ -66,6 +70,10 @@ switch($params[0])
 
     case 'test':
         include_once('test.php');
+    break;
+
+    case 'icons':
+        include_once('icons.php');
     break;
 
     default:

@@ -9,6 +9,7 @@ var StoryBlock = Backbone.Model.extend(
     initialize:function()
     {
         this.artefacts = new Artefacts();
+        this.notes = new Notes();
     },
 
     loadArtefacts:function()
@@ -24,7 +25,6 @@ var StoryBlock = Backbone.Model.extend(
         } else {
             console.log("StoryBlock\tThis block is still new so not loading artefacts.");        
         }
-        
     },
 
     addArtefact:function(url)
@@ -45,6 +45,23 @@ var StoryBlock = Backbone.Model.extend(
             // console.log(a,b,c);        
             alert(b.responseText);        
         }});
+    },
+
+    loadNotes:function()
+    {
+        console.log("StoryBlock\tloadNotes");        
+        if (!this.isNew())
+        {
+            // console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
+            var id = this.get('id');
+            this.notes.blockID = id;
+            this.notes.fetch({reset:true,success:_.bind(function(a,b,c)
+            {
+                this.trigger('notes');
+            },this)});    
+        } else {
+            console.log("StoryBlock\tThis block is still new so not loading artefacts.");        
+        }        
     },
 });
 
@@ -122,6 +139,7 @@ var Story = Backbone.Collection.extend({
 
         this.trigger('block'); 
         this.block.loadArtefacts();        
+        this.block.loadNotes();        
     },
 
     /*

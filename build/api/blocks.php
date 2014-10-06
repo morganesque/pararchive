@@ -8,8 +8,28 @@ switch($_SERVER['REQUEST_METHOD'])
 		if (isset($params[1]))
 		{
 			$id = $params[1];
-			$bean = R::load($type,$id); //Retrieve 
-			echo json_encode($bean->export());
+			if (isset($params[2])) 
+			{
+				// returning a collection of notes
+				$type = $params[2];
+				$stuff = R::findAll($type, "block_id = ?", [$id]);
+				$out = []; 
+				foreach($stuff as $s) 
+				{
+					$u = R::load('user',$s->user_id);
+					$u->gravatar = md5($u->email);
+					$s->user = $u;
+					$out[] = $s->export();
+				}
+				echo json_encode($out);
+				
+			} else {
+
+				// returning a single block
+				$bean = R::load($type,$id); //Retrieve 
+				echo json_encode($bean->export());	
+			}
+			
 
 		} else {
 

@@ -16,7 +16,6 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <!-- <link rel="stylesheet" href="http://i.icomoon.io/public/temp/069a4c5316/Pararchive/style.css"> -->
     <link rel="stylesheet" href="/css/styles.css">
 
     <!-- let modernizr do it's thing (OPTIMIZE THIS LATER!) -->
@@ -24,7 +23,7 @@
 
     <!-- get fonts from Google Fonts -->
     <!-- <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900italic' rel='stylesheet' type='text/css'> -->
-    <!-- <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700|Averia+Serif+Libre' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700|Merriweather' rel='stylesheet' type='text/css'>
 
     <!-- load all the libraries -->
     <script type="text/javascript" src="/js/all.min.js"></script>
@@ -42,6 +41,7 @@
     <script type="text/javascript" src="/js/pararchive/model-user.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-artefacts.js"></script>
+    <script type="text/javascript" src="/js/pararchive/model-notes.js"></script>
 
     <!-- load all the components -->
     <script type="text/javascript" src="/js/pararchive/components/login.js"></script>
@@ -55,6 +55,8 @@
     <script type="text/javascript" src="/js/pararchive/components/view-footer.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/view-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/view-block.js"></script>
+    <script type="text/javascript" src="/js/pararchive/components/view-block-artefacts.js"></script>
+    <script type="text/javascript" src="/js/pararchive/components/view-block-notes.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/all-stories.js"></script>
 
     <!-- behaviours -->
