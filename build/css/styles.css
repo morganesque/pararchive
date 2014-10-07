@@ -4625,7 +4625,8 @@ body {
   font-family: "Merriweather", cursive;
   font-size: 2em;
   vertical-align: middle;
-  margin: 0; }
+  margin: 0;
+  white-space: nowrap; }
 .header .story-author {
   display: none; }
 
@@ -4723,8 +4724,9 @@ body {
     width: 100%;
     pointer-events: none;
     padding: 0;
-    color: white;
-    background-color: #f0ad4e;
+    color: #26b9b9;
+    outline: 1px solid #26b9b9;
+    background-color: white;
     -webkit-transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
     .edit-story .details-edit .notify.out {
@@ -4732,7 +4734,7 @@ body {
     .edit-story .details-edit .notify p {
       text-align: center;
       padding: 0.5em;
-      margin: 1em 0 0;
+      margin: 2em 0 0;
       font-size: 3em; }
 
 .edit-block .form-group {
@@ -4853,7 +4855,7 @@ body {
 
 .view-block__body {
   font-size: 1.5em;
-  line-height: 1.2;
+  line-height: 1.4;
   font-family: "Merriweather", cursive;
   padding: 0.5em 0; }
 .view-block__media {

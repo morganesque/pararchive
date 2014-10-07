@@ -16,10 +16,11 @@ var HeaderView = Marionette.ItemView.extend(
 
 	initialize:function(options)
 	{
-		console.log("HeaderView\tinitialize");				
+		// console.log("HeaderView\tinitialize");				
 		this.listenTo(this.model, "meta", this.render);
+
 		this.listenTo(pararchive.vent, "storyname:hide", this.hideName);
-		this.listenTo(pararchive.vent, "storyname:show", this.nameShow);
+		this.listenTo(pararchive.vent, "storyname:show", this.showName);
 		this.listenTo(pararchive.vent, "storyname:change", this.changeName);
 	},
 
@@ -33,14 +34,14 @@ var HeaderView = Marionette.ItemView.extend(
 
 	hideName:function()
 	{
-		console.log("hideName");		
+		// console.log("hideName");		
 		this.nameShow = false;	
 		this.render();	
 	},
 
 	showName:function()
 	{
-		console.log("showName");		
+		// console.log("showName");		
 		this.nameShow = true;		
 		this.render();
 	},

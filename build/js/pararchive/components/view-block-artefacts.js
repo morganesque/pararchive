@@ -39,7 +39,7 @@ var ViewBlockArtefactsView = Marionette.ItemView.extend(
 
 		if (type == 'photo')
 		{
-			var url = a.get('url');
+			var url = a.get('url'); console.log(url);		
 			this.ui.showall.css({"background-image":'url('+url+')'});	
 			this.ui.showall.empty();
 			this.ui.showall.append('<a class="btn-close"><span class="icon icon-close"></span></a>');

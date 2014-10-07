@@ -5,6 +5,7 @@
 	</div>
 
 	<h3>You can&hellip; <a href="#" class="create-new-story btn btn-lg btn-primary">Create new story</a> &hellip;or choose a story below.</h3>
+	<br />
 	<div class="edit-story">		
 		<% _.each(items, function(item){ %>
 			<div class="edit-story__item">

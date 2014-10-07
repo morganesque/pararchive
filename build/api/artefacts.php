@@ -80,6 +80,7 @@ switch($_SERVER['REQUEST_METHOD'])
 
 				if ($mime_true !== false)
 				{
+					$bean->type = 'photo';
 					$block = R::load('block',$bean->block_id);
 					$block->sharedArtefactList[] = $bean;
 					$user->ownArtefactList[] = $bean;							

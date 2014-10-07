@@ -20,8 +20,9 @@
 			top:0;bottom:0;left:0;width:100%;
 			pointer-events:none;
 			padding:0;
-			color:white;
-			background-color:$brand-warning;
+			color:$brand-primary;
+			outline:1px solid $brand-primary;
+			background-color:white;
 			transition:opacity 0.5s $easeOutQuint;
 			&.out {
 				opacity:0;
@@ -29,7 +30,7 @@
 			p {
 				text-align:center;
 				padding:0.5em;
-				margin:1em 0 0;
+				margin:2em 0 0;
 				font-size:3em;
 			}
 		}

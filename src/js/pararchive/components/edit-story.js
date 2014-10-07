@@ -4,15 +4,15 @@ var StoryListView = Marionette.ItemView.extend(
 	className:'edit-story',
 
 	ui:{
-		num:'.some-blocks .num',
-		someblocks:'.some-blocks',
-		noblocks:'.no-blocks',
 		newstory:'.new-story',
 		plus:'.new-block',
 
 		blurb:'#story-blurb',
 		name:'#story-name',
 		notify:'.notify',
+		submit:'.save-story-meta',
+
+		create:'.create-call',
 	},
 
 	behaviors:{
@@ -26,7 +26,8 @@ var StoryListView = Marionette.ItemView.extend(
 		'focus 		@ui.name':"onNameChange",
 		'textInput 	@ui.name':"onNameChange",
 		'input 		@ui.name':"onNameChange",
-		'click .save-story-meta':"onSaveStoryMeta",
+		
+		'click @ui.submit':"onSaveStoryMeta",
 	},
 
 	initialize:function()
@@ -75,6 +76,7 @@ var StoryListView = Marionette.ItemView.extend(
 				setTimeout(_.bind(function()
 				{
 					this.ui.notify.addClass('out');
+					this.ui.newstory.hide();
 				},this),1000);
 
 			},this)});

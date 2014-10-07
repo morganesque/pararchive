@@ -44,7 +44,7 @@
 		</div>
 		<div class="col-xs-4">
 			<% if (items.length == 0) { %>
-				<p class="lead text-right"><span class="icon icon-arrow-up text-right"></span> Create a new block</p>
+				<p class="lead text-right create-call"><span class="icon icon-arrow-up text-right"></span> Create a new block</p>
 			<% } %>
 		</div>
 	</div>

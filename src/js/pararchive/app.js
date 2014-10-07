@@ -58,6 +58,7 @@ var App = Marionette.Application.extend({
         }); 
         pararchive.main.show(storiesview);  
         this.top.empty();  
+        this.vent.trigger('footer:hide');
     },
 
     showYourStories:function()
