@@ -1,6 +1,6 @@
 <div class="saved-block container-fluid">
 
-	<div class="page-header"><h1>Block Saved!</h1></div>
+	<div class="page-header"><h3>Block Saved!</h3></div>
 
 	<br />
 	

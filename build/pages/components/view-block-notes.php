@@ -1,4 +1,5 @@
 <div class="show-notes">
+	<% if (items.length == 0){ %> <p>There are no notes for this block yet.</p> <% } %>
 	<% _.each(items, function(item){ %>
 		<div class="show-notes__note media">
 			<a href="#" class="pull-left"><img src="http://www.gravatar.com/avatar/<%= item.user.gravatar %>?d=identicon" class="media-object"/></a>

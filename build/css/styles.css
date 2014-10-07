@@ -4606,7 +4606,7 @@ body {
   margin-bottom: 0; }
 
 .central {
-  max-width: 640px;
+  max-width: 960px;
   margin: 0 auto; }
 
 .header .story {
@@ -4626,6 +4626,11 @@ body {
 
 .navbar .username {
   color: black; }
+
+.all-stories__item {
+  border-bottom: 1px solid rgba(38, 185, 185, 0.42); }
+.all-stories__edit {
+  margin-right: 0.5em; }
 
 .your-stories .edit-story {
   max-width: 640px;
@@ -4665,7 +4670,7 @@ body {
   width: 50px;
   height: 50px;
   text-align: center;
-  line-height: 48px;
+  line-height: 44px;
   border: 2px solid #26b9b9;
   font-size: 30px;
   font-size: 3rem;
@@ -4858,7 +4863,9 @@ body {
     .view-block__notes .show-notes__note {
       border: 1px solid rgba(0, 0, 0, 0.12);
       padding: 1em 1em 0.25em 1em;
-      background-color: rgba(255, 255, 255, 0.62); }
+      background-color: rgba(255, 255, 255, 0.62);
+      margin-top: 0;
+      margin-bottom: 0.5em; }
     .view-block__notes .show-notes .media-object {
       width: 50px;
       margin-bottom: 1em; }
