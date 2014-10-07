@@ -79,16 +79,18 @@ var App = Marionette.Application.extend({
         });
         this.main.show(storyview);
         this.showStoryPanel('edit');
+        this.vent.trigger('storyname:show');
     },
 
     showEditBlock:function()
     {
-        console.log("App\t\t\tshowEditBlock");        
+        // console.log("App\t\t\tshowEditBlock");        
         var editblock = new EditBlockView({
             model:this.story,
         });
         this.main.show(editblock);
         this.showStoryPanel('block');
+        this.vent.trigger('storyname:show');
     },
 
     showStoryPanel:function(state)
@@ -118,11 +120,12 @@ var App = Marionette.Application.extend({
     showViewStory:function()
     {
         var storyfront = new StoryFrontView({
-            model:this.story,
+            model:this.story.meta,
         });
         this.main.show(storyfront);
         this.top.empty();  
         this.vent.trigger('footer:hide');
+        this.vent.trigger('storyname:hide');
     },
 
     showViewBlock:function()
@@ -133,5 +136,6 @@ var App = Marionette.Application.extend({
         });
         this.main.show(viewblock);
         this.showViewFooter();
+        this.vent.trigger('storyname:show');
     },
 });

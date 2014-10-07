@@ -21,8 +21,7 @@ var ViewController = Marionette.Controller.extend({
 	{
 		// console.log("ViewController:viewStory: "+slug);
 		pararchive.showViewStory();
-		this.convertSlug(slug);
-		
+		this.convertSlug(slug);		
 	},
 
 	viewBlock:function(slug,bin)

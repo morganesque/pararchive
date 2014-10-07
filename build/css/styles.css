@@ -4713,6 +4713,27 @@ body {
   .edit-story .first-blurb .icon {
     position: relative;
     top: 0.20em; }
+.edit-story .details-edit {
+  position: relative; }
+  .edit-story .details-edit .notify {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    padding: 0;
+    color: white;
+    background-color: #f0ad4e;
+    -webkit-transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: opacity 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+    .edit-story .details-edit .notify.out {
+      opacity: 0; }
+    .edit-story .details-edit .notify p {
+      text-align: center;
+      padding: 0.5em;
+      margin: 1em 0 0;
+      font-size: 3em; }
 
 .edit-block .form-group {
   border-bottom: 1px solid #ccc;

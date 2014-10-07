@@ -49,7 +49,7 @@ var StoryBlock = Backbone.Model.extend(
 
     loadNotes:function()
     {
-        console.log("StoryBlock\tloadNotes");        
+        // console.log("StoryBlock\tloadNotes");        
         if (!this.isNew())
         {
             // console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
@@ -88,6 +88,7 @@ var Story = Backbone.Collection.extend({
     initialize:function(options)
     {        
     	if (options && options.storyID) this.storyID = options.storyID;        
+        this.meta = new StoryMeta();
     },    
 
     /*
@@ -116,7 +117,7 @@ var Story = Backbone.Collection.extend({
     {
         var self = this;
     	this.storyID = id;
-        this.meta = new StoryMeta({id:id});
+        this.meta.set({id:id});
         this.meta.fetch({success:function(a)
         {
             self.trigger('meta'); // adds the story title to the storyPanel.
@@ -125,7 +126,7 @@ var Story = Backbone.Collection.extend({
 
     setStoryMeta:function(sm)
     {
-        this.meta = new StoryMeta(sm);
+        this.meta.set(sm);
         this.storyID = this.meta.get('id');
         this.trigger('meta');
     },

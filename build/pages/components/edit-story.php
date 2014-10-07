@@ -5,6 +5,7 @@
 			<% if (items.length > 1) { %>			
 				<div class="some-blocks">
 					<p class="lead">Your story has <%= items.length %> blocks.</p>					
+					<p class="text-primary">{ Click above to edit one. }</p>
 				</div>
 			<% } else if (items.length == 1) { %>
 				<div class="some-blocks">
@@ -21,7 +22,8 @@
 				<% } %>
 			<% }  %>
 		</div>
-		<div class="col-xs-4">
+		<div class="col-xs-4 details-edit">
+			<div class="notify"><p>Story details saved</p></div>
 			<h3>Story details</h3>
 			<div class="form-group">
 				<label>Story name</label>

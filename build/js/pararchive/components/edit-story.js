@@ -12,6 +12,7 @@ var StoryListView = Marionette.ItemView.extend(
 
 		blurb:'#story-blurb',
 		name:'#story-name',
+		notify:'.notify',
 	},
 
 	behaviors:{
@@ -30,20 +31,8 @@ var StoryListView = Marionette.ItemView.extend(
 
 	initialize:function()
 	{	
-		this.listenTo(this.collection, "change", this.onChange);		
-		this.listenTo(this.collection, "reset", this.onReset);		
-	},
-
-	onChange:function()
-	{
-		// console.log("StoryListView change");			
-		this.render();
-	},
-
-	onReset:function()
-	{
-		// console.log("StoryListView reset");		
-		this.render();
+		this.listenTo(this.collection, "change", this.render);		
+		this.listenTo(this.collection, "reset", this.render);		
 	},
 
 	serializeData:function()
@@ -53,6 +42,12 @@ var StoryListView = Marionette.ItemView.extend(
 		}	
 		if (this.collection.meta !== undefined) out.meta = this.collection.meta.toJSON();
 		return out;
+	},
+
+	onRender:function()
+	{
+		// console.log("onRender");		
+		this.ui.notify.addClass('out');	
 	},
 
 	onNameChange:function(e)
@@ -67,18 +62,22 @@ var StoryListView = Marionette.ItemView.extend(
 		var name = this.ui.name.val();
 		var blurb = this.ui.blurb.val();
 
+		this.ui.notify.html('<p>Saving...</p>');
+		this.ui.notify.removeClass('out');
+
 		if (name)
 		{
 			var slug = $.slugify(name);
 			this.collection.meta.set({name:name,slug:slug,blurb:blurb});			
-			this.collection.meta.save({},{success:function(story)
-			{
-				var sid = story.get('id');
-				console.log('saved story meta: '+sid);		
-				pararchive.story.trigger('meta');
-				pararchive.story.trigger('change');
-				pararchive.nav.editStory(sid);
-			}});
+			this.collection.meta.save({},{success:_.bind(function(story)
+			{				
+				this.ui.notify.html('<p>Saved!</p>');
+				setTimeout(_.bind(function()
+				{
+					this.ui.notify.addClass('out');
+				},this),1000);
+
+			},this)});
 		} else {
 			alert("You story's name can't be blank");
 		}

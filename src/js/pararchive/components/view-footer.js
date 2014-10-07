@@ -34,11 +34,13 @@ var ViewFooterView = Marionette.ItemView.extend(
 
 	show:function()
 	{
+		console.log("footer:show");		
 		this.$el.parent().removeClass('out');
 	},
 
 	hide:function()
 	{
+		console.log("footer:hide");
 		this.$el.parent().addClass('out');	
 	},
 

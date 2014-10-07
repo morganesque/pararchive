@@ -18,21 +18,28 @@ var StoryFrontView = Marionette.ItemView.extend(
 
 	initialize:function()
 	{
-		this.listenTo(this.model, "meta", this.render);
+		/*
+			need to listen to meta & reset to make sure all the data is included.
+		*/		
+		this.listenTo(pararchive.story, "meta", this.render);
+		this.listenTo(pararchive.story, "reset", this.render);
+	},
+
+	serializeData:function()
+	{
+		var out = this.model.toJSON();
+		if (!out.blurb) out.blurb = '';
+		out.blocks = pararchive.story.length;
+		return out;
 	},
 
 	onRender:function()
-	{
-		if (this.model.meta)
-		{
-			this.ui.storyname.text(this.model.meta.get('name'));	
-		}
-	},
+	{},
 
 	onStart:function(e)
 	{
 		e.preventDefault();
-		var slug = pararchive.story.meta.get('slug');
+		var slug = this.model.get('slug');
 		pararchive.nav.viewStoryBlock(slug,1);
 	},
 });
