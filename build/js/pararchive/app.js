@@ -75,10 +75,10 @@ var App = Marionette.Application.extend({
     showEditStory:function()
     {
         var storyview = new StoryListView({
-            model:this.story,
+            collection:this.story,
         });
         this.main.show(storyview);
-        this.showStoryPanel();
+        this.showStoryPanel('edit');
     },
 
     showEditBlock:function()
@@ -88,14 +88,16 @@ var App = Marionette.Application.extend({
             model:this.story,
         });
         this.main.show(editblock);
+        this.showStoryPanel('block');
     },
 
-    showStoryPanel:function()
+    showStoryPanel:function(state)
     {
         var storypanel = new StoryPanelView({
-            model:this.story,
+            collection:this.story,
         })
         this.top.show(storypanel);
+        storypanel.setState(state)
     },
 
     showSavedBlock:function()

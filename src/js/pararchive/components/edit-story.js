@@ -1,6 +1,7 @@
 var StoryListView = Marionette.ItemView.extend(
 {
 	template:'#story-template',
+	className:'edit-story',
 
 	ui:{
 		num:'.some-blocks .num',
@@ -8,7 +9,9 @@ var StoryListView = Marionette.ItemView.extend(
 		noblocks:'.no-blocks',
 		newstory:'.new-story',
 		plus:'.new-block',
-		storyname:'.story-name',
+
+		blurb:'#story-blurb',
+		name:'#story-name',
 	},
 
 	behaviors:{
@@ -16,13 +19,19 @@ var StoryListView = Marionette.ItemView.extend(
 	},
 
 	events:{
-		'click .story-name__submit':'changeStoryName',
+		'change 	@ui.name':"onNameChange",
+		'keypress 	@ui.name':"onNameChange",
+		'paste 		@ui.name':"onNameChange",
+		'focus 		@ui.name':"onNameChange",
+		'textInput 	@ui.name':"onNameChange",
+		'input 		@ui.name':"onNameChange",
+		'click .save-story-meta':"onSaveStoryMeta",
 	},
 
 	initialize:function()
 	{	
-		this.listenTo(this.model, "change", this.onChange);		
-		this.listenTo(this.model, "reset", this.onReset);		
+		this.listenTo(this.collection, "change", this.onChange);		
+		this.listenTo(this.collection, "reset", this.onReset);		
 	},
 
 	onChange:function()
@@ -37,52 +46,41 @@ var StoryListView = Marionette.ItemView.extend(
 		this.render();
 	},
 
-	onRender:function()
-	{				
-		// console.log("story list - onRender");		
-		if (pararchive.story.length)
-		{			
-			this.ui.newstory.hide();
-			this.ui.someblocks.show();
-			this.ui.noblocks.hide();
-
-			if (pararchive.story.length == 1) this.ui.num.text('1 block');
-			else this.ui.num.text(pararchive.story.length+' blocks');
-
-		} else {
-
-			this.ui.someblocks.hide();	
-
-			if (this.model.meta)
-			{
-				if (this.model.meta.get('name') !== 'MyStory')
-				{
-					this.ui.newstory.hide();
-					this.ui.noblocks.show();
-				} else {					
-					this.ui.newstory.show();
-					this.ui.noblocks.hide();
-				}
-			}
-		}		
+	serializeData:function()
+	{
+		var out = {
+			items:this.collection.toJSON(),
+		}	
+		if (this.collection.meta !== undefined) out.meta = this.collection.meta.toJSON();
+		return out;
 	},
 
-	changeStoryName:function(e)
+	onNameChange:function(e)
+	{
+		pararchive.vent.trigger('storyname:change',this.ui.name.val());
+	},
+
+	onSaveStoryMeta:function(e)
 	{
 		e.preventDefault();
 
-		var name = this.ui.storyname.val();
+		var name = this.ui.name.val();
+		var blurb = this.ui.blurb.val();
+
 		if (name)
 		{
 			var slug = $.slugify(name);
-			this.model.meta.set({name:name,slug:slug});
-			this.model.trigger('meta');
-			this.model.meta.save({},{success:function(story)
+			this.collection.meta.set({name:name,slug:slug,blurb:blurb});			
+			this.collection.meta.save({},{success:function(story)
 			{
-				console.log('saved new name');		
-				var id = story.get('id');
-				pararchive.controller.editStory(id);
+				var sid = story.get('id');
+				console.log('saved story meta: '+sid);		
+				pararchive.story.trigger('meta');
+				pararchive.story.trigger('change');
+				pararchive.nav.editStory(sid);
 			}});
+		} else {
+			alert("You story's name can't be blank");
 		}
 	},
 

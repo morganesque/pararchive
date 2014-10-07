@@ -19,6 +19,7 @@ var HeaderView = Marionette.ItemView.extend(
 		// console.log("HeaderView\tinitialize");				
 		this.listenTo(this.model, "meta", this.render);
 		this.listenTo(pararchive.vent, "storyname:hide", this.clearName);
+		this.listenTo(pararchive.vent, "storyname:change", this.changeName);
 	},
 
 	onRender:function()
@@ -33,6 +34,11 @@ var HeaderView = Marionette.ItemView.extend(
 	{
 		// console.log("HeaderView\t clearName");		
 		if (this.ui.story) this.ui.story.hide();
+	},
+
+	changeName:function(name)
+	{
+		this.ui.name.text(name);
 	},
 
 	onLogoClick:function(e)

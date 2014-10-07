@@ -1,84 +1,65 @@
 var StoryPanelView = Marionette.ItemView.extend(
 {
 	template:'#panel-template',	
+	className:'story-panel',
 
 	ui: {
-		temp:'.story-panel__blocks .block',		
 		blocks:'.story-panel__blocks',
 		name:'.story-panel__name .content',
 		author:'.story-panel__name .author',
 
 		plus:'.btn-new-block',
-		view:'.btn-view-story',
-		edit:'.btn-edit-story',
+		viewstory:'.btn-view-story',
+		editstory:'.btn-edit-story',
 	},
 
 	events:{
 		'click .block': "onBlockClick",
-		'click @ui.view' : "onViewStory",
-		'click @ui.edit' : "onEditStory",
 	},
 
 	behaviors:{
 		NewBlock:{},
+		ViewStory:{},
+		EditStory:{},
 	},
 
 	/*
-		this.model = pararchive.story 
+		this.collection = pararchive.story 
 	*/		
 	initialize:function(options)
 	{		
-		this.listenTo(this.model, "block", 	this.blockBlocks);
-		this.listenTo(this.model, "reset", 	this.resetBlocks);
-		this.listenTo(this.model, "add", 	this.addBlocks);
+		this.listenTo(this.collection, "block", 	this.blockBlocks);
+		this.listenTo(this.collection, "reset", 	this.render);
+		this.listenTo(this.collection, "change", 	this.render);
+		this.listenTo(this.collection, "add", 		this.render);
+	},
+
+	serializeData:function()
+	{
+		var out = {items:this.collection.toJSON()};
+		if (this.collection.meta !== undefined) out.meta = this.collection.meta.toJSON();
+		return out;
 	},
 
 	onRender:function()
 	{		
 		// console.log("StoryPanelView:onRender");		
-		this.ui.temp.remove();
-		if (this.model.length)
-		{
-			this.addBlocks();
-		}
+		if (this.state == 'edit') this.ui.editstory.hide();
+	},
+
+	setState:function(state)
+	{
+		// console.log("setState "+state);		
+		this.state = state;
+		if (state == 'edit') this.ui.editstory.hide();
 	},
 
 	blockBlocks:function()
 	{
-		// console.log("blockBlocks");		
-		// throw new Error('blockBlocks');
-		var bid = this.model.block.get('id');
-		if (!bid) bid = this.model.block.cid;
+		// console.log("blockBlocks");				
+		var bid = this.collection.block.get('id');
+		if (!bid) bid = this.collection.block.cid;
 		this.selectBlock(bid);
-	},
-
-	resetBlocks:function()
-	{
-		// console.log('–– resetBlocks');		
-		this.addBlocks();
-	},
-
-	/*
-		Main rendering of this component.
-	*/		
-	addBlocks:function()
-	{		
-		this.ui.blocks.empty();
-
-		this.model.each(function(m,i)
-		{
-			var id = m.id;
-			var sd = m.get('story_id');
-
-			if(!id) id = m.cid; // it's a new Block	
-
-			var n = this.ui.temp.clone();
-			n.attr('href','#'+id);
-			n.addClass('block_'+id);
-			n.text(i+1);
-
-			this.ui.blocks.append(n);					
-		},this);
 	},
 
 	/*
@@ -89,7 +70,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 		// console.log("onBlockClick");		
 		e.preventDefault();		
 
-		var sid = this.model.storyID;
+		var sid = this.collection.storyID;
 		var bid = $(e.currentTarget).attr('href').substr(1);
 
 		pararchive.nav.editStoryBlock(sid,bid);
@@ -100,6 +81,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	selectBlock:function(id)
 	{
+		// console.log("selectBlock: "+id);		
 		var block = this.$el.find('.block_'+id);
 		this.$el.find('.block').removeClass('current'); // remove the current 
 		block.addClass('current');
@@ -108,20 +90,6 @@ var StoryPanelView = Marionette.ItemView.extend(
 	deselectBlock:function()
 	{
 		this.$el.find('.block').removeClass('current'); // remove the current 
-	},
-
-	onViewStory:function(e)
-	{
-		e.preventDefault();
-		var slug = pararchive.story.meta.get('slug');
-		pararchive.nav.viewStory(slug);
-	},
-
-	onEditStory:function(e)
-	{
-		e.preventDefault();
-		var sid = pararchive.story.meta.get('id');
-		pararchive.nav.editStory(sid);
 	},
 
 	/*

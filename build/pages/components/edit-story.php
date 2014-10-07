@@ -1,16 +1,56 @@
-<div class="saved-block container-fluid">
+<div class="container-fluid">
 
-	<div class="new-story">
-		<h1>First give your story a name</h1>
-		<p>
-			<form class="form-inline" role="form">
-				<div class="form-group">
-					<input type="text" class="story-name form-control input-lg" size="42"/>
-					<button class="story-name__submit btn btn-lg btn-primary">Submit</button>
+	<div class="row">
+		<div class="col-xs-4">			
+			<% if (items.length > 1) { %>			
+				<div class="some-blocks">
+					<p class="lead">Your story has <%= items.length %> blocks.</p>					
 				</div>
-			</form>
-		</p>
+			<% } else if (items.length == 1) { %>
+				<div class="some-blocks">
+					<p class="lead">Your story has <%= items.length %> block.</p>					
+				</div>
+			<% } else if (items.length == 0) { %>
+				<% if (typeof meta !== "undefined") { %>
+					<% if (meta.name == 'MyStory') { %>
+						<div class="new-story">
+							<p class="lead first-name text-right">1. Give your story a name <span class="icon icon-arrow-right"></span></p>		
+							<p class="lead first-blurb text-right">2. Write a little introduction <span class="icon icon-arrow-right"></span></p>		
+						</div>
+					<% } %>	
+				<% } %>
+			<% }  %>
+		</div>
+		<div class="col-xs-4">
+			<h3>Story details</h3>
+			<div class="form-group">
+				<label>Story name</label>
+				<% if (typeof meta !== "undefined") { %>
+				<input class="form-control" id="story-name" value="<%= meta.name %>"/>
+				<% } %>
+			</div>
+			<div class="form-group">
+				<label>Story blurb</label>
+				<p class="example">A brief introduction to your story (optional).</p>
+				<% if (typeof meta !== "undefined") { %>
+				<textarea class="form-control story-blurb" id="story-blurb"><%= meta.blurb %></textarea>
+				<% } %>
+			</div>
+			<div class="form-group">
+				<button class="save-story-meta btn btn-lg btn-primary">Save changes</button>
+			</div>
+		</div>
+		<div class="col-xs-4">
+			<% if (items.length == 0) { %>
+				<p class="lead text-right"><span class="icon icon-arrow-up text-right"></span> Create a new block</p>
+			<% } %>
+		</div>
 	</div>
+
+</div>
+
+<!--
+	
 
 	<div class="no-blocks">
 		<h1 class="start-message">Your story contains no blocks.</h1>
@@ -18,10 +58,5 @@
 		<p class="h3"><a href="#" class="btn btn-sm btn-primary new-block">create a new block</a></p>
 	</div>
 
-	<div class="some-blocks">
-		<h1 class="start-message">Your story has <span class="num"> blocks</span></h1>
-		<p class="h3">Click a block above to edit it.</p>
-		<p class="h3">&hellip; or <a href="#" class="btn btn-sm btn-primary new-block">create a new block</a></p>
-	</div>
-
-</div>
+	
+-->
