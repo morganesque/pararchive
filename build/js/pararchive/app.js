@@ -51,6 +51,15 @@ var App = Marionette.Application.extend({
         // this.header.show(identity);
     },
 
+    showAllStories:function()
+    {
+        var storiesview = new AllStoriesView({
+            collection:pararchive.allStories,
+        }); 
+        pararchive.main.show(storiesview);  
+        this.top.empty();  
+    },
+
     showYourStories:function()
     {
         console.log("App\t\t\tshowYourStories");        
@@ -89,11 +98,6 @@ var App = Marionette.Application.extend({
         this.top.show(storypanel);
     },
 
-    hideStoryPanel:function()
-    {
-        this.top.empty();  
-    },
-
     showSavedBlock:function()
     {
         var savedblock = new SavedBlockView({});
@@ -115,7 +119,7 @@ var App = Marionette.Application.extend({
             model:this.story,
         });
         this.main.show(storyfront);
-        this.hideStoryPanel();
+        this.top.empty();  
         this.vent.trigger('footer:hide');
     },
 

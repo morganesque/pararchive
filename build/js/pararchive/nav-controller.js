@@ -11,6 +11,17 @@ var NavController = Marionette.Controller.extend({
 		this.user = pararchive.user.get('username');
 	},
 
+	/*
+		Actually controller functions start here. 
+	*/		
+
+	allStories:function()
+	{
+		pararchive.router.navigate('/');			
+		pararchive.showAllStories();
+		if (pararchive.allStories.length == 0) pararchive.allStories.fetch({reset:true});
+	},
+
 	yourStories:function()
 	{
 		// console.log("Nav\t\t\tyourStories");		

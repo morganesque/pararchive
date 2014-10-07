@@ -8,10 +8,7 @@ var EditController = Marionette.Controller.extend({
 
 	home:function()
 	{
-		var storiesview = new AllStoriesView({
-			collection:pararchive.allStories,
-		});	
-		pararchive.main.show(storiesview);	
+		pararchive.showAllStories();
 		pararchive.allStories.fetch({reset:true});
 	},
 

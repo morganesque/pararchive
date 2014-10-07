@@ -16,6 +16,7 @@ switch($_SERVER['REQUEST_METHOD'])
 				$bean = R::load($type,$id); //Retrieve
 				echo json_encode($bean->export());	
 			}
+
 		} else {
 
 			$stories = R::findAll($type, "user_id = ? ", [$user->id]);
@@ -64,7 +65,9 @@ function outputStories($stories)
 	// $stories = R::findAll($type);
 	$out = [];			
 	foreach($stories as $s)
-	{
+	{		
+		$user = R::load('user',$s->user_id);
+		$s->author = $user->firstname.' '.$user->surname;
 		$out[] = $s->export();
 	}
 	echo json_encode($out);

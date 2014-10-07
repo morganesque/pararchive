@@ -2,6 +2,8 @@
 
 	<div class="page-header">
 		<h1>Everyone's Stories</h1>
+		<br />
+		<p>Here are all the stories currently in Pararchive. You can view them and edit your own.</p>
 	</div>
 
 	<div class="all-stories__list">
@@ -11,7 +13,7 @@
 				<% if (isUser(item.user_id)) { %>
 					<a href="/edit/story/<%= item.id %>/" class="all-stories__edit btn btn-sm btn-success pull-right">edit this story</a>
 				<% } %>
-				<h3><%= item.name %></h3>
+				<h3><%= item.name %> <small>by <%= item.author %></small></h3>
 			</div>
 		<% }); %>
 	</div>

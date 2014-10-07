@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-3">
-			<a href="/" class="navbar-brand">Pararchive</a>
+			<a href="/" class="logo navbar-brand">Pararchive</a>
 		</div>
 		<div class="col-xs-6">
 			<div class="story">
