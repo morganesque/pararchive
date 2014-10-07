@@ -4,11 +4,14 @@ var YourStoriesView = Marionette.ItemView.extend(
 
 	behaviors: {
 		EditStory:{},
+		ViewStory:{},
 	},
 
 	ui:{
 		storylist:'.edit-story',
 		author:'.author-name',
+		editstory:'.edit-story__edit',
+		viewstory:'.edit-story__view',
 	},
 
 	events:{
@@ -17,28 +20,14 @@ var YourStoriesView = Marionette.ItemView.extend(
 
 	initialize:function()
 	{		
-		this.listenTo(this.model, "reset", this.render);		
-		this.listenTo(this.model, "change", this.render);		
+		this.listenTo(this.collection, "reset", this.render);		
+		this.listenTo(this.collection, "change", this.render);		
 		this.listenTo(pararchive.user, "reset", this.render);		
 	},
 
 	onRender:function()
 	{
 		// console.log("YourStoriesView\t onRender");		
-		if (this.model.length) this.showList();
-		this.showAuthor();
-	},
-
-	showList:function()
-	{
-		this.ui.storylist.empty();
-		// this.model is the 
-		this.model.each(function(a)
-		{				
-			var link = $('<div class="edit-story__item"><a href="#'+a.get('id')+'" class="edit-story__edit-link pull-right">edit this story</a><h3>'+a.get('name')+'</h3></div>');
-			this.ui.storylist.append(link);
-		},this);
-
 		this.showAuthor();
 	},
 
@@ -51,7 +40,7 @@ var YourStoriesView = Marionette.ItemView.extend(
 	onCreateNewStory:function(e)
 	{
 		e.preventDefault();
-		var m = this.model.add({
+		var m = this.collection.add({
 			name:'MyStory',
 			user_id:pararchive.user.get('id'),			
 		});

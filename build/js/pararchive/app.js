@@ -64,7 +64,7 @@ var App = Marionette.Application.extend({
     {
         console.log("App\t\t\tshowYourStories");        
         var storiesview = new YourStoriesView({
-            model:this.user.stories,
+            collection:this.user.stories,
         });
         this.top.empty();
         this.main.show(storiesview);

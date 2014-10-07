@@ -4635,15 +4635,9 @@ body {
 .your-stories .edit-story {
   margin-bottom: 2em; }
   .your-stories .edit-story__item {
-    clear: both;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 1em 0; }
-  .your-stories .edit-story h3 {
-    width: 60%;
-    margin: 0;
-    font-size: 20px;
-    font-size: 2rem;
-    font-weight: bold; }
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .your-stories .edit-story__edit {
+    margin-right: 0.5em; }
 
 .story-panel .row {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
