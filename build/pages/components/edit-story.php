@@ -13,7 +13,7 @@
 				</div>
 			<% } else if (items.length == 0) { %>
 				<% if (typeof meta !== "undefined") { %>
-					<% if (meta.name == 'MyStory') { %>
+					<% if (meta.name == 'My Story') { %>
 						<div class="new-story">
 							<p class="lead first-name text-right">1. Give your story a name <span class="icon icon-arrow-right"></span></p>		
 							<p class="lead first-blurb text-right">2. Write a little introduction <span class="icon icon-arrow-right"></span></p>		
@@ -39,13 +39,16 @@
 				<% } %>
 			</div>
 			<div class="form-group">
-				<button class="save-story-meta btn btn-lg btn-primary">Save changes</button>
+				<% if (items.length) { %>
+					<button class="save-story-meta btn btn-lg btn-primary">Save Changes</button>
+				<% } else { %>
+					<button class="save-story-meta btn btn-lg btn-primary">Next</button>					
+				<% } %>
+				
 			</div>
 		</div>
 		<div class="col-xs-4">
-			<% if (items.length == 0) { %>
-				<p class="lead text-right create-call"><span class="icon icon-arrow-up text-right"></span> Create a new block</p>
-			<% } %>
+			
 		</div>
 	</div>
 

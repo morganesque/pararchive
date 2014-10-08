@@ -3,6 +3,7 @@
 		<div class="col-xs-7">
 			<ul class="story-panel__blocks">
 				<% _.each(items, function(item,a){ %>
+				<% if (!item.id) item.id = item.cid; %>
 					<li class="block block_<%= item.id %>"><a href="#<%= item.id %>" class="block__link" draggable="true"><%= a+1 %></a></li>
 				<% }); %>
 				<!-- <a href="#" class="plus btn btn-default"><span class="icon icon-plus"></span></a>			 -->

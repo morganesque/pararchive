@@ -10,7 +10,7 @@
 		<% _.each(items, function(item){ %>
 			<div class="edit-story__item">
 				<a href="/view/<%= item.slug %>/" class="edit-story__view btn btn-sm btn-primary pull-right">view this story</a>
-				<a href="/me/story/<%= item.id %>/edit/" class="edit-story__edit btn btn-sm btn-success pull-right">edit this story</a>
+				<a href="/me/story/<%= item.id %>/edit/" class="edit-story__edit btn btn-sm btn-warning pull-right">edit this story</a>
 				<h3><%= item.name %></h3>
 			</div>
 		<% }); %>

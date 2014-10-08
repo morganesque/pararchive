@@ -4,6 +4,16 @@ var StoryPanelView = Marionette.ItemView.extend(
 	className:'story-panel',
 	blockID:undefined,
 
+	templateHelpers:function()
+	{
+		return {
+			getID:function(item)
+			{
+				
+			},
+		};
+	},
+
 	ui: {
 		blocks:'.story-panel__blocks',
 		name:'.story-panel__name .content',
@@ -38,13 +48,25 @@ var StoryPanelView = Marionette.ItemView.extend(
 	serializeData:function()
 	{
 		this.collection.sort();
-		var out = {items:this.collection.toJSON()};
+		var bid;
+		this.collection.each(function(e)
+		{
+			if (e.isNew()) e.set({cid:e.cid});
+		});		
+		var out = {items:this.collection.toJSON()};		
 		if (this.collection.meta !== undefined) out.meta = this.collection.meta.toJSON();
+		_.each(out.items,function(e)
+		{
+
+		});
 		return out;
 	},
 
 	onRender:function()
 	{		
+		// if (this.collection.length) throw new Error('fish');
+		// console.log(this.collection.pluck('order'));		
+
 		// console.log("StoryPanelView:onRender");		
 		if (this.state == 'edit') this.ui.editstory.hide();
 
@@ -65,12 +87,12 @@ var StoryPanelView = Marionette.ItemView.extend(
 		{
 			var id = $(b).attr('href').substr(1);
 			var bk = this.collection.get(id);
-			console.log(a,id);		
-			bk.save({order:a},{success:function(a,b)
+			this.saveCount = 0;
+			bk.save({order:a},{silent:true,success:_.bind(function(a,b)
 			{
-				console.log(b.order);		
-				console.log(a.get('id'),a.get('order'));		
-			}});	
+				this.saveCount++;
+				if (this.saveCount == this.collection.length) this.render();
+			},this)});	
 		},this));
 	},
 
@@ -82,12 +104,11 @@ var StoryPanelView = Marionette.ItemView.extend(
 	},
 
 	blockBlocks:function()
-	{
-		// console.log("blockBlocks");				
-		var bid = this.collection.block.get('id');
+	{					
+		var bid = this.collection.block.get('id');		
 		if (!bid) bid = this.collection.block.cid;
 		this.blockID = bid;
-		this.selectBlock();
+		this.render();
 	},
 
 	/*
@@ -95,7 +116,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	onBlockClick:function(e)
 	{
-		console.log("onBlockClick");		
+		// console.log("onBlockClick");		
 		e.preventDefault();		
 
 		var sid = this.collection.storyID;
@@ -109,6 +130,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	selectBlock:function()
 	{
+		// console.log("selectBlock: "+this.blockID);		
 		if (this.blockID)
 		{
 			// console.log("selectBlock: "+this.blockID);		

@@ -62,13 +62,13 @@ var StoryListView = Marionette.ItemView.extend(
 
 		var name = this.ui.name.val();
 		var blurb = this.ui.blurb.val();
+		var slug = $.slugify(name);
 
 		this.ui.notify.html('<p>Saving...</p>');
 		this.ui.notify.removeClass('out');
 
 		if (name)
 		{
-			var slug = $.slugify(name);
 			this.collection.meta.set({name:name,slug:slug,blurb:blurb});			
 			this.collection.meta.save({},{success:_.bind(function(story)
 			{				
@@ -83,6 +83,16 @@ var StoryListView = Marionette.ItemView.extend(
 		} else {
 			alert("You story's name can't be blank");
 		}
+
+		// m.save({},{success:_.bind(function(a,b,c)
+		// {
+		// 	var sid = a.get('id');
+		// 	this.ui.notify.html('<p>Saved!</p>');
+		// 	setTimeout(_.bind(function()
+		// 	{
+		// 		pararchive.nav.editStory(sid);	
+		// 	},this),1000);			
+		// },this)});
 	},
 
 });

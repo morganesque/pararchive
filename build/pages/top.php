@@ -39,6 +39,7 @@
     <!-- load all the backbone models -->
     <script type="text/javascript" src="/js/pararchive/model.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-user.js"></script>
+    <script type="text/javascript" src="/js/pararchive/model-block.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-artefacts.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-notes.js"></script>

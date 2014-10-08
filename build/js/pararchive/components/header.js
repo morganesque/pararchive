@@ -1,7 +1,11 @@
-var HeaderView = Marionette.ItemView.extend(
+var HeaderView = Marionette.LayoutView.extend(
 {
 	el:'#header',
 	template:false,
+
+	regions:{
+		identity:'#identity',
+	},
 
 	ui: {
 		logo:'.logo',
@@ -30,7 +34,16 @@ var HeaderView = Marionette.ItemView.extend(
 		this.ui.author.html('&mdash; '+pararchive.user.get('firstname')+' '+pararchive.user.get('surname'));
 		// console.log("onRender "+this.nameShow);		
 		this.ui.story.toggle(this.nameShow);	
+		this.showIdentity();
 	},	
+
+	showIdentity:function()
+    {
+        var identity = new IdentityView({
+            model:pararchive.user,
+        })
+        identity.render();
+    },
 
 	hideName:function()
 	{

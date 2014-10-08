@@ -22,7 +22,8 @@ var YourStoriesView = Marionette.ItemView.extend(
 	{		
 		this.listenTo(this.collection, "reset", this.render);		
 		this.listenTo(this.collection, "change", this.render);		
-		this.listenTo(pararchive.user, "reset", this.render);		
+
+		this.listenTo(pararchive.user, "reset", this.render);			
 	},
 
 	onRender:function()
@@ -39,15 +40,16 @@ var YourStoriesView = Marionette.ItemView.extend(
 
 	onCreateNewStory:function(e)
 	{
-		e.preventDefault();
-		var m = this.collection.add({
-			name:'MyStory',
-			user_id:pararchive.user.get('id'),			
+		e.preventDefault();	
+
+		pararchive.story.reset();
+		pararchive.story.meta.clear();
+		
+		var m = pararchive.user.stories.add({
+			name:"My Story",
+			user_id:pararchive.user.get('id'),
 		});
-		m.save({},{success:function(story,b,c)
-		{
-			var sid = story.get('id');
-			pararchive.nav.editStory(sid);
-		}});
+
+		pararchive.nav.editStory(m.cid);
 	},
 });

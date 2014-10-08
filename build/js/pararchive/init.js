@@ -19,7 +19,6 @@ $(document).on("ready",function(e)
 
 				case "logged in":
 					pararchive.showHeader();
-					pararchive.showIdentity();					
 					Backbone.history.start({pushState:true});
 				break;
 			}	

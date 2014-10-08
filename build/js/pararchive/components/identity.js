@@ -4,13 +4,14 @@ var IdentityView = Marionette.ItemView.extend(
 	template:false,
 
 	ui: {
-		username:'#username',
-		logout:'#logout',
+		mystories:'.my-stories',
+		username:'.username',
+		logout:'.logout',
 	},
 
 	events:{
 		"click @ui.logout": "onLogOut",
-		"click @ui.username": "onUserClick",
+		"click @ui.mystories": "onMyStoriesClick",
 	},
 
 	initialize:function(options)
@@ -21,7 +22,7 @@ var IdentityView = Marionette.ItemView.extend(
 	onRender:function()
 	{
 		this.$el.show();
-		this.ui.username.text(this.model.get('firstname'));
+		this.ui.username.text(this.model.get('firstname')+' '+this.model.get('surname'));
 	},	
 
 	onLogOut:function(e)
@@ -34,7 +35,7 @@ var IdentityView = Marionette.ItemView.extend(
 		});
 	},
 
-	onUserClick:function(e)
+	onMyStoriesClick:function(e)
 	{
 		e.preventDefault();
 		pararchive.nav.yourStories();

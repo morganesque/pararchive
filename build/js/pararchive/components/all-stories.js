@@ -31,5 +31,8 @@ var AllStoriesView = Marionette.ItemView.extend(
 	initialize:function()
 	{		
 		this.listenTo(this.collection, "reset", this.render);		
+
+		this.listenTo(pararchive.story, "reset", this.render);		
+		this.listenTo(pararchive.story, "change", this.render);
 	},
 });

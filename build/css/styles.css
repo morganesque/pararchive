@@ -4629,13 +4629,11 @@ body {
   white-space: nowrap; }
 .header .story-author {
   display: none; }
-
-.logout {
-  opacity: 0.8;
-  margin-right: 15px; }
-
-.navbar .username {
-  color: black; }
+.header .logout {
+  padding-left: 0.25em; }
+  .header .logout:hover {
+    background: none;
+    text-decoration: underline; }
 
 .all-stories__item {
   border-bottom: 1px solid rgba(38, 185, 185, 0.42); }
@@ -5003,8 +5001,7 @@ a:hover {
 
 .form-group label {
   font-size: 1.2em;
-  font-weight: 700;
-  color: #26b9b9; }
+  font-weight: 700; }
 
 .lead {
   margin-top: 1em; }

@@ -40,16 +40,7 @@ var App = Marionette.Application.extend({
             model:this.story
         });
         header.render();
-    },
-
-    showIdentity:function()
-    {
-        var identity = new IdentityView({
-            model:this.user,
-        })
-        identity.render();
-        // this.header.show(identity);
-    },
+    },    
 
     showAllStories:function()
     {

@@ -9,7 +9,7 @@ var SavedBlockView = Marionette.ItemView.extend(
 	},
 
 	ui: {
-		newblockbutton:'.new-block',
+		plus:'.new-block',
 		editblock:'.edit-it',
 	},
 
