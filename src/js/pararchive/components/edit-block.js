@@ -8,7 +8,9 @@ var EditBlockView = Marionette.ItemView.extend(
 		when_field:'#when-text',
 		where_field:'#where-text',
 		arte_field:'.file__name',
-		help:'.help',
+
+		// help:'.help',
+		
 		artefacts:'.show-artefacts',
 		arteexam:'.artfacts-example',
 		addarte:'.add-artefact',
@@ -94,10 +96,10 @@ var EditBlockView = Marionette.ItemView.extend(
 			t = "<h3>Edit block <small>(remember to save your changes!)</small></h3>";
 		}		
 
-		if (i == 0) $("label[for='what-text']").text("What happened first?");
-		else $("label[for='what-text']").text("What happened next?");
+		if (i == 0) $("label[for='what-text']").text("1. Start your story");
+		else $("label[for='what-text']").text("1. What happened next?");
 
-		this.ui.help.html(t);
+		// this.ui.help.html(t);
 	},
 
 	updateArtefacts:function()

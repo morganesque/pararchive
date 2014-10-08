@@ -1,6 +1,6 @@
 <div class="edit-block container-fluid">
 
-	<div class="page-header help"></div>
+	<!-- <div class="page-header help"></div> -->
 
 	<div class="row">
 		
@@ -12,29 +12,29 @@
 			</div>			
 		</div>
 
+		<div class="col-xs-4">			
+			<div class="form-group">				
+				<label>2. Add artefacts?</label>
+				<div class="show-artefacts"></div>
+				<p class="example artfacts-example">If you want you can add pictures, sounds,<br />video or documents to this part of the story.</p>
+				<button id="artefacts" class="btn btn-default btn-warning">Add artefacts</button>
+			</div>				
+			<div class="form-group">	
+				<a href="/next/" class="btn btn-lg btn-success btn-block next__button" type="submit" id="login_submit">Save This Block &amp; Continue</a>		
+			</div>
+		</div>
+
 		<div class="col-xs-4">
 			<div class="form-group">
-				<label for="when-text">When did it happen?</label>
+				<label for="when-text">3. Add details</label>
 				<input class="form-control" id="when-text" />
 				<p class="example">(e.g. 3rd March 1956, Summer 1920, The 1950s)</p>
 			</div>
 			<div class="form-group">
-				<label for="when-text">Where did it happen?</label>
+				<label for="when-text">4. Add a note</label>
 				<input class="form-control" id="where-text" />
 				<p class="example">(e.g. a postcode, Alf's Shop, Leeds)</p>
 			</div>
-			<div class="form-group">	
-				<a href="/next/" class="btn btn-lg btn-success btn-block next__button" type="submit" id="login_submit">Save This Block &amp; Continue</a>		
-				</div>
-		</div>
-
-		<div class="col-xs-4">			
-			<div class="form-group">				
-				<label>Add artefacts?</label>
-				<div class="show-artefacts"></div>
-				<p class="example artfacts-example">If you want you can add pictures, sounds,<br />video or documents to this part of the story.</p>
-				<button id="artefacts" class="btn btn-default btn-warning">Add artefacts</button>
-			</div>	
 			<div class="form-group text-right">				
 				<button id="delete-block" class="btn btn-xs btn-danger">delete block</button>
 			</div>
