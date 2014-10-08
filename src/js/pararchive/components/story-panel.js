@@ -16,12 +16,12 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 	ui: {
 		blocks:'.story-panel__blocks',
-		name:'.story-panel__name .content',
-		author:'.story-panel__name .author',
 
 		plus:'.btn-new-block',
 		viewstory:'.btn-view-story',
 		editstory:'.btn-edit-story',
+
+		name:'.story-name',
 	},
 
 	events:{
@@ -43,6 +43,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 		this.listenTo(this.collection, "reset", 	this.render);
 		this.listenTo(this.collection, "change", 	this.render);
 		this.listenTo(this.collection, "add", 		this.render);
+
+		this.listenTo(pararchive.vent, "storyname:change", this.changeName);
 	},
 
 	serializeData:function()
@@ -79,6 +81,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 		});
 
 		this.selectBlock();
+
+		if (this.collection.meta) this.ui.name.text(this.collection.meta.get('name')+' ');
 	},
 
 	doneDraggging:function(event)
@@ -145,9 +149,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 		this.$el.find('.block').removeClass('current'); // remove the current 
 	},
 
-	/*
-		helper functions to allow this whole section to be controlled.
-	*/		
-	hide:function() {this.$el.hide();},
-	show:function() {this.$el.show();},
+	changeName:function(name)
+	{
+		this.ui.name.text(name);
+	},
 });

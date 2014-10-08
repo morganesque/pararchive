@@ -4618,22 +4618,14 @@ body {
   max-width: 960px;
   margin: 0 auto; }
 
-.header .story {
-  text-align: center;
-  padding-top: 0.25em; }
-.header .story-name {
-  font-family: "Merriweather", cursive;
-  font-size: 2em;
-  vertical-align: middle;
-  margin: 0;
-  white-space: nowrap; }
-.header .story-author {
-  display: none; }
-.header .logout {
-  padding-left: 0.25em; }
-  .header .logout:hover {
-    background: none;
-    text-decoration: underline; }
+.header {
+  background-color: #4c4f62;
+  color: white; }
+  .header .logout {
+    padding-left: 0.25em; }
+    .header .logout:hover {
+      background: none;
+      text-decoration: underline; }
 
 .all-stories__item {
   border-bottom: 1px solid rgba(38, 185, 185, 0.42); }
@@ -4667,6 +4659,10 @@ body {
   margin-top: 1.25em; }
   .story-panel__btns a {
     margin-left: 1em; }
+.story-panel .story {
+  font-family: "Merriweather", cursive;
+  padding-top: 0.75em;
+  white-space: nowrap; }
 .story-panel .block {
   position: relative;
   display: inline-block;
@@ -4987,9 +4983,6 @@ a:hover {
 
 .sidepad {
   padding: 0 5%; }
-
-.header {
-  border-bottom: 1px solid #26b9b9; }
 
 .enormous, .view-story__name {
   font-size: 80px;

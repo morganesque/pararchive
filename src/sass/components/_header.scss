@@ -1,18 +1,6 @@
 .header {
-	.story {
-		text-align:center;
-		padding-top:0.25em;
-	}
-	.story-name {
-		font-family:$font-family-serif;
-		font-size:2em;
-		vertical-align:middle;
-		margin:0;
-		white-space:nowrap;
-	}
-	.story-author {
-		display:none;
-	}
+	background-color:$brand-secondary;
+	color:white;
 	.logout {
 		padding-left:0.25em;
 		&:hover {

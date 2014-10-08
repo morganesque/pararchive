@@ -4,7 +4,7 @@
 
 	<br />
 	
-	<p>You can go back and <a href="#" class="btn btn-sm btn-default edit-it">edit it</a>.</p>
+	<p>You can go back and <a href="#" class="btn btn-sm btn-default edit-it">edit it</a></p>
 
 	<hr />
 

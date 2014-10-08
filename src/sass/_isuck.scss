@@ -15,10 +15,6 @@ a:hover {
 	padding:0 5%;
 }
 
-.header {
-	border-bottom:1px solid $brand-primary;
-}
-
 .enormous {
 	@include rem('font-size',8);
 }

@@ -28,6 +28,12 @@
 		}
 	}
 
+	.story {
+		font-family:$font-family-serif;
+		padding-top:0.75em;
+		white-space:nowrap;
+	}	
+
 	.block {
 
 		$blockh:50px;

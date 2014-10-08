@@ -19,6 +19,8 @@ var ViewBlockView = Marionette.LayoutView.extend(
 
 		numarte:'.view-block__extras .artefacts .num',
 		numnotes:'.view-block__extras .notes .num',
+
+		editblock:'.view-block__edit',
 	},
 
 	events: {				
@@ -27,7 +29,7 @@ var ViewBlockView = Marionette.LayoutView.extend(
 	},
 
 	behaviors:{
-
+		EditBlock:{},
 	},
 
 	initialize:function()

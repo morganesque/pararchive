@@ -9,9 +9,7 @@ var HeaderView = Marionette.LayoutView.extend(
 
 	ui: {
 		logo:'.logo',
-		story:'.story',
-		name:'.story-name',
-		author:'.story-author',
+		story:'.story',		
 	},
 
 	events:{
@@ -24,16 +22,12 @@ var HeaderView = Marionette.LayoutView.extend(
 		this.listenTo(this.model, "meta", this.render);
 
 		this.listenTo(pararchive.vent, "storyname:hide", this.hideName);
-		this.listenTo(pararchive.vent, "storyname:show", this.showName);
-		this.listenTo(pararchive.vent, "storyname:change", this.changeName);
+		this.listenTo(pararchive.vent, "storyname:show", this.showName);		
 	},
 
 	onRender:function()
-	{
-		if (this.model.meta) this.ui.name.text(this.model.meta.get('name')+' ');
-		this.ui.author.html('&mdash; '+pararchive.user.get('firstname')+' '+pararchive.user.get('surname'));
+	{		
 		// console.log("onRender "+this.nameShow);		
-		this.ui.story.toggle(this.nameShow);	
 		this.showIdentity();
 	},	
 
@@ -43,26 +37,7 @@ var HeaderView = Marionette.LayoutView.extend(
             model:pararchive.user,
         })
         identity.render();
-    },
-
-	hideName:function()
-	{
-		// console.log("hideName");		
-		this.nameShow = false;	
-		this.render();	
-	},
-
-	showName:function()
-	{
-		// console.log("showName");		
-		this.nameShow = true;		
-		this.render();
-	},
-
-	changeName:function(name)
-	{
-		this.ui.name.text(name);
-	},
+    },	
 
 	onLogoClick:function(e)
 	{

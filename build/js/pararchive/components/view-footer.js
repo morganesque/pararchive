@@ -34,30 +34,35 @@ var ViewFooterView = Marionette.ItemView.extend(
 
 	show:function()
 	{
-		console.log("footer:show");		
+		// console.log("footer:show");		
 		this.$el.parent().removeClass('out');
 	},
 
 	hide:function()
 	{
-		console.log("footer:hide");
+		// console.log("footer:hide");
 		this.$el.parent().addClass('out');	
+	},
+
+	onRender:function()
+	{		
+		this.ui.page.text('Page '+this.current);
+		this.updateArrows();
 	},
 
 	onReset:function()
 	{
-		// console.log("ViewFooterView:onReset");
 		this.slug = this.model.meta.get('slug');
 		this.length = this.model.length;
+		this.render();
 	},
 
 	onBlock:function()
 	{
 		// console.log("ViewFooterView\tonBlock");		
 		var block = this.model.getBlock();
-		this.current = this.model.indexOf(block) + 1;
-		this.ui.page.text('Page '+this.current);
-		this.updateArrows();	
+		this.current = this.model.indexOf(block) + 1;		
+		this.render();
 	},
 
 	updateArrows:function()
@@ -72,32 +77,28 @@ var ViewFooterView = Marionette.ItemView.extend(
 	onNextClick:function(e)
 	{
 		e.preventDefault();
-
 		if (this.current < this.length)
 		{
 			this.current++;
-			console.log("––––––––––––––––––––––––––––");
+			// console.log("––––––––––––––––––––––––––––");
 			pararchive.nav.viewStoryBlock(this.slug,this.current);						
 		}	
-		this.updateArrows();	
 	},
 
 	onPrevClick:function(e)
 	{
 		// console.log("ViewFooterView\tonPrevClick");		
 		e.preventDefault();
-
 		if (this.current > 1)
 		{			
 			this.current--;
-			console.log("––––––––––––––––––––––––––––");
+			// console.log("––––––––––––––––––––––––––––");
 			pararchive.nav.viewStoryBlock(this.slug,this.current);
 		}
 		else if (this.current == 1)
 		{
 			console.log("–––going home ");
 			pararchive.nav.viewStory(this.slug);
-		}
-		this.updateArrows(); 		
+		}		
 	},
 });

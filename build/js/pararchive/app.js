@@ -84,6 +84,7 @@ var App = Marionette.Application.extend({
         this.main.show(editblock);
         this.showStoryPanel('block');
         this.vent.trigger('storyname:show');
+        this.vent.trigger('footer:hide');
     },
 
     showStoryPanel:function(state)

@@ -27,14 +27,22 @@ var ViewBlockArtefactsView = Marionette.ItemView.extend(
 
 	onRender:function()
 	{
+		if (this.collection.length == 1)
+		{
+			this.showSingleArtefact(this.collection.first().id);		
+		}
 	},
 
 	onThumbClick:function(e)
 	{		
 		e.preventDefault();		
-		var id = $(e.currentTarget).attr('href').substr(1);		
-		var a = this.collection.get(id);
+		var id = $(e.currentTarget).attr('href').substr(1);				
+		this.showSingleArtefact(id);
+	},
 
+	showSingleArtefact:function(id)
+	{
+		var a = this.collection.get(id);
 		var type = a.get('type');
 
 		if (type == 'photo')

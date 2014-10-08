@@ -3,6 +3,7 @@
 		<div class="col-xs-5">
 			<div class="view-block__body">
 			</div>
+			<p><a href="/tommo/story//block//edit/" class="view-block__edit">Edit this block</a></p>
 		</div>
 		<div class="col-xs-6">
 			<div class="view-block__media">
