@@ -2,6 +2,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 {
 	template:'#panel-template',	
 	className:'story-panel',
+	blockID:undefined,
 
 	ui: {
 		blocks:'.story-panel__blocks',
@@ -14,7 +15,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	},
 
 	events:{
-		'click .block': "onBlockClick",
+		'click .block__link': "onBlockClick",
 	},
 
 	behaviors:{
@@ -36,6 +37,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 	serializeData:function()
 	{
+		this.collection.sort();
 		var out = {items:this.collection.toJSON()};
 		if (this.collection.meta !== undefined) out.meta = this.collection.meta.toJSON();
 		return out;
@@ -45,6 +47,31 @@ var StoryPanelView = Marionette.ItemView.extend(
 	{		
 		// console.log("StoryPanelView:onRender");		
 		if (this.state == 'edit') this.ui.editstory.hide();
+
+		this.sorter = new Sortable(this.ui.blocks[0],{
+			draggable:  '.block',
+			animation:  150,
+			handle:     '.block',
+			ghostClass: "block--dragged",
+			onUpdate:_.bind(this.doneDraggging,this),
+		});
+
+		this.selectBlock();
+	},
+
+	doneDraggging:function(event)
+	{
+		$('.block__link').each(_.bind(function(a,b,c)
+		{
+			var id = $(b).attr('href').substr(1);
+			var bk = this.collection.get(id);
+			console.log(a,id);		
+			bk.save({order:a},{success:function(a,b)
+			{
+				console.log(b.order);		
+				console.log(a.get('id'),a.get('order'));		
+			}});	
+		},this));
 	},
 
 	setState:function(state)
@@ -59,7 +86,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 		// console.log("blockBlocks");				
 		var bid = this.collection.block.get('id');
 		if (!bid) bid = this.collection.block.cid;
-		this.selectBlock(bid);
+		this.blockID = bid;
+		this.selectBlock();
 	},
 
 	/*
@@ -67,7 +95,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	onBlockClick:function(e)
 	{
-		// console.log("onBlockClick");		
+		console.log("onBlockClick");		
 		e.preventDefault();		
 
 		var sid = this.collection.storyID;
@@ -79,12 +107,15 @@ var StoryPanelView = Marionette.ItemView.extend(
 	/*
 		changing the appearance of the list to reflect the block being editted.
 	*/		
-	selectBlock:function(id)
+	selectBlock:function()
 	{
-		// console.log("selectBlock: "+id);		
-		var block = this.$el.find('.block_'+id);
-		this.$el.find('.block').removeClass('current'); // remove the current 
-		block.addClass('current');
+		if (this.blockID)
+		{
+			// console.log("selectBlock: "+this.blockID);		
+			var block = this.$el.find('.block_'+this.blockID);
+			this.$el.find('.block').removeClass('current'); // remove the current 
+			block.addClass('current');	
+		}
 	},
 
 	deselectBlock:function()

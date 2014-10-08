@@ -1,12 +1,12 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-7">
-			<div class="story-panel__blocks">
+			<ul class="story-panel__blocks">
 				<% _.each(items, function(item,a){ %>
-					<a href="#<%= item.id %>" class="block block_<%= item.id %>"><%= a+1 %></a>
+					<li class="block block_<%= item.id %>"><a href="#<%= item.id %>" class="block__link" draggable="true"><%= a+1 %></a></li>
 				<% }); %>
 				<!-- <a href="#" class="plus btn btn-default"><span class="icon icon-plus"></span></a>			 -->
-			</div>
+			</ul>
 		</div>
 		<div class="col-xs-5">
 			<p class="story-panel__btns">

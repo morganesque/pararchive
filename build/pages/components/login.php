@@ -1,4 +1,3 @@
-
 <div class="container-fluid central">
 
 	<div class="page-header"><h1>Login</h1></div>

@@ -82,8 +82,6 @@ var EditController = Marionette.Controller.extend({
     */        
     in:function()
     {
-    	// console.log("Controller\tin");		
-    	var user = pararchive.user.get('username');    	
-        pararchive.router.navigate('/'+user+'/',{trigger:true});
+    	pararchive.nav.yourStories();
     },
 });

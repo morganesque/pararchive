@@ -4,7 +4,7 @@
 var StoryBlock = Backbone.Model.extend(
 {
     urlRoot:"/api/blocks/",
-    artefacts:undefined,
+    artefacts:undefined,    
 
     initialize:function()
     {
@@ -84,6 +84,7 @@ var Story = Backbone.Collection.extend({
     model:StoryBlock,
     storyID:undefined,
     block:undefined,
+    comparator:'order',
 
     initialize:function(options)
     {        

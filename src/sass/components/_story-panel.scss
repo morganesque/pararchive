@@ -14,8 +14,10 @@
 
 	&__blocks {	
 		padding-top:0.75em;	
-		padding-left:1em;
+		padding-left:0;
 		padding-bottom:0.75em;
+		list-style:none;
+		margin:0;
 	}
 
 	&__btns {
@@ -38,16 +40,32 @@
 		text-align:center;
 		line-height:$blockh - 6px;
 
-		// background-color:#666;
+		background-color:white;
 		border:2px solid $brand-primary;
 
 		@include rem("font-size",3);
 		@include rem("margin-right",2);
 
+		transition:all 0.5s $easeOutQuint;
+
+		user-select:none;
+		user-drag:element;
+		cursor:move;
+
+		&--dragged {
+			background-color:$brand-teriary;
+			border-color:$brand-teriary;
+			a {
+				color:white;	
+			}
+			
+		}
+
 		&:hover {
-			text-decoration:none;
-			color:white;
-			background-color:$brand-primary;
+			color:$brand-primary;
+			// text-decoration:none;
+			// color:white;
+			// background-color:$brand-primary;
 		}		
 
 		&.current {	
@@ -55,6 +73,8 @@
 			color:white;
 			background-color:$brand-secondary;
 			border:none;
+			// pointer-events:none;
+			a {color:white}
 			&:before {
 			   content:"";
 			   position: absolute;
@@ -66,8 +86,6 @@
 			   border-top: $blockh/4 solid $brand-secondary;
 			   border-right: $blockh/4 solid transparent;
 			}
-			pointer-events:none;
-			// transition:all .3s ease-in;
 
 			.state-saved-block & {
 				background-color:$brand-success;

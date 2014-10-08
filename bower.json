@@ -11,6 +11,7 @@
     "bootstrap-sass-official": "~3.1.1",
     "jquery-textrange": "~1.1.0",
     "marionette": "~2.2.1",
-    "jquery-slugify": "~1.0.3"
+    "jquery-slugify": "~1.0.3",
+    "Sortable": "~0.5.1"
   }
 }

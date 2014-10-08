@@ -4661,8 +4661,10 @@ body {
     font-weight: 300; }
 .story-panel__blocks {
   padding-top: 0.75em;
-  padding-left: 1em;
-  padding-bottom: 0.75em; }
+  padding-left: 0;
+  padding-bottom: 0.75em;
+  list-style: none;
+  margin: 0; }
 .story-panel__btns {
   margin-top: 1.25em; }
   .story-panel__btns a {
@@ -4674,21 +4676,34 @@ body {
   height: 50px;
   text-align: center;
   line-height: 44px;
+  background-color: white;
   border: 2px solid #26b9b9;
   font-size: 30px;
   font-size: 3rem;
   margin-right: 20px;
-  margin-right: 2rem; }
+  margin-right: 2rem;
+  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+          transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  user-drag: element;
+  cursor: move; }
+  .story-panel .block--dragged {
+    background-color: #a61520;
+    border-color: #a61520; }
+    .story-panel .block--dragged a {
+      color: white; }
   .story-panel .block:hover {
-    text-decoration: none;
-    color: white;
-    background-color: #26b9b9; }
+    color: #26b9b9; }
   .story-panel .block.current {
     position: relative;
     color: white;
     background-color: #4c4f62;
-    border: none;
-    pointer-events: none; }
+    border: none; }
+    .story-panel .block.current a {
+      color: white; }
     .story-panel .block.current:before {
       content: "";
       position: absolute;
