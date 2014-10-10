@@ -50,7 +50,6 @@ var App = Marionette.Application.extend({
         pararchive.main.show(storiesview);  
         this.top.empty();  
         this.vent.trigger('footer:hide');
-        this.vent.trigger('storyname:hide');
     },
 
     showYourStories:function()
@@ -61,7 +60,6 @@ var App = Marionette.Application.extend({
         });
         this.top.empty();
         this.main.show(storiesview);
-        this.vent.trigger('storyname:hide');
         this.vent.trigger('footer:hide');
     },
 
@@ -72,7 +70,6 @@ var App = Marionette.Application.extend({
         });
         this.main.show(storyview);
         this.showStoryPanel('edit');
-        this.vent.trigger('storyname:show');
     },
 
     showEditBlock:function()
@@ -83,7 +80,6 @@ var App = Marionette.Application.extend({
         });
         this.main.show(editblock);
         this.showStoryPanel('block');
-        this.vent.trigger('storyname:show');
         this.vent.trigger('footer:hide');
     },
 
@@ -119,7 +115,6 @@ var App = Marionette.Application.extend({
         this.main.show(storyfront);
         this.top.empty();  
         this.vent.trigger('footer:hide');
-        this.vent.trigger('storyname:hide');
     },
 
     showViewBlock:function()
@@ -129,7 +124,7 @@ var App = Marionette.Application.extend({
             model:this.story,
         });
         this.main.show(viewblock);
+        this.top.empty();  
         this.showViewFooter();
-        this.vent.trigger('storyname:show');
     },
 });

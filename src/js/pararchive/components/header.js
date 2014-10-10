@@ -20,9 +20,6 @@ var HeaderView = Marionette.LayoutView.extend(
 	{
 		// console.log("HeaderView\tinitialize");				
 		this.listenTo(this.model, "meta", this.render);
-
-		this.listenTo(pararchive.vent, "storyname:hide", this.hideName);
-		this.listenTo(pararchive.vent, "storyname:show", this.showName);		
 	},
 
 	onRender:function()

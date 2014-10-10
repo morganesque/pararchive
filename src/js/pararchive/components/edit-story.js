@@ -64,20 +64,30 @@ var StoryListView = Marionette.ItemView.extend(
 		var blurb = this.ui.blurb.val();
 		var slug = $.slugify(name);
 
-		this.ui.notify.html('<p>Saving...</p>');
-		this.ui.notify.removeClass('out');
+		if (this.collection.length)
+		{
+			this.ui.notify.html('<p>Saving...</p>');
+			this.ui.notify.removeClass('out');	
+		}
 
 		if (name)
 		{
-			this.collection.meta.set({name:name,slug:slug,blurb:blurb});			
-			this.collection.meta.save({},{success:_.bind(function(story)
-			{				
-				this.ui.notify.html('<p>Saved!</p>');
-				setTimeout(_.bind(function()
+			this.collection.meta.save({name:name,slug:slug,blurb:blurb},{success:_.bind(function(story)
+			{								
+				if (!this.collection.length)
 				{
-					this.ui.notify.addClass('out');
-					this.ui.newstory.hide();
-				},this),1000);
+					pararchive.story.addBlock();
+			        var sid = pararchive.story.storyID;
+			        var bid = pararchive.story.block.cid;
+			        pararchive.nav.editStoryBlock(sid,bid);        
+				} else {
+					setTimeout(_.bind(function()
+					{
+						this.ui.notify.html('<p>Saved!</p>');
+						this.ui.notify.addClass('out');
+						this.ui.newstory.hide();
+					},this),1000);	
+				}
 
 			},this)});
 		} else {
