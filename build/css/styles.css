@@ -4620,12 +4620,13 @@ body {
 
 .header {
   background-color: #4c4f62;
-  color: white; }
+  color: white;
+  border-radius: 0; }
+  .header .logout:hover, .header .my-stories:hover {
+    background: none;
+    text-decoration: underline; }
   .header .logout {
     padding-left: 0.25em; }
-    .header .logout:hover {
-      background: none;
-      text-decoration: underline; }
 
 .all-stories__item {
   border-bottom: 1px solid rgba(38, 185, 185, 0.42); }

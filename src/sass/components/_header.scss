@@ -1,11 +1,14 @@
 .header {
 	background-color:$brand-secondary;
 	color:white;
-	.logout {
-		padding-left:0.25em;
+	border-radius:0;
+	.logout, .my-stories {		
 		&:hover {
 			background:none;
 			text-decoration:underline;
 		}
+	}
+	.logout {
+		padding-left:0.25em;
 	}
 }

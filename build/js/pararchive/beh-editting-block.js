@@ -41,10 +41,14 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
             "what": this.view.fields()['what'].val(),
             "when": this.view.fields()['when'].val(),
             "where": this.view.fields()['where'].val(),
-            "order": pararchive.story.length-1,
-        }
+            // "order": pararchive.story.length-1,
+        }        
 
-        console.log(this.view.block);        
+        // if (this.view.block.isNew())
+        // {
+        //     console.log(this.view.block);       
+        // }
+
         if(this.view.block)
         {
             this.view.block.save(data,{success:function(model,response,options)
