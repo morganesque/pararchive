@@ -69,8 +69,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 		// if (this.collection.length) throw new Error('fish');
 		// console.log(this.collection.pluck('order'));		
 
-		// console.log("StoryPanelView:onRender");		
-		if (this.state == 'edit') this.ui.editstory.hide();
+		console.log("StoryPanelView:onRender");		
+		this.setState();
 
 		this.sorter = new Sortable(this.ui.blocks[0],{
 			draggable:  '.block',
@@ -117,9 +117,13 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 	setState:function(state)
 	{
-		// console.log("setState "+state);		
-		this.state = state;
-		if (state == 'edit') this.ui.editstory.hide();
+		if (state) this.state = state;
+
+		if (this.state == 'edit') 
+		{
+			this.ui.editstory.hide();
+			if (this.collection.length == 0) this.ui.viewstory.hide();
+		}
 	},
 
 	blockBlocks:function()
