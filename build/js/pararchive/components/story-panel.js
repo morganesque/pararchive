@@ -122,7 +122,11 @@ var StoryPanelView = Marionette.ItemView.extend(
 		if (this.state == 'edit') 
 		{
 			this.ui.editstory.hide();
-			if (this.collection.length == 0) this.ui.viewstory.hide();
+			if (this.collection.length == 0) 
+			{
+				this.ui.viewstory.hide();
+				this.ui.plus.hide();
+			}
 		}
 	},
 
