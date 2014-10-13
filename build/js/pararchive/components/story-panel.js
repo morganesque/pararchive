@@ -91,13 +91,28 @@ var StoryPanelView = Marionette.ItemView.extend(
 		{
 			var id = $(b).attr('href').substr(1);
 			var bk = this.collection.get(id);
-			this.saveCount = 0;
-			bk.save({order:a},{silent:true,success:_.bind(function(a,b)
+
+			if(!bk.isNew()) 
 			{
+				console.log('set: '+a);		
+				this.saveCount = 0;
+				bk.set({order:a});
+				bk.save({},{silent:true,success:_.bind(function(a,b)
+				{
+					this.saveCount++;
+					if (this.saveCount == this.collection.length) this.render();
+					
+				},this)});	
+			} else {
+				console.log(a);		
+				bk.set({order:a});
 				this.saveCount++;
 				if (this.saveCount == this.collection.length) this.render();
-			},this)});	
+			}			
 		},this));
+		this.collection.sort();
+		console.log(this.collection.pluck("order"));
+
 	},
 
 	setState:function(state)
@@ -108,8 +123,9 @@ var StoryPanelView = Marionette.ItemView.extend(
 	},
 
 	blockBlocks:function()
-	{					
-		var bid = this.collection.block.get('id');		
+	{			
+		console.log(this.collection.block);				
+		var bid = this.collection.block.get('id');
 		if (!bid) bid = this.collection.block.cid;
 		this.blockID = bid;
 		this.render();
@@ -120,11 +136,11 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	onBlockClick:function(e)
 	{
-		// console.log("onBlockClick");		
+		console.log("onBlockClick");		
 		e.preventDefault();		
 
 		var sid = this.collection.storyID;
-		var bid = $(e.currentTarget).attr('href').substr(1);
+		var bid = $(e.currentTarget).attr('href').substr(1); console.log(bid);		
 
 		pararchive.nav.editStoryBlock(sid,bid);
 	},

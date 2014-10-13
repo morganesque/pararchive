@@ -60,7 +60,7 @@ var StoryBlock = Backbone.Model.extend(
                 this.trigger('notes');
             },this)});    
         } else {
-            console.log("StoryBlock\tThis block is still new so not loading artefacts.");        
+            console.log("StoryBlock\tThis block is still new so not loading notes.");        
         }        
     },
 });
