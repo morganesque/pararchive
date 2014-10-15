@@ -74,6 +74,20 @@ var ViewBlockArtefactsView = Marionette.ItemView.extend(
 			var vhi = swi*(rat/100);		
 			if (she > vhi) cont.css({'margin-top':((she-vhi)/2)});			
 		}
+
+		if (type == 'rich')
+		{
+			var close = this.ui.showall.find('.btn-close').detach();
+			this.ui.showall.empty();
+
+			var html = $(a.get("html"));
+			console.log(a.get('html'));		
+			var cont = $('<div class="embed-container"></div>');
+
+			cont.append(html);
+			this.ui.showall.append(cont);
+			this.ui.showall.append(close);
+		}
 		
 		this.ui.showall.show();
 	},

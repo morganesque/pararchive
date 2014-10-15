@@ -69,7 +69,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 		// if (this.collection.length) throw new Error('fish');
 		// console.log(this.collection.pluck('order'));		
 
-		console.log("StoryPanelView:onRender");		
+		// console.log("StoryPanelView:onRender");		
 		this.setState();
 
 		this.sorter = new Sortable(this.ui.blocks[0],{
@@ -94,7 +94,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 			if(!bk.isNew()) 
 			{
-				console.log('set: '+a);		
+				// console.log('set: '+a);		
 				this.saveCount = 0;
 				bk.set({order:a});
 				bk.save({},{silent:true,success:_.bind(function(a,b)
@@ -104,14 +104,14 @@ var StoryPanelView = Marionette.ItemView.extend(
 					
 				},this)});	
 			} else {
-				console.log(a);		
+				// console.log(a);		
 				bk.set({order:a});
 				this.saveCount++;
 				if (this.saveCount == this.collection.length) this.render();
 			}			
 		},this));
 		this.collection.sort();
-		console.log(this.collection.pluck("order"));
+		// console.log(this.collection.pluck("order"));
 
 	},
 
@@ -132,7 +132,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 	blockBlocks:function()
 	{			
-		console.log(this.collection.block);				
+		// console.log(this.collection.block);				
 		var bid = this.collection.block.get('id');
 		if (!bid) bid = this.collection.block.cid;
 		this.blockID = bid;
@@ -144,11 +144,11 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	onBlockClick:function(e)
 	{
-		console.log("onBlockClick");		
+		// console.log("onBlockClick");		
 		e.preventDefault();		
 
 		var sid = this.collection.storyID;
-		var bid = $(e.currentTarget).attr('href').substr(1); console.log(bid);		
+		var bid = $(e.currentTarget).attr('href').substr(1);
 
 		pararchive.nav.editStoryBlock(sid,bid);
 	},

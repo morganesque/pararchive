@@ -73,7 +73,9 @@ var StoryListView = Marionette.ItemView.extend(
 		if (name)
 		{
 			this.collection.meta.save({name:name,slug:slug,blurb:blurb},{success:_.bind(function(story)
-			{								
+			{							
+				this.collection.setStoryID(story.id);
+
 				if (!this.collection.length)
 				{
 					pararchive.story.addBlock();

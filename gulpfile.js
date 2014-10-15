@@ -199,7 +199,8 @@ gulp.task('browser-sync', function() {
     plugins.browserSync.init(null, {
         open:false,
         // server: {baseDir: "./build/"},
-        proxy: "pararchive.app"
+        proxy: "pararchive.app",
+        notify: false,
     });
 });
 
