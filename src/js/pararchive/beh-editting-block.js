@@ -43,6 +43,8 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
             "author_note": this.view.ui.authornote.val(),
         }        
 
+        this.view.block.unset('cid');
+        
         if(this.view.block)
         {
             this.view.block.save(data,{success:function(model,response,options)

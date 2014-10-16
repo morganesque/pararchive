@@ -19,11 +19,6 @@ var EditBlockTagsView = Marionette.ItemView.extend(
 		this.listenTo(this.block, 'tags', this.render);
 	},
 
-	onRender:function()
-	{
-		console.log(this.block.tags.pluck('id'));		
-	},
-
 	onTagClick:function(e)
 	{
 		e.preventDefault();
