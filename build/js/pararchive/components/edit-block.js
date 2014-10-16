@@ -11,15 +11,16 @@ var EditBlockView = Marionette.LayoutView.extend(
 
 	ui: {
 		what_field:'#what-text',
-		when_field:'#when-text',
-		where_field:'#where-text',
 		arte_field:'.file__name',
+		authornote:'#author_note',
 
 		// help:'.help',
 		
 		artefacts:'.show-artefacts',
 		arteexam:'.artfacts-example',
 		addarte:'.add-artefact',
+
+		tagdesc:'.tags-desc',
 			
 	},
 
@@ -42,19 +43,21 @@ var EditBlockView = Marionette.LayoutView.extend(
 		this.block = this.model.getBlock();
 		this.listenTo(this.block,'artefacts',this.updateArtefacts);
 		this.listenTo(this.block.artefacts, "reset", this.updateArtefacts);
-		this.listenTo(this.block.artefacts, "change", this.updateArtefacts);
-		this.listenTo(this.block, 'tags', this.onTags);
+		this.listenTo(this.block.artefacts, "change", this.updateArtefacts);		
+		this.listenTo(this.block, "tags", this.checkTags);		
 		this.render();
-	},
 
-	fields:function()
-	{
-		return {
-			what:this.ui.what_field,
-			when:this.ui.when_field,
-			where:this.ui.where_field,
-			artefact:this.ui.arte_field,
-		};
+		var showtags = new EditBlockTagsView({
+            collection:this.block.tags,
+            block:this.block,
+        });
+        this.tags.show(showtags);
+
+		var taginput = new EditBlockTagInputView({
+			el:$('.block-details'),
+			block:this.block,
+		});
+		taginput.render();
 	},
 
 	onRender:function()
@@ -64,20 +67,14 @@ var EditBlockView = Marionette.LayoutView.extend(
 			this.block = this.model.getBlock();
 		}
 
-		this.updateTextField('what');	
-
-		this.onTags();
+		this.ui.what_field.val(this.block.get('what'));
+		this.ui.authornote.val(this.block.get('author_note'));
 	},
 
-	onTags:function()
-	{		
-		if (this.block.tags.length)
-		{
-			var editblocktags = new EditBlockTagsView({
-	            collection:this.block.tags,
-	        });
-	        this.tags.show(editblocktags);
-		}
+	checkTags:function()
+	{
+		if (this.block.tags.length) this.ui.tagdesc.hide();
+		else this.ui.tagdesc.show();
 	},
 
 	addTags:function(type)
@@ -89,46 +86,6 @@ var EditBlockView = Marionette.LayoutView.extend(
 			var t = $();
 			$('.'+type+' .tags').append(t);
 		});
-	},
-
-	/*
-		Updating the form fields with content from the model.
-	*/		
-	updateTextField:function(type)
-	{
-		if (this.block)
-		if (this.block.has(type))
-		{
-			this.fields()[type].val(this.block.get(type));
-		} else {
-
-			var data = pararchive.story.getLastWhenWhere();
-
-			if (data && data[type]) this.fields()[type].val(data[type]);
-			else this.fields()[type].val('');
-		}
-	},
-
-	updateHelpText:function()
-	{
-		var c = pararchive.story.length; 
-		var b = pararchive.story.getBlock();
-		var i = pararchive.story.indexOf(b);
-		var t = '';		
-
-		if (b)
-		if (b.isNew())
-		{
-			if (c==1) t = "<h3>First block</h3>";
-			else t = "<h3>New block</h3>";
-		} else {
-			t = "<h3>Edit block <small>(remember to save your changes!)</small></h3>";
-		}		
-
-		if (i == 0) $("label[for='what-text']").text("1. Start your story");
-		else $("label[for='what-text']").text("1. What happened next?");
-
-		// this.ui.help.html(t);
 	},
 
 	updateArtefacts:function()

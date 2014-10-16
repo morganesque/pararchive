@@ -36,6 +36,7 @@ var StoryBlock = Backbone.Model.extend(
             block_id:this.get('id'),
             url:url,
         });
+        var self = this;
         newArte.save({},{success:function(a,b,c)
         {
             // console.log('Saved\tArtefact');        
@@ -43,7 +44,9 @@ var StoryBlock = Backbone.Model.extend(
             // console.log(a,b,c);        
         },error:function(a,b,c)
         {
-            // console.log(a,b,c);        
+            // console.log(a,b,c); 
+            a.destroy();       
+            self.trigger('artefacts');
             alert(b.responseText);        
         }});
     },

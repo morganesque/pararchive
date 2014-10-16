@@ -53,6 +53,7 @@
     <script type="text/javascript" src="/js/pararchive/components/your-stories.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/edit-block.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/edit-block-tags.js"></script>
+    <script type="text/javascript" src="/js/pararchive/components/edit-block-taginput.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/saved-block.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/edit-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/view-footer.js"></script>

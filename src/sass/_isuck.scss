@@ -114,3 +114,27 @@ a:hover {
 	font-size:1.2em;
 	padding-top:0.75em;
 }
+
+@keyframes anim-rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-spinner {
+    display: inline-block;
+    height: 1em;
+    line-height: 1;
+    animation: anim-rotate 2s infinite linear;
+
+    &:before {
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+}

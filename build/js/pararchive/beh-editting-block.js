@@ -8,7 +8,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         'click #save-artefact':     'saveArtefact',
         'click #cancel-artefact':   'cancelArtefact',
         "click #delete-block":      'onDeleteBlock',        
-    },    
+    },        
 
     saveAndGo:function(e)
     {
@@ -39,16 +39,9 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
     saveStoryBlock:function(callback)
     {
         var data = {
-            "what": this.view.fields()['what'].val(),
-            "when": this.view.fields()['when'].val(),
-            "where": this.view.fields()['where'].val(),
-            // "order": pararchive.story.length-1,
+            "what": this.view.ui.what_field.val(),
+            "author_note": this.view.ui.authornote.val(),
         }        
-
-        // if (this.view.block.isNew())
-        // {
-        //     console.log(this.view.block);       
-        // }
 
         if(this.view.block)
         {
@@ -65,26 +58,30 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
                 else alert('error - bad return value!');
             }});              
         }
-
-      
     },    
 
     saveArtefact:function(e)
     {
         e.preventDefault();     
 
-        if (this.view.fields()['artefact'].val() == '')
+        if (this.view.ui.arte_field.val() == '')
         {
             this.view.ui.addarte.removeClass('show');
             return;     
-        }
+        }        
 
-        var url = this.view.fields()['artefact'].val();        
+        var url = this.view.ui.arte_field.val();        
         this.view.block.addArtefact(url);
 
-        this.view.fields()['artefact'].val('');
+        this.view.ui.arte_field.val('');
         this.view.ui.addarte.removeClass('show');
-    },  
+    }, 
+
+    showSpinner:function()
+    {
+        var spinner = $('<div class="display"><span class="icon icon-spinner"></span></div');
+        this.view.ui.artefacts.append(spinner);
+    }, 
 
     cancelArtefact:function(e)
     {

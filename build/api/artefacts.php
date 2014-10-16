@@ -88,7 +88,7 @@ switch($_SERVER['REQUEST_METHOD'])
 					echo json_encode($bean->export());
 				} else {
 					header('HTTP/1.1 500 Internal Server Error');
-					echo "I'm sorry but that doesn't seem to be an image. Please only paste addresses of actual images.";
+					echo "I'm sorry but that web address isn't one I recognise.\n\nPlease try a different one.";
 				}
 			}
 		}
