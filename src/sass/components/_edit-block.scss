@@ -2,14 +2,53 @@
 
 	.form-group {
 		// border-top:1px solid #ccc;
-		border-bottom:1px solid #ccc;
-		padding:1em 0;
+		// border-bottom:1px solid #ccc;
+		// padding:1em 0;
 	}
 
 	.edit-block__what {
 		height:279px;
+		font-size:1.5em;
 	}
 
+	.edit-block__note {
+		height:150px;
+	}
+
+	.block-artefacts {
+		background-color:$gray-lighter;
+		padding:0.5em;		
+	}
+
+	.details-type {
+		border-bottom:1px solid rgba($brand-secondary,0.1);
+		padding:0.5em 0 0.25em;
+	}
+
+	.tags {
+		.tag {
+			position:relative;
+			font-size:0.8em;
+			letter-spacing:0.05em;
+			display:inline-block;
+			background-color:$brand-secondary;
+			color:white;
+			border-radius:1em;
+			padding:0.25em 0.75em;
+			margin:0 0.5em 0.5em 0;
+			transition:padding-right 0.5s $easeOutQuint;	
+			&:hover {
+				padding-right:1.7em;
+				&:after {
+					content:"x";
+					position:absolute;
+					top:2px;
+					right:10px;
+					color:$brand-primary;
+				}
+			}
+		}
+	}
 }
 
 .example {
@@ -30,6 +69,7 @@
 
 .add-artefact__input {
 	width:76%;
+	margin:3em auto 0;
 	background:white;
 	outline:1em solid rgba($brand-secondary,0.42);
 	padding:2em;

@@ -6,8 +6,9 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         'click .next__button':      'saveAndGo',
         'click #artefacts':         'addArtefact',
         'click #save-artefact':     'saveArtefact',
-        "click #delete-block":      'onDeleteBlock',
-    },
+        'click #cancel-artefact':   'cancelArtefact',
+        "click #delete-block":      'onDeleteBlock',        
+    },    
 
     saveAndGo:function(e)
     {
@@ -83,7 +84,13 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
 
         this.view.fields()['artefact'].val('');
         this.view.ui.addarte.removeClass('show');
-    },    
+    },  
+
+    cancelArtefact:function(e)
+    {
+        e.preventDefault();
+        this.view.ui.addarte.removeClass('show');
+    },  
 
     onDeleteBlock:function(e)
     {

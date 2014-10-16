@@ -16,6 +16,7 @@
 	<script type="text/template" id="stories-template"><?php include('pages/components/your-stories.php'); ?></script>
 	<script type="text/template" id="story-template"><?php include('pages/components/edit-story.php'); ?></script>
 	<script type="text/template" id="editblock-template"><?php include('pages/components/edit-block.php'); ?></script>
+	<script type="text/template" id="editblocktag-template"><?php include('pages/components/edit-block-tags.php'); ?></script>
 	<script type="text/template" id="savedblock-template"><?php include('pages/components/saved-block.php'); ?></script>
 	<script type="text/template" id="viewfooter-template"><?php include('pages/components/view-footer.php'); ?></script>
 	<script type="text/template" id="storyfront-template"><?php include('pages/components/view-story.php'); ?></script>

@@ -10,15 +10,18 @@ switch($_SERVER['REQUEST_METHOD'])
 			$id = $params[1];
 			if (isset($params[2])) 
 			{
-				// returning a collection of notes
+				// returning a collection of notes or tags
 				$type = $params[2];
 				$stuff = R::findAll($type, "block_id = ?", [$id]);
 				$out = []; 
 				foreach($stuff as $s) 
 				{
-					$u = R::load('user',$s->user_id);
-					$u->gravatar = md5($u->email);
-					$s->user = $u;
+					if ($type == 'note')
+					{
+						$u = R::load('user',$s->user_id);
+						$u->gravatar = md5($u->email);
+						$s->user = $u;	
+					}
 					$out[] = $s->export();
 				}
 				echo json_encode($out);

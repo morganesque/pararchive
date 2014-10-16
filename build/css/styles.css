@@ -4749,11 +4749,37 @@ body {
       margin: 2em 0 0;
       font-size: 3em; }
 
-.edit-block .form-group {
-  border-bottom: 1px solid #ccc;
-  padding: 1em 0; }
 .edit-block .edit-block__what {
-  height: 279px; }
+  height: 279px;
+  font-size: 1.5em; }
+.edit-block .edit-block__note {
+  height: 150px; }
+.edit-block .block-artefacts {
+  background-color: #eeeff2;
+  padding: 0.5em; }
+.edit-block .details-type {
+  border-bottom: 1px solid rgba(76, 79, 98, 0.1);
+  padding: 0.5em 0 0.25em; }
+.edit-block .tags .tag {
+  position: relative;
+  font-size: 0.8em;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  background-color: #4c4f62;
+  color: white;
+  border-radius: 1em;
+  padding: 0.25em 0.75em;
+  margin: 0 0.5em 0.5em 0;
+  -webkit-transition: padding-right 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+          transition: padding-right 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
+  .edit-block .tags .tag:hover {
+    padding-right: 1.7em; }
+    .edit-block .tags .tag:hover:after {
+      content: "x";
+      position: absolute;
+      top: 2px;
+      right: 10px;
+      color: #26b9b9; }
 
 .example {
   font-size: 14px;
@@ -4784,6 +4810,7 @@ body {
 
 .add-artefact__input {
   width: 76%;
+  margin: 3em auto 0;
   background: white;
   outline: 1em solid rgba(76, 79, 98, 0.42);
   padding: 2em; }

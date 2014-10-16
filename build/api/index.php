@@ -56,6 +56,10 @@ switch($params[0])
         include_once('notes.php');
     break;
 
+    case 'tags':
+        include_once('tags.php');
+    break;
+
     case 'view':
         include_once('view.php');
     break;

@@ -1,7 +1,13 @@
-var EditBlockView = Marionette.ItemView.extend(
+var EditBlockView = Marionette.LayoutView.extend(
 {
 	template:'#editblock-template',
 	block:undefined,
+	className:'edit-block',
+	rendered:false,
+
+	regions:{
+		tags:'.show-tags'
+	},
 
 	ui: {
 		what_field:'#what-text',
@@ -14,10 +20,15 @@ var EditBlockView = Marionette.ItemView.extend(
 		artefacts:'.show-artefacts',
 		arteexam:'.artfacts-example',
 		addarte:'.add-artefact',
+			
 	},
 
 	behaviors:{
 		EdittingBlock:{},
+	},
+
+	events:{
+		
 	},
 
 	initialize:function()
@@ -32,6 +43,7 @@ var EditBlockView = Marionette.ItemView.extend(
 		this.listenTo(this.block,'artefacts',this.updateArtefacts);
 		this.listenTo(this.block.artefacts, "reset", this.updateArtefacts);
 		this.listenTo(this.block.artefacts, "change", this.updateArtefacts);
+		this.listenTo(this.block, 'tags', this.onTags);
 		this.render();
 	},
 
@@ -47,19 +59,36 @@ var EditBlockView = Marionette.ItemView.extend(
 
 	onRender:function()
 	{
-		// console.log("EditBlockView onRender");		
-
 		if (!this.block) 
 		{
 			this.block = this.model.getBlock();
 		}
 
-		this.updateTextField('what');
-		this.updateTextField('when');
-		this.updateTextField('where');
+		this.updateTextField('what');	
 
-		this.updateHelpText();
-		// this.updateArtefacts();
+		this.onTags();
+	},
+
+	onTags:function()
+	{		
+		if (this.block.tags.length)
+		{
+			var editblocktags = new EditBlockTagsView({
+	            collection:this.block.tags,
+	        });
+	        this.tags.show(editblocktags);
+		}
+	},
+
+	addTags:function(type)
+	{
+		$('.'+type+' .tags').empty();
+		var tags = this.block.tags.where({type:type});
+		_.each(tags,function(a,i)
+		{		
+			var t = $();
+			$('.'+type+' .tags').append(t);
+		});
 	},
 
 	/*
