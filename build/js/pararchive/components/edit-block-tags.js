@@ -6,7 +6,7 @@ var EditBlockTagsView = Marionette.ItemView.extend(
 	showdetail:false,
 
 	ui:{
-		tag: 	 '.tag',				
+		tag: '.tag',				
 	},
 
 	events:{
@@ -19,14 +19,19 @@ var EditBlockTagsView = Marionette.ItemView.extend(
 		this.listenTo(this.block, 'tags', this.render);
 	},
 
+	onRender:function()
+	{
+		console.log(this.block.tags.pluck('id'));		
+	},
+
 	onTagClick:function(e)
 	{
 		e.preventDefault();
-		var id = $(e.currentTarget).attr('href').substr(1);
+		var id = $(e.currentTarget).attr('href').substr(1);		
 		var t = this.block.tags.get(id);
 		t.destroy({success:_.bind(function()
 		{
-			console.log('destroyed the tag');		
+			// console.log('destroyed the tag');		
 			this.block.trigger('tags');
 		},this)});
 	},	

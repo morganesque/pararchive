@@ -10,7 +10,7 @@ var StoryBlock = Backbone.Model.extend(
     {
         this.artefacts = new Artefacts();
         this.notes = new Notes();
-        this.tags = new Tags();
+        this.tags = new Tags(this);
     },
 
     loadArtefacts:function()

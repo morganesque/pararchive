@@ -48,14 +48,13 @@ var EditBlockTagInputView = Marionette.ItemView.extend({
         e.preventDefault();
         
         var type = this.type;
-        var val = this.ui.input.val();
+        var val = this.ui.input.val().toLowerCase();
 
         if (val)
         {
             this.ui.input.val('');
             this.ui.input.focus();
             this.block.tags.addTag(val,type);
-            this.block.trigger('tags');
         } else {
             alert('You have to type something.');
         }  

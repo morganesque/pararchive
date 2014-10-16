@@ -9,6 +9,11 @@ var Tags = Backbone.Collection.extend({
 	model:Tag,
 	blockID:undefined,
 
+    initialize:function(block)
+    {
+        this.block = block;        
+    },
+
 	addTag:function(text,type)
     {       
         // console.log("Tags\taddTag");        
@@ -27,10 +32,12 @@ var Tags = Backbone.Collection.extend({
             type:type,
         });
 
-        newtag.save({},{success:function()
+        newtag.save({},{success:_.bind(function()
         {
+            console.log('saved new tag');        
+            this.block.trigger('tags');
             
-        },error:function()
+        },this),error:function()
         {
             
         }});
