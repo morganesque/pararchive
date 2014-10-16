@@ -43,6 +43,7 @@
     <script type="text/javascript" src="/js/pararchive/model-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-artefacts.js"></script>
     <script type="text/javascript" src="/js/pararchive/model-notes.js"></script>
+    <script type="text/javascript" src="/js/pararchive/model-tags.js"></script>
 
     <!-- load all the components -->
     <script type="text/javascript" src="/js/pararchive/components/login.js"></script>
@@ -51,6 +52,7 @@
     <script type="text/javascript" src="/js/pararchive/components/story-panel.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/your-stories.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/edit-block.js"></script>
+    <script type="text/javascript" src="/js/pararchive/components/edit-block-tags.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/saved-block.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/edit-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/components/view-footer.js"></script>

@@ -10,6 +10,7 @@ var StoryBlock = Backbone.Model.extend(
     {
         this.artefacts = new Artefacts();
         this.notes = new Notes();
+        this.tags = new Tags();
     },
 
     loadArtefacts:function()
@@ -58,6 +59,23 @@ var StoryBlock = Backbone.Model.extend(
             this.notes.fetch({reset:true,success:_.bind(function(a,b,c)
             {
                 this.trigger('notes');
+            },this)});    
+        } else {
+            console.log("StoryBlock\tThis block is still new so not loading notes.");        
+        }        
+    },
+
+    loadTags:function()
+    {
+        // console.log("StoryBlock\tloadNotes");        
+        if (!this.isNew())
+        {
+            // console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
+            var id = this.get('id');
+            this.tags.blockID = id;
+            this.tags.fetch({reset:true,success:_.bind(function(a,b,c)
+            {
+                this.trigger('tags');
             },this)});    
         } else {
             console.log("StoryBlock\tThis block is still new so not loading notes.");        

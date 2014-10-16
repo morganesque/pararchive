@@ -74,7 +74,6 @@ var App = Marionette.Application.extend({
 
     showEditBlock:function()
     {
-        // console.log("App\t\t\tshowEditBlock");        
         var editblock = new EditBlockView({
             model:this.story,
         });
