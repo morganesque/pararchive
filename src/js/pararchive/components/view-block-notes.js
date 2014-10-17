@@ -28,16 +28,18 @@ var ViewBlockNotesView = Marionette.ItemView.extend(
 		this.listenTo(this.collection, "change", this.render)
 	},
 
+	// serializeData:function()
+	// {
+	// 	return {
+	// 		items:this.collection.toJSON(),
+	// 		authors:this.authors,
+	// 	}
+	// },
+
 	onRender:function()
 	{	
-		// console.log("Notes onRender");		
-		// this.ui.frame.on('scroll',_.bind(function()
-		// {
-		// 	console.log('scrolling: '+this.ui.frame.scrollTop());		
-		// 	console.log('scrolling: '+this.$el.scrollTop());		
-		// },this));
+		console.log("ViewBlockNotesView\tonRender");		
 		var r = this.ui.frame.scrollTop(0).scrollTop(300);
-		// console.log(r.scrollTop());		
 	},
 
 	onNotes:function()

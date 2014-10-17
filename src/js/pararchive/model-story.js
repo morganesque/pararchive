@@ -69,8 +69,8 @@ var Story = Backbone.Collection.extend({
             this.meta.set({id:id});
             this.meta.fetch({success:function(a)
             {
-                self.trigger('meta'); // adds the story title to the storyPanel.
-            }});    
+                self.trigger('meta'); // adds the story title to the storyPanel.                
+            }});
         }
     },
 

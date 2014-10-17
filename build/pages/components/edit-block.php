@@ -48,8 +48,10 @@
 			</div>
 			<div class="form-group">
 				<label for="when-text">4. Add a note</label>
-				<textarea class="edit-block__note form-control" id="author_note" class="input"></textarea>
-				<p class="example">(e.g. Your comments on the block, or a question you'd like to ask people to answer about it.)</p>
+				<div class="grey-block">
+					<textarea class="edit-block__note form-control" id="author_note" class="input"></textarea>
+					<p class="example">(e.g. Your comments on the block, or a question you'd like to ask people to answer about it.)</p>
+				</div><!-- .grey-block -->
 			</div>			
 		</div>
 
