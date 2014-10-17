@@ -42,3 +42,4 @@ project.sh
 build/photos
 prototype.sublime-workspace
 prototype.sublime-project
+build/js
