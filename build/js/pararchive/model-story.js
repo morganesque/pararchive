@@ -47,7 +47,7 @@ var Story = Backbone.Collection.extend({
 
     addBlock:function()
     {
-        // console.log("Story\t\taddBlock");
+        console.log("Story\t\taddBlock");
         var newBlock = this.add({"story_id":this.storyID,order:this.length});
         this.setBlock(newBlock.cid);
     },
@@ -85,14 +85,13 @@ var Story = Backbone.Collection.extend({
     setBlock:function(id)
     {
         // console.log('Story\t\tsetBlock '+id);
-
         if (id) this.block = this.get(id);
         else if (this.length) this.block = this.first();
 
-        this.trigger('block'); 
+        this.trigger('block');         
         this.block.loadArtefacts();        
         this.block.loadNotes();        
-        this.block.loadTags();        
+        this.block.loadTags();            
     },
 
     /*

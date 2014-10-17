@@ -8,23 +8,24 @@ var Tags = Backbone.Collection.extend({
 
 	model:Tag,
 	blockID:undefined,
+    block:undefined,
 
-    initialize:function(block)
+    initialize:function(items,options)
     {
-        this.block = block;        
+        this.block = options.block;
     },
 
 	addTag:function(text,type)
     {       
         // console.log("Tags\taddTag");        
-        // console.log(this.blockID);        
-        if (!this.blockID) 
+        // console.log(this.block.id);        
+        if (!this.block.id) 
 		{
 			alert('Tags Model - Not picked a block yet!');
 			return;
 		}
 
-		var bid = this.blockID;
+		var bid = this.block.id;
 
         var newtag = this.add({
             tag: text,
@@ -32,9 +33,8 @@ var Tags = Backbone.Collection.extend({
             type:type,
         });
 
-        newtag.save({},{success:_.bind(function()
+        newtag.save({},{success:_.bind(function(a,b,c)
         {
-            console.log('saved new tag');        
             this.block.trigger('tags');
             
         },this),error:function()
@@ -45,12 +45,12 @@ var Tags = Backbone.Collection.extend({
 
 	url: function()
     {
-    	// console.log("url: "+this.blockID);		
-    	if (!this.blockID) 
+    	// console.log("url: "+this.block.id);		
+    	if (!this.block.id) 
 		{
 			console.log('Tags Model - Not picked a block yet!');
 		}
-    	var url = '/api/blocks/'+this.blockID+'/tag/';
+    	var url = '/api/blocks/'+this.block.id+'/tag/';
     	return url;
     },
 });

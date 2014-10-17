@@ -4,6 +4,7 @@ var EditBlockView = Marionette.LayoutView.extend(
 	block:undefined,
 	className:'edit-block',
 	rendered:false,
+	edittingTags:undefined,
 
 	regions:{
 		tags:'.show-tags'
@@ -21,6 +22,8 @@ var EditBlockView = Marionette.LayoutView.extend(
 		addarte:'.add-artefact',
 
 		tagdesc:'.tags-desc',
+
+		details:'.block-details',
 			
 	},
 
@@ -53,26 +56,33 @@ var EditBlockView = Marionette.LayoutView.extend(
         });
         this.tags.show(showtags);
 
-		var taginput = new EditBlockTagInputView({
-			el:$('.block-details'),
+        console.log("edittingTags: "+this.edittingTags);		
+        
+    	this.taginput = new EditBlockTagInputView({
+			el:this.ui.details,
 			block:this.block,
-		});
-		taginput.render();
+			parent:this,
+		});	
+		this.taginput.render();
+		if (typeof this.edittingTags !== 'undefined') 
+		{
+			this.taginput.type = this.edittingTags;
+			this.taginput.showTagInput();
+			this.edittingTags = undefined;
+		}
 	},
 
 	onRender:function()
-	{
-		if (!this.block) 
-		{
-			this.block = this.model.getBlock();
-		}
-
+	{		
+		if (!this.block) this.block = this.model.getBlock();
+		
 		this.ui.what_field.val(this.block.get('what'));
 		this.ui.authornote.val(this.block.get('author_note'));
 	},
 
 	checkTags:function()
 	{
+		// console.log("checktags: "+this.block.tags.length);		
 		if (this.block.tags.length) this.ui.tagdesc.hide();
 		else this.ui.tagdesc.show();
 	},
@@ -118,5 +128,32 @@ var EditBlockView = Marionette.LayoutView.extend(
 			this.ui.artefacts.append(dc);
 		},this);
 	},
+
+    saveStoryBlock:function(callback)
+    {
+        var data = {
+            "what": this.ui.what_field.val(),
+            "author_note": this.ui.authornote.val(),
+        }        
+
+        this.block.unset('cid');        
+
+        if(this.block)
+        {
+            this.block.save(data,{success:function(model,response,options)
+            {       
+            	console.log('EditBlockView: Saved Block');		
+                // make sure you set the newly saved block ID (replace the temp one).
+                var bid = model.get('id');
+                pararchive.story.setBlock(bid); 
+                callback(model);
+                
+            },error:function()
+            {
+                if (response.responseText) alert(response.responseText);
+                else alert('error - bad return value!');
+            }});              
+        }
+    },  	
 
 });

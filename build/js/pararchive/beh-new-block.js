@@ -8,7 +8,7 @@ window.Behaviors.NewBlock = Marionette.Behavior.extend(
 
     newBlock: function(e) 
     {
-        console.log("NewBlock\tnewBlock");        
+        // console.log("Behaviors.NewBlock\tnewBlock");        
         e.preventDefault();
         pararchive.story.addBlock();
         var sid = pararchive.story.storyID;

@@ -10,7 +10,7 @@ var StoryBlock = Backbone.Model.extend(
     {
         this.artefacts = new Artefacts();
         this.notes = new Notes();
-        this.tags = new Tags(this);
+        this.tags = new Tags([],{block:this});
     },
 
     loadArtefacts:function()
@@ -24,7 +24,7 @@ var StoryBlock = Backbone.Model.extend(
                 this.trigger('artefacts');
             },this));    
         } else {
-            console.log("StoryBlock\tThis block is still new so not loading artefacts.");        
+            // console.log("StoryBlock\tThis block is still new so not loading artefacts.");        
         }
     },
 
@@ -64,24 +64,25 @@ var StoryBlock = Backbone.Model.extend(
                 this.trigger('notes');
             },this)});    
         } else {
-            console.log("StoryBlock\tThis block is still new so not loading notes.");        
+            // console.log("StoryBlock\tThis block is still new so not loading notes.");        
         }        
     },
 
     loadTags:function()
     {
-        // console.log("StoryBlock\tloadNotes");        
+        // console.log("StoryBlock\tloadTags");        
         if (!this.isNew())
         {
-            // console.log("StoryBlock\tloadArtefacts "+this.get('id'));        
+            // console.log("StoryBlock\tloadTags "+this.get('id'));        
             var id = this.get('id');
-            this.tags.blockID = id;
-            this.tags.fetch({reset:true,success:_.bind(function(a,b,c)
+            this.tags.blockID = id;        
+            this.tags.fetch({reset:false,success:_.bind(function(a,b,c)
             {
+                // console.log("StoryBlock\tFetched tags");        
                 this.trigger('tags');
             },this)});    
         } else {
-            console.log("StoryBlock\tThis block is still new so not loading notes.");        
+            // console.log("StoryBlock\tThis block is still new so not loading tags.");        
         }        
     },
 });

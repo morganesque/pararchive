@@ -18,11 +18,13 @@ var EditBlockTagInputView = Marionette.ItemView.extend({
 
 	initialize:function(options)
 	{
+		console.log("EditBlockTagInputView init");		
 		this.block = options.block;
+		this.parent = options.parent;
 	},
 
 	onRender:function()
-	{
+	{		
 		this.ui.detail.hide();
 	},
 
@@ -30,10 +32,32 @@ var EditBlockTagInputView = Marionette.ItemView.extend({
 	{
 		e.preventDefault();
 		this.type = $(e.currentTarget).attr('href').substr(1);
+
+		if (this.block.isNew())
+		{
+			this.parent.edittingTags = this.type;
+			this.parent.saveStoryBlock(_.bind(function(model)
+			{
+				var sid = model.get("story_id");
+				var bid = model.get("id");
+				var user = pararchive.user.get('username');
+				pararchive.router.navigate('/'+user+'/story/'+sid+'/block/'+bid+'/edit/');
+				
+			},this));
+		} else {
+			this.showTagInput();
+		}
+	},
+
+	showTagInput:function()
+	{
+		console.log("showTagInput");				
+		console.log(this.ui.detail);		
 		this.ui.detail.find('.icon').attr('class','icon icon-'+this.convert(this.type));
 		this.ui.detail.show();
 		this.ui.button.hide();
-		this.ui.input.focus();
+		this.ui.input.focus();		
+		console.log(this.el);		
 	},
 
 	convert:function(type)
@@ -54,7 +78,13 @@ var EditBlockTagInputView = Marionette.ItemView.extend({
         {
             this.ui.input.val('');
             this.ui.input.focus();
-            this.block.tags.addTag(val,type);
+            if (this.block.isNew())
+            {
+            	alert("Can't add a tag to an unsaved block.")
+            } else {
+            	this.block.tags.addTag(val,type);	
+            }
+            
         } else {
             alert('You have to type something.');
         }  
