@@ -42,6 +42,9 @@ switch($_SERVER['REQUEST_METHOD'])
 			$out = [];
 			foreach($stories as $s)
 			{
+				$u = R::load('user',$s->user_id);
+				$u->gravatar = md5($u->email);
+				$s->user = $u;	
 				array_push($out,$s->export());
 			}
 
@@ -68,6 +71,7 @@ switch($_SERVER['REQUEST_METHOD'])
  	// update
 	case "PUT":
 		$post = json_decode(file_get_contents('php://input'));
+		unset($post->user);
 		$bean = R::dispense($type);		
 		
 		$bean->import($post);

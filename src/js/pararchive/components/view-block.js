@@ -60,7 +60,7 @@ var ViewBlockView = Marionette.LayoutView.extend(
 			this.ui.body.text(this.block.get('what'))
 			this.showArtefacts();
 		}
-		this.onWindowResize();
+		this.onWindowResize();				
 	},
 
 	onArtefacts:function()
@@ -73,6 +73,7 @@ var ViewBlockView = Marionette.LayoutView.extend(
 	onNotes:function()
 	{
 		var num = this.block.notes.length;
+		if (this.block.get('author_note')) num++;		
 		this.ui.numnotes.text(num+" notes");
 		this.ui.numnotes.parent().toggleClass('gotsome',!!num);
 	},
@@ -81,6 +82,7 @@ var ViewBlockView = Marionette.LayoutView.extend(
 	{
 		var showartefacts = new ViewBlockArtefactsView({
 			collection:this.block.artefacts,
+			author:this.block.get('user_id'),
 		});
 		this.media.show(showartefacts);
 	},
@@ -96,6 +98,14 @@ var ViewBlockView = Marionette.LayoutView.extend(
 		console.log("ViewBlockView\tshowNotes");		
 		var shownotes = new ViewBlockNotesView({
 			collection:this.block.notes,
+			authors:{
+				gravatar:this.block.get('user').gravatar,
+				note:this.block.get('author_note'),
+				firstname:this.block.get('user').firstname,
+				surname:this.block.get('user').surname,
+				username:this.block.get('user').username,
+				created:this.block.get('modified'),
+			},
 		});
 		this.media.show(shownotes);
 	},

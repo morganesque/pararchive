@@ -8,13 +8,20 @@
     	// background-color:red;
     	padding-bottom:100px;
     	overflow:auto;
+
 		&__note {
+			width:99%;
 			border:1px solid rgba(black,0.12);
 			padding:1em 1em 0.25em 1em;
 			background-color:rgba(white,0.62);
 			margin-top:0;
 			margin-bottom:0.5em;
+			&.author {
+				border-color:rgba($brand-tertiary,0.2);
+				background-color:lighten(desaturate($brand-tertiary,40%),60%);
+			}
 		}		
+
 		.media-object {width:50px;margin-bottom:1em;}
 		.media-body p:first-child {margin-top:-5px}
     }
