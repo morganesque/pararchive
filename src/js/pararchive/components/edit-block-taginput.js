@@ -18,7 +18,7 @@ var EditBlockTagInputView = Marionette.ItemView.extend({
 
 	initialize:function(options)
 	{
-		console.log("EditBlockTagInputView init");		
+		// console.log("EditBlockTagInputView init");		
 		this.block = options.block;
 		this.parent = options.parent;
 	},
@@ -51,13 +51,11 @@ var EditBlockTagInputView = Marionette.ItemView.extend({
 
 	showTagInput:function()
 	{
-		console.log("showTagInput");				
-		console.log(this.ui.detail);		
+		// console.log("showTagInput");						
 		this.ui.detail.find('.icon').attr('class','icon icon-'+this.convert(this.type));
 		this.ui.detail.show();
 		this.ui.button.hide();
 		this.ui.input.focus();		
-		console.log(this.el);		
 	},
 
 	convert:function(type)

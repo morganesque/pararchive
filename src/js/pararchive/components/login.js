@@ -11,7 +11,7 @@ var LoginView = Marionette.ItemView.extend(
 
 	onSubmit:function(e)
 	{
-		console.log("PageLogin onSubmit");		
+		// console.log("PageLogin onSubmit");		
 		e.preventDefault();
 		
 		var username = this.$el.find('form #username').val();
@@ -31,8 +31,8 @@ var LoginView = Marionette.ItemView.extend(
 			}, 
 			error:function(m,r,o)
 			{
-				console.log('error');			
-				console.log([m,r,o]);		
+				// console.log('error');			
+				// console.log([m,r,o]);		
 			}
 		});
 	},

@@ -34,7 +34,7 @@ var Artefacts = Backbone.Collection.extend({
     	// console.log("url: "+this.blockID);		
     	if (!this.blockID) 
 		{
-			console.log('Artfacts Model - Not picked a block yet!');
+			// console.log('Artfacts Model - Not picked a block yet!');
 		}
     	var url = '/api/artefacts/?block_id='+this.blockID;
     	return url;

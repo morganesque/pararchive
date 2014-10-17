@@ -85,7 +85,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
 
             },error:function(model,response,options)
             {
-                console.log('error',model,response,options);        
+                // console.log('error',model,response,options);        
             }});
         }
     },    

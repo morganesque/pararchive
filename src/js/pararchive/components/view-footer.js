@@ -97,7 +97,7 @@ var ViewFooterView = Marionette.ItemView.extend(
 		}
 		else if (this.current == 1)
 		{
-			console.log("–––going home ");
+			// console.log("–––going home ");
 			pararchive.nav.viewStory(this.slug);
 		}		
 	},

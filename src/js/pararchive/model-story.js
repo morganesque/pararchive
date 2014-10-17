@@ -47,14 +47,14 @@ var Story = Backbone.Collection.extend({
 
     addBlock:function()
     {
-        console.log("Story\t\taddBlock");
+        // console.log("Story\t\taddBlock");
         var newBlock = this.add({"story_id":this.storyID,order:this.length});
         this.setBlock(newBlock.cid);
     },
 
     setStoryID:function(id)
     {
-        console.log("Story\tsetStoryID "+id);
+        // console.log("Story\tsetStoryID "+id);
         if (String(id).substr(0,1)=='c')
         {
             this.storyID = id;

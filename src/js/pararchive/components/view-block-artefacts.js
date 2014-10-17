@@ -47,7 +47,7 @@ var ViewBlockArtefactsView = Marionette.ItemView.extend(
 
 		if (type == 'photo')
 		{
-			var url = a.get('url'); console.log(url);		
+			var url = a.get('url');
 			this.ui.showall.css({"background-image":'url('+url+')'});	
 			this.ui.showall.empty();
 			this.ui.showall.append('<a class="btn-close"><span class="icon icon-close"></span></a>');
@@ -81,7 +81,7 @@ var ViewBlockArtefactsView = Marionette.ItemView.extend(
 			this.ui.showall.empty();
 
 			var html = $(a.get("html"));
-			console.log(a.get('html'));		
+			// console.log(a.get('html'));		
 			var cont = $('<div class="embed-container"></div>');
 
 			cont.append(html);

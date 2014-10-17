@@ -9,7 +9,7 @@ var App = Marionette.Application.extend({
 
     initialize:function()
     {
-        console.log('App:Initialize');
+        // console.log('App:Initialize');
 
         // First create a user object.
         this.user = new User();     
@@ -117,7 +117,7 @@ var App = Marionette.Application.extend({
 
     showViewBlock:function()
     {
-        console.log("App\t\t\tshowViewBlock");        
+        // console.log("App\t\t\tshowViewBlock");        
         var viewblock = new ViewBlockView({
             model:this.story,
         });

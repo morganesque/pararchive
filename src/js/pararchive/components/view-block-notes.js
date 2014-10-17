@@ -30,19 +30,19 @@ var ViewBlockNotesView = Marionette.ItemView.extend(
 
 	onRender:function()
 	{	
-		console.log("Notes onRender");		
+		// console.log("Notes onRender");		
 		// this.ui.frame.on('scroll',_.bind(function()
 		// {
 		// 	console.log('scrolling: '+this.ui.frame.scrollTop());		
 		// 	console.log('scrolling: '+this.$el.scrollTop());		
 		// },this));
 		var r = this.ui.frame.scrollTop(0).scrollTop(300);
-		console.log(r.scrollTop());		
+		// console.log(r.scrollTop());		
 	},
 
 	onNotes:function()
 	{
-		console.log('onNotes');		
+		// console.log('onNotes');		
 	},
 
 	onAddNotesShow:function(e)

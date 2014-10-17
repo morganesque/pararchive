@@ -56,7 +56,7 @@ var EditBlockView = Marionette.LayoutView.extend(
         });
         this.tags.show(showtags);
 
-        console.log("edittingTags: "+this.edittingTags);		
+        // console.log("edittingTags: "+this.edittingTags);		
         
     	this.taginput = new EditBlockTagInputView({
 			el:this.ui.details,
@@ -142,7 +142,7 @@ var EditBlockView = Marionette.LayoutView.extend(
         {
             this.block.save(data,{success:function(model,response,options)
             {       
-            	console.log('EditBlockView: Saved Block');		
+            	// console.log('EditBlockView: Saved Block');		
                 // make sure you set the newly saved block ID (replace the temp one).
                 var bid = model.get('id');
                 pararchive.story.setBlock(bid); 

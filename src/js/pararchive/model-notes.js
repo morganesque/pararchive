@@ -38,7 +38,7 @@ var Notes = Backbone.Collection.extend({
     	// console.log("url: "+this.blockID);		
     	if (!this.blockID) 
 		{
-			console.log('Notes Model - Not picked a block yet!');
+			// console.log('Notes Model - Not picked a block yet!');
 		}
     	var url = '/api/blocks/'+this.blockID+'/note/';
     	return url;

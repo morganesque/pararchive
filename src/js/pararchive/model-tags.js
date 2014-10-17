@@ -48,7 +48,7 @@ var Tags = Backbone.Collection.extend({
     	// console.log("url: "+this.block.id);		
     	if (!this.block.id) 
 		{
-			console.log('Tags Model - Not picked a block yet!');
+			// console.log('Tags Model - Not picked a block yet!');
 		}
     	var url = '/api/blocks/'+this.block.id+'/tag/';
     	return url;

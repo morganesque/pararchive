@@ -26,7 +26,7 @@ var ViewController = Marionette.Controller.extend({
 
 	viewBlock:function(slug,bin)
 	{
-		console.log("Controller\tviewBlock");
+		// console.log("Controller\tviewBlock");
 		this.convertSlug(slug,function()
 		{
 			pararchive.showViewBlock();

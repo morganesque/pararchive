@@ -28,7 +28,7 @@ var IdentityView = Marionette.ItemView.extend(
 	onLogOut:function(e)
 	{
 		e.preventDefault();
-		console.log('loggin out');		
+		// console.log('loggin out');		
 		$.get('/api/users/logout/',function(a,b,c)
 		{
 			window.location.href = '/';
