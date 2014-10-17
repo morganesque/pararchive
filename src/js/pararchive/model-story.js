@@ -54,8 +54,8 @@ var Story = Backbone.Collection.extend({
 
     setStoryID:function(id)
     {
-        // console.log("setStoryID "+id);
-        if (id.substr(0,1)=='c')
+        console.log("Story\tsetStoryID "+id);
+        if (String(id).substr(0,1)=='c')
         {
             this.storyID = id;
             var meta = pararchive.user.stories.get(id);
