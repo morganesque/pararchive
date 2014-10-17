@@ -8,12 +8,16 @@ var ViewController = Marionette.Controller.extend({
 		}
 		convert.set('slug',slug);
 		convert.fetch({success:function(model,json,options)
-		{
+		{		
 			pararchive.story.setStoryMeta(json);
 			pararchive.story.loadStory(function()
 			{
 				if (callback) callback();
 			});
+		},error:function(a,b,c)
+		{
+			console.log('error');		
+			console.log(a,b,c);		
 		}});
 	},
 
@@ -26,7 +30,7 @@ var ViewController = Marionette.Controller.extend({
 
 	viewBlock:function(slug,bin)
 	{
-		// console.log("Controller\tviewBlock");
+		console.log("ViewController\tviewBlock: "+slug+' '+bin);
 		this.convertSlug(slug,function()
 		{
 			pararchive.showViewBlock();

@@ -38,7 +38,7 @@ var Model = Backbone.Model.extend({
         {            
             if (!this.fetching)
             {
-                this.// console.log('fetching new data: '+this.urlRoot);       
+                // console.log('fetching new data: '+this.urlRoot);       
                 this.fetching = true;
                 this.fetch({success:function(a,b,c)
                 {
@@ -55,7 +55,7 @@ var Model = Backbone.Model.extend({
             
         } else {
 
-            this.// console.log('already got data: '+this.urlRoot+' - '+force);        
+            // console.log('already got data: '+this.urlRoot+' - '+force);        
             if (force) this.trigger('change');
         }        
     },

@@ -8,7 +8,7 @@ switch($_SERVER['REQUEST_METHOD'])
         if (isset($params[1]))
         {
             $slug = $params[1];
-    odelb        $story = R::findOne($type, "slug = ? ", [$slug]);
+    		$story = R::findOne($type, "slug = ? ", [$slug]);
 
             echo json_encode($story->export());
 

@@ -1,4 +1,3 @@
-// // console.log('init');		
 // just to be safe.
 if (typeof(pararchive) == "undefined") pararchive = {};
 
