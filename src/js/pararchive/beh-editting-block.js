@@ -23,6 +23,9 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
         }); 
     },
 
+    /*
+        When they click the "add artefact" button.
+    */        
     addArtefact:function(e)
     {
         e.preventDefault();
@@ -40,7 +43,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
     {
         e.preventDefault();     
 
-        if (this.view.ui.arte_field.val() == '')
+        if (this.view.ui.arte_field.val() == '') // ignore if empty
         {
             this.view.ui.addarte.removeClass('show');
             return;     
@@ -51,6 +54,7 @@ window.Behaviors.EdittingBlock = Marionette.Behavior.extend(
 
         this.view.ui.arte_field.val('');
         this.view.ui.addarte.removeClass('show');
+        this.showSpinner();
     }, 
 
     showSpinner:function()

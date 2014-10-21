@@ -4629,6 +4629,8 @@ body {
     text-decoration: underline; }
   .header .logout {
     padding-left: 0.25em; }
+  .header .username {
+    opacity: 0.5; }
   .header a {
     color: white; }
 
@@ -4855,6 +4857,14 @@ body {
     padding: 48% 0 0;
     margin: 0 2% 0 0;
     background-color: rgba(255, 255, 255, 0.9); }
+  .display span.icon-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+    opacity: 0.42; }
   .display a, .display div {
     background-size: contain;
     background-repeat: no-repeat;
