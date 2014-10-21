@@ -8,7 +8,7 @@
 			</div>	
 		</div>	
 	<% } %>
-	<% if (items.length == 0){ %> <p>There are no notes for this block yet.</p> <% } %>
+	<% if (items.length == 0 && !authors.note){ %> <p>There are no notes for this block yet.</p> <% } %>
 	<% _.each(items, function(item){ %>
 		
 		<% var classname = (item.user.username == authors.username) ? 'author' : '' ; %>
