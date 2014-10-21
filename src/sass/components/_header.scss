@@ -1,15 +1,24 @@
 .header {
+	
+	.logo:hover {
+		text-decoration:underline;
+	}
+
 	background-color:$brand-secondary;
 	color:white;
 	border-radius:0;
-	.logout, .my-stories {		
+
+	.logout, .my-stories {
+
 		&:hover {
 			background:none;
 			text-decoration:underline;
 		}
 	}
+
 	.logout {
 		padding-left:0.25em;
 	}
+
 	a {color:white}
 }

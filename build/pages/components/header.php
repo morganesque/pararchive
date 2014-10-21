@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-3">
-			<a href="/" class="logo navbar-brand">Pararchive</a>
+			<a href="/" class="logo navbar-brand">Pararchive Home</a>
 		</div>		
 		<div class="col-xs-9">	
 			<ul id="identity" style="display:none" class="nav navbar-nav navbar-right">	
