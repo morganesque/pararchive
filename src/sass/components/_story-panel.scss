@@ -26,6 +26,24 @@
 		a {
 			margin-left:1em;
 		}
+		&--top {
+			margin-top:0.85em;
+		}
+	}
+
+	.block-edit-buttons, .story-edit-buttons {
+		@extend .pull-right;
+	}
+	
+	.preview {
+		display:inline-block;
+		margin:0 0 0 0.5em;
+		line-height:1;
+		position:relative;
+		top:2px;
+		&:after {
+			content:':';
+		}
 	}
 
 	.story {

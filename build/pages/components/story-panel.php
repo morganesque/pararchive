@@ -4,12 +4,22 @@
 			<h4 class="story"><span class="story-name"></span></h4>
 		</div>		
 		<div class="col-xs-4">
-			<p class="story-panel__btns">				
-				<% if (typeof meta !== "undefined") { %>
-					<a href="/me/story/<%= meta.id %>/edit/" class="btn-edit-story btn btn-sm btn-primary">change details</a>
-					<a href="/view/<%= meta.slug %>/" class="btn-view-story btn btn-sm btn-primary">preview</a>
+			<div class="story-panel__btns story-panel__btns--top">				
+				<% if (typeof meta !== "undefined") { %>					
+					<div class="block-edit-buttons">
+						<a href="/me/story/<%= meta.id %>/edit/" class="btn-edit-story btn btn-sm btn-primary">change details</a>										
+						<span class="preview">Preview</span>
+						<div class="btn-group block-edit">						
+							<a href="/view/<%= meta.slug %>/" class="btn-view-story btn btn-sm btn-primary">story</a>
+							<a href="/view/<%= meta.slug %>/block/id/" class="btn-view-block btn btn-sm btn-primary">block</a>
+						</div>
+					</div>
+					<div class="story-edit-buttons">
+						<a href="/view/<%= meta.slug %>/" class="btn-view-story btn btn-sm btn-primary">preview story</a>
+					</div>
+
 				<% } %>
-			</p>
+			</div>
 		</div>
 	</div><!-- .row -->
 	<div class="row">

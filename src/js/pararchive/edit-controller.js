@@ -55,9 +55,7 @@ var EditController = Marionette.Controller.extend({
 					pararchive.story.addBlock();
 				}
 			},this));
-		}	
-
-		pararchive.showStoryPanel();	
+		}
 	},
 
 	savedBlock:function(sid,bid)

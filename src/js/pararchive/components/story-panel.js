@@ -19,7 +19,11 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 		plus:'.btn-new-block',
 		viewstory:'.btn-view-story',
+		viewblock:'.btn-view-block',
 		editstory:'.btn-edit-story',
+
+		blockeditbuttons:'.block-edit-buttons',
+		storyeditbuttons:'.story-edit-buttons',
 
 		name:'.story-name',
 	},
@@ -31,6 +35,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	behaviors:{
 		NewBlock:{},
 		ViewStory:{},
+		ViewBlock:{},
 		EditStory:{},
 	},
 
@@ -39,6 +44,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 	*/		
 	initialize:function(options)
 	{		
+		// this.ran = Math.round(Math.random()*100);
 		this.listenTo(this.collection, "block", 	this.blockBlocks);
 		this.listenTo(this.collection, "reset", 	this.render);
 		this.listenTo(this.collection, "change", 	this.render);
@@ -69,8 +75,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 		// if (this.collection.length) throw new Error('fish');
 		// console.log(this.collection.pluck('order'));		
 
-		// console.log("StoryPanelView:onRender");		
-		this.setState();
+		// console.log("StoryPanelView:onRender: "+this.state+' - '+this.ran);		
+		this.setState(this.state);
 
 		this.sorter = new Sortable(this.ui.blocks[0],{
 			draggable:  '.block',
@@ -116,17 +122,25 @@ var StoryPanelView = Marionette.ItemView.extend(
 	},
 
 	setState:function(state)
-	{
-		if (state) this.state = state;
+	{	
+		if (typeof state !== "undefined") this.state = state;
 
 		if (this.state == 'edit') 
 		{
-			this.ui.editstory.hide();
+			this.ui.blockeditbuttons.hide();
+			this.ui.storyeditbuttons.show();
+
 			if (this.collection.length == 0) 
 			{
 				this.ui.viewstory.hide();
 				this.ui.plus.hide();
 			}
+		}
+
+		if (this.state == 'block') 
+		{
+			this.ui.blockeditbuttons.show();
+			this.ui.storyeditbuttons.hide();
 		}
 	},
 

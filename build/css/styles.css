@@ -539,7 +539,9 @@ blockquote {
 
 .blockquote-reverse,
 blockquote.pull-right,
-blockquote.story-panel__btns {
+blockquote.story-panel__btns,
+.story-panel blockquote.block-edit-buttons,
+.story-panel blockquote.story-edit-buttons {
   padding-right: 15px;
   padding-left: 0;
   border-right: 5px solid #eeeff2;
@@ -550,20 +552,32 @@ blockquote.story-panel__btns {
   .blockquote-reverse .small:before,
   blockquote.pull-right footer:before,
   blockquote.story-panel__btns footer:before,
+  .story-panel blockquote.block-edit-buttons footer:before,
+  .story-panel blockquote.story-edit-buttons footer:before,
   blockquote.pull-right small:before,
   blockquote.story-panel__btns small:before,
+  .story-panel blockquote.block-edit-buttons small:before,
+  .story-panel blockquote.story-edit-buttons small:before,
   blockquote.pull-right .small:before,
-  blockquote.story-panel__btns .small:before {
+  blockquote.story-panel__btns .small:before,
+  .story-panel blockquote.block-edit-buttons .small:before,
+  .story-panel blockquote.story-edit-buttons .small:before {
     content: ''; }
   .blockquote-reverse footer:after,
   .blockquote-reverse small:after,
   .blockquote-reverse .small:after,
   blockquote.pull-right footer:after,
   blockquote.story-panel__btns footer:after,
+  .story-panel blockquote.block-edit-buttons footer:after,
+  .story-panel blockquote.story-edit-buttons footer:after,
   blockquote.pull-right small:after,
   blockquote.story-panel__btns small:after,
+  .story-panel blockquote.block-edit-buttons small:after,
+  .story-panel blockquote.story-edit-buttons small:after,
   blockquote.pull-right .small:after,
-  blockquote.story-panel__btns .small:after {
+  blockquote.story-panel__btns .small:after,
+  .story-panel blockquote.block-edit-buttons .small:after,
+  .story-panel blockquote.story-edit-buttons .small:after {
     content: '\00A0 \2014'; }
 
 blockquote:before,
@@ -2150,7 +2164,7 @@ tbody.collapse.in {
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box; }
-  .dropdown-menu.pull-right, .dropdown-menu.story-panel__btns {
+  .dropdown-menu.pull-right, .dropdown-menu.story-panel__btns, .story-panel .dropdown-menu.block-edit-buttons, .story-panel .dropdown-menu.story-edit-buttons {
     right: 0;
     left: auto; }
   .dropdown-menu .divider {
@@ -2216,7 +2230,7 @@ tbody.collapse.in {
   top: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu, .story-panel__btns > .dropdown-menu {
+.pull-right > .dropdown-menu, .story-panel__btns > .dropdown-menu, .story-panel .block-edit-buttons > .dropdown-menu, .story-panel .story-edit-buttons > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -3401,7 +3415,7 @@ a.thumbnail.active {
 
 .media > .pull-left {
   margin-right: 10px; }
-.media > .pull-right, .media > .story-panel__btns {
+.media > .pull-right, .media > .story-panel__btns, .story-panel .media > .block-edit-buttons, .story-panel .media > .story-edit-buttons {
   margin-left: 10px; }
 
 .media-list {
@@ -4318,7 +4332,7 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right, .story-panel__btns {
+.pull-right, .story-panel__btns, .story-panel .block-edit-buttons, .story-panel .story-edit-buttons {
   float: right !important; }
 
 .pull-left {
@@ -4666,6 +4680,16 @@ body {
   margin-top: 1.25em; }
   .story-panel__btns a {
     margin-left: 1em; }
+  .story-panel__btns--top {
+    margin-top: 0.85em; }
+.story-panel .preview {
+  display: inline-block;
+  margin: 0 0 0 0.5em;
+  line-height: 1;
+  position: relative;
+  top: 2px; }
+  .story-panel .preview:after {
+    content: ':'; }
 .story-panel .story {
   font-family: "Merriweather", cursive;
   padding-top: 0.75em;
@@ -5103,7 +5127,7 @@ a:hover {
 /*
 	just modify the bs call for when I use it with icons.
 */
-.icon.pull-right, .icon.story-panel__btns {
+.icon.pull-right, .icon.story-panel__btns, .story-panel .icon.block-edit-buttons, .story-panel .icon.story-edit-buttons {
   padding-top: 0.25em; }
 
 .icon.nudge {

@@ -66,6 +66,7 @@
     <!-- behaviours -->
     <script type="text/javascript" src="/js/pararchive/beh-edit-story.js"></script>
     <script type="text/javascript" src="/js/pararchive/beh-view-story.js"></script>
+    <script type="text/javascript" src="/js/pararchive/beh-view-block.js"></script>
     <script type="text/javascript" src="/js/pararchive/beh-new-block.js"></script>
     <script type="text/javascript" src="/js/pararchive/beh-edit-block.js"></script>
     <script type="text/javascript" src="/js/pararchive/beh-editting-block.js"></script>
