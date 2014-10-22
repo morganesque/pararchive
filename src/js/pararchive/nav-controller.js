@@ -19,14 +19,26 @@ var NavController = Marionette.Controller.extend({
 	{
 		pararchive.router.navigate('/');			
 		pararchive.showAllStories();
-		pararchive.allStories.fetch({reset:true});
+        pararchive.allStories.fetch({reset:true,error:function(model,response,options)
+		{
+			if (response.status == 401) {
+				alert('Very sorry but you have been logged out due to inactivity.');
+				window.location.href = '/';
+			}
+		}});
 	},
 
 	yourStories:function()
 	{
 		// console.log("Nav\t\t\tyourStories");		
 		pararchive.router.navigate('/'+this.user+'/');
-		pararchive.user.stories.fetch({reset:true});
+        pararchive.user.stories.fetch({reset:true,error:function(model,response,options)
+		{
+			if (response.status == 401) {
+				alert('Very sorry but you have been logged out due to inactivity.');
+				window.location.href = '/';
+			}
+		}});
 		pararchive.showYourStories();
 	},
 

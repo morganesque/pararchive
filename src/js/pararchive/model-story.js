@@ -39,9 +39,10 @@ var Story = Backbone.Collection.extend({
         {
             // console.log(a,b,c);        
             if (callback) callback();
-        },error:function()
+        },error:function(model,response,options)
         {
             // console.log('error loading story!');           
+            if (response.status == 401) {alert('Very sorry but you have been logged out due to inactivity.');}
         }});
     },
 
