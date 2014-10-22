@@ -27,7 +27,14 @@
 			<ul class="story-panel__blocks">
 				<% _.each(items, function(item,a){ %>
 				<% if (!item.id) item.id = item.cid; %>
-					<li class="block block_<%= item.id %>"><a href="#<%= item.id %>" class="block__link" draggable="true"><%= a+1 %></a></li>
+					<% 
+						var sneek = String(item.what).substr(0,62); 
+						if (String(item.what).length > 62) sneek+='&hellip;';
+					%>
+					<li class="block block_<%= item.id %>">
+						<a href="#<%= item.id %>" class="block__link" draggable="true"><%= a+1 %></a>
+						<div class="sneek"><%= sneek %></div>
+					</li>
 				<% }); %>
 				<!-- <a href="#" class="plus btn btn-default"><span class="icon icon-plus"></span></a>			 -->
 			</ul>

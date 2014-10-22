@@ -4715,6 +4715,38 @@ body {
           user-select: none;
   user-drag: element;
   cursor: move; }
+  .story-panel .block .sneek {
+    position: absolute;
+    top: 58px;
+    left: -5px;
+    width: 12em;
+    z-index: 1000;
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 0.5em;
+    background: #4c4f62;
+    color: white;
+    text-align: left;
+    opacity: 0;
+    display: block;
+    pointer-events: none;
+    -webkit-transition: opacity 1s 0s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: opacity 1s 0s cubic-bezier(0.23, 1, 0.32, 1); }
+    .story-panel .block .sneek:before {
+      content: "";
+      position: absolute;
+      top: -14.66667px;
+      left: 12.5px;
+      width: 0;
+      height: 0;
+      border-left: 12.5px solid transparent;
+      border-bottom: 16.66667px solid #4c4f62;
+      border-right: 12.5px solid transparent; }
+  .story-panel .block.hover .sneek {
+    -webkit-transition: opacity 1s 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: opacity 1s 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    display: block;
+    opacity: 1; }
   .story-panel .block--dragged {
     background-color: #a61520;
     border-color: #a61520; }

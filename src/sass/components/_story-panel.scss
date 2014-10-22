@@ -76,6 +76,40 @@
 		user-drag:element;
 		cursor:move;
 
+		.sneek {
+			position:absolute;
+			top:58px; left:-5px;
+			width:12em;
+			z-index:1000;
+			font-size:14px;
+			line-height:1.2;
+			padding:0.5em;
+			background:$brand-secondary;
+			color:white;
+			text-align:left;
+			opacity:0;
+			display:block;
+			pointer-events:none;
+			transition:opacity 1s 0s $easeOutQuint;
+			&:before {
+			   content:"";
+			   position: absolute;
+			   top: 2-$blockh/3;
+			   left: $blockh/4;
+			   width: 0;
+			   height: 0;
+			   border-left: $blockh/4 solid transparent;
+			   border-bottom: $blockh/3 solid $brand-secondary;
+			   border-right: $blockh/4 solid transparent;
+			}
+		}
+
+		&.hover .sneek {
+			transition:opacity 1s 0.5s $easeOutQuint;
+			display:block;
+			opacity:1;
+		}
+
 		&--dragged {
 			background-color:$brand-tertiary;
 			border-color:$brand-tertiary;
@@ -87,9 +121,6 @@
 
 		&:hover {
 			color:$brand-primary;
-			// text-decoration:none;
-			// color:white;
-			// background-color:$brand-primary;
 		}		
 
 		&.current {	

@@ -30,6 +30,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 
 	events:{
 		'click .block__link': "onBlockClick",
+		'mouseover .block': "onBlockOver",
+		'mouseout  .block': "onBlockOut",
 	},
 
 	behaviors:{
@@ -75,7 +77,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 		// if (this.collection.length) throw new Error('fish');
 		// console.log(this.collection.pluck('order'));		
 
-		// console.log("StoryPanelView:onRender: "+this.state+' - '+this.ran);		
+		// console.log("StoryPanelView:onRender: "+this.state);		
 		this.setState(this.state);
 
 		this.sorter = new Sortable(this.ui.blocks[0],{
@@ -83,7 +85,8 @@ var StoryPanelView = Marionette.ItemView.extend(
 			animation:  150,
 			handle:     '.block',
 			ghostClass: "block--dragged",
-			onUpdate:_.bind(this.doneDraggging,this),
+			onUpdate:_.bind(this.doneDragging,this),
+			onStart: _.bind(this.onBlockDrag,this),
 		});
 
 		this.selectBlock();
@@ -91,7 +94,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 		if (this.collection.meta) this.ui.name.text(this.collection.meta.get('name')+' ');
 	},
 
-	doneDraggging:function(event)
+	doneDragging:function(event)
 	{
 		$('.block__link').each(_.bind(function(a,b,c)
 		{
@@ -102,7 +105,7 @@ var StoryPanelView = Marionette.ItemView.extend(
 			{
 				// console.log('set: '+a);		
 				this.saveCount = 0;
-				bk.set({order:a});
+				bk.set({order:a},{silent:true});
 				bk.save({},{silent:true,success:_.bind(function(a,b)
 				{
 					this.saveCount++;
@@ -165,6 +168,24 @@ var StoryPanelView = Marionette.ItemView.extend(
 		var bid = $(e.currentTarget).attr('href').substr(1);
 
 		pararchive.nav.editStoryBlock(sid,bid);
+	},
+
+	onBlockOver:function(e)
+	{
+		e.preventDefault();
+		$(e.currentTarget).addClass('hover');		
+	},
+
+	onBlockOut:function(e)
+	{
+		e.preventDefault();
+		$(e.currentTarget).removeClass('hover');		
+	},
+
+	onBlockDrag:function(e)
+	{
+		e.preventDefault();
+		$(e.currentTarget).find('.block').removeClass('hover');		
 	},
 
 	/*
