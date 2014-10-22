@@ -173,7 +173,6 @@ var StoryPanelView = Marionette.ItemView.extend(
 	onBlockOver:function(e)
 	{
 		e.preventDefault();
-		console.log($(e.currentTarget).hasClass('current'));		
 		if (!$(e.currentTarget).hasClass('current')) $(e.currentTarget).addClass('hover');
 	},
 

@@ -10,7 +10,7 @@ var App = Marionette.Application.extend({
     initialize:function()
     {
         // console.log('App:Initialize');
-        console.log('App:Initialize');
+        // console.log('App:Initialize');
 
         // First create a user object.
         this.user = new User();     

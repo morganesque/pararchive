@@ -16,8 +16,8 @@ var ViewController = Marionette.Controller.extend({
 			});
 		},error:function(a,b,c)
 		{
-			console.log('error');		
-			console.log(a,b,c);		
+			// console.log('error');		
+			// console.log(a,b,c);		
 		}});
 	},
 
@@ -30,7 +30,7 @@ var ViewController = Marionette.Controller.extend({
 
 	viewBlock:function(slug,bin)
 	{
-		console.log("ViewController\tviewBlock: "+slug+' '+bin);
+		// console.log("ViewController\tviewBlock: "+slug+' '+bin);
 		this.convertSlug(slug,function()
 		{
 			pararchive.showViewBlock();

@@ -95,7 +95,7 @@ var ViewBlockView = Marionette.LayoutView.extend(
 	
 	showNotes:function()
 	{
-		console.log("ViewBlockView\tshowNotes");		
+		// console.log("ViewBlockView\tshowNotes");		
 		var shownotes = new ViewBlockNotesView({
 			collection:this.block.notes,
 			authors:{

@@ -27,7 +27,7 @@ var ViewBlockNotesView = Marionette.ItemView.extend(
 		this.listenTo(this.collection, "reset",  this.render)
 		this.listenTo(this.collection, "change", this.render)
 		this.authors = options.authors;
-		console.log(this.authors);		
+		// console.log(this.authors);		
 	},
 
 	serializeData:function()
