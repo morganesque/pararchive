@@ -64,7 +64,8 @@ switch($_SERVER['REQUEST_METHOD'])
 		$user->ownStoryList[] = $bean;
 		$id = R::store($user);	
 
-		// $bean->id = $id;
+		$user->gravatar = md5($user->email);
+		$bean->user = $user;
 		echo json_encode($bean->export());
 	break;
  
@@ -78,6 +79,9 @@ switch($_SERVER['REQUEST_METHOD'])
 		$bean->modified = R::isoDateTime();
 
 		R::store($bean); // Update
+
+		$user->gravatar = md5($user->email);
+		$bean->user = $user;
 		echo json_encode($bean->export());
 	break;
  
