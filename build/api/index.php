@@ -38,6 +38,10 @@ switch($params[0])
 {
     case 'users':
         include_once('users.php');
+    break;    
+
+    case 'newuser':
+        include_once('newuser.php');
     break;       
 
     case 'stories':
