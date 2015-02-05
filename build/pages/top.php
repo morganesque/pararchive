@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="favicon.ico?v2">
+    <link rel="shortcut icon" href="/favicon.ico?v2">
     <link rel="icon" href="/apple-touch-icon-precomposed.png">
     <link rel="apple-touch-icon-precomposed apple-touch-icon" href="/apple-touch-icon-precomposed.png">
     <meta name="mobile-web-app-capable" content="yes">
