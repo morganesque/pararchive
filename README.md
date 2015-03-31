@@ -2,7 +2,7 @@
 
 This repo is where I stored all the stuff I used for creating a number of rapidly evolving prototypes during the design process of the [Pararchive](http://pararchive.com) project.
 
-The prototypes were built using (Backbone)[http://backbonejs.org/] and [Marionette](http://marionettejs.com/) to provide a front-end framework for passing data around and creating a UI. 
+The prototypes were built using [Backbone](http://backbonejs.org/) and [Marionette](http://marionettejs.com/) to provide a front-end framework for passing data around and creating a UI. 
 
 I used a MySQL database and [RedBeanPHP](http://www.redbeanphp.com/) to create a RESTful API which formed a persistence layer for any data entered.
 
